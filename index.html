@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <title>Heartfull</title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #cardContainer::-webkit-scrollbar {
+      display: none;
+    }
+
+    #cardContainer {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen bg-gradient-to-br from-pink-200 via-pink-300 to-orange-200">
+
+  <!-- Hero wrapper with background image -->
+  <section id="hero" class="relative bg-cover bg-center min-h-screen" style="background-image: url('bg.jpg');">
+
+    <!-- Dark overlay over background -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Navbar: transparent background -->
+    <header class="sticky top-0 z-50 w-full bg-transparent backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-3 select-none">
+        <span class="text-pink-500 text-4xl sm:text-5xl">💗</span>
+        <h1 class="flex items-baseline space-x-1 m-0 text-white">
+          <span style="font-family: 'Pacifico', cursive; font-size: 1.6rem;" class="sm:text-[2rem] font-semibold">Heart</span>
+          <span style="font-family: 'Pacifico', cursive; font-size: 1.6rem;" class="sm:text-[2rem] font-semibold">Full</span>
+        </h1>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex space-x-6 text-white font-medium">
+        <a href="#why" class="hover:text-pink-400 transition">Why Us?</a>
+        <a href="#mission" class="hover:text-pink-400 transition">Mission</a>
+        <a href="#community" class="hover:text-pink-400 transition">Community</a>
+        <a href="#footer" class="hover:text-pink-400 transition">Contact</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+        <!-- Hamburger icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Mobile menu links -->
+      <nav id="mobile-menu" class="hidden md:hidden flex flex-col space-y-2 mt-2 bg-black/70 backdrop-blur-md p-4 rounded-md absolute top-full right-4 w-48 z-50">
+        <a href="#why" class="text-white hover:text-pink-400 font-medium block">Why Us?</a>
+        <a href="#mission" class="text-white hover:text-pink-400 font-medium block">Mission</a>
+        <a href="#community" class="text-white hover:text-pink-400 font-medium block">Community</a>
+        <a href="#footer" class="text-white hover:text-pink-400 font-medium block">Contact</a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+
+
+    <!-- Hero main content: center left -->
+    <div
+      class="relative max-w-2xl w-full min-h-[400px] flex flex-col justify-center pl-6 sm:pl-20 pr-6 text-left text-white select-none">
+
+      <!-- Text content -->
+      <p class="mt-6 text-base sm:text-xl max-w-lg leading-relaxed text-white/90">
+        We're making dating human again. No subscriptions. No ads. No pay-to-message. Just real people earning trust
+        through effort.
+      </p>
+
+      <!-- Date button below text -->
+      <div class="mt-6">
+        <a href="https://app.heartfull.online"
+          class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-medium py-2.5 px-6 rounded-full shadow-md transition text-sm sm:text-base">
+          Date now
+        </a>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+
+
+  <section class="py-16 px-6 bg-white">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between space-y-8 md:space-y-0">
+
+      <!-- Our Mission (Left) -->
+      <div
+        class="w-full md:w-5/12 bg-white/70 backdrop-blur-lg border border-pink-200 rounded-xl p-8 shadow-md text-left flex flex-col md:flex-row items-center md:items-start space-x-0 md:space-x-6">
+
+        <div>
+          <h2 id="mission" class="text-pink-500 text-2xl font-semibold mb-4">Our Mission</h2>
+          <p class="text-gray-700 mb-2">Redefining how dating apps should work.</p>
+          <p class="text-gray-600 italic mb-4">Attention is earned, not bought. You get what you give.</p>
+          <p class="text-gray-700 font-medium">Join our community where real connection comes first.</p>
+        </div>
+      </div>
+
+      <!-- Our Community (Right) -->
+      <div
+        id="community" class="w-full md:w-5/12 bg-white/70 backdrop-blur-lg border border-pink-200 rounded-xl p-8 shadow-md text-left">
+        <h2 class="text-pink-500 text-2xl font-semibold mb-4">Our Community</h2>
+        <p class="text-gray-700 mb-2">A welcoming space for genuine connections.</p>
+        <p class="text-gray-600 italic mb-4">We celebrate kindness, honesty, and engagement.</p>
+        <p class="text-gray-700 font-medium">Be part of a trusted, supportive network.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="why" class="py-16 px-6 text-center relative">
+
+    <div class="mb-8 flex justify-center items-center space-x-2">
+      <h2 class="text-4xl font-bold text-pink-500">Why us</h2>
+      <span class="text-4xl font-bold text-pink-500 animate-bounce">?</span>
+    </div>
+    <!-- Add in <head> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <p class="max-w-3xl mx-auto font-extrabold text-2xl mb-8 leading-snug text-white select-none"
+      style="font-family: 'Poppins', sans-serif;">
+      “Unlike other apps where people quickly move to WhatsApp or phone, our community values staying and building trust
+      on-platform.”
+    </p>
+
+
+
+    <div class="max-w-6xl mx-auto px-4 space-y-12">
+
+      <!-- Card 1 -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <!-- Image with overlay -->
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="SMS.jpg" alt="SMS Sign-in" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+
+        <!-- Text content -->
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">SMS-only Sign-in</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Verify using your real phone
+              number—no fake accounts or throwaways.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> No need to remember another
+              password—quick and secure access.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Keeps the community safe and
+              authentic.</li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!-- Card 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <!-- Image with overlay -->
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="people.jpg" alt="Real People" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+
+        <!-- Text content -->
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">Real People Only</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Strict verification—no bots or spam
+              profiles.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Every interaction is with someone
+              genuine.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Builds trust in every connection.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- Card 3 -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <!-- Image with overlay -->
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="money.jpg" alt="Free Forever" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+
+        <!-- Text content -->
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">100% Free Forever</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> No premium subscriptions or hidden
+              fees.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Every feature is available to
+              everyone.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Keeps the focus on people, not
+              money.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="heart.jpg" alt="Hearts System" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">Hearts-based System</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Earn Hearts through kindness,
+              honesty, and engagement.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> No one can buy popularity—it’s all
+              about genuine effort.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Encourages real connections, not
+              transactions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="ghost.jpg" alt="No Ghosting" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">No Ghosting Culture</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Encourage timely replies to keep
+              conversations alive.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Treat everyone with respect, even if
+              you’re not interested.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Creates a respectful, friendly
+              dating space.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="relative w-full md:w-1/2 h-64">
+          <img src="ladder.jpg" alt="Merit-Based Ladder" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-500/30 via-purple-500/20 to-transparent"></div>
+        </div>
+        <div class="p-6 md:w-1/2 text-left text-base md:text-lg">
+          <h3 class="text-xl font-semibold text-pink-500 mb-4">Merit-Based Ladder</h3>
+          <ul class="space-y-2 text-gray-600 text-base md:text-lg">
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Your visibility increases through
+              consistent kindness.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> No one can pay to be on top—it’s
+              purely merit-based.</li>
+            <li class="flex items-start"><span class="text-pink-500 mr-2">💗</span> Rewards genuine, positive behavior.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section id="hearts" class="py-16 px-6 text-center">
+    <div class="max-w-5xl mx-auto p-10 rounded-xl shadow-lg border border-gray-100 text-left bg-white">
+      <h2 class="text-3xl font-bold text-pink-600 mb-8 text-center">💗 The Hearts Economy</h2>
+
+      <p class="text-gray-700 mb-10 max-w-3xl mx-auto text-lg text-center">
+        A unique trust economy where Hearts can’t be bought—only earned and shared.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+        <div>
+          <h4 class="font-semibold text-pink-500 mb-2">Earn Hearts by:</h4>
+          <ul class="list-disc pl-5 space-y-3">
+            <li>Posting real-time, AI-verified selfies that confirm your authenticity and help build trust.</li>
+            <li>Answering personality prompts honestly to share more about who you really are.</li>
+            <li>Being kind and consistently responsive to messages to foster meaningful connections.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-pink-500 mb-2">Spend Hearts to:</h4>
+          <ul class="list-disc pl-5 space-y-3">
+            <li>Start conversations with others, showing your interest in building real connections.</li>
+            <li>Approach users who have earned more Hearts, encouraging mutual trust and respect.</li>
+            <li>Give underdogs a chance by supporting members who are newer or less visible on the platform.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-white border-t border-gray-300 mt-16 text-black">
+    <div
+      class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center md:items-start justify-between space-y-6 md:space-y-0">
+
+      <!-- Left: Logo & Slogan -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        <span class="text-pink-500 text-5xl select-none">💗</span>
+        <div>
+          <h1 class="flex items-baseline space-x-1 m-0 text-black">
+              <span style="font-family: 'Pacifico', cursive; font-size: 1.6rem;"
+                class="sm:text-[2rem] font-semibold">Heart</span>
+              <span style="font-family: 'Pacifico', cursive; font-size: 1.6rem;"
+                class="sm:text-[2rem] font-semibold">Full</span>
+            </h1>
+          <p class="text-gray-700 text-sm mt-1">Where heart matters, not money. 100% free. Always.</p>
+        </div>
+      </div>
+
+      <!-- Center: Quick Links & Join -->
+      <div class="text-center md:text-left space-y-2">
+        <h4 class="text-pink-600 font-semibold text-lg mb-2">Quick Links</h4>
+        <ul class="space-y-1">
+          <li><a href="#why" class="hover:text-pink-500 transition">Why Free Dates?</a></li>
+          <li><a href="#hero" class="hover:text-pink-500 transition">Join the Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Right: Social Icons -->
+      <div class="flex space-x-5 text-gray-700">
+        <!-- social icons same as before -->
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram" class="hover:text-pink-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7z" />
+            <circle cx="12" cy="12" r="3.2" />
+            <circle cx="17.5" cy="6.5" r="1" />
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook" class="hover:text-pink-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5 3.657 9.127 8.438 9.879v-6.987h-2.54v-2.892h2.54V9.845c0-2.507 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.892h-2.33V22C18.343 21.127 22 17 22 12z" />
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a href="#" aria-label="TikTok" class="hover:text-pink-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12.636 2H9.818v14.182a2.182 2.182 0 1 1-2.182-2.182V11.64a4.364 4.364 0 1 0 4.364 4.364V7.09a6.545 6.545 0 0 0 3.927 1.3V5.454a3.927 3.927 0 0 1-3.927-3.927z" />
+          </svg>
+        </a>
+        <!-- X Platform -->
+        <a href="#" aria-label="X Platform" class="hover:text-pink-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4 4h4l4.25 5.56L17 4h3l-6.67 8.92L21 20h-4l-4.84-6.25L8 20H5l7-9.33L4 4z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center text-gray-500 text-xs py-4 border-t border-gray-200">
+      © 2025 Free Dates. All rights reserved.
+    </div>
+  </footer>
+
+
+
+</body>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+      // close mobile menu on click
+      if (!menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+</html>
