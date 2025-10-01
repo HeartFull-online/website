@@ -189,8 +189,11 @@
       <a href="#difference" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Find the difference</a>
       <a href="#hearts-economy" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Hearts Economy</a>
       <a href="#contact" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Contact</a>
-      <button class="w-full bg-gradient-to-r from-red-500 to-red-700 text-white py-3 rounded-full font-semibold mt-4">Join Now</button>
-    </div>
+      <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
+        <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block">
+          Join Now
+        </button>
+      </a>    </div>
   </div>
 </nav>
 
@@ -272,32 +275,31 @@
     <div class="grid md:grid-cols-3 gap-8 mb-16">
         <!-- Other Apps (Swipeable) -->
         <div class="text-center fade-in">
-          <div class="relative flex justify-center">
-            <!-- Phone Frame -->
-            <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
-              <!-- Notch -->
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
-      
-              <!-- Screen (Swiper) -->
-              <div class="swiper w-full h-full rounded-[30px] overflow-hidden z-10" id="other-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="images/badoo.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/bumble.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/cmd.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/hinge.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/tantan.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/tinder.png" class="w-full h-full object-cover" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
-      
-              <!-- Label (bottom, like HeartFull) -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-[30px] flex items-end justify-center pb-6 pointer-events-none z-20">
-                <span class="text-white font-bold text-xl">Other Apps</span>
-              </div>
-            </div>
-          </div>
+  <div class="relative flex flex-col items-center">
+    <!-- Phone Frame -->
+    <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
+      <!-- Notch -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
+
+      <!-- Screen (Swiper) -->
+      <div class="swiper w-full h-full rounded-[30px] overflow-hidden z-10" id="other-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/badoo.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/bumble.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/cmd.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/hinge.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/tantan.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/tinder.png" class="w-full h-full object-cover" /></div>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Label (OUTSIDE phone frame) -->
+    <span class="mt-3 text-pink font-bold text-xl">Other Apps</span>
+  </div>
+</div>
+
       
         <!-- VS -->
         <div class="text-center fade-in flex items-center justify-center" style="animation-delay: 0.2s;">
@@ -306,24 +308,24 @@
       
         <!-- HeartFull (Static Mobile) -->
         <div class="text-center fade-in" style="animation-delay: 0.4s;">
-          <div class="relative flex justify-center">
-            <!-- Phone Frame -->
-            <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
-      
-              <!-- Static Screen -->
-              <img
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=400&fit=crop&crop=center"
-                alt="HeartFull genuine community"
-                class="w-full h-full object-cover rounded-[30px]" />
-      
-              <!-- Label -->
-              <div class="absolute inset-0 bg-gradient-to-t from-pink-600/70 to-transparent rounded-[30px] flex items-end justify-center pb-6 pointer-events-none z-20">
-                <span class="text-white font-bold text-xl">♥ HeartFull</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="relative flex flex-col items-center">
+    <!-- Phone Frame -->
+    <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
+      <!-- Notch -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
+
+      <!-- Static Screen -->
+      <img
+        src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=400&fit=crop&crop=center"
+        alt="HeartFull genuine community"
+        class="w-full h-full object-cover rounded-[30px]" />
+    </div>
+
+    <!-- Label (OUTSIDE phone frame) -->
+    <span class="mt-3 text-black font-bold text-xl">HeartFull</span>
+  </div>
+</div>
+
       </div>                            
            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-pink-500">
@@ -738,7 +740,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
-                        <span class="text-3xl text-pink-400">♥</span>
+                       <img src="heart_logo.png" alt="Logo" class="h-8 w-8" />
                         <span class="text-2xl font-bold gradient-text">HeartFull</span>
                     </div>
                     <p class="text-gray-400 mb-6 text-lg max-w-md">
