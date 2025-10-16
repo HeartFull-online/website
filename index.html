@@ -147,165 +147,112 @@
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-pink-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-3">
-                    <div class="text-3xl pulse-heart heart-pink">♥</div>
-                    <span class="text-2xl font-bold gradient-text">HeartFull</span>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#difference" class="text-gray-700 hover:text-pink-500 transition-colors font-medium">Find the difference</a>
-                    <a href="#hearts-economy" class="text-gray-700 hover:text-pink-500 transition-colors font-medium">Hearts Economy</a>
-                    <a href="#contact" class="text-gray-700 hover:text-pink-500 transition-colors font-medium">Contact</a>
-                </div>
-                
-                <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-                    <button class="bg-gradient-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block">
-                        Join Now
-                    </button>
-                </a>
-                
-                
-                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-red-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div 
+          class="w-16 h-16 bg-center bg-no-repeat bg-contain pulse-heart" 
+          style="background-image: url('heart_logo.png');">
         </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-pink-100 hidden">
-            <div class="px-4 py-4 space-y-3">
-                <a href="#difference" class="block py-2 text-gray-700 hover:text-pink-500 font-medium">Find the difference</a>
-                <a href="#hearts-economy" class="block py-2 text-gray-700 hover:text-pink-500 font-medium">Hearts Economy</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-pink-500 font-medium">Contact</a>
-                <button class="w-full bg-gradient-pink text-white py-3 rounded-full font-semibold mt-4">Join Now</button>
-            </div>
+        <span class="text-2xl font-bold text-red-600">HeartFull</span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#difference" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Find the difference</a>
+        <a href="#hearts-economy" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Hearts Economy</a>
+        <a href="#contact" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Contact</a>
+      </div>
+      
+      <!-- CTA -->
+      <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
+        <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block">
+          Join Now
+        </button>
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-red-100 hidden">
+    <div class="px-4 py-4 space-y-3">
+      <a href="#difference" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Find the difference</a>
+      <a href="#hearts-economy" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Hearts Economy</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Contact</a>
+      <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
+        <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block">
+          Join Now
+        </button>
+      </a>    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+  <!-- Full Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="bg.jpg" 
+         alt="Hero background" 
+         class="w-full h-full object-cover">
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-pink-500/70 via-rose-400/60 to-orange-400/50"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center">
+      <!-- Main Content -->
+      <div class="max-w-4xl mx-auto">
+        <h1 class="hero-text text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 fade-in leading-tight drop-shadow-lg">
+          Real Hearts.<br>Real Connections.
+        </h1>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-12 fade-in drop-shadow-md">
+          Where authenticity meets romance.
+        </h2>
+
+        <!-- CTA Button -->
+        <div class="fade-in">
+          <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
+            <button class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all">
+              Start Connecting
+            </button>
+          </a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
-    style="background-image: url('images/bg.jpg'); 
-           background-size: cover; 
-           background-position: center;
-           background-repeat: no-repeat;">
-<!-- Dark overlay to make text readable -->
-<div class="absolute inset-0 bg-black/40 z-0"></div>
-
-<!-- Floating circles -->
-<div class="absolute inset-0 z-0">
-   <div class="absolute top-20 left-10 w-32 h-32 bg-pink-300 rounded-full opacity-20 floating"></div>
-   <div class="absolute top-40 right-20 w-48 h-48 bg-red-300 rounded-full opacity-15 floating" style="animation-delay: -2s;"></div>
-   <div class="absolute bottom-32 left-1/4 w-24 h-24 bg-pink-400 rounded-full opacity-25 floating" style="animation-delay: -4s;"></div>
-</div>
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-   <div class="grid lg:grid-cols-2 gap-12 items-center">
-       <!-- Left Content -->
-       <div class="text-center lg:text-left">
-           <h1 class="hero-text text-6xl lg:text-7xl xl:text-8xl font-black text-gray-100 mb-6 fade-in leading-tight">
-               <span class="gradient-text">Our Mission</span>
-           </h1>
-           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-200 mb-6 fade-in">
-               Redefining how dating apps should work.
-           </h2>
-           <p class="text-lg sm:text-xl text-gray-300 italic mb-8 fade-in">
-               Attention is earned, not bought. You get what you give.
-           </p>
-           <p class="text-xl sm:text-2xl font-semibold text-gray-100 mb-12 fade-in">
-               <span class="heart-pink">♥</span> Join our community where real connection comes first.
-           </p>
-           
-           <div class="flex flex-col sm:flex-row gap-4 fade-in">
-            <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-               <button class="bg-gradient-pink text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                   Start Connecting
-               </button>
-               </a>
-               <a href="https://www.linkedin.com/company/heartfull-online/" target="_blank" rel="noopener noreferrer">
-               <button class="border-2 border-pink-500 text-pink-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-500 hover:text-white transition-all">
-                   Learn More
-               </button>
-               </a>
-           </div>
-       </div>
-       
-       <!-- Right Image -->
-       <div class="relative lg:mt-0 mt-12">
-           <div class="relative">
-               <img src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?w=600&h=600&fit=crop&crop=center" 
-                    alt="Happy couple connecting authentically" 
-                    class="w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl floating">
-               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-pink rounded-full opacity-80 floating" style="animation-delay: -1s;"></div>
-               <div class="absolute -top-6 -left-6 w-24 h-24 bg-gradient-red rounded-full opacity-70 floating" style="animation-delay: -3s;"></div>
-           </div>
-       </div>
-   </div>
-   
-   <!-- Community Stats -->
-   <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 fade-in">
-       <div class="text-center">
-           <div class="text-3xl lg:text-4xl font-bold gradient-text">10K+</div>
-           <div class="text-gray-200">Real People</div>
-       </div>
-       <div class="text-center">
-           <div class="text-3xl lg:text-4xl font-bold gradient-text">95%</div>
-           <div class="text-gray-200">Verified Profiles</div>
-       </div>
-       <div class="text-center">
-           <div class="text-3xl lg:text-4xl font-bold gradient-text">0$</div>
-           <div class="text-gray-200">Forever Free</div>
-       </div>
-       <div class="text-center">
-           <div class="text-3xl lg:text-4xl font-bold gradient-text">100%</div>
-           <div class="text-gray-200">Heart-Based</div>
-       </div>
-   </div>
-</div>
+      <!-- Community Stats -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 fade-in">
+        <div class="text-center backdrop-blur-sm bg-white/20 rounded-2xl p-6">
+          <div class="text-3xl lg:text-4xl font-bold text-white">10K+</div>
+          <div class="text-white font-medium">Real People</div>
+        </div>
+        <div class="text-center backdrop-blur-sm bg-white/20 rounded-2xl p-6">
+          <div class="text-3xl lg:text-4xl font-bold text-white">95%</div>
+          <div class="text-white font-medium">Verified Profiles</div>
+        </div>
+        <div class="text-center backdrop-blur-sm bg-white/20 rounded-2xl p-6">
+          <div class="text-3xl lg:text-4xl font-bold text-white">0$</div>
+          <div class="text-white font-medium">Forever Free</div>
+        </div>
+        <div class="text-center backdrop-blur-sm bg-white/20 rounded-2xl p-6">
+          <div class="text-3xl lg:text-4xl font-bold text-white">100%</div>
+          <div class="text-white font-medium">Heart-Based</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <!-- Community Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="slide-in-left">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center" 
-                         alt="Diverse community of genuine people" 
-                         class="w-full h-80 lg:h-96 object-cover rounded-3xl shadow-xl">
-                </div>
-                
-                <div class="slide-in-right">
-                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-                        <span class="gradient-text">Our Community</span>
-                    </h2>
-                    <p class="text-xl text-gray-700 mb-6">
-                        A welcoming space for genuine connections.
-                    </p>
-                    <p class="text-lg text-gray-600 italic mb-8">
-                        We celebrate kindness, honesty, and engagement.
-                    </p>
-                    <p class="text-xl font-semibold text-gray-800 mb-8">
-                        <span class="heart-pink">♥</span> Be part of a trusted, supportive network.
-                    </p>
-                    
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="bg-pink-50 p-4 rounded-2xl">
-                            <div class="text-2xl font-bold heart-pink mb-2">Safe Space</div>
-                            <div class="text-gray-600">Verified profiles only</div>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-2xl">
-                            <div class="text-2xl font-bold heart-pink mb-2">Real Talk</div>
-                            <div class="text-gray-600">No fake interactions</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Find the Difference Section -->
     <section id="difference" class="py-20 bg-gradient-to-br from-pink-50 to-red-50">
@@ -319,7 +266,7 @@
                 </p>
                 <div class="bg-white p-6 rounded-2xl shadow-lg max-w-4xl mx-auto fade-in">
                     <p class="text-lg font-semibold text-pink-600 italic">
-                        <span class="heart-pink text-xl">♥</span> Unlike other apps where people quickly move to WhatsApp or phone, our community values staying and building trust on-platform.
+                         Unlike other apps where people quickly move to WhatsApp or phone, our community values staying and building trust on-platform.
                     </p>
                 </div>
             </div>
@@ -328,32 +275,36 @@
     <div class="grid md:grid-cols-3 gap-8 mb-16">
         <!-- Other Apps (Swipeable) -->
         <div class="text-center fade-in">
-          <div class="relative flex justify-center">
-            <!-- Phone Frame -->
-            <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
-              <!-- Notch -->
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
-      
-              <!-- Screen (Swiper) -->
-              <div class="swiper w-full h-full rounded-[30px] overflow-hidden z-10" id="other-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="images/badoo.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/bumble.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/cmd.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/hinge.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/tantan.png" class="w-full h-full object-cover" /></div>
-                  <div class="swiper-slide"><img src="images/tinder.png" class="w-full h-full object-cover" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
-      
-              <!-- Label (bottom, like HeartFull) -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-[30px] flex items-end justify-center pb-6 pointer-events-none z-20">
-                <span class="text-white font-bold text-xl">Other Apps</span>
-              </div>
-            </div>
-          </div>
+  <div class="relative flex flex-col items-center">
+    <!-- Phone Frame -->
+    <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
+      <!-- Notch -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
+
+      <!-- Screen (Swiper) -->
+      <div class="swiper w-full h-full rounded-[30px] overflow-hidden z-10" id="other-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/badoo.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/bumble1.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/chinalovecupid.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/grindr.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/hinge1.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/hinge2.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/Okcupid.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/POW.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/tantan1.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/tinder1.png" class="w-full h-full object-cover" /></div>
+          <div class="swiper-slide"><img src="images/tinder2.png" class="w-full h-full object-cover" /></div>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Label (OUTSIDE phone frame) -->
+    <span class="mt-3 text-pink font-bold text-xl">Other Apps</span>
+  </div>
+</div>
+
       
         <!-- VS -->
         <div class="text-center fade-in flex items-center justify-center" style="animation-delay: 0.2s;">
@@ -362,143 +313,144 @@
       
         <!-- HeartFull (Static Mobile) -->
         <div class="text-center fade-in" style="animation-delay: 0.4s;">
-          <div class="relative flex justify-center">
-            <!-- Phone Frame -->
-            <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
-      
-              <!-- Static Screen -->
-              <img
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=400&fit=crop&crop=center"
-                alt="HeartFull genuine community"
-                class="w-full h-full object-cover rounded-[30px]" />
-      
-              <!-- Label -->
-              <div class="absolute inset-0 bg-gradient-to-t from-pink-600/70 to-transparent rounded-[30px] flex items-end justify-center pb-6 pointer-events-none z-20">
-                <span class="text-white font-bold text-xl">♥ HeartFull</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="relative flex flex-col items-center">
+    <!-- Phone Frame -->
+    <div class="relative w-[220px] h-[440px] bg-black rounded-[40px] p-4 shadow-xl overflow-hidden">
+      <!-- Notch -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-20"></div>
+
+      <!-- Static Screen -->
+      <img
+        src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=400&fit=crop&crop=center"
+        alt="HeartFull genuine community"
+        class="w-full h-full object-cover rounded-[30px]" />
+    </div>
+
+    <!-- Label (OUTSIDE phone frame) -->
+    <span class="mt-3 text-black font-bold text-xl">HeartFull</sp
+        40.
+        an>
+  </div>
+</div>
+
       </div>                            
-            <!-- Features Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-pink-500">
-                    <div class="text-3xl mb-4">📱</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">SMS-only Sign-in</h3>
+                    <div class="text-3xl mb-4 text-center">📱</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">SMS-only Sign-in</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Verify using your real phone number—no fake accounts or throwaways.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>No need to remember another password—quick and secure access.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Keeps the community safe and authentic.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-red-500" style="animation-delay: 0.2s;">
-                    <div class="text-3xl mb-4">✨</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Real People Only</h3>
+                    <div class="text-3xl mb-4 text-center">✨</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Real People Only</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Strict verification—no bots or spam profiles.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Every interaction is with someone genuine.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Builds trust in every connection.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-pink-400" style="animation-delay: 0.4s;">
-                    <div class="text-3xl mb-4">🆓</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">100% Free Forever</h3>
+                    <div class="text-3xl mb-4 text-center">🆓</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">100% Free Forever</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>No premium subscriptions or hidden fees.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Every feature is available to everyone.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Keeps the focus on people, not money.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-red-400" style="animation-delay: 0.6s;">
-                    <div class="text-3xl mb-4">💖</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Hearts-based System</h3>
+                    <div class="text-3xl mb-4 text-center">💖</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Hearts-based System</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Earn Hearts through kindness, honesty, and engagement.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>No one can buy popularity—it's all about genuine effort.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Encourages real connections, not transactions.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-pink-600" style="animation-delay: 0.8s;">
-                    <div class="text-3xl mb-4">🚫</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">No Ghosting Culture</h3>
+                    <div class="text-3xl mb-4 text-center">🚫</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">No Ghosting Culture</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Encourage timely replies to keep conversations alive.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Treat everyone with respect, even if you're not interested.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Creates a respectful, friendly dating space.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in border-l-4 border-red-600" style="animation-delay: 1s;">
-                    <div class="text-3xl mb-4">🏆</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Merit-Based Ladder</h3>
+                    <div class="text-3xl mb-4 text-center">🏆</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Merit-Based Ladder</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Your visibility increases through consistent kindness.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>No one can pay to be on top—it's purely merit-based.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="heart-pink mr-2 text-lg">♥</span>
+                            <span class="heart-pink mr-2 text-lg flex-shrink-0">♥</span>
                             <span>Rewards genuine, positive behavior.</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
     <!-- Hearts Economy Section -->
     <section id="hearts-economy" class="py-20 bg-white relative overflow-hidden">
@@ -530,15 +482,15 @@
                     </div>
                     <ul class="space-y-6 text-gray-700">
                         <li class="flex items-start">
-                            <div class="bg-pink-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Posting real-time, AI-verified selfies that confirm your authenticity and help build trust.</span>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-pink-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Answering personality prompts honestly to share more about who you really are.</span>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-pink-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Being kind and consistently responsive to messages to foster meaningful connections.</span>
                         </li>
                     </ul>
@@ -555,15 +507,15 @@
                     </div>
                     <ul class="space-y-6 text-gray-700">
                         <li class="flex items-start">
-                            <div class="bg-red-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Start conversations with others, showing your interest in building real connections.</span>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Approach users who have earned more Hearts, encouraging mutual trust and respect.</span>
                         </li>
                         <li class="flex items-start">
-                            <div class="bg-red-500 w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="heart-pink mr-3 text-xl flex-shrink-0">♥</span>
                             <span class="text-lg">Give underdogs a chance by supporting members who are newer or less visible on the platform.</span>
                         </li>
                     </ul>
@@ -572,87 +524,101 @@
             
             <!-- Hearts Flow Visualization -->
             <div class="mt-16 text-center fade-in">
-                <div class="inline-flex items-center space-x-8 bg-white p-8 rounded-3xl shadow-lg">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-pink rounded-full flex items-center justify-center mb-2">
-                            <span class="text-white text-2xl font-bold">🤝</span>
-                        </div>
-                        <div class="text-sm font-medium text-gray-600">Build Trust</div>
-                    </div>
-                </div>
-            </div>
+  <div class="mt-16 flex justify-center fade-in">
+  <div class="flex flex-col items-center bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-lg max-w-xs text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-400 rounded-full flex items-center justify-center mb-3 shadow-md">
+      <span class="text-white text-2xl font-bold">🤝</span>
+    </div>
+    <div class="text-base font-semibold text-gray-800 mb-2">Build Trust</div>
+    <p class="text-gray-600 text-sm leading-relaxed">
+      Trust is the foundation of lasting relationships.  
+      Be transparent, keep promises, and show consistency  
+      in every interaction to strengthen confidence.
+    </p>
+  </div>
+</div>
         </div>
     </section>
 
     <!-- Success Stories Section -->
     <section class="py-20 bg-gradient-to-br from-pink-50 to-red-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6 fade-in">
-                    <span class="gradient-text">Success Stories</span>
-                </h2>
-                <p class="text-xl text-gray-600 fade-in">
-                    Real connections, real relationships, real happiness.
-                </p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 fade-in">
+        <span class="gradient-text">Success Stories</span>
+      </h2>
+      <p class="text-xl text-gray-600 fade-in">
+        Real connections, real relationships, real happiness.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Story 1 -->
+      <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in">
+        <div class="flex items-center mb-6">
+          <img
+            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face"
+            alt="Sarah"
+            class="w-16 h-16 rounded-full mr-4 object-cover"
+          />
+          <div>
+            <h4 class="font-bold text-gray-800 text-lg">Sarah & Mike</h4>
+            <div class="flex text-pink-500">
+              <span>♥♥♥♥♥</span>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face" 
-                             alt="Sarah" 
-                             class="w-16 h-16 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Sarah & Mike</h4>
-                            <div class="flex text-pink-500">
-                                <span>♥♥♥♥♥</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4 italic">
-                        "We met on HeartFull 8 months ago. The heart-based system helped us build real trust before meeting. Now we're engaged!"
-                    </p>l
-                    <div class="text-sm text-gray-500">Connected through genuine conversation</div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" 
-                             alt="James" 
-                             class="w-16 h-16 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-lg">James & Emma</h4>
-                            <div class="flex text-pink-500">
-                                <span>♥♥♥♥♥</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4 italic">
-                        "No ghosting, no games. Just real people looking for real connections. Found my soulmate here!"
-                    </p>
-                    <div class="text-sm text-gray-500">1 year together</div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in" style="animation-delay: 0.4s;">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" 
-                             alt="Lisa" 
-                             class="w-16 h-16 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Lisa & David</h4>
-                            <div class="flex text-pink-500">
-                                <span>♥♥♥♥♥</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4 italic">
-                        "The verification system made me feel safe. Meeting David was natural because we'd already built such a strong connection."
-                    </p>
-                    <div class="text-sm text-gray-500">Moving in together</div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+        <p class="text-gray-700 mb-4 italic">
+          "We met on HeartFull 8 months ago. The heart-based system helped us build real trust before meeting. Now we're engaged!"
+        </p>
+        <div class="text-sm text-gray-500">Connected through genuine conversation</div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
+        <div class="flex items-center mb-6">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+            alt="James"
+            class="w-16 h-16 rounded-full mr-4 object-cover"
+          />
+          <div>
+            <h4 class="font-bold text-gray-800 text-lg">James & Emma</h4>
+            <div class="flex text-pink-500">
+              <span>♥♥♥♥♥</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4 italic">
+          "No ghosting, no games. Just real people looking for real connections. Found my soulmate here!"
+        </p>
+        <div class="text-sm text-gray-500">1 year together</div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="bg-white p-8 rounded-3xl shadow-lg card-hover fade-in" style="animation-delay: 0.4s;">
+        <div class="flex items-center mb-6">
+          <img
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
+            alt="Lisa"
+            class="w-16 h-16 rounded-full mr-4 object-cover"
+          />
+          <div>
+            <h4 class="font-bold text-gray-800 text-lg">Lisa & David</h4>
+            <div class="flex text-pink-500">
+              <span>♥♥♥♥♥</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4 italic">
+          "The verification system made me feel safe. Meeting David was natural because we'd already built such a strong connection."
+        </p>
+        <div class="text-sm text-gray-500">Moving in together</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- How It Works Section -->
     <section class="py-20 bg-white">
@@ -781,29 +747,61 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
-                        <span class="text-3xl text-pink-400">♥</span>
+                       <img src="heart_logo.png" alt="Logo" class="h-8 w-8" />
                         <span class="text-2xl font-bold gradient-text">HeartFull</span>
                     </div>
                     <p class="text-gray-400 mb-6 text-lg max-w-md">
                         Where heart matters, not money. Join the revolution in authentic dating where real connections flourish.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z.017 0z"/>
-                            </svg>
-                        </a>
-                    </div>
+                   <div class="flex space-x-4">
+  <!-- Twitter -->
+  <a href="#" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
+    <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 
+        1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 
+        1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 
+        0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 
+        2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 
+        2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 
+        1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 
+        2.04 2.179 1.397 4.768 2.212 7.548 2.212 
+        9.142 0 14.307-7.721 13.995-14.646.962-.695 
+        1.797-1.562 2.457-2.549z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/heartfull-online" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
+    <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 
+        5v14c0 2.761 2.239 5 5 5h14c2.762 
+        0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
+        19h-3v-10h3v10zm-1.5-11.268c-.966 
+        0-1.75-.79-1.75-1.764s.784-1.764 
+        1.75-1.764 1.75.79 1.75 
+        1.764-.784 1.764-1.75 1.764zm13.5 
+        11.268h-3v-5.604c0-1.337-.027-3.059-1.865-3.059-1.867 
+        0-2.154 1.459-2.154 2.965v5.698h-3v-10h2.879v1.367h.041c.401-.76 
+        1.379-1.562 2.838-1.562 3.033 
+        0 3.584 1.997 3.584 4.59v5.605z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/profile.php?id=61579023050009" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors">
+    <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22.675 0h-21.35C.597 
+        0 0 .597 0 1.333v21.333C0 23.403.597 
+        24 1.325 24H12.82v-9.294H9.692V11.41h3.128V8.691c0-3.1 
+        1.893-4.788 4.659-4.788 1.325 
+        0 2.463.099 2.794.143v3.24h-1.918c-1.505 
+        0-1.797.716-1.797 1.765v2.359h3.587l-.467 
+        3.296h-3.12V24h6.116C23.403 24 24 
+        23.403 24 22.667V1.333C24 .597 23.403 
+        0 22.675 0z"/>
+    </svg>
+  </a>
+</div>
                 </div>
                 
                 <div>
