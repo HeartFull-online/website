@@ -4,56 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HeartFull - Real hearts, real connections. 100% free dating app where authenticity meets romance.">
+    <meta name="theme-color" content="#FAF7F5">
     <title>HeartFull - Where heart matters, not money</title>
-    
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="heart_logo.png" as="image">
     <link rel="preload" href="bg.jpg" as="image">
-    
-    <!-- Optimized font loading - reduced weights -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
+    <!-- Optimized font loading - Fraunces + DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+
     <!-- Critical CSS - inline for faster FCP -->
     <style>
         /* Critical above-the-fold styles */
         :root {
-            --primary-pink: #ff1744;
-            --secondary-pink: #ff6b9d;
-            --light-pink: #ffebef;
-            --dark-red: #d32f2f;
+            --coral: #FF5870;
+            --coral-light: #FF8A9A;
+            --coral-subtle: #FFF0F2;
+            --ink: #1E1916;
+            --ink-secondary: #6B5E57;
+            --ink-tertiary: #9C8F88;
+            --border: #E4DDD8;
+            --surface: #FAF7F5;
+            --surface-elevated: #FFFFFF;
+            --surface-sunken: #F2EDEA;
+            --shadow-warm: 0 2px 8px rgba(30,25,22,0.08);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             overflow-x: hidden;
-            color: #111827;
-            background: #fff;
+            color: var(--ink);
+            background: var(--surface);
         }
-        
+
+        h1, h2 {
+            font-family: 'Fraunces', serif;
+        }
+
         /* Navigation - critical */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 247, 245, 0.95);
             backdrop-filter: blur(12px);
             z-index: 50;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #fecaca;
+            box-shadow: 0 1px 3px rgba(30, 25, 22, 0.06);
+            border-bottom: 1px solid var(--border);
         }
-        
+
         /* Hero section - critical */
         .hero-section {
             min-height: 100vh;
@@ -64,30 +76,30 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
-        
+
         .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom right, rgba(236, 72, 153, 0.7), rgba(251, 146, 60, 0.5));
+            background: linear-gradient(to bottom right, rgba(255, 88, 112, 0.6), rgba(30, 25, 22, 0.4));
         }
     </style>
-    
+
     <!-- Defer non-critical CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
-    
+
     <!-- Tailwind CDN with defer (consider building for production) -->
     <script>
         // Inline Tailwind config to reduce blocking
@@ -95,51 +107,51 @@
     </script>
     <script src="https://cdn.tailwindcss.com" defer></script>
 </head>
-<body class="bg-white text-gray-900">
+<body style="background: var(--surface); color: var(--ink);">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-red-100">
+    <nav>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
-                
+
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-12 h-12 bg-center bg-no-repeat bg-contain pulse-heart" 
+                    <div class="w-12 h-12 bg-center bg-no-repeat bg-contain pulse-heart"
                          style="background-image: url('heart_logo.png');">
                     </div>
-                    <span class="text-xl font-bold text-red-600">HeartFull</span>
+                    <span class="text-xl font-bold" style="font-family: 'Fraunces', serif; color: var(--coral);">HeartFull</span>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-7">
-                    <a href="#difference" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Find the difference</a>
-                    <a href="#hearts-economy" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Hearts Economy</a>
-                    <a href="#contact" class="text-gray-700 hover:text-red-500 transition-colors font-medium">Contact</a>
+                    <a href="#difference" class="nav-link font-medium" style="color: var(--ink-secondary);">Find the difference</a>
+                    <a href="#hearts-economy" class="nav-link font-medium" style="color: var(--ink-secondary);">Hearts Economy</a>
+                    <a href="#contact" class="nav-link font-medium" style="color: var(--ink-secondary);">Contact</a>
                 </div>
-                
+
                 <!-- CTA -->
                 <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-                    <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block">
+                    <button class="text-white px-6 py-2 font-semibold hover:shadow-lg transform hover:scale-105 transition-all hidden md:block" style="background: var(--coral); border-radius: 12px;">
                         Join Now
                     </button>
                 </a>
-                
+
                 <!-- Mobile Menu Toggle -->
-                <button class="md:hidden text-gray-700" onclick="toggleMenu()" aria-label="Toggle menu">
+                <button class="md:hidden" style="color: var(--ink-secondary);" onclick="toggleMenu()" aria-label="Toggle menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-red-100 hidden">
+        <div id="mobile-menu" class="md:hidden hidden" style="background: var(--surface); border-top: 1px solid var(--border);">
             <div class="px-4 py-3 space-y-2">
-                <a href="#difference" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Find the difference</a>
-                <a href="#hearts-economy" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Hearts Economy</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-red-500 font-medium">Contact</a>
+                <a href="#difference" class="block py-2 nav-link font-medium" style="color: var(--ink-secondary);">Find the difference</a>
+                <a href="#hearts-economy" class="block py-2 nav-link font-medium" style="color: var(--ink-secondary);">Hearts Economy</a>
+                <a href="#contact" class="block py-2 nav-link font-medium" style="color: var(--ink-secondary);">Contact</a>
                 <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-                    <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-2 rounded-full font-semibold w-full mt-1">
+                    <button class="text-white px-6 py-2 font-semibold w-full mt-1" style="background: var(--coral); border-radius: 12px;">
                         Join Now
                     </button>
                 </a>
@@ -153,9 +165,9 @@
         <div class="hero-bg">
             <picture>
                 <source srcset="bg.webp" type="image/webp">
-                <img src="bg.jpg" 
-                     alt="Hero background showing happy couples" 
-                     width="1920" 
+                <img src="bg.jpg"
+                     alt="Hero background showing happy couples"
+                     width="1920"
                      height="1080"
                      fetchpriority="high">
             </picture>
@@ -165,17 +177,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <div class="max-w-4xl mx-auto">
-                    <h1 class="text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 leading-tight drop-shadow-lg">
+                    <h1 class="text-6xl lg:text-7xl xl:text-8xl text-white mb-6 leading-tight drop-shadow-lg" style="font-family: 'Fraunces', serif; font-weight: 600;">
                         Real Hearts.<br>Real Connections.
                     </h1>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-12 drop-shadow-md">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl text-white mb-12 drop-shadow-md" style="font-family: 'Fraunces', serif; font-weight: 500;">
                         Where authenticity meets romance.
                     </h2>
 
                     <!-- CTA Button -->
                     <div>
                         <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-                            <button class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                            <button class="bg-white px-8 py-4 font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all" style="color: var(--coral); border-radius: 12px;">
                                 Start Connecting
                             </button>
                         </a>
@@ -206,17 +218,17 @@
     </section>
 
     <!-- Find the Difference Section -->
-    <section id="difference" class="py-20 bg-gradient-to-br from-pink-50 to-red-50">
+    <section id="difference" class="py-20" style="background: var(--surface-sunken);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-8" style="color: var(--ink);">
                     Can You <span class="gradient-text">spot the difference</span>?
                 </h2>
-                <p class="text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
+                <p class="text-xl mb-6 max-w-4xl mx-auto" style="color: var(--ink-secondary);">
                     These apps may rule the dating world... but each leaves something behind. Can you spot the difference?
                 </p>
-                <div class="bg-white p-6 rounded-2xl shadow-lg max-w-4xl mx-auto">
-                    <p class="text-lg font-semibold text-pink-600 italic">
+                <div class="p-6 max-w-4xl mx-auto" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <p class="text-lg font-semibold italic" style="color: var(--coral);">
                         Unlike other apps where people quickly move to WhatsApp or phone, our community values staying and building trust on-platform.
                     </p>
                 </div>
@@ -283,15 +295,15 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="mt-3 text-pink-600 font-bold text-xl">Other Apps</span>
+                        <span class="mt-3 font-bold text-xl" style="color: var(--coral);">Other Apps</span>
                     </div>
                 </div>
-                
+
                 <!-- VS -->
                 <div class="text-center flex items-center justify-center">
-                    <div class="text-6xl lg:text-8xl font-bold text-red-600">VS</div>
+                    <div class="text-6xl lg:text-8xl font-bold" style="color: var(--coral);">VS</div>
                 </div>
-                
+
                 <!-- HeartFull (Static Mobile) -->
                 <div class="text-center">
                     <div class="relative flex flex-col items-center">
@@ -304,121 +316,121 @@
                                  height="440"
                                  class="w-full h-full object-cover rounded-[30px]" />
                         </div>
-                        <span class="mt-3 text-black font-bold text-xl">HeartFull</span>
+                        <span class="mt-3 font-bold text-xl" style="color: var(--ink);">HeartFull</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-pink-500">
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">📱</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">SMS-only Sign-in</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">SMS-only Sign-in</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Verify using your real phone number—no fake accounts or throwaways.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>No need to remember another password—quick and secure access.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Keeps the community safe and authentic.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-red-500">
+
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">✨</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Real People Only</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">Real People Only</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Strict verification—no bots or spam profiles.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Every interaction is with someone genuine.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Builds trust in every connection.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-pink-400">
+
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">🆓</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">100% Free Forever</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">100% Free Forever</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>No premium subscriptions or hidden fees.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Every feature is available to everyone.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Keeps the focus on people, not money.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-red-400">
+
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">💖</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Hearts-based System</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">Hearts-based System</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Earn Hearts through kindness, honesty, and engagement.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>No one can buy popularity—it's all about genuine effort.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Encourages real connections, not transactions.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-pink-600">
+
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">🚫</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">No Ghosting Culture</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">No Ghosting Culture</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Encourage timely replies to keep conversations alive.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Treat everyone with respect, even if you're not interested.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Creates a respectful, friendly dating space.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover border-l-4 border-red-600">
+
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="text-3xl mb-4 text-center">🏆</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Merit-Based Ladder</h3>
-                    <ul class="space-y-3 text-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--ink);">Merit-Based Ladder</h3>
+                    <ul class="space-y-3" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Your visibility increases through consistent kindness.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>No one can pay to be on top—it's purely merit-based.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-2 text-lg flex-shrink-0">♥</span>
+                            <span class="mr-2 text-lg flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span>Rewards genuine, positive behavior.</span>
                         </li>
                     </ul>
@@ -428,86 +440,86 @@
     </section>
 
     <!-- Hearts Economy Section -->
-    <section id="hearts-economy" class="py-20 bg-white relative overflow-hidden">
+    <section id="hearts-economy" class="py-20 relative overflow-hidden" style="background: var(--surface);">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1518621012372-a2a6b90ef415?w=1200&h=800&fit=crop&crop=center" 
-                 alt="Background hearts" 
+            <img src="https://images.unsplash.com/photo-1518621012372-a2a6b90ef415?w=1200&h=800&fit=crop&crop=center"
+                 alt="Background hearts"
                  loading="lazy"
                  width="1200"
                  height="800"
                  class="w-full h-full object-cover opacity-5">
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-8">
-                    <span class="text-red-600 text-6xl">♥</span> The <span class="gradient-text">Hearts Economy</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-8" style="font-family: 'Fraunces', serif;">
+                    <span style="color: var(--coral);" class="text-6xl">♥</span> The <span class="gradient-text">Hearts Economy</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-xl max-w-3xl mx-auto" style="color: var(--ink-secondary);">
                     A unique trust economy where Hearts can't be bought—only earned and shared.
                 </p>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="bg-gradient-to-br from-pink-50 to-red-50 p-10 rounded-3xl shadow-xl card-hover">
+                <div class="p-10 card-hover" style="background: var(--surface-sunken); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="flex items-center mb-8">
-                        <div class="bg-gradient-to-r from-red-500 to-pink-600 p-4 rounded-2xl mr-4">
+                        <div class="p-4 rounded-2xl mr-4" style="background: var(--coral);">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-800">Earn Hearts by:</h3>
+                        <h3 class="text-3xl font-bold" style="color: var(--ink);">Earn Hearts by:</h3>
                     </div>
-                    <ul class="space-y-6 text-gray-700">
+                    <ul class="space-y-6" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Posting real-time, AI-verified selfies that confirm your authenticity and help build trust.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Answering personality prompts honestly to share more about who you really are.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Being kind and consistently responsive to messages to foster meaningful connections.</span>
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-gradient-to-br from-red-50 to-pink-50 p-10 rounded-3xl shadow-xl card-hover">
+
+                <div class="p-10 card-hover" style="background: var(--surface-sunken); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="flex items-center mb-8">
-                        <div class="bg-gradient-to-r from-red-700 to-red-500 p-4 rounded-2xl mr-4">
+                        <div class="p-4 rounded-2xl mr-4" style="background: var(--coral);">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-800">Spend Hearts to:</h3>
+                        <h3 class="text-3xl font-bold" style="color: var(--ink);">Spend Hearts to:</h3>
                     </div>
-                    <ul class="space-y-6 text-gray-700">
+                    <ul class="space-y-6" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Start conversations with others, showing your interest in building real connections.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Approach users who have earned more Hearts, encouraging mutual trust and respect.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-red-600 mr-3 text-xl flex-shrink-0">♥</span>
+                            <span class="mr-3 text-xl flex-shrink-0" style="color: var(--coral);">♥</span>
                             <span class="text-lg">Give underdogs a chance by supporting members who are newer or less visible on the platform.</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Hearts Flow Visualization -->
             <div class="mt-16 flex justify-center">
-                <div class="flex flex-col items-center bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-lg max-w-xs text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-400 rounded-full flex items-center justify-center mb-3 shadow-md">
+                <div class="flex flex-col items-center p-8 max-w-xs text-center transform transition duration-300 hover:scale-105" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 shadow-md" style="background: var(--coral);">
                         <span class="text-white text-2xl font-bold">🤝</span>
                     </div>
-                    <div class="text-base font-semibold text-gray-800 mb-2">Build Trust</div>
-                    <p class="text-gray-600 text-sm leading-relaxed">
+                    <div class="text-base font-semibold mb-2" style="color: var(--ink);">Build Trust</div>
+                    <p class="text-sm leading-relaxed" style="color: var(--ink-secondary);">
                         Trust is the foundation of lasting relationships. Be transparent, keep promises, and show consistency in every interaction to strengthen confidence.
                     </p>
                 </div>
@@ -516,20 +528,20 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section class="py-20 bg-gradient-to-br from-pink-50 to-red-50">
+    <section class="py-20" style="background: var(--surface-sunken);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
                     <span class="gradient-text">Success Stories</span>
                 </h2>
-                <p class="text-xl text-gray-600">
+                <p class="text-xl" style="color: var(--ink-secondary);">
                     Real connections, real relationships, real happiness.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Story 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face"
                              alt="Sarah"
@@ -538,20 +550,20 @@
                              height="60"
                              class="w-16 h-16 rounded-full mr-4 object-cover" />
                         <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Sarah & Mike</h4>
-                            <div class="flex text-pink-500">
+                            <h4 class="font-bold text-lg" style="color: var(--ink);">Sarah & Mike</h4>
+                            <div class="flex" style="color: var(--coral);">
                                 <span>♥♥♥♥♥</span>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">
+                    <p class="mb-4 italic" style="color: var(--ink-secondary);">
                         "We met on HeartFull 8 months ago. The heart-based system helped us build real trust before meeting. Now we're engaged!"
                     </p>
-                    <div class="text-sm text-gray-500">Connected through genuine conversation</div>
+                    <div class="text-sm" style="color: var(--ink-tertiary);">Connected through genuine conversation</div>
                 </div>
 
                 <!-- Story 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
                              alt="James"
@@ -560,20 +572,20 @@
                              height="60"
                              class="w-16 h-16 rounded-full mr-4 object-cover" />
                         <div>
-                            <h4 class="font-bold text-gray-800 text-lg">James & Emma</h4>
-                            <div class="flex text-pink-500">
+                            <h4 class="font-bold text-lg" style="color: var(--ink);">James & Emma</h4>
+                            <div class="flex" style="color: var(--coral);">
                                 <span>♥♥♥♥♥</span>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">
+                    <p class="mb-4 italic" style="color: var(--ink-secondary);">
                         "No ghosting, no games. Just real people looking for real connections. Found my soulmate here!"
                     </p>
-                    <div class="text-sm text-gray-500">1 year together</div>
+                    <div class="text-sm" style="color: var(--ink-tertiary);">1 year together</div>
                 </div>
 
                 <!-- Story 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                <div class="p-8 card-hover" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
                              alt="Lisa"
@@ -582,114 +594,114 @@
                              height="60"
                              class="w-16 h-16 rounded-full mr-4 object-cover" />
                         <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Lisa & David</h4>
-                            <div class="flex text-pink-500">
+                            <h4 class="font-bold text-lg" style="color: var(--ink);">Lisa & David</h4>
+                            <div class="flex" style="color: var(--coral);">
                                 <span>♥♥♥♥♥</span>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">
+                    <p class="mb-4 italic" style="color: var(--ink-secondary);">
                         "The verification system made me feel safe. Meeting David was natural because we'd already built such a strong connection."
                     </p>
-                    <div class="text-sm text-gray-500">Moving in together</div>
+                    <div class="text-sm" style="color: var(--ink-tertiary);">Moving in together</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20" style="background: var(--surface);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
                     How <span class="gradient-text">HeartFull</span> Works
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-xl max-w-3xl mx-auto" style="color: var(--ink-secondary);">
                     Simple steps to find meaningful connections based on genuine interest and mutual respect.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="text-center">
                     <div class="relative mb-8">
-                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=300&fit=crop&crop=center" 
-                             alt="Sign up with phone" 
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=300&fit=crop&crop=center"
+                             alt="Sign up with phone"
                              loading="lazy"
                              width="300"
                              height="300"
-                             class="w-full h-48 object-cover rounded-2xl">
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-red-500 to-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                             class="w-full h-48 object-cover" style="border-radius: 16px;">
+                        <div class="absolute -top-4 -right-4 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold" style="background: var(--coral);">
                             1
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sign Up</h3>
-                    <p class="text-gray-600">Verify with your real phone number. No fake profiles allowed.</p>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--ink);">Sign Up</h3>
+                    <p style="color: var(--ink-secondary);">Verify with your real phone number. No fake profiles allowed.</p>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="relative mb-8">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=center" 
-                             alt="Complete your profile" 
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=center"
+                             alt="Complete your profile"
                              loading="lazy"
                              width="300"
                              height="300"
-                             class="w-full h-48 object-cover rounded-2xl">
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-red-500 to-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                             class="w-full h-48 object-cover" style="border-radius: 16px;">
+                        <div class="absolute -top-4 -right-4 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold" style="background: var(--coral);">
                             2
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Build Profile</h3>
-                    <p class="text-gray-600">Share your authentic self through verified photos and honest answers.</p>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--ink);">Build Profile</h3>
+                    <p style="color: var(--ink-secondary);">Share your authentic self through verified photos and honest answers.</p>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="relative mb-8">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=center" 
-                             alt="Earn hearts through kindness" 
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=center"
+                             alt="Earn hearts through kindness"
                              loading="lazy"
                              width="300"
                              height="300"
-                             class="w-full h-48 object-cover rounded-2xl">
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-red-500 to-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                             class="w-full h-48 object-cover" style="border-radius: 16px;">
+                        <div class="absolute -top-4 -right-4 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold" style="background: var(--coral);">
                             3
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Earn Hearts</h3>
-                    <p class="text-gray-600">Be kind, responsive, and genuine to earn hearts and increase visibility.</p>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--ink);">Earn Hearts</h3>
+                    <p style="color: var(--ink-secondary);">Be kind, responsive, and genuine to earn hearts and increase visibility.</p>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="relative mb-8">
-                        <img src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?w=300&h=300&fit=crop&crop=center" 
-                             alt="Make genuine connections" 
+                        <img src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?w=300&h=300&fit=crop&crop=center"
+                             alt="Make genuine connections"
                              loading="lazy"
                              width="300"
                              height="300"
-                             class="w-full h-48 object-cover rounded-2xl">
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-red-500 to-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                             class="w-full h-48 object-cover" style="border-radius: 16px;">
+                        <div class="absolute -top-4 -right-4 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold" style="background: var(--coral);">
                             4
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Connect</h3>
-                    <p class="text-gray-600">Use hearts to start meaningful conversations and build lasting relationships.</p>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--ink);">Connect</h3>
+                    <p style="color: var(--ink-secondary);">Use hearts to start meaningful conversations and build lasting relationships.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-red-500 to-pink-600 text-white relative overflow-hidden">
+    <section class="py-20 text-white relative overflow-hidden" style="background: var(--coral);">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1518621012372-a2a6b90ef415?w=1200&h=600&fit=crop&crop=center" 
-                 alt="Hearts background" 
+            <img src="https://images.unsplash.com/photo-1518621012372-a2a6b90ef415?w=1200&h=600&fit=crop&crop=center"
+                 alt="Hearts background"
                  loading="lazy"
                  width="1200"
                  height="600"
                  class="w-full h-full object-cover opacity-20">
         </div>
-        
+
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="text-6xl lg:text-8xl font-black mb-8">
+            <div class="text-6xl lg:text-8xl mb-8" style="font-family: 'Fraunces', serif; font-weight: 600;">
                 <span class="text-white">HeartFull</span>
             </div>
             <p class="text-2xl lg:text-3xl mb-6 font-light">
@@ -698,99 +710,99 @@
             <p class="text-xl lg:text-2xl mb-12">
                 100% free. Always.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
-                    <button class="bg-white text-pink-500 px-12 py-4 rounded-full font-bold text-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+                    <button class="bg-white px-12 py-4 font-bold text-xl hover:shadow-2xl transform hover:scale-105 transition-all" style="color: var(--coral); border-radius: 12px;">
                         Join the Community
                     </button>
                 </a>
                 <a href="https://www.linkedin.com/company/heartfull-online/" target="_blank" rel="noopener noreferrer">
-                    <button class="border-2 border-white text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-pink-500 transition-all">
+                    <button class="border-2 border-white text-white px-12 py-4 font-bold text-xl hover:bg-white transition-all" style="border-radius: 12px;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='white'">
                         Learn More
                     </button>
                 </a>
             </div>
-            
+
             <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center">
                     <div class="text-3xl font-bold">10K+</div>
-                    <div class="text-pink-100">Members</div>
+                    <div style="color: rgba(255,255,255,0.75);">Members</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold">95%</div>
-                    <div class="text-pink-100">Verified</div>
+                    <div style="color: rgba(255,255,255,0.75);">Verified</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold">$0</div>
-                    <div class="text-pink-100">Cost</div>
+                    <div style="color: rgba(255,255,255,0.75);">Cost</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold">∞</div>
-                    <div class="text-pink-100">Hearts</div>
+                    <div style="color: rgba(255,255,255,0.75);">Hearts</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-16">
+    <footer id="contact" class="text-white py-16" style="background: #1E1916;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
                         <img src="heart_logo.png" alt="HeartFull Logo" loading="lazy" width="32" height="32" class="h-8 w-8" />
-                        <span class="text-2xl font-bold gradient-text">HeartFull</span>
+                        <span class="text-2xl font-bold gradient-text" style="font-family: 'Fraunces', serif;">HeartFull</span>
                     </div>
-                    <p class="text-gray-400 mb-6 text-lg max-w-md">
+                    <p class="mb-6 text-lg max-w-md" style="color: var(--ink-tertiary);">
                         Where heart matters, not money. Join the revolution in authentic dating where real connections flourish.
                     </p>
                     <div class="flex space-x-4">
                         <!-- Twitter -->
-                        <a href="#" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors" aria-label="Twitter">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,88,112,0.2);" onmouseover="this.style.background='rgba(255,88,112,0.3)'" onmouseout="this.style.background='rgba(255,88,112,0.2)'" aria-label="Twitter">
+                            <svg class="w-6 h-6" style="color: var(--coral);" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                             </svg>
                         </a>
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/heartfull-online" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors" aria-label="LinkedIn">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://www.linkedin.com/company/heartfull-online" class="w-12 h-12 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,88,112,0.2);" onmouseover="this.style.background='rgba(255,88,112,0.3)'" onmouseout="this.style.background='rgba(255,88,112,0.2)'" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" style="color: var(--coral);" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.059-1.865-3.059-1.867 0-2.154 1.459-2.154 2.965v5.698h-3v-10h2.879v1.367h.041c.401-.76 1.379-1.562 2.838-1.562 3.033 0 3.584 1.997 3.584 4.59v5.605z"/>
                             </svg>
                         </a>
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/profile.php?id=61579023050009" class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center hover:bg-pink-500/30 transition-colors" aria-label="Facebook">
-                            <svg class="w-6 h-6 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://www.facebook.com/profile.php?id=61579023050009" class="w-12 h-12 rounded-full flex items-center justify-center transition-colors" style="background: rgba(255,88,112,0.2);" onmouseover="this.style.background='rgba(255,88,112,0.3)'" onmouseout="this.style.background='rgba(255,88,112,0.2)'" aria-label="Facebook">
+                            <svg class="w-6 h-6" style="color: var(--coral);" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24H12.82v-9.294H9.692V11.41h3.128V8.691c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.765v2.359h3.587l-.467 3.296h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h3 class="font-bold text-lg mb-6 text-pink-400">Quick Links</h3>
+                    <h3 class="font-bold text-lg mb-6" style="color: var(--coral);">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#difference" class="text-gray-400 hover:text-white transition-colors text-lg">Why HeartFull?</a></li>
-                        <li><a href="https://app.heartfull.online" class="text-gray-400 hover:text-white transition-colors text-lg">Join the Community</a></li>
-                        <li><a href="#hearts-economy" class="text-gray-400 hover:text-white transition-colors text-lg">How It Works</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Success Stories</a></li>
+                        <li><a href="#difference" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Why HeartFull?</a></li>
+                        <li><a href="https://app.heartfull.online" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Join the Community</a></li>
+                        <li><a href="#hearts-economy" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">How It Works</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Success Stories</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="font-bold text-lg mb-6 text-pink-400">Support</h3>
+                    <h3 class="font-bold text-lg mb-6" style="color: var(--coral);">Support</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Safety Tips</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Community Guidelines</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors text-lg">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Safety Tips</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Community Guidelines</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400 text-lg">
-                    © 2025 HeartFull. All rights reserved. Made with <span class="text-pink-400">♥</span> for authentic connections.
+
+            <div class="mt-12 pt-8 text-center" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <p class="text-lg" style="color: var(--ink-tertiary);">
+                    © 2026 HeartFull. All rights reserved. Made with <span style="color: var(--coral);">♥</span> for authentic connections.
                 </p>
             </div>
         </div>
@@ -800,53 +812,58 @@
     <style>
         /* Non-critical styles loaded after page paint */
         .gradient-text {
-            background: linear-gradient(135deg, #ff1744, #ff6b9d);
+            background: linear-gradient(135deg, #FF5870, #FF8A9A);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .card-hover {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: transform;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-10px) scale(1.02);
         }
-        
+
         .pulse-heart {
             animation: pulse-heart 2s infinite;
         }
-        
+
         @keyframes pulse-heart {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
-        
+
+        /* Nav link hover */
+        .nav-link:hover {
+            color: var(--coral) !important;
+        }
+
         /* Swiper specific styles */
-        #other-swiper .swiper-wrapper { 
-            height: 100%; 
+        #other-swiper .swiper-wrapper {
+            height: 100%;
         }
-        
-        #other-swiper .swiper-slide { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100%; 
+
+        #other-swiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
-        
-        #other-swiper img { 
-            display: block; 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
+
+        #other-swiper img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 
     <!-- Deferred JavaScript -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
     <script>
         // Mobile menu toggle
         function toggleMenu() {
@@ -870,7 +887,7 @@
         window.addEventListener('load', function() {
             // Only initialize swiper when it's visible (performance optimization)
             const swiperElement = document.querySelector('#other-swiper');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
                     const swiper = new Swiper('#other-swiper', {
@@ -888,7 +905,7 @@
                     observer.disconnect(); // Stop observing after initialization
                 }
             }, { threshold: 0.1 });
-            
+
             observer.observe(swiperElement);
         });
     </script>
