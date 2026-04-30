@@ -144,12 +144,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
-    <!-- Tailwind CDN with defer (consider building for production) -->
-    <script>
-        // Inline Tailwind config to reduce blocking
-        tailwind = { darkMode: 'class' }
-    </script>
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Tailwind (built, tree-shaken: npx tailwindcss -i src/input.css -o style.css --minify) -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background: var(--surface); color: var(--ink);">
     <!-- Navigation -->
@@ -572,7 +568,7 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section class="py-20" style="background: var(--surface-sunken);">
+    <section id="stories" class="py-20" style="background: var(--surface-sunken);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
@@ -829,7 +825,7 @@
                         <li><a href="#difference" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Why HeartFull?</a></li>
                         <li><a href="https://app.heartfull.online" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Join the Community</a></li>
                         <li><a href="#hearts-economy" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">How It Works</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Success Stories</a></li>
+                        <li><a href="#stories" class="hover:text-white transition-colors text-lg" style="color: var(--ink-tertiary);">Success Stories</a></li>
                     </ul>
                 </div>
 
