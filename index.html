@@ -59,6 +59,10 @@
     <!-- Preload -->
     <link rel="preload" href="heart_logo.png" as="image">
 
+    <!-- Swiper (deferred) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
     <!-- Fonts: Fraunces (display) + DM Sans (body) — matches app -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
 
@@ -283,6 +287,240 @@
                         HeartFull isn't another variation. It's a radically different concept. Free forever, no paywalls, no pay-to-win. Your character is your currency &mdash; not your credit card.
                     </p>
                 </div>
+            </div>
+
+            <!-- Phone Comparison: Them vs HeartFull -->
+            <div class="grid md:grid-cols-3 gap-4 sm:gap-8 mb-16 items-center">
+                <!-- Competitor Phone (Swipeable) -->
+                <div class="flex flex-col items-center">
+                    <div class="phone-compare">
+                        <div class="phone-compare-notch"></div>
+                        <div class="swiper" id="competitor-swiper" style="width: 100%; height: 100%; border-radius: 24px; overflow: hidden;">
+                            <div class="swiper-wrapper">
+                                <!-- Tinder -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #FE3C72, #FF6036);">
+                                        <div class="app-slide-name">Tinder</div>
+                                        <div class="app-slide-icon">🔥</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card">
+                                                <div class="mockup-photo"></div>
+                                                <div class="mockup-line w-3/4"></div>
+                                                <div class="mockup-line w-1/2"></div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color: #2ecc71;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price">$25 &ndash; $50/mo</div>
+                                        <div class="app-slide-quote">&ldquo;Pay $50/mo or get buried. Your wallet decides who sees you.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Bumble -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #FFC629, #FF9E00);">
+                                        <div class="app-slide-name" style="color: #1a1a1a;">Bumble</div>
+                                        <div class="app-slide-icon">🐝</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card">
+                                                <div class="mockup-photo" style="background: rgba(0,0,0,0.12);"></div>
+                                                <div class="mockup-line w-3/4" style="background: rgba(0,0,0,0.12);"></div>
+                                                <div class="mockup-line w-1/2" style="background: rgba(0,0,0,0.12);"></div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round" style="color: #1a1a1a;">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color: #1a1a1a;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price" style="color: #1a1a1a;">$17 &ndash; $80/mo</div>
+                                        <div class="app-slide-quote" style="color: rgba(0,0,0,0.6);">&ldquo;Women message first &mdash; if they find you behind the $80/mo paywall.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Hinge -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #1A1A2E, #16213E);">
+                                        <div class="app-slide-name">Hinge</div>
+                                        <div class="app-slide-icon" style="font-size: 28px;">H</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card" style="background: rgba(255,255,255,0.08);">
+                                                <div class="mockup-photo" style="background: rgba(255,255,255,0.06);"></div>
+                                                <div class="mockup-line w-3/4" style="background: rgba(255,255,255,0.1);"></div>
+                                                <div class="mockup-line w-1/2" style="background: rgba(255,255,255,0.1);"></div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color: #E04E68;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price">$30 &ndash; $50/mo</div>
+                                        <div class="app-slide-quote">&ldquo;Designed to be deleted &mdash; after emptying your wallet. $50/mo.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Badoo -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #783BF9, #5B2BC4);">
+                                        <div class="app-slide-name">Badoo</div>
+                                        <div class="app-slide-icon" style="font-size: 28px;">b</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card">
+                                                <div class="mockup-photo"></div>
+                                                <div class="mockup-line w-3/4"></div>
+                                                <div class="mockup-line w-1/2"></div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color: #783BF9;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price">$13/mo</div>
+                                        <div class="app-slide-quote">&ldquo;Same swipe mechanics as everyone else. Even the cheap one has a paywall.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- OkCupid -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #4A8DF8, #304FFE);">
+                                        <div class="app-slide-name">OkCupid</div>
+                                        <div class="app-slide-icon">💘</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card">
+                                                <div class="mockup-photo"></div>
+                                                <div class="mockup-line w-3/4"></div>
+                                                <div class="mockup-line w-1/2"></div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color: #304FFE;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price">$35 &ndash; $55/mo</div>
+                                        <div class="app-slide-quote">&ldquo;Once free and different. Now $55/mo and identical to the rest.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Grindr -->
+                                <div class="swiper-slide">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
+                                        <div class="app-slide-name" style="color: #F5C518;">Grindr</div>
+                                        <div class="app-slide-icon">⚡</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-grid">
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-price" style="color: #F5C518;">$20 &ndash; $40/mo</div>
+                                        <div class="app-slide-quote">&ldquo;A grid of profiles and a $40/mo fee to see who&rsquo;s nearby.&rdquo;</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="mt-3 font-bold text-lg" style="color: var(--ink-tertiary);">All of them</span>
+                </div>
+
+                <!-- VS -->
+                <div class="text-center flex items-center justify-center py-4 md:py-0">
+                    <div class="text-5xl lg:text-7xl font-bold" style="color: var(--coral); font-family: 'Fraunces', serif;">vs</div>
+                </div>
+
+                <!-- HeartFull Phone -->
+                <div class="flex flex-col items-center">
+                    <div class="phone-compare">
+                        <div class="phone-compare-notch"></div>
+                        <div class="app-slide" style="background: var(--surface); border-radius: 24px;">
+                            <div class="app-slide-name" style="color: var(--coral);">HeartFull</div>
+                            <div class="app-slide-icon">&#9829;</div>
+                            <ul style="list-style: none; padding: 0 12px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> 100% free forever</li>
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Zero paywalls</li>
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Merit-based visibility</li>
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Phone-verified users</li>
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Anti-ghosting system</li>
+                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Works on every device</li>
+                            </ul>
+                            <div class="app-slide-price" style="color: var(--coral); font-size: 20px;">$0 forever</div>
+                        </div>
+                    </div>
+                    <span class="mt-3 font-bold text-lg" style="color: var(--coral);">HeartFull</span>
+                </div>
+            </div>
+
+            <!-- Pricing Comparison Table -->
+            <div class="mb-16">
+                <h3 class="text-2xl lg:text-3xl font-bold text-center mb-8" style="font-family: 'Fraunces', serif; color: var(--ink);">
+                    The real cost of <span class="gradient-text">finding love</span>
+                </h3>
+                <div class="overflow-x-auto" style="border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>App</th>
+                                <th>Cheapest plan</th>
+                                <th>Top tier</th>
+                                <th>See who liked you</th>
+                                <th>Unlimited swipes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tinder</strong></td>
+                                <td>$25/mo</td>
+                                <td>$50/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bumble</strong></td>
+                                <td>$17/mo</td>
+                                <td>$80/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hinge</strong></td>
+                                <td>$30/mo</td>
+                                <td>$50/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OkCupid</strong></td>
+                                <td>$35/mo</td>
+                                <td>$55/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Grindr</strong></td>
+                                <td>$20/mo</td>
+                                <td>$40/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Badoo</strong></td>
+                                <td>$13/mo</td>
+                                <td>$13/mo</td>
+                                <td class="td-paid">Paid</td>
+                                <td class="td-paid">Paid</td>
+                            </tr>
+                            <tr class="tr-heartfull">
+                                <td><strong style="color: var(--coral);">HeartFull</strong></td>
+                                <td style="color: var(--coral); font-weight: 700;">Free</td>
+                                <td style="color: var(--coral); font-weight: 700;">Free</td>
+                                <td class="td-free">Free</td>
+                                <td class="td-free">Free</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-center text-sm mt-4" style="color: var(--ink-tertiary);">
+                    Prices shown are monthly rates as of 2026. Most apps charge more for shorter plans and use dynamic pricing based on age and location.
+                </p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -623,6 +861,177 @@
             color: var(--coral) !important;
         }
 
+        /* Phone comparison */
+        .phone-compare {
+            width: 220px;
+            height: 420px;
+            background: #1E1916;
+            border-radius: 36px;
+            padding: 8px;
+            box-shadow: 0 20px 50px rgba(30,25,22,0.25);
+            position: relative;
+        }
+        .phone-compare-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 20px;
+            background: #1E1916;
+            border-radius: 0 0 12px 12px;
+            z-index: 5;
+        }
+
+        /* App slide inside competitor phone */
+        .app-slide {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 28px 14px 14px;
+            overflow: hidden;
+        }
+        .app-slide-name {
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        .app-slide-icon {
+            font-size: 24px;
+            margin: 6px 0;
+        }
+        .app-slide-mockup {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mockup-card {
+            width: 85%;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 10px;
+        }
+        .mockup-photo {
+            width: 100%;
+            height: 70px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .mockup-line {
+            height: 8px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .mockup-actions {
+            display: flex;
+            gap: 24px;
+        }
+        .mockup-btn-round {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+        }
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            width: 85%;
+        }
+        .mockup-grid-cell {
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.08);
+            border-radius: 4px;
+        }
+        .app-slide-price {
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            margin-top: 6px;
+        }
+        .app-slide-quote {
+            font-size: 10px;
+            color: rgba(255,255,255,0.65);
+            text-align: center;
+            font-style: italic;
+            line-height: 1.4;
+            margin-top: 4px;
+            padding: 0 2px;
+        }
+
+        /* HeartFull phone features */
+        .hf-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ink);
+        }
+        .hf-check {
+            color: var(--coral);
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Pricing table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface-elevated);
+            font-size: 14px;
+        }
+        .pricing-table th {
+            background: var(--ink);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .pricing-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        .pricing-table tbody tr:hover {
+            background: var(--surface-sunken);
+        }
+        .td-paid {
+            color: #D64045;
+            font-weight: 600;
+        }
+        .td-free {
+            color: #2D8F5E;
+            font-weight: 700;
+        }
+        .tr-heartfull {
+            background: var(--coral-subtle) !important;
+        }
+        .tr-heartfull:hover {
+            background: var(--coral-subtle) !important;
+        }
+
+        /* Swiper overrides */
+        #competitor-swiper .swiper-wrapper { height: 100%; }
+        #competitor-swiper .swiper-slide { height: 100%; }
+
         /* Device showcase */
         .device-showcase {
             position: relative;
@@ -715,6 +1124,27 @@
     </style>
 
     <script>
+        // Swiper init (lazy — only when visible)
+        function initSwiper() {
+            if (typeof Swiper === 'undefined') return setTimeout(initSwiper, 200);
+            var el = document.querySelector('#competitor-swiper');
+            if (!el) return;
+            var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    new Swiper('#competitor-swiper', {
+                        slidesPerView: 1,
+                        loop: true,
+                        autoplay: { delay: 2500, disableOnInteraction: false },
+                        effect: 'fade',
+                        fadeEffect: { crossFade: true },
+                    });
+                    observer.disconnect();
+                }
+            }, { threshold: 0.1 });
+            observer.observe(el);
+        }
+        window.addEventListener('load', initSwiper);
+
         // Nav scroll effect
         const nav = document.querySelector('nav');
         function updateNav() {
@@ -748,5 +1178,6 @@
             });
         });
     </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
