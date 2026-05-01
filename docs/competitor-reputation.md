@@ -234,6 +234,94 @@ Research summary of what users actually think about each major dating app. Used 
 
 ---
 
+## Happn
+
+**Tagline:** "Stalking, but make it romantic"
+
+**Crowd sentiment:** Unique concept — shows people you've physically crossed paths with. But only works in walkable cities, raises serious privacy concerns (GPS tracking exposes daily routines), and the small user pool means limited options outside major metros.
+
+**Key complaints:**
+- **Privacy nightmare** — Academic researchers flagged that bad actors can exploit GPS data to track daily routines
+- **"Stalker's Dream"** — Users concerned others can determine where they live or work
+- **Fake profiles** — "Scammers and prostitutes, mostly" per reviews
+- **Computer-generated messages** — Free users flooded with fake messages to drive subscriptions
+- **Tiny user pool** — "Lucky to get 10 profiles" in non-urban areas
+
+**Review ratings:** ~2.0 stars on Trustpilot
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/happn.com)
+- [Happn Review 2026 — DatingScout](https://www.datingscout.com/happn/review)
+- [Happn Review — HealthyFramework](https://healthyframework.com/happn-review/)
+
+---
+
+## The League
+
+**Tagline:** "The velvet rope of loneliness"
+
+**Crowd sentiment:** The most openly elitist dating app — requires LinkedIn verification, charges up to $2,500/mo, and makes users wait on a waitlist. Criticized as classist, racist (ethnicity filters), and ultimately not more effective than cheaper alternatives.
+
+**Key complaints:**
+- **$2,500/mo VIP tier** — Most expensive dating app in existence
+- **Waitlist as a feature** — Artificial scarcity; paying to skip the line defeats the purpose
+- **Elitism and racism** — Ethnicity declaration required; users can filter by race
+- **Poor matching quality** — Users with elite credentials matched with people who don't fit the app's own criteria
+- **Geographic failures** — Matches from Manhattan when user is in Charlotte
+
+**Review ratings:** ~1.8 stars on Trustpilot
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/theleague.com)
+- [The League Review 2026 — SwipeStats](https://www.swipestats.io/blog/the-league-review)
+- [Dating App for Elitists — CNBC](https://www.cnbc.com/2023/10/20/founder-of-the-league-on-dating-ambition-and-that-viral-ad-campaign.html)
+
+---
+
+## Tantan
+
+**Tagline:** "Tinder's Asian twin"
+
+**Crowd sentiment:** China's answer to Tinder — literally the same swipe interface. 300M+ users but overwhelmingly fake. Estimated 95% of profiles are bots or scammers. Chinese ownership raises data sovereignty concerns.
+
+**Key complaints:**
+- **95% fake profiles** — Scammers, catfish, deepfake videos, and romance scams
+- **Unauthorized charges** — Users billed for VIP after cancellation
+- **Fake users banning real ones** — Fake accounts can report verified users, resulting in permanent bans
+- **Data privacy** — Chinese-owned; collects location, chat logs, photos
+- **Scam vectors** — Profiles push users to Signal/WhatsApp for crypto scams
+
+**Review ratings:** ~1.3 stars on Trustpilot
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/tantanapp.com)
+- [Is Tantan Legit? — VeePN](https://veepn.com/blog/is-tantan-legit/)
+- [Tantan Review 2026 — DatingScout](https://www.datingscout.com/tantan/review)
+
+---
+
+## Feeld
+
+**Tagline:** "Expensive for the open-minded"
+
+**Crowd sentiment:** The go-to app for ethically non-monogamous dating and alternative relationships. Strong community values, but plagued by technical issues, gender imbalance, and an identity crisis as "vanilla" users flood in. Expensive for what it offers.
+
+**Key complaints:**
+- **Buggy and unreliable** — Constant crashes, frequent login issues
+- **Gender filter failures** — Users selecting "no cis men" still see cis men
+- **Extreme gender imbalance** — "Borderline unusable for straight men"; London ratio reportedly 1:500 female:male
+- **Expensive for basic features** — ~£100/mo for visibility that's free on other apps
+- **Identity crisis** — Mainstream users diluting the ENM/kink community
+
+**Review ratings:** ~1.5 stars on Trustpilot
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/feeld.com)
+- [Feeld Review 2026 — BeyondAges](https://beyondages.com/feeld-dating-app-review/)
+- [What Is Feeld — NSS Magazine](https://www.nssmag.com/en/lifestyle/43809/what-is-feeld-dating-app-sex-positivity)
+
+---
+
 ## Common Themes Across All Competitors
 
 1. **Same business model** — Hide features behind paywalls, profit from keeping users single and swiping

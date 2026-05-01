@@ -119,6 +119,52 @@ All prices are monthly rates. Most apps use dynamic pricing based on age, locati
 - Premium adds: Likes You feed, 8 Flowers, 48hr boost, Activity Reports, advanced filters
 - Annual plan: $179.99 upfront
 
+## Happn
+
+| Plan | 1 month | 6 months | 12 months |
+|------|---------|----------|-----------|
+| Premium | $24.99/mo | $14.99/mo | $10/mo |
+
+- Location-based "crossed paths" model — only works in walkable cities
+- Limited user pool outside major metros
+- Privacy concerns: GPS tracking can expose daily routines
+
+## The League
+
+| Plan | Monthly |
+|------|---------|
+| Member | $299.99/mo |
+| Owner | $399.99/mo |
+| Investor | $999/mo |
+| VIP | $2,499.99/mo |
+
+- Free tier exists but functionality is minimal (can view but not interact)
+- LinkedIn verification required for admission
+- Waitlist can take weeks/months; paying skips the line
+- Most expensive dating app on the market by far
+
+## Tantan
+
+| Plan | 1 month | Notes |
+|------|---------|-------|
+| VIP | $2–30/mo | Varies widely by region |
+
+- Chinese-owned (Hello Group), 300M+ users
+- Free tier allows browsing, matching, and messaging
+- VIP adds: exclusive badge, highlighted nickname, unlimited swipes
+- Pricing extremely region-dependent ($2 in Asia, higher in US/EU)
+
+## Feeld
+
+| Plan | 1 month | 3 months |
+|------|---------|----------|
+| Majestic | $11.99–29.99/mo | $8/mo |
+
+- Free tier allows matching and messaging (unlike most competitors)
+- Majestic adds: see who liked you, incognito, unlimited likes, advanced filters
+- Pricing varies by location
+- Positioned for ethically non-monogamous / open relationships
+
 ## HeartFull
 
 | Feature | Cost |
