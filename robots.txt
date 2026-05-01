@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://heartfull.online/sitemap.xml
+Sitemap: https://about.heartfull.online/sitemap.xml
