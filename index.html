@@ -84,9 +84,13 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            overflow-x: hidden;
             color: var(--ink);
             background: var(--surface);
         }
@@ -543,8 +547,8 @@
                                 <th>App</th>
                                 <th>Cheapest plan</th>
                                 <th>Top tier</th>
-                                <th>See who liked you</th>
-                                <th>Unlimited swipes</th>
+                                <th>Likes</th>
+                                <th>Swipes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -928,8 +932,8 @@
                                 <thead>
                                     <tr>
                                         <th>Scenario</th>
-                                        <th>Your Hearts</th>
-                                        <th>Their Hearts</th>
+                                        <th>You</th>
+                                        <th>Them</th>
                                         <th>Cost</th>
                                     </tr>
                                 </thead>
