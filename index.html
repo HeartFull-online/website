@@ -298,7 +298,7 @@
                         <div class="swiper" id="competitor-swiper" style="width: 100%; height: 100%; border-radius: 24px; overflow: hidden;">
                             <div class="swiper-wrapper">
                                 <!-- Tinder -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="The hookup slot machine">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #FE3C72, #FF6036);">
                                         <div class="app-slide-name">Tinder</div>
                                         <div class="app-slide-icon">🔥</div>
@@ -318,7 +318,7 @@
                                     </div>
                                 </div>
                                 <!-- Bumble -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="Tinder, but yellow">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #FFC629, #FF9E00);">
                                         <div class="app-slide-name" style="color: #1a1a1a;">Bumble</div>
                                         <div class="app-slide-icon">🐝</div>
@@ -338,7 +338,7 @@
                                     </div>
                                 </div>
                                 <!-- Hinge -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="Designed to delete your wallet">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #1A1A2E, #16213E);">
                                         <div class="app-slide-name">Hinge</div>
                                         <div class="app-slide-icon" style="font-size: 28px;">H</div>
@@ -358,7 +358,7 @@
                                     </div>
                                 </div>
                                 <!-- Badoo -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="The one nobody chose on purpose">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #783BF9, #5B2BC4);">
                                         <div class="app-slide-name">Badoo</div>
                                         <div class="app-slide-icon" style="font-size: 28px;">b</div>
@@ -378,7 +378,7 @@
                                     </div>
                                 </div>
                                 <!-- OkCupid -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="RIP the free dating site (2004–2018)">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #4A8DF8, #304FFE);">
                                         <div class="app-slide-name">OkCupid</div>
                                         <div class="app-slide-icon">💘</div>
@@ -398,7 +398,7 @@
                                     </div>
                                 </div>
                                 <!-- Grindr -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-label="Now with a $500/mo AI tier">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
                                         <div class="app-slide-name" style="color: #F5C518;">Grindr</div>
                                         <div class="app-slide-icon">⚡</div>
@@ -419,7 +419,7 @@
                             </div>
                         </div>
                     </div>
-                    <span class="mt-3 font-bold text-lg" style="color: var(--ink-tertiary);">All of them</span>
+                    <span id="competitor-label" class="mt-3 font-semibold text-sm sm:text-base text-center block" style="color: var(--ink-tertiary); max-width: 220px; min-height: 2.5em; transition: opacity 0.3s;">The hookup slot machine</span>
                 </div>
 
                 <!-- VS -->
@@ -1172,12 +1172,25 @@
             if (!el) return;
             var observer = new IntersectionObserver(function(entries) {
                 if (entries[0].isIntersecting) {
+                    var label = document.getElementById('competitor-label');
                     new Swiper('#competitor-swiper', {
                         slidesPerView: 1,
                         loop: true,
                         autoplay: { delay: 2500, disableOnInteraction: false },
                         effect: 'fade',
                         fadeEffect: { crossFade: true },
+                        on: {
+                            slideChange: function () {
+                                var slide = this.slides[this.activeIndex];
+                                if (slide && label) {
+                                    label.style.opacity = '0';
+                                    setTimeout(function() {
+                                        label.textContent = slide.getAttribute('data-label') || '';
+                                        label.style.opacity = '1';
+                                    }, 150);
+                                }
+                            }
+                        }
                     });
                     observer.disconnect();
                 }
