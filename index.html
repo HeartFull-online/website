@@ -57,7 +57,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload -->
-    <link rel="preload" href="heart_logo.png" as="image">
+    <link rel="preload" href="heart-logo.svg" as="image">
 
     <!-- Swiper (deferred) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
@@ -161,15 +161,16 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-center bg-no-repeat bg-contain pulse-heart"
-                         style="background-image: url('heart_logo.png');"></div>
+                    <svg class="w-10 h-10 pulse-heart" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs><linearGradient id="hf-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs>
+                        <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-nav)"/>
+                    </svg>
                     <span class="text-xl font-bold nav-brand" style="font-family: 'Fraunces', serif;">HeartFull</span>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-7">
-                    <a href="#why" class="nav-link font-medium">Why HeartFull</a>
+                    <a href="#why" class="nav-link font-medium">The Problem</a>
                     <a href="#hearts-economy" class="nav-link font-medium">Hearts Economy</a>
-                    <a href="#install" class="nav-link font-medium">Install</a>
                     <a href="/dating-institute/" class="nav-link font-medium">Dating Institute</a>
                 </div>
 
@@ -189,9 +190,8 @@
 
         <div id="mobile-menu" class="md:hidden hidden" style="background: var(--surface); border-top: 1px solid var(--border);">
             <div class="px-4 py-3 space-y-2">
-                <a href="#why" class="block py-2 font-medium" style="color: var(--ink-secondary);">Why HeartFull</a>
+                <a href="#why" class="block py-2 font-medium" style="color: var(--ink-secondary);">The Problem</a>
                 <a href="#hearts-economy" class="block py-2 font-medium" style="color: var(--ink-secondary);">Hearts Economy</a>
-                <a href="#install" class="block py-2 font-medium" style="color: var(--ink-secondary);">Install</a>
                 <a href="/dating-institute/" class="block py-2 font-medium" style="color: var(--ink-secondary);">Dating Institute</a>
                 <a href="https://app.heartfull.online" target="_blank" rel="noopener noreferrer">
                     <button class="text-white px-6 py-2 font-semibold w-full mt-1" style="background: var(--coral); border-radius: 12px;">
@@ -870,19 +870,11 @@
                     <p class="text-sm" style="color: var(--ink-secondary);">A student with great character has the same chances as a CEO. Your dating life is determined by who you are, not what you earn.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Hearts Deep Dive -->
-    <section class="py-16 sm:py-20" style="background: var(--surface);">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
-                    How Hearts <span class="gradient-text">actually work</span>
-                </h2>
-                <p class="text-lg max-w-3xl mx-auto" style="color: var(--ink-secondary);">
-                    Hearts aren't a gimmick. They're a complete economy that replaces money with merit. Here's exactly how it works.
-                </p>
+            <!-- How it actually works -->
+            <div class="text-center mb-8 mt-16">
+                <h3 class="text-2xl lg:text-3xl font-bold" style="font-family: 'Fraunces', serif; color: var(--ink);">
+                    How it <span class="gradient-text">actually works</span>
+                </h3>
             </div>
 
             <!-- Step 1: You start with 100 -->
@@ -1193,7 +1185,10 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="heart_logo.png" alt="HeartFull Logo" loading="lazy" width="28" height="28" style="width: 28px; height: 28px;" />
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px;">
+                            <defs><linearGradient id="hf-footer" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs>
+                            <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-footer)"/>
+                        </svg>
                         <span class="text-lg font-bold gradient-text" style="font-family: 'Fraunces', serif;">HeartFull</span>
                     </div>
                     <p class="text-sm mb-6" style="color: var(--ink-tertiary);">
