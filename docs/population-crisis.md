@@ -66,7 +66,7 @@ In 2023, US Surgeon General Dr. Vivek Murthy issued a formal advisory — "Our E
 
 **Scale:**
 - **30%** of Americans aged 18-34 feel lonely daily or several times a week
-- **1 in 5** adults worldwide experiences persistent loneliness (WHO, 2025)
+- **1 in 6** people worldwide experiences persistent loneliness (WHO, 2025)
 - **$6.7 billion** excess Medicare spending annually from social isolation
 
 ### Sources
