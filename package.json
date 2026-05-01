@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "HeartFull marketing website",
+  "scripts": {
+    "test": "bash scripts/check.sh",
+    "build": "npx tailwindcss -i src/input.css -o style.css --minify",
+    "validate": "html-validate '*.html' 'dating-institute/*.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeartFull-online/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeartFull-online/website/issues"
+  },
+  "homepage": "https://github.com/HeartFull-online/website#readme",
+  "devDependencies": {
+    "html-validate": "^10.13.1",
+    "tailwindcss": "^3.4.19"
+  }
+}
