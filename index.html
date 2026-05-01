@@ -557,37 +557,58 @@
                     <div class="phone-compare">
                         <div class="phone-compare-notch"></div>
                         <div class="hf-demo">
-                            <!-- Avatar bar — highlight moves between person 3 and 4 -->
+                            <!-- Avatar bar — highlight cycles through 3 people -->
                             <div class="hf-av-bar">
                                 <div class="hf-av"></div>
-                                <div class="hf-av"></div>
-                                <div class="hf-av hf-av-a"></div>
-                                <div class="hf-av hf-av-b"></div>
+                                <div class="hf-av hf-av-1"></div>
+                                <div class="hf-av hf-av-2"></div>
+                                <div class="hf-av hf-av-3"></div>
                                 <div class="hf-av"></div>
                             </div>
-                            <!-- Conversation slider — two panels that slide -->
+                            <!-- Conversation slider — three panels -->
                             <div class="hf-conv-area">
                                 <div class="hf-conv-track">
-                                    <!-- Conversation 1 -->
+                                    <!-- Person 1: outdoor/adventurous -->
                                     <div class="hf-conv">
                                         <div class="hf-photo">
+                                            <div class="hf-img hf-img-1a" style="background:linear-gradient(135deg,#F4A261,#E76F51);"><span style="font-size:20px; opacity:0.3;">&#9968;</span></div>
+                                            <div class="hf-img hf-img-1b" style="background:linear-gradient(135deg,#90BE6D,#43AA8B);"><span style="font-size:20px; opacity:0.3;">&#127796;</span></div>
+                                            <div class="hf-tap hf-tap-1"></div>
                                             <div class="hf-hearts-badge">&#9829; 247</div>
+                                            <div class="hf-dots"><span class="hf-dot hf-dot-1a"></span><span class="hf-dot hf-dot-1b"></span><span class="hf-dot"></span></div>
                                         </div>
                                         <div class="hf-msgs">
-                                            <div class="hf-msg-in">Hey! Love your photos</div>
+                                            <div class="hf-msg-in">Love the hiking pic!</div>
                                             <div class="hf-msg-out">Thanks! Coffee tmrw?</div>
-                                            <div class="hf-msg-new">Sounds great! 10am?</div>
+                                            <div class="hf-msg-pop-a">10am at Blue Bottle?</div>
                                         </div>
                                     </div>
-                                    <!-- Conversation 2 -->
+                                    <!-- Person 2: music/creative -->
                                     <div class="hf-conv">
-                                        <div class="hf-photo" style="background: var(--border);">
+                                        <div class="hf-photo">
+                                            <div class="hf-img" style="background:linear-gradient(135deg,#7B2D8E,#4A1259); opacity:1;"><span style="font-size:20px; opacity:0.3;">&#9835;</span></div>
                                             <div class="hf-hearts-badge">&#9829; 83</div>
+                                            <div class="hf-dots"><span class="hf-dot" style="background:white;"></span><span class="hf-dot"></span></div>
                                         </div>
                                         <div class="hf-msgs">
                                             <div class="hf-msg-out">Great music taste!</div>
                                             <div class="hf-msg-in">Thanks! Into jazz?</div>
-                                            <div class="hf-msg-new2">Love it! Fav artist?</div>
+                                            <div class="hf-msg-pop-b">Love it! Coltrane?</div>
+                                        </div>
+                                    </div>
+                                    <!-- Person 3: food/social -->
+                                    <div class="hf-conv">
+                                        <div class="hf-photo">
+                                            <div class="hf-img hf-img-3a" style="background:linear-gradient(135deg,#F77F00,#D62828);"><span style="font-size:20px; opacity:0.3;">&#9749;</span></div>
+                                            <div class="hf-img hf-img-3b" style="background:linear-gradient(135deg,#577590,#277DA1);"><span style="font-size:20px; opacity:0.3;">&#127754;</span></div>
+                                            <div class="hf-tap hf-tap-3"></div>
+                                            <div class="hf-hearts-badge">&#9829; 412</div>
+                                            <div class="hf-dots"><span class="hf-dot hf-dot-3a"></span><span class="hf-dot hf-dot-3b"></span><span class="hf-dot"></span></div>
+                                        </div>
+                                        <div class="hf-msgs">
+                                            <div class="hf-msg-in">That cafe looks amazing</div>
+                                            <div class="hf-msg-out">It's the best in town!</div>
+                                            <div class="hf-msg-pop-c">Show me Saturday?</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1300,142 +1321,196 @@
         #competitor-swiper .swiper-wrapper { height: 100%; }
         #competitor-swiper .swiper-slide { height: 100%; }
 
-        /* HeartFull animated demo */
+        /* HeartFull animated demo — 15s loop, 3 people, gallery taps */
         .hf-demo {
             background: var(--surface); border-radius: 24px;
             width: 100%; height: 100%;
             display: flex; flex-direction: column; overflow: hidden;
         }
         .hf-av-bar {
-            display: flex; gap: 6px; padding: 24px 10px 6px;
+            display: flex; gap: 5px; padding: 24px 8px 5px;
             align-items: center; justify-content: center;
         }
         .hf-av {
-            width: 28px; height: 28px; border-radius: 50%;
+            width: 26px; height: 26px; border-radius: 50%;
             background: var(--border); flex-shrink: 0;
             border: 2px solid transparent;
-            transition: border-color 0.3s, background 0.3s;
         }
-        .hf-av-a {
-            animation: hf-hl-a 10s ease-in-out infinite;
+        /* Avatar highlights: person 1 (0-30%), person 2 (34-62%), person 3 (66-95%) */
+        .hf-av-1 { animation: hf-h1 15s ease-in-out infinite; }
+        .hf-av-2 { animation: hf-h2 15s ease-in-out infinite; }
+        .hf-av-3 { animation: hf-h3 15s ease-in-out infinite; }
+        @keyframes hf-h1 {
+            0%,30% { border-color:var(--coral); background:var(--coral-subtle); transform:scale(1.15); }
+            34%,95% { border-color:transparent; background:var(--border); transform:scale(1); }
+            100% { border-color:var(--coral); background:var(--coral-subtle); transform:scale(1.15); }
         }
-        .hf-av-b {
-            animation: hf-hl-b 10s ease-in-out infinite;
+        @keyframes hf-h2 {
+            0%,30% { border-color:transparent; background:var(--border); transform:scale(1); }
+            34%,62% { border-color:var(--coral); background:var(--coral-subtle); transform:scale(1.15); }
+            66%,100% { border-color:transparent; background:var(--border); transform:scale(1); }
         }
-        @keyframes hf-hl-a {
-            0%, 42% { border-color: var(--coral); background: var(--coral-subtle); width: 32px; height: 32px; }
-            48%, 92% { border-color: transparent; background: var(--border); width: 28px; height: 28px; }
-            98%, 100% { border-color: var(--coral); background: var(--coral-subtle); width: 32px; height: 32px; }
-        }
-        @keyframes hf-hl-b {
-            0%, 42% { border-color: transparent; background: var(--border); width: 28px; height: 28px; }
-            48%, 92% { border-color: var(--coral); background: var(--coral-subtle); width: 32px; height: 32px; }
-            98%, 100% { border-color: transparent; background: var(--border); width: 28px; height: 28px; }
+        @keyframes hf-h3 {
+            0%,62% { border-color:transparent; background:var(--border); transform:scale(1); }
+            66%,95% { border-color:var(--coral); background:var(--coral-subtle); transform:scale(1.15); }
+            100% { border-color:transparent; background:var(--border); transform:scale(1); }
         }
         .hf-conv-area {
-            flex: 1; margin: 4px 8px; border-radius: 12px;
+            flex: 1; margin: 3px 6px; border-radius: 10px;
             overflow: hidden; position: relative; min-height: 0;
         }
         .hf-conv-track {
-            display: flex; width: 200%; height: 100%;
-            animation: hf-slide 10s ease-in-out infinite;
+            display: flex; width: 300%; height: 100%;
+            animation: hf-slide 15s ease-in-out infinite;
         }
         @keyframes hf-slide {
-            0%, 40% { transform: translateX(0); }
-            48%, 90% { transform: translateX(-50%); }
-            98%, 100% { transform: translateX(0); }
+            0%,28% { transform: translateX(0); }
+            33%,60% { transform: translateX(-33.333%); }
+            65%,93% { transform: translateX(-66.666%); }
+            98%,100% { transform: translateX(0); }
         }
         .hf-conv {
-            width: 50%; height: 100%;
+            width: 33.333%; height: 100%;
             display: flex; flex-direction: column;
-            position: relative;
         }
         .hf-photo {
             flex: 1; background: var(--surface-sunken);
-            border-radius: 10px; margin: 0 2px;
-            position: relative; min-height: 0;
+            border-radius: 8px; margin: 0 2px;
+            position: relative; min-height: 0; overflow: hidden;
         }
+        .hf-img {
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 8px;
+        }
+        /* Gallery tap: person 1 — photo A visible first, then B */
+        .hf-img-1a { animation: hf-g1a 15s ease-in-out infinite; }
+        .hf-img-1b { animation: hf-g1b 15s ease-in-out infinite; }
+        @keyframes hf-g1a {
+            0%,16% { opacity:1; } 18%,28% { opacity:0; } 30%,100% { opacity:1; }
+        }
+        @keyframes hf-g1b {
+            0%,16% { opacity:0; } 18%,28% { opacity:1; } 30%,100% { opacity:0; }
+        }
+        /* Gallery tap: person 3 — photo A then B */
+        .hf-img-3a { animation: hf-g3a 15s ease-in-out infinite; }
+        .hf-img-3b { animation: hf-g3b 15s ease-in-out infinite; }
+        @keyframes hf-g3a {
+            0%,80% { opacity:1; } 82%,92% { opacity:0; } 94%,100% { opacity:1; }
+        }
+        @keyframes hf-g3b {
+            0%,80% { opacity:0; } 82%,92% { opacity:1; } 94%,100% { opacity:0; }
+        }
+        /* Tap indicator */
+        .hf-tap {
+            position: absolute; width: 20px; height: 20px;
+            border-radius: 50%; background: rgba(255,255,255,0.5);
+            top: 50%; left: 60%; transform: translate(-50%,-50%) scale(0);
+            pointer-events: none; z-index: 3;
+        }
+        .hf-tap-1 { animation: hf-tap-fx 15s ease-out infinite; }
+        .hf-tap-3 { animation: hf-tap-fx3 15s ease-out infinite; }
+        @keyframes hf-tap-fx {
+            0%,15% { transform:translate(-50%,-50%) scale(0); opacity:0; }
+            16% { transform:translate(-50%,-50%) scale(1); opacity:0.7; }
+            20% { transform:translate(-50%,-50%) scale(1.5); opacity:0; }
+            21%,100% { transform:translate(-50%,-50%) scale(0); opacity:0; }
+        }
+        @keyframes hf-tap-fx3 {
+            0%,79% { transform:translate(-50%,-50%) scale(0); opacity:0; }
+            80% { transform:translate(-50%,-50%) scale(1); opacity:0.7; }
+            84% { transform:translate(-50%,-50%) scale(1.5); opacity:0; }
+            85%,100% { transform:translate(-50%,-50%) scale(0); opacity:0; }
+        }
+        /* Photo dots */
+        .hf-dots {
+            position: absolute; bottom: 4px; left: 50%;
+            transform: translateX(-50%); display: flex; gap: 3px; z-index: 2;
+        }
+        .hf-dot {
+            width: 4px; height: 4px; border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+        }
+        .hf-dot-1a { animation: hf-d1a 15s ease-in-out infinite; }
+        .hf-dot-1b { animation: hf-d1b 15s ease-in-out infinite; }
+        @keyframes hf-d1a { 0%,16% { background:white; } 18%,28% { background:rgba(255,255,255,0.4); } 30%,100% { background:white; } }
+        @keyframes hf-d1b { 0%,16% { background:rgba(255,255,255,0.4); } 18%,28% { background:white; } 30%,100% { background:rgba(255,255,255,0.4); } }
+        .hf-dot-3a { animation: hf-d3a 15s ease-in-out infinite; }
+        .hf-dot-3b { animation: hf-d3b 15s ease-in-out infinite; }
+        @keyframes hf-d3a { 0%,80% { background:white; } 82%,92% { background:rgba(255,255,255,0.4); } 94%,100% { background:white; } }
+        @keyframes hf-d3b { 0%,80% { background:rgba(255,255,255,0.4); } 82%,92% { background:white; } 94%,100% { background:rgba(255,255,255,0.4); } }
+
         .hf-hearts-badge {
-            position: absolute; top: 6px; right: 6px;
+            position: absolute; top: 4px; right: 4px;
             background: var(--coral); color: white;
-            border-radius: 12px; padding: 2px 8px;
-            font-size: 8px; font-weight: 700;
+            border-radius: 10px; padding: 1px 6px;
+            font-size: 7px; font-weight: 700; z-index: 2;
         }
         .hf-msgs {
-            padding: 6px 4px; display: flex;
-            flex-direction: column; gap: 3px;
+            padding: 4px 3px; display: flex;
+            flex-direction: column; gap: 2px;
         }
         .hf-msg-in {
-            align-self: flex-start;
-            background: var(--surface-elevated);
-            border-radius: 8px 8px 8px 2px;
-            padding: 4px 8px; font-size: 8px;
-            color: var(--ink-secondary); max-width: 80%;
+            align-self: flex-start; background: var(--surface-elevated);
+            border-radius: 7px 7px 7px 2px; padding: 3px 7px;
+            font-size: 7px; color: var(--ink-secondary); max-width: 82%;
         }
         .hf-msg-out {
-            align-self: flex-end;
-            background: var(--coral);
-            border-radius: 8px 8px 2px 8px;
-            padding: 4px 8px; font-size: 8px;
-            color: white; max-width: 80%;
+            align-self: flex-end; background: var(--coral);
+            border-radius: 7px 7px 2px 7px; padding: 3px 7px;
+            font-size: 7px; color: white; max-width: 82%;
         }
-        .hf-msg-new {
-            align-self: flex-start;
-            background: var(--surface-elevated);
-            border-radius: 8px 8px 8px 2px;
-            padding: 4px 8px; font-size: 8px;
-            color: var(--ink-secondary); max-width: 80%;
-            animation: hf-msg-pop 10s ease-out infinite;
+        /* New message pops: person A at 20%, B at 50%, C at 82% */
+        .hf-msg-pop-a {
+            align-self: flex-start; background: var(--surface-elevated);
+            border-radius: 7px 7px 7px 2px; padding: 3px 7px;
+            font-size: 7px; color: var(--ink-secondary); max-width: 82%;
+            animation: hf-pa 15s ease-out infinite;
         }
-        .hf-msg-new2 {
-            align-self: flex-end;
-            background: var(--coral);
-            border-radius: 8px 8px 2px 8px;
-            padding: 4px 8px; font-size: 8px;
-            color: white; max-width: 80%;
-            animation: hf-msg-pop2 10s ease-out infinite;
+        .hf-msg-pop-b {
+            align-self: flex-end; background: var(--coral);
+            border-radius: 7px 7px 2px 7px; padding: 3px 7px;
+            font-size: 7px; color: white; max-width: 82%;
+            animation: hf-pb 15s ease-out infinite;
         }
-        @keyframes hf-msg-pop {
-            0%, 25% { opacity: 0; transform: translateY(6px); }
-            32%, 100% { opacity: 1; transform: translateY(0); }
+        .hf-msg-pop-c {
+            align-self: flex-start; background: var(--surface-elevated);
+            border-radius: 7px 7px 7px 2px; padding: 3px 7px;
+            font-size: 7px; color: var(--ink-secondary); max-width: 82%;
+            animation: hf-pc 15s ease-out infinite;
         }
-        @keyframes hf-msg-pop2 {
-            0%, 70% { opacity: 0; transform: translateY(6px); }
-            78%, 100% { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes hf-pa { 0%,14% { opacity:0; transform:translateY(4px); } 20%,100% { opacity:1; transform:translateY(0); } }
+        @keyframes hf-pb { 0%,46% { opacity:0; transform:translateY(4px); } 52%,100% { opacity:1; transform:translateY(0); } }
+        @keyframes hf-pc { 0%,76% { opacity:0; transform:translateY(4px); } 82%,100% { opacity:1; transform:translateY(0); } }
+
         .hf-input {
-            display: flex; gap: 6px; padding: 4px 8px 10px;
+            display: flex; gap: 4px; padding: 3px 6px 8px;
             align-items: center;
         }
         .hf-input-text {
             flex: 1; background: var(--surface-sunken);
-            border-radius: 16px; padding: 5px 10px;
-            font-size: 8px; color: var(--ink-tertiary);
-            min-height: 22px; display: flex; align-items: center;
+            border-radius: 14px; padding: 4px 8px;
+            font-size: 7px; color: var(--ink-tertiary);
+            min-height: 20px; display: flex; align-items: center;
         }
         .hf-typing {
-            display: inline-block;
-            overflow: hidden; white-space: nowrap;
-            animation: hf-type 10s steps(12) infinite;
-            font-size: 8px; color: var(--ink-secondary);
+            display: inline-block; overflow: hidden; white-space: nowrap;
+            animation: hf-type 15s steps(10) infinite;
+            font-size: 7px; color: var(--ink-secondary);
         }
-        .hf-typing::after { content: "Sounds fun! ✓"; }
+        .hf-typing::after { content: "Sounds fun!"; }
         @keyframes hf-type {
-            0%, 18% { width: 0; }
-            28%, 35% { width: 60px; }
-            40%, 100% { width: 0; }
+            0%,10% { width:0; } 18%,24% { width:48px; } 28%,100% { width:0; }
         }
         .hf-send {
-            width: 22px; height: 22px; border-radius: 50%;
-            background: var(--coral);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 9px; color: white; flex-shrink: 0;
-            animation: hf-send-pulse 10s ease-in-out infinite;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: var(--coral); display: flex;
+            align-items: center; justify-content: center;
+            font-size: 8px; color: white; flex-shrink: 0;
+            animation: hf-send-p 15s ease-in-out infinite;
         }
-        @keyframes hf-send-pulse {
-            0%, 30% { transform: scale(1); }
-            33% { transform: scale(1.2); }
-            36%, 100% { transform: scale(1); }
+        @keyframes hf-send-p {
+            0%,22% { transform:scale(1); } 24% { transform:scale(1.3); } 26%,100% { transform:scale(1); }
         }
 
         /* Device showcase */
