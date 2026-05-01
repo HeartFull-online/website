@@ -290,9 +290,9 @@
             </div>
 
             <!-- Phone Comparison: Them vs HeartFull -->
-            <div class="grid md:grid-cols-3 gap-4 sm:gap-8 mb-16 items-center">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-12 mb-16">
                 <!-- Competitor Phone (Swipeable) -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center flex-shrink-0">
                     <div class="phone-compare">
                         <div class="phone-compare-notch"></div>
                         <div class="swiper" id="competitor-swiper" style="width: 100%; height: 100%; border-radius: 24px; overflow: hidden;">
@@ -428,7 +428,7 @@
                 </div>
 
                 <!-- HeartFull Phone -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center flex-shrink-0">
                     <div class="phone-compare">
                         <div class="phone-compare-notch"></div>
                         <div class="app-slide" style="background: var(--surface); border-radius: 24px;">
@@ -594,14 +594,18 @@
                 <h2 class="text-3xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
                     The <span class="gradient-text">Hearts</span> Economy
                 </h2>
-                <p class="text-lg max-w-3xl mx-auto" style="color: var(--ink-secondary);">
-                    Other apps sell you coins and boosts for cash. On HeartFull, the only currency is earned through how you treat people. Hearts can never be purchased. Period.
+                <p class="text-lg max-w-3xl mx-auto mb-4" style="color: var(--ink-secondary);">
+                    Every dating app has an in-app currency &mdash; coins, boosts, super likes. The difference? They sell theirs for cash. Ours can only be earned through how you treat people.
+                </p>
+                <p class="text-lg max-w-3xl mx-auto font-semibold" style="color: var(--ink);">
+                    Hearts can never be purchased. Not for $1. Not for $1,000. Period.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 lg:p-10" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
-                    <div class="flex items-center mb-8">
+            <!-- How it works: Earn & Spend -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="p-7 lg:p-9" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="flex items-center mb-6">
                         <div class="w-12 h-12 flex items-center justify-center mr-4" style="background: var(--coral); border-radius: 12px;">
                             <svg class="w-6 h-6 text-white" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -612,21 +616,25 @@
                     <ul class="space-y-4" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Post real-time, AI-verified selfies that confirm your authenticity.</span>
+                            <span><strong style="color: var(--ink);">Verify yourself</strong> &mdash; post a real-time selfie confirmed by AI. Proves you're real, earns you Hearts.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Answer personality prompts honestly to share who you really are.</span>
+                            <span><strong style="color: var(--ink);">Complete your profile</strong> &mdash; answer personality prompts, add photos. The more you share, the more you earn.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Be kind and consistently responsive to foster meaningful connections.</span>
+                            <span><strong style="color: var(--ink);">Be responsive</strong> &mdash; reply to messages, show up to conversations. Consistency is rewarded.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
+                            <span><strong style="color: var(--ink);">Be kind</strong> &mdash; positive interactions earn Hearts. Ghosting, rudeness, and spam drain them.</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="p-8 lg:p-10" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
-                    <div class="flex items-center mb-8">
+                <div class="p-7 lg:p-9" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="flex items-center mb-6">
                         <div class="w-12 h-12 flex items-center justify-center mr-4" style="background: var(--coral); border-radius: 12px;">
                             <svg class="w-6 h-6 text-white" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
@@ -637,17 +645,50 @@
                     <ul class="space-y-4" style="color: var(--ink-secondary);">
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Start conversations with people you're genuinely interested in.</span>
+                            <span><strong style="color: var(--ink);">Start a conversation</strong> &mdash; reaching out costs Hearts, so you think about what to say. No more &ldquo;hey&rdquo; spam.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Approach users who've earned more Hearts &mdash; mutual trust and respect.</span>
+                            <span><strong style="color: var(--ink);">Approach high-value users</strong> &mdash; messaging someone with many Hearts costs more. It protects popular users from inbox flooding.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
-                            <span>Give underdogs a chance by supporting newer members on the platform.</span>
+                            <span><strong style="color: var(--ink);">Champion underdogs</strong> &mdash; newer members cost fewer Hearts to approach. Give someone a chance who hasn't been discovered yet.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 flex-shrink-0 mt-0.5" style="color: var(--coral);">&#9829;</span>
+                            <span><strong style="color: var(--ink);">Boost visibility</strong> &mdash; spend Hearts to get seen by more people. The same feature other apps charge $50/mo for.</span>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Why people prefer it -->
+            <div class="text-center mb-8">
+                <h3 class="text-2xl lg:text-3xl font-bold" style="font-family: 'Fraunces', serif; color: var(--ink);">
+                    Why people <span class="gradient-text">prefer</span> this
+                </h3>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 text-center" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="text-3xl mb-3" style="color: var(--coral);">&#9829;</div>
+                    <h4 class="font-bold mb-2" style="color: var(--ink);">Jerks get filtered out</h4>
+                    <p class="text-sm" style="color: var(--ink-secondary);">On other apps, bad behavior costs nothing. Here, ghosting and rudeness drain your Hearts. Kind people rise. Toxic ones disappear.</p>
+                </div>
+                <div class="p-6 text-center" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="text-3xl mb-3" style="color: var(--coral);">&#9829;</div>
+                    <h4 class="font-bold mb-2" style="color: var(--ink);">Hearts = trust signal</h4>
+                    <p class="text-sm" style="color: var(--ink-secondary);">Someone with lots of Hearts has proven they're genuine, responsive, and kind. It's a reputation money can't buy &mdash; only behavior can earn.</p>
+                </div>
+                <div class="p-6 text-center" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="text-3xl mb-3" style="color: var(--coral);">&#9829;</div>
+                    <h4 class="font-bold mb-2" style="color: var(--ink);">Conversations matter</h4>
+                    <p class="text-sm" style="color: var(--ink-secondary);">When reaching out costs Hearts, people actually think about what to say. Messages are thoughtful, not mass-produced pickup lines.</p>
+                </div>
+                <div class="p-6 text-center" style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm);">
+                    <div class="text-3xl mb-3" style="color: var(--coral);">&#9829;</div>
+                    <h4 class="font-bold mb-2" style="color: var(--ink);">Income doesn't matter</h4>
+                    <p class="text-sm" style="color: var(--ink-secondary);">A student with great character has the same chances as a CEO. Your dating life is determined by who you are, not what you earn.</p>
                 </div>
             </div>
         </div>
