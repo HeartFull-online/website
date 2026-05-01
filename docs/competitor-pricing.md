@@ -69,6 +69,56 @@ All prices are monthly rates. Most apps use dynamic pricing based on age, locati
 - Pricing varies by country, platform, and promotions
 - 1.5-star average rating across review sites
 
+## Match.com
+
+| Plan | 1 month | 3 months | 6 months | 12 months |
+|------|---------|----------|----------|-----------|
+| Standard | $45.99/mo | $31.99/mo | $23/mo | $18.99/mo |
+
+- Must pay full amount upfront (e.g. $227.88 for 12 months)
+- Optional add-ons: matchPhone, Private Mode (increase monthly cost)
+- Diamond tier pricing not clearly displayed — deliberately opaque
+- Bronze/Silver tiers barely better than free; Platinum needed for real features
+- Profiles never deleted — users from years ago still show up
+
+## eHarmony
+
+| Plan | 6 months | 12 months | 24 months |
+|------|----------|-----------|-----------|
+| Premium Plus | ~$40/mo | $39.90/mo | — |
+| Premium Extra | — | — | $29.90/mo |
+| Premium Unlimited | — | — | $19.14/mo |
+
+- No month-to-month option — minimum 6-month commitment
+- Pricing ranges from $30–$66/mo depending on plan and promotions
+- Payment options: upfront lump sum or 2–4 equal installments
+- Frequent 50% off promotions for first 3 months (FOMO tactic)
+- Auto-renewal is aggressive — hard to cancel before it kicks in
+
+## Plenty of Fish (POF)
+
+| Plan | 3 months | 6 months | 12 months |
+|------|----------|----------|-----------|
+| Plus | ~$10–15/mo | — | ~$10/mo |
+| Premium | $20.94/mo | $15.70/mo | $10.47/mo |
+| Prestige | Higher | — | — |
+
+- Three paid tiers (Plus, Premium, Prestige) with confusing pricing
+- No clear pricing chart — varies by region, platform, and promotions
+- Can also buy a la carte "boosts," "super likes," and "first contacts"
+- Prices differ between App Store, Google Play, and web
+
+## Coffee Meets Bagel
+
+| Plan | 1 month | 3 months | 6 months | 12 months |
+|------|---------|----------|----------|-----------|
+| Mini | $9–15/mo | — | — | — |
+| Premium | $35/mo | $25/mo | $20/mo | $15/mo |
+
+- Mini is limited: no "Likes You" feed, no monthly Flowers
+- Premium adds: Likes You feed, 8 Flowers, 48hr boost, Activity Reports, advanced filters
+- Annual plan: $179.99 upfront
+
 ## HeartFull
 
 | Plan | Cost |
@@ -93,3 +143,11 @@ All prices are monthly rates. Most apps use dynamic pricing based on age, locati
 - [Grindr Costs 2026 — BoostMatches](https://boostmatches.com/grindr-cost/)
 - [Grindr $500/mo EDGE — PinkNews](https://www.thepinknews.com/2026/02/18/former-grindr-staff-says-app-went-downhill-after-one-key-change/)
 - [Badoo Review 2026 — SwipeStats](https://www.swipestats.io/blog/badoo-review)
+- [Match.com Cost 2026 — DatingApps.com](https://www.datingapps.com/cost/match/)
+- [Match.com Pricing Up 58% in 2026 — HealthyFramework](https://healthyframework.com/match-cost/)
+- [eHarmony Cost 2026 — HealthyFramework](https://healthyframework.com/eharmony-cost/)
+- [eHarmony Cost — VIDA Select](https://www.vidaselect.com/eharmony-cost)
+- [POF Membership Tiers — POF Help](https://help.pof.com/hc/en-us/articles/41811837195931)
+- [POF Free Trial & Cost 2026 — DatingAdvice](https://www.datingadvice.com/online-dating/plenty-of-fish-free-trial)
+- [Coffee Meets Bagel Premium — VIDA Select](https://www.vidaselect.com/coffee-meets-bagel-premium)
+- [Coffee Meets Bagel Pricing — Subger](https://subger.com/en/ar/service/coffee-meets-bagel)

@@ -145,6 +145,95 @@ Research summary of what users actually think about each major dating app. Used 
 
 ---
 
+## Match.com
+
+**Tagline:** "Where profiles never die"
+
+**Crowd sentiment:** The original dating site, now a bloated relic. Profiles from years ago still show up. Multiple subscription tiers designed to confuse, with useful features locked behind the most expensive plan. Pricing increased 58% in 2026.
+
+**Key complaints:**
+- **Zombie profiles** — Match never deletes inactive profiles; users from years ago still appear in searches
+- **Opaque pricing** — Diamond tier pricing deliberately hidden; Bronze/Silver barely better than free
+- **Price hikes** — Some plan costs up 58% in 2026
+- **Upfront payment** — Must pay full amount in advance (e.g. $228 for 12 months)
+- **Feature-gated** — Need Platinum to access any practically useful features
+
+**Review ratings:** ~1.5 stars on Trustpilot
+
+**Sources:**
+- [Match.com Pricing Up 58% — HealthyFramework](https://healthyframework.com/match-cost/)
+- [Match.com Review 2026 — DavidWygant](https://davidwygant.com/blog/match-com-review-2026/)
+- [Match.com Cost 2026 — DatingApps.com](https://www.datingapps.com/cost/match/)
+
+---
+
+## eHarmony
+
+**Tagline:** "29 dimensions of emptying your wallet"
+
+**Crowd sentiment:** Markets itself as the "serious relationship" app with a compatibility algorithm, but the main experience is being locked into long, expensive contracts that auto-renew aggressively. The 29-dimension compatibility quiz is the hook; the 6-month minimum commitment is the trap.
+
+**Key complaints:**
+- **No monthly option** — Minimum 6-month commitment; most features require 12–24 month plans
+- **Auto-renewal trap** — Aggressively auto-renews before users can cancel
+- **Expensive** — $30–$66/mo depending on plan, one of the priciest dating services
+- **Price-blocked features** — Standard features on other apps cost extra here
+- **Difficult to navigate** — Confusing UI and cancellation process
+
+**Review ratings:** ~1.4 stars on Trustpilot
+
+**Sources:**
+- [eHarmony Cost 2026 — HealthyFramework](https://healthyframework.com/eharmony-cost/)
+- [eHarmony Review 2026 — SwipeStats](https://www.swipestats.io/blog/eharmony-review)
+- [eHarmony vs Match — InnerBody](https://www.innerbody.com/eharmony-vs-match)
+
+---
+
+## Plenty of Fish (POF)
+
+**Tagline:** "The Walmart of dating apps"
+
+**Crowd sentiment:** Called "the Walmart of dating" and "the trailer park of online dating" by its own users. The low barrier to entry means massive volume but terrible quality. Inbox flooded with spam and low-effort messages. Profiles are often fake or abandoned.
+
+**Key complaints:**
+- **Spam inbox** — Overwhelming volume of low-effort and spam messages
+- **Fake/inactive profiles** — Higher proportion of fakes than paid services; many profiles abandoned for years
+- **"Walmart of dating"** — Actual user description; low quality control due to free access
+- **Confusing pricing** — Three paid tiers, three contract lengths, plus a la carte boosts/super likes with no clear guide
+- **Outdated interface** — Cluttered, looks like it hasn't been updated in years
+
+**Review ratings:** ~1.3 stars on Trustpilot
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/pof.com)
+- [POF Review 2026 — DatingAdvice](https://www.datingadvice.com/online-dating/plenty-of-fish-reviews)
+- [Is POF Good? — DatingManSecrets](https://datingmansecrets.com/is-plenty-of-fish-good/)
+
+---
+
+## Coffee Meets Bagel
+
+**Tagline:** "One bagel a day, none that reply"
+
+**Crowd sentiment:** Marketed as the "quality over quantity" alternative that sends you one curated match per day. In practice: the app freezes constantly, matches rarely respond, and the premium subscription is a "blatant cash grab." Users report getting no new matches despite the daily promise.
+
+**Key complaints:**
+- **Buggy app** — Constantly freezes, photos won't load even after 5+ minutes of waiting
+- **Empty promises** — Claims to provide new matches daily, but the timer just resets with no matches
+- **Absentee users** — Many profiles are inactive or unresponsive
+- **Cash grab upsells** — Pushed to buy premium for "double suggestions" that don't materialize
+- **Slow experience** — One match per day feels glacial if none of them respond
+
+**Review ratings:** ~1.6 stars on Trustpilot, 3.3/5 from dating experts
+
+**Sources:**
+- [Trustpilot Reviews](https://www.trustpilot.com/review/coffeemeetsbagel.com)
+- [CMB Review 2026 — VIDA Select](https://www.vidaselect.com/coffee-meets-bagel-review-what-you-need-to-know)
+- [CMB Review 2026 — SwipeStats](https://www.swipestats.io/blog/coffee-meets-bagel-review)
+- [CMB Review — HealthyFramework](https://healthyframework.com/coffee-meets-bagel-review/)
+
+---
+
 ## Common Themes Across All Competitors
 
 1. **Same business model** — Hide features behind paywalls, profit from keeping users single and swiping
