@@ -303,111 +303,68 @@
                         <div class="phone-compare-notch"></div>
                         <div class="swiper" id="competitor-swiper" style="width: 100%; height: 100%; border-radius: 24px; overflow: hidden;">
                             <div class="swiper-wrapper">
-                                <!-- Tinder -->
+                                <!-- Tinder — card stack + swipe buttons -->
                                 <div class="swiper-slide" data-label="The hookup slot machine">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #FE3C72, #FF6036);">
                                         <div class="app-slide-name">Tinder</div>
-                                        <div class="app-slide-icon">🔥</div>
                                         <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
+                                            <div class="mockup-card" style="height: 180px; position: relative;">
+                                                <div class="mockup-photo" style="height: 130px;"></div>
                                                 <div class="mockup-line w-3/4"></div>
                                                 <div class="mockup-line w-1/2"></div>
+                                                <div style="position:absolute; top:6px; left:6px; background:rgba(255,255,255,0.3); border-radius:4px; padding:2px 6px; font-size:9px; color:white;">BOOST $9.99</div>
                                             </div>
                                             <div class="mockup-actions">
                                                 <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="background:rgba(255,215,0,0.3); font-size:11px;">&#9733;</div>
                                                 <div class="mockup-btn-round" style="color: #2ecc71;">&#9829;</div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price">$25 &ndash; $50/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Pay $50/mo or get buried. Your wallet decides who sees you.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;Swipe right, swipe left. Same UI since 2012.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Bumble -->
+                                <!-- Bumble — card + yellow, "she messages first" -->
                                 <div class="swiper-slide" data-label="Tinder, but yellow">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #FFC629, #FF9E00);">
                                         <div class="app-slide-name" style="color: #1a1a1a;">Bumble</div>
-                                        <div class="app-slide-icon">🐝</div>
                                         <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo" style="background: rgba(0,0,0,0.12);"></div>
-                                                <div class="mockup-line w-3/4" style="background: rgba(0,0,0,0.12);"></div>
-                                                <div class="mockup-line w-1/2" style="background: rgba(0,0,0,0.12);"></div>
+                                            <div class="mockup-card" style="height: 180px; background: rgba(0,0,0,0.08);">
+                                                <div class="mockup-photo" style="height: 130px; background: rgba(0,0,0,0.1);"></div>
+                                                <div class="mockup-line w-3/4" style="background: rgba(0,0,0,0.1);"></div>
+                                                <div class="mockup-line w-1/2" style="background: rgba(0,0,0,0.1);"></div>
                                             </div>
+                                            <div style="background:rgba(0,0,0,0.1); border-radius:8px; padding:4px 10px; font-size:9px; color:#1a1a1a; margin-top:6px;">SHE MESSAGES FIRST</div>
                                             <div class="mockup-actions">
-                                                <div class="mockup-btn-round" style="color: #1a1a1a;">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #1a1a1a;">&#9829;</div>
+                                                <div class="mockup-btn-round" style="color:#1a1a1a;">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color:#1a1a1a;">&#9829;</div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price" style="color: #1a1a1a;">$17 &ndash; $80/mo</div>
-                                        <div class="app-slide-quote" style="color: rgba(0,0,0,0.6);">&ldquo;Women message first &mdash; if they find you behind the $80/mo paywall.&rdquo;</div>
+                                        <div class="app-slide-quote" style="color: rgba(0,0,0,0.5);">&ldquo;Same cards, same swiping. Just a different color.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Hinge -->
+                                <!-- Hinge — vertical scroll with prompts -->
                                 <div class="swiper-slide" data-label="Designed to delete your wallet">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #1A1A2E, #16213E);">
                                         <div class="app-slide-name">Hinge</div>
-                                        <div class="app-slide-icon" style="font-size: 28px;">H</div>
-                                        <div class="app-slide-mockup">
-                                            <div class="mockup-card" style="background: rgba(255,255,255,0.08);">
-                                                <div class="mockup-photo" style="background: rgba(255,255,255,0.06);"></div>
-                                                <div class="mockup-line w-3/4" style="background: rgba(255,255,255,0.1);"></div>
-                                                <div class="mockup-line w-1/2" style="background: rgba(255,255,255,0.1);"></div>
+                                        <div class="app-slide-mockup" style="gap: 6px; width: 85%;">
+                                            <div class="mockup-photo" style="height: 100px; background:rgba(255,255,255,0.06); border-radius:8px; width:100%;"></div>
+                                            <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:8px; width:100%;">
+                                                <div style="font-size:8px; color:rgba(255,255,255,0.4); margin-bottom:4px;">MY BIGGEST FLEX IS...</div>
+                                                <div class="mockup-line w-3/4" style="background:rgba(255,255,255,0.1);"></div>
                                             </div>
-                                            <div class="mockup-actions">
-                                                <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #E04E68;">&#9829;</div>
+                                            <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:8px; width:100%;">
+                                                <div style="font-size:8px; color:rgba(255,255,255,0.4); margin-bottom:4px;">I'M LOOKING FOR...</div>
+                                                <div class="mockup-line w-1/2" style="background:rgba(255,255,255,0.1);"></div>
                                             </div>
+                                            <div style="text-align:center; font-size:9px; color:rgba(255,255,255,0.3); margin-top:2px;">SEND ROSE &bull; $3.99</div>
                                         </div>
-                                        <div class="app-slide-price">$30 &ndash; $50/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Designed to be deleted &mdash; after emptying your wallet. $50/mo.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;Scroll, read prompts, pay for roses. Repeat.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Badoo -->
-                                <div class="swiper-slide" data-label="The one nobody chose on purpose">
-                                    <div class="app-slide" style="background: linear-gradient(135deg, #783BF9, #5B2BC4);">
-                                        <div class="app-slide-name">Badoo</div>
-                                        <div class="app-slide-icon" style="font-size: 28px;">b</div>
-                                        <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
-                                                <div class="mockup-line w-3/4"></div>
-                                                <div class="mockup-line w-1/2"></div>
-                                            </div>
-                                            <div class="mockup-actions">
-                                                <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #783BF9;">&#9829;</div>
-                                            </div>
-                                        </div>
-                                        <div class="app-slide-price">$13/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Same swipe mechanics as everyone else. Even the cheap one has a paywall.&rdquo;</div>
-                                    </div>
-                                </div>
-                                <!-- OkCupid -->
-                                <div class="swiper-slide" data-label="RIP the free dating site (2004–2018)">
-                                    <div class="app-slide" style="background: linear-gradient(135deg, #4A8DF8, #304FFE);">
-                                        <div class="app-slide-name">OkCupid</div>
-                                        <div class="app-slide-icon">💘</div>
-                                        <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
-                                                <div class="mockup-line w-3/4"></div>
-                                                <div class="mockup-line w-1/2"></div>
-                                            </div>
-                                            <div class="mockup-actions">
-                                                <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #304FFE;">&#9829;</div>
-                                            </div>
-                                        </div>
-                                        <div class="app-slide-price">$35 &ndash; $55/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Once free and different. Now $55/mo and identical to the rest.&rdquo;</div>
-                                    </div>
-                                </div>
-                                <!-- Grindr -->
+                                <!-- Grindr — photo grid -->
                                 <div class="swiper-slide" data-label="Now with a $500/mo AI tier">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
                                         <div class="app-slide-name" style="color: #F5C518;">Grindr</div>
-                                        <div class="app-slide-icon">⚡</div>
                                         <div class="app-slide-mockup">
                                             <div class="mockup-grid">
                                                 <div class="mockup-grid-cell"></div>
@@ -416,90 +373,130 @@
                                                 <div class="mockup-grid-cell"></div>
                                                 <div class="mockup-grid-cell"></div>
                                                 <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
+                                                <div class="mockup-grid-cell"></div>
                                             </div>
+                                            <div style="text-align:center; font-size:9px; color:rgba(255,255,255,0.3); margin-top:6px;">UPGRADE TO SEE MORE</div>
                                         </div>
-                                        <div class="app-slide-price" style="color: #F5C518;">$20 &ndash; $40/mo</div>
-                                        <div class="app-slide-quote">&ldquo;A grid of profiles and a $40/mo fee to see who&rsquo;s nearby.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;A grid of thumbnails. That's the whole app.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Match.com -->
+                                <!-- OkCupid — match % badge -->
+                                <div class="swiper-slide" data-label="RIP the free dating site (2004&ndash;2018)">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #4A8DF8, #304FFE);">
+                                        <div class="app-slide-name">OkCupid</div>
+                                        <div class="app-slide-mockup">
+                                            <div class="mockup-card" style="height: 180px; position:relative;">
+                                                <div class="mockup-photo" style="height: 130px;"></div>
+                                                <div class="mockup-line w-3/4"></div>
+                                                <div class="mockup-line w-1/2"></div>
+                                                <div style="position:absolute; top:6px; right:6px; background:rgba(255,255,255,0.3); border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; font-size:9px; color:white; font-weight:700;">87%</div>
+                                            </div>
+                                            <div class="mockup-actions">
+                                                <div class="mockup-btn-round">&#10005;</div>
+                                                <div class="mockup-btn-round" style="color:#304FFE;">&#9829;</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-slide-quote">&ldquo;Was free and different. Now just another swipe app.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Match — search bar + list -->
                                 <div class="swiper-slide" data-label="Where profiles never die">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #E4002B, #B8001F);">
                                         <div class="app-slide-name">Match</div>
-                                        <div class="app-slide-icon" style="font-size: 28px;">M</div>
-                                        <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
-                                                <div class="mockup-line w-3/4"></div>
-                                                <div class="mockup-line w-1/2"></div>
+                                        <div class="app-slide-mockup" style="gap:5px; width:85%;">
+                                            <div style="background:rgba(255,255,255,0.15); border-radius:20px; padding:6px 12px; width:100%; font-size:9px; color:rgba(255,255,255,0.5);">Search...</div>
+                                            <div style="display:flex; gap:6px; width:100;">
+                                                <div style="background:rgba(255,255,255,0.1); border-radius:8px; width:50%; height:70px;"></div>
+                                                <div style="background:rgba(255,255,255,0.1); border-radius:8px; width:50%; height:70px;"></div>
                                             </div>
-                                            <div class="mockup-actions">
-                                                <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #E4002B;">&#9829;</div>
+                                            <div style="display:flex; gap:6px; width:100;">
+                                                <div style="background:rgba(255,255,255,0.1); border-radius:8px; width:50%; height:70px;"></div>
+                                                <div style="background:rgba(255,255,255,0.1); border-radius:8px; width:50%; height:70px;"></div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price">$19 &ndash; $46/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Profiles from 2014 still showing up. Nobody home.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;Browse a catalog of profiles. Click. Back. Click. Back.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- eHarmony -->
+                                <!-- eHarmony — compatibility bar -->
                                 <div class="swiper-slide" data-label="29 dimensions of emptying your wallet">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #00798C, #005F6B);">
                                         <div class="app-slide-name">eHarmony</div>
-                                        <div class="app-slide-icon" style="font-size: 28px;">eH</div>
+                                        <div class="app-slide-mockup" style="gap:6px; width:85%;">
+                                            <div style="background:rgba(255,255,255,0.1); border-radius:50%; width:64px; height:64px; margin:0 auto;"></div>
+                                            <div style="text-align:center; font-size:10px; color:rgba(255,255,255,0.6);">Compatibility</div>
+                                            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px; width:100%;"><div style="background:rgba(255,255,255,0.3); border-radius:4px; height:100%; width:72%;"></div></div>
+                                            <div style="font-size:9px; color:rgba(255,255,255,0.4); text-align:center;">72% Match</div>
+                                            <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:6px; width:100%;">
+                                                <div class="mockup-line w-3/4" style="background:rgba(255,255,255,0.1);"></div>
+                                                <div class="mockup-line w-1/2" style="background:rgba(255,255,255,0.1);"></div>
+                                            </div>
+                                            <div style="text-align:center; font-size:9px; color:rgba(255,255,255,0.3);">6-MONTH MINIMUM</div>
+                                        </div>
+                                        <div class="app-slide-quote">&ldquo;Take a 45-minute quiz, then pay for 6 months.&rdquo;</div>
+                                    </div>
+                                </div>
+                                <!-- Badoo — encounter card -->
+                                <div class="swiper-slide" data-label="The one nobody chose on purpose">
+                                    <div class="app-slide" style="background: linear-gradient(135deg, #783BF9, #5B2BC4);">
+                                        <div class="app-slide-name">Badoo</div>
                                         <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
+                                            <div class="mockup-card" style="height: 180px;">
+                                                <div class="mockup-photo" style="height: 130px;"></div>
                                                 <div class="mockup-line w-3/4"></div>
                                                 <div class="mockup-line w-1/2"></div>
                                             </div>
                                             <div class="mockup-actions">
                                                 <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #00798C;">&#9829;</div>
+                                                <div class="mockup-btn-round" style="color: #783BF9;">&#9829;</div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price">$19 &ndash; $66/mo</div>
-                                        <div class="app-slide-quote">&ldquo;Six-month minimum contract. Auto-renews before you can cancel.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;Same swipe cards. Same buttons. Same everything.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Plenty of Fish -->
+                                <!-- POF — cluttered inbox -->
                                 <div class="swiper-slide" data-label="The Walmart of dating apps">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #0076D6, #004E8C);">
                                         <div class="app-slide-name">POF</div>
-                                        <div class="app-slide-icon" style="font-size: 24px;">&#128031;</div>
-                                        <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
-                                                <div class="mockup-line w-3/4"></div>
-                                                <div class="mockup-line w-1/2"></div>
+                                        <div class="app-slide-mockup" style="gap:4px; width:85%;">
+                                            <div style="display:flex; gap:6px; align-items:center; background:rgba(255,255,255,0.08); border-radius:6px; padding:6px;">
+                                                <div style="width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.12); flex-shrink:0;"></div>
+                                                <div style="flex:1;"><div class="mockup-line w-3/4" style="background:rgba(255,255,255,0.1); margin:0;"></div></div>
                                             </div>
-                                            <div class="mockup-actions">
-                                                <div class="mockup-btn-round">&#10005;</div>
-                                                <div class="mockup-btn-round" style="color: #0076D6;">&#9829;</div>
+                                            <div style="display:flex; gap:6px; align-items:center; background:rgba(255,255,255,0.08); border-radius:6px; padding:6px;">
+                                                <div style="width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.12); flex-shrink:0;"></div>
+                                                <div style="flex:1;"><div class="mockup-line w-1/2" style="background:rgba(255,255,255,0.1); margin:0;"></div></div>
+                                            </div>
+                                            <div style="display:flex; gap:6px; align-items:center; background:rgba(255,255,255,0.08); border-radius:6px; padding:6px;">
+                                                <div style="width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.12); flex-shrink:0;"></div>
+                                                <div style="flex:1;"><div class="mockup-line w-3/4" style="background:rgba(255,255,255,0.1); margin:0;"></div></div>
+                                            </div>
+                                            <div style="display:flex; gap:6px; align-items:center; background:rgba(255,255,255,0.08); border-radius:6px; padding:6px;">
+                                                <div style="width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.12); flex-shrink:0;"></div>
+                                                <div style="flex:1;"><div class="mockup-line w-1/2" style="background:rgba(255,255,255,0.1); margin:0;"></div></div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price">$11 &ndash; $21/mo</div>
-                                        <div class="app-slide-quote">&ldquo;An ocean of spam messages and inactive profiles since 2009.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;An inbox full of spam. That's the experience.&rdquo;</div>
                                     </div>
                                 </div>
-                                <!-- Coffee Meets Bagel -->
+                                <!-- CMB — single card with timer -->
                                 <div class="swiper-slide" data-label="One bagel a day, none that reply">
                                     <div class="app-slide" style="background: linear-gradient(135deg, #6B1D3A, #4A1228);">
                                         <div class="app-slide-name" style="font-size: 14px;">CoffeeMeetsBagel</div>
-                                        <div class="app-slide-icon">&#9749;</div>
                                         <div class="app-slide-mockup">
-                                            <div class="mockup-card">
-                                                <div class="mockup-photo"></div>
+                                            <div class="mockup-card" style="height: 160px;">
+                                                <div class="mockup-photo" style="height: 110px;"></div>
                                                 <div class="mockup-line w-3/4"></div>
                                                 <div class="mockup-line w-1/2"></div>
                                             </div>
+                                            <div style="text-align:center; font-size:10px; color:rgba(255,255,255,0.5); margin-top:6px;">Next bagel in 23:42:01</div>
                                             <div class="mockup-actions">
                                                 <div class="mockup-btn-round">&#10005;</div>
                                                 <div class="mockup-btn-round" style="color: #6B1D3A;">&#9829;</div>
                                             </div>
                                         </div>
-                                        <div class="app-slide-price">$9 &ndash; $35/mo</div>
-                                        <div class="app-slide-quote">&ldquo;One match a day. Constantly freezes. Blatant cash grab.&rdquo;</div>
+                                        <div class="app-slide-quote">&ldquo;One match a day. If the app doesn't crash.&rdquo;</div>
                                     </div>
                                 </div>
                             </div>
@@ -513,22 +510,37 @@
                     <div class="text-5xl lg:text-7xl font-bold" style="color: var(--coral); font-family: 'Fraunces', serif;">vs</div>
                 </div>
 
-                <!-- HeartFull Phone -->
+                <!-- HeartFull Phone — shows actual UI: avatar bar + conversation + message input -->
                 <div class="flex flex-col items-center flex-shrink-0">
                     <div class="phone-compare">
                         <div class="phone-compare-notch"></div>
-                        <div class="app-slide" style="background: var(--surface); border-radius: 24px;">
-                            <div class="app-slide-name" style="color: var(--coral);">HeartFull</div>
-                            <div class="app-slide-icon">&#9829;</div>
-                            <ul style="list-style: none; padding: 0 12px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Connections never paywalled</li>
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Chat &amp; match for free</li>
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Merit-based visibility</li>
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Phone-verified users</li>
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Anti-ghosting system</li>
-                                <li class="hf-feature"><span class="hf-check">&#10003;</span> Works on every device</li>
-                            </ul>
-                            <div class="app-slide-price" style="color: var(--coral); font-size: 16px;">$0 to connect</div>
+                        <div style="background: var(--surface); border-radius: 24px; width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden;">
+                            <!-- Avatar bar -->
+                            <div style="display: flex; gap: 6px; padding: 24px 10px 6px; align-items: center; overflow: hidden;">
+                                <div style="width:30px; height:30px; border-radius:50%; background:var(--border); flex-shrink:0;"></div>
+                                <div style="width:30px; height:30px; border-radius:50%; background:var(--border); flex-shrink:0;"></div>
+                                <div style="width:34px; height:34px; border-radius:50%; border:2px solid var(--coral); background:var(--coral-subtle); flex-shrink:0;"></div>
+                                <div style="width:30px; height:30px; border-radius:50%; background:var(--border); flex-shrink:0;"></div>
+                                <div style="width:30px; height:30px; border-radius:50%; background:var(--border); flex-shrink:0;"></div>
+                            </div>
+                            <!-- Photo area -->
+                            <div style="flex: 1; margin: 4px 8px; border-radius: 12px; background: var(--surface-sunken); position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; min-height: 0;">
+                                <!-- Swipe arrows -->
+                                <div style="position:absolute; top:50%; left:4px; transform:translateY(-50%); font-size:14px; color:var(--ink-tertiary); opacity:0.4;">&#8249;</div>
+                                <div style="position:absolute; top:50%; right:4px; transform:translateY(-50%); font-size:14px; color:var(--ink-tertiary); opacity:0.4;">&#8250;</div>
+                                <!-- Hearts badge -->
+                                <div style="position:absolute; top:6px; right:6px; background:var(--coral); color:white; border-radius:12px; padding:2px 8px; font-size:8px; font-weight:700;">&#9829; 247</div>
+                                <!-- Message bubbles -->
+                                <div style="padding: 6px 8px; display:flex; flex-direction:column; gap:4px;">
+                                    <div style="align-self:flex-start; background:var(--surface-elevated); border-radius:10px 10px 10px 2px; padding:5px 9px; font-size:9px; color:var(--ink-secondary); max-width:75%;">Hey! Love your photos</div>
+                                    <div style="align-self:flex-end; background:var(--coral); border-radius:10px 10px 2px 10px; padding:5px 9px; font-size:9px; color:white; max-width:75%;">Thanks! What are you up to?</div>
+                                </div>
+                            </div>
+                            <!-- Message input -->
+                            <div style="display:flex; gap:6px; padding:6px 8px 10px; align-items:center;">
+                                <div style="flex:1; background:var(--surface-sunken); border-radius:20px; padding:6px 12px; font-size:9px; color:var(--ink-tertiary);">Type a message...</div>
+                                <div style="width:26px; height:26px; border-radius:50%; background:var(--coral); display:flex; align-items:center; justify-content:center; font-size:11px; color:white;">&#10148;</div>
+                            </div>
                         </div>
                     </div>
                     <span class="mt-3 font-bold text-lg" style="color: var(--coral);">HeartFull</span>
