@@ -4,7 +4,9 @@ The Hearts Economy is HeartFull's core differentiator. It replaces the pay-to-wi
 
 ## Core Principle
 
-**Hearts can never be purchased with money.** Not for $1, not for $1,000. They can only be earned through genuine effort and good behavior. This is the fundamental difference between HeartFull and every competitor.
+**Payments are completely disconnected from connections.** Matching, messaging, and visibility will never cost money. Hearts can never be purchased — they can only be earned through genuine effort and good behavior.
+
+HeartFull will monetize through premium tools (AI assistance, voice messages, speech-to-text, etc.) — features that enhance the experience but never gate who you can meet or talk to. This is the cornerstone issue that every competitor failed at: they tied money to connections.
 
 ## Starting Balance
 

@@ -245,8 +245,9 @@ Research summary of what users actually think about each major dating app. Used 
 
 ## What Makes HeartFull Different
 
-- $0 forever — no premium tiers, no in-app purchases
+- Connections never paywalled — matching, messaging, visibility always free
 - Hearts (currency) can only be earned through good behavior, never purchased
+- Revenue from premium tools (AI, voice, speech-to-text) — never from connections
 - Phone verification eliminates bots and fakes
 - Anti-ghosting system: responsiveness earns Hearts, ghosting costs them
 - Merit-based visibility: your character determines who sees you, not your wallet

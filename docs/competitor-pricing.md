@@ -121,15 +121,15 @@ All prices are monthly rates. Most apps use dynamic pricing based on age, locati
 
 ## HeartFull
 
-| Plan | Cost |
-|------|------|
-| Everything | $0 forever |
+| Feature | Cost |
+|---------|------|
+| Connections (match, message, visibility) | $0 always |
+| Premium tools (AI, voice, speech-to-text) | Paid (planned) |
 
-- No premium tiers
-- No in-app purchases
-- No boosts for sale
-- No paying to see who liked you
-- Hearts (in-app currency) can only be earned, never purchased
+- Connections are never paywalled — matching, messaging, and visibility will never cost money
+- Hearts (in-app currency) can only be earned through behavior, never purchased
+- Revenue comes from premium tools that enhance experience, not from gating connections
+- This is the cornerstone difference: payments are completely disconnected from connections
 
 ## Sources
 
