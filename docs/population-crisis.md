@@ -25,6 +25,23 @@
 ### The Diaper Indicator
 In Japan, Italy, and Germany, **adult diaper sales have overtaken baby diaper sales**. Adult diapers are projected to hit $28B in global sales by 2030, growing 8%/year. Baby diaper sales dropped 1% last year. This is the demographic shift made tangible.
 
+### The Correlation: US Fertility vs Dating App Revenue (2007-2025)
+
+| Year | US TFR | Match Revenue | Key Event |
+|------|--------|---------------|-----------|
+| 2007 | 2.12 | — | Pre-app peak |
+| 2012 | 1.88 | — | Tinder launches |
+| 2015 | 1.84 | $0.91B | Match IPO, paywalls begin |
+| 2017 | 1.77 | $1.33B | Tinder Gold paywall era |
+| 2019 | 1.71 | $2.05B | Peak downloads (287M) |
+| 2020 | 1.64 | $2.39B | Pandemic boom |
+| 2023 | 1.62 | $3.36B | Surgeon General advisory |
+| 2025 | 1.53 | $3.49B | US historic low |
+
+Fertility data: World Bank API. Revenue: Match Group SEC filings.
+
+Correlation ≠ causation, but the mechanism is documented: app burnout → lower relationship quality → delayed family formation → fewer births.
+
 ### Sources
 - [Lancet: Dramatic Declines in Global Fertility](https://www.healthdata.org/news-events/newsroom/news-releases/lancet-dramatic-declines-global-fertility-rates-set-transform)
 - [Birth Rate by Country 2026 — World Population Review](https://worldpopulationreview.com/country-rankings/birth-rate-by-country)

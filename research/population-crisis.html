@@ -110,6 +110,150 @@
                 When a society sells more diapers for its elderly than for its children, something fundamental has shifted.
             </p>
 
+            <h2>The correlation</h2>
+            <p>
+                Here's what happens when you plot US fertility rates against dating app industry revenue on the same timeline. One line goes down. The other goes up.
+            </p>
+
+            <!-- Dual-axis SVG chart -->
+            <div style="background: var(--surface-elevated); border-radius: 16px; box-shadow: var(--shadow-warm); padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto;">
+                <svg viewBox="0 0 720 430" style="width: 100%; height: auto; font-family: 'DM Sans', sans-serif;" role="img" aria-label="Chart showing US fertility rate declining as dating app revenue increases from 2007 to 2025">
+                    <!-- Grid lines -->
+                    <line x1="50" y1="50" x2="50" y2="350" stroke="#E4DDD8" stroke-width="1"/>
+                    <line x1="50" y1="350" x2="670" y2="350" stroke="#E4DDD8" stroke-width="1"/>
+                    <line x1="670" y1="50" x2="670" y2="350" stroke="#E4DDD8" stroke-width="1"/>
+                    <line x1="50" y1="125" x2="670" y2="125" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="50" y1="200" x2="670" y2="200" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="50" y1="275" x2="670" y2="275" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+                    <!-- Left Y-axis labels (Fertility Rate) -->
+                    <text x="45" y="54" text-anchor="end" font-size="10" fill="#6B5E57">2.2</text>
+                    <text x="45" y="129" text-anchor="end" font-size="10" fill="#6B5E57">2.0</text>
+                    <text x="45" y="204" text-anchor="end" font-size="10" fill="#6B5E57">1.8</text>
+                    <text x="45" y="279" text-anchor="end" font-size="10" fill="#6B5E57">1.6</text>
+                    <text x="45" y="354" text-anchor="end" font-size="10" fill="#6B5E57">1.4</text>
+                    <text x="10" y="200" text-anchor="middle" font-size="10" fill="#FF5870" font-weight="600" transform="rotate(-90,10,200)">US Fertility Rate</text>
+
+                    <!-- Right Y-axis labels (Revenue) -->
+                    <text x="675" y="354" text-anchor="start" font-size="10" fill="#6B5E57">$0B</text>
+                    <text x="675" y="279" text-anchor="start" font-size="10" fill="#6B5E57">$1B</text>
+                    <text x="675" y="204" text-anchor="start" font-size="10" fill="#6B5E57">$2B</text>
+                    <text x="675" y="129" text-anchor="start" font-size="10" fill="#6B5E57">$3B</text>
+                    <text x="675" y="54" text-anchor="start" font-size="10" fill="#6B5E57">$4B</text>
+                    <text x="710" y="200" text-anchor="middle" font-size="10" fill="#1E1916" font-weight="600" transform="rotate(90,710,200)">Match Group Revenue</text>
+
+                    <!-- X-axis year labels -->
+                    <text x="50" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'07</text>
+                    <text x="117" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'09</text>
+                    <text x="183" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'11</text>
+                    <text x="250" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'13</text>
+                    <text x="317" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'15</text>
+                    <text x="383" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'17</text>
+                    <text x="450" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'19</text>
+                    <text x="517" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'21</text>
+                    <text x="583" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'23</text>
+                    <text x="650" y="370" text-anchor="middle" font-size="9" fill="#9C8F88">'25</text>
+
+                    <!-- Milestone markers -->
+                    <line x1="217" y1="50" x2="217" y2="350" stroke="#FF5870" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4"/>
+                    <text x="217" y="395" text-anchor="middle" font-size="8" fill="#FF5870">Tinder</text>
+                    <text x="217" y="405" text-anchor="middle" font-size="8" fill="#FF5870">launches</text>
+
+                    <line x1="317" y1="50" x2="317" y2="350" stroke="#FF5870" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4"/>
+                    <text x="317" y="395" text-anchor="middle" font-size="8" fill="#FF5870">Match IPO</text>
+                    <text x="317" y="405" text-anchor="middle" font-size="8" fill="#FF5870">paywalls begin</text>
+
+                    <line x1="383" y1="50" x2="383" y2="350" stroke="#FF5870" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4"/>
+                    <text x="383" y="395" text-anchor="middle" font-size="8" fill="#FF5870">Tinder Gold</text>
+                    <text x="383" y="405" text-anchor="middle" font-size="8" fill="#FF5870">paywall era</text>
+
+                    <!-- Revenue area fill (Match Group, 2015-2025) -->
+                    <polygon points="317,350 317,282 350,268 383,250 417,220 450,196 483,171 517,127 550,111 583,98 617,89 650,88 650,350"
+                             fill="#1E1916" opacity="0.08"/>
+
+                    <!-- Revenue line (Match Group, 2015-2025) -->
+                    <polyline points="317,282 350,268 383,250 417,220 450,196 483,171 517,127 550,111 583,98 617,89 650,88"
+                              fill="none" stroke="#1E1916" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- Fertility rate area fill -->
+                    <polygon points="50,80 83,99 117,125 150,151 183,166 217,170 250,178 283,178 317,185 350,193 383,211 417,226 450,234 483,260 517,253 550,253 583,268 617,264 650,301 650,350 50,350"
+                             fill="#FF5870" opacity="0.06"/>
+
+                    <!-- Fertility rate line (2007-2025) -->
+                    <polyline points="50,80 83,99 117,125 150,151 183,166 217,170 250,178 283,178 317,185 350,193 383,211 417,226 450,234 483,260 517,253 550,253 583,268 617,264 650,301"
+                              fill="none" stroke="#FF5870" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- Data point dots - TFR -->
+                    <circle cx="50" cy="80" r="3" fill="#FF5870"/>
+                    <circle cx="650" cy="301" r="3" fill="#FF5870"/>
+
+                    <!-- Data point dots - Revenue -->
+                    <circle cx="317" cy="282" r="3" fill="#1E1916"/>
+                    <circle cx="650" cy="88" r="3" fill="#1E1916"/>
+
+                    <!-- Start/end value labels -->
+                    <text x="55" y="76" font-size="10" fill="#FF5870" font-weight="600">2.12</text>
+                    <text x="640" y="316" font-size="10" fill="#FF5870" font-weight="600" text-anchor="end">1.53</text>
+                    <text x="322" y="296" font-size="10" fill="#1E1916" font-weight="600">$0.9B</text>
+                    <text x="640" y="82" font-size="10" fill="#1E1916" font-weight="600" text-anchor="end">$3.5B</text>
+
+                    <!-- Legend -->
+                    <line x1="200" y1="425" x2="225" y2="425" stroke="#FF5870" stroke-width="2.5"/>
+                    <text x="230" y="428" font-size="10" fill="#6B5E57">US Fertility Rate (TFR)</text>
+                    <line x1="400" y1="425" x2="425" y2="425" stroke="#1E1916" stroke-width="2.5"/>
+                    <text x="430" y="428" font-size="10" fill="#6B5E57">Match Group Revenue</text>
+                </svg>
+            </div>
+
+            <p class="note" style="font-size: 0.85rem; color: var(--ink-tertiary); font-style: italic; margin-bottom: 1.5rem;">
+                Fertility data: World Bank. Revenue data: Match Group SEC filings. Match Group represents ~70% of total dating app industry revenue.
+            </p>
+
+            <p>
+                The lines are almost a mirror image. As Match Group revenue climbed from <strong>$0.9 billion to $3.5 billion</strong>, the US fertility rate dropped from <strong>1.84 to 1.53</strong> &mdash; a 17% decline over the same period.
+            </p>
+
+            <h3>The full data</h3>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr><th>Year</th><th>US TFR</th><th>Match Revenue</th><th>Key Event</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2007</td><td><strong>2.12</strong></td><td>&mdash;</td><td>Pre-app era peak fertility</td></tr>
+                        <tr><td>2008</td><td>2.07</td><td>&mdash;</td><td>Great Recession begins</td></tr>
+                        <tr><td>2009</td><td>2.00</td><td>&mdash;</td><td></td></tr>
+                        <tr><td>2010</td><td>1.93</td><td>&mdash;</td><td>Falls below replacement (2.1)</td></tr>
+                        <tr><td>2011</td><td>1.89</td><td>&mdash;</td><td></td></tr>
+                        <tr><td>2012</td><td>1.88</td><td>&mdash;</td><td style="color: var(--coral);">Tinder launches</td></tr>
+                        <tr><td>2013</td><td>1.86</td><td>&mdash;</td><td>1B swipes/day on Tinder</td></tr>
+                        <tr><td>2014</td><td>1.86</td><td>&mdash;</td><td>Bumble launches</td></tr>
+                        <tr><td>2015</td><td>1.84</td><td>$0.91B</td><td style="color: var(--coral);">Match IPO + first paywalls</td></tr>
+                        <tr><td>2016</td><td>1.82</td><td>$1.10B</td><td></td></tr>
+                        <tr><td>2017</td><td>1.77</td><td>$1.33B</td><td style="color: var(--coral);">Tinder Gold &mdash; paywall era begins</td></tr>
+                        <tr><td>2018</td><td>1.73</td><td>$1.73B</td><td></td></tr>
+                        <tr><td>2019</td><td>1.71</td><td>$2.05B</td><td>Peak app downloads (287M)</td></tr>
+                        <tr><td>2020</td><td>1.64</td><td>$2.39B</td><td>Pandemic dating boom</td></tr>
+                        <tr><td>2021</td><td>1.66</td><td>$2.98B</td><td></td></tr>
+                        <tr><td>2022</td><td>1.66</td><td>$3.19B</td><td></td></tr>
+                        <tr><td>2023</td><td>1.62</td><td>$3.36B</td><td style="color: var(--coral);">Surgeon General: loneliness crisis</td></tr>
+                        <tr><td>2024</td><td>1.63</td><td>$3.48B</td><td></td></tr>
+                        <tr><td>2025</td><td><strong>1.53</strong></td><td><strong>$3.49B</strong></td><td>US historic low fertility</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Correlation is not causation &mdash; but the mechanism is real</h3>
+            <p>
+                We're not claiming dating apps single-handedly caused the fertility decline. Economics, housing costs, student debt, career priorities, and cultural shifts all play major roles. The fertility decline started before dating apps with the 2008 recession.
+            </p>
+            <p>
+                But dating apps <em>accelerated</em> the decline after 2015 by degrading how people form relationships. The mechanism is well-documented: apps create burnout and loneliness (78% of users report exhaustion), users form lower-quality relationships (studies show lower satisfaction for couples who met online), and lower relationship quality leads to delayed or avoided family formation.
+            </p>
+            <p>
+                When the #1 way people meet is <strong>optimized for engagement and subscriptions instead of genuine connection</strong>, it becomes a contributing factor to the broader crisis. You can't fix population decline without fixing how people meet.
+            </p>
+
             <h2>The loneliness epidemic</h2>
             <p>
                 In 2023, the US Surgeon General issued a formal advisory declaring loneliness a <strong>public health crisis</strong>. The data behind it is staggering:
