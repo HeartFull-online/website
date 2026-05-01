@@ -58,7 +58,7 @@ This matters beyond individual experiences because dating apps are now the **pri
 
 | Metric | Data | Source |
 |--------|------|--------|
-| Couples who met through dating apps | 50%+ of engaged couples (2025) | The Knot |
+| Couples who met through dating apps | 50%+ of engaged couples surveyed (2025) | The Knot Survey |
 | Marriages from dating apps | 27% of 2025 marriages | The Knot Real Weddings Study |
 | Most common way couples meet | Online dating (#1 channel in 2026) | SSRS / Pew |
 | Gen Z dating app fatigue | 79% report being drained | Multiple studies |
