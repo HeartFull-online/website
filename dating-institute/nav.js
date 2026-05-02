@@ -25,12 +25,12 @@
 
   // Category tabs
   var tabs = [
-    { label: 'Apps', href: prefix + 'app-directory.html' },
-    { label: 'Industry', href: prefix + 'industry-critique.html' },
-    { label: 'Pricing', href: prefix + 'competitor-pricing.html' },
+    { label: 'Research', href: prefix + 'statistics-2026.html' },
+    { label: 'Apps', href: prefix + 'app-landscapes.html' },
     { label: 'By Country', href: prefix + 'countries/' },
     { label: 'Advice', href: prefix + 'advice/' },
     { label: 'Community', href: prefix + 'community.html' },
+    { label: 'About', href: prefix + 'about.html' },
   ];
 
   // Build tabs HTML
