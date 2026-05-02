@@ -306,37 +306,107 @@
             <h2>Explore by country</h2>
             <p>Each country tells a different story &mdash; but the pattern is the same.</p>
 
-            <div class="grid sm:grid-cols-2 gap-4" style="margin:1.5rem 0;">
-                <a href="usa.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#FF5870;">1.63</div>
-                    <h3 style="color:var(--ink);">United States</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Historic low TFR. Match Group's $3.5B home market. The US correlation chart that started this research.</p>
-                </a>
-                <a href="south-korea.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#1E90FF;">0.75</div>
-                    <h3 style="color:var(--ink);">South Korea</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Lowest fertility rate on Earth. Each generation a third the size of the last. $196M dating app market.</p>
-                </a>
-                <a href="japan.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#BC002D;">1.15</div>
-                    <h3 style="color:var(--ink);">Japan</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Adult diapers outsell baby diapers. Only 0.08% of app downloads are dating apps. $271M market.</p>
-                </a>
-                <a href="uk.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#00847F;">1.55</div>
-                    <h3 style="color:var(--ink);">United Kingdom</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">16% online dating penetration. London as the dating app capital of Europe. ~$350M market.</p>
-                </a>
-                <a href="france.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#7B68EE;">1.61</div>
-                    <h3 style="color:var(--ink);">France</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Deaths outnumbered births for the first time since WWII in 2025. Happn was born here.</p>
-                </a>
-                <a href="germany.html" class="country-card" style="text-decoration:none;">
-                    <div class="tfr" style="color:#FFB400;">1.36</div>
-                    <h3 style="color:var(--ink);">Germany</h3>
-                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Privacy-first dating culture. Parship and ElitePartner dominate. Adult diapers outselling baby diapers.</p>
-                </a>
+            <div style="display:flex; flex-direction:column; gap:12px; margin:1.5rem 0;">
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">United States</h3><span class="tfr" style="color:#FF5870; font-size:1.25rem;">1.63</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="usa.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="usa-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="usa-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="usa-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="usa-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">China</h3><span class="tfr" style="color:#D64045; font-size:1.25rem;">1.01</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="china.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="china-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="china-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="china-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="china-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">South Korea</h3><span class="tfr" style="color:#1E90FF; font-size:1.25rem;">0.75</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="south-korea.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="south-korea-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="south-korea-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="south-korea-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="south-korea-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">Japan</h3><span class="tfr" style="color:#BC002D; font-size:1.25rem;">1.15</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="japan.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="japan-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="japan-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="japan-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="japan-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">India</h3><span class="tfr" style="color:#FF8C42; font-size:1.25rem;">1.96</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="india.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="india-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="india-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="india-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="india-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">United Kingdom</h3><span class="tfr" style="color:#00847F; font-size:1.25rem;">1.55</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="uk.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="uk-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="uk-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="uk-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="uk-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">France</h3><span class="tfr" style="color:#7B68EE; font-size:1.25rem;">1.61</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="france.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="france-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="france-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="france-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="france-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">Germany</h3><span class="tfr" style="color:#FFB400; font-size:1.25rem;">1.36</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="germany.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="germany-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="germany-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="germany-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="germany-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">Brazil</h3><span class="tfr" style="color:#2D8F5E; font-size:1.25rem;">1.61</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="brazil.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="brazil-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="brazil-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="brazil-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="brazil-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;"><h3 style="color:var(--ink); margin:0;">Australia</h3><span class="tfr" style="color:#E67E22; font-size:1.25rem;">1.48</span></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
+                        <a href="australia.html" style="font-size:0.7rem; padding:3px 8px; background:var(--coral-subtle); border-radius:5px; color:var(--coral); text-decoration:none;">Overview</a>
+                        <a href="australia-apps.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Apps</a>
+                        <a href="australia-culture.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Culture</a>
+                        <a href="australia-pricing.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Pricing</a>
+                        <a href="australia-safety.html" style="font-size:0.7rem; padding:3px 8px; background:var(--surface-sunken); border-radius:5px; color:var(--ink-secondary); text-decoration:none;">Safety</a>
+                    </div>
+                </div>
             </div>
 
             <h2>The universal pattern</h2>
