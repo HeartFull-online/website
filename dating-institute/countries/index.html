@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating &amp; Fertility by Country - Dating Institute</title>
+    <meta name="description" content="How dating apps correlate with declining birth rates across 7 countries. World Bank fertility data, country-specific dating app markets, and cultural context.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:750px; margin:0 auto; }
+        .article p { font-size:1.1rem; line-height:1.8; margin-bottom:1.5rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:2.5rem 0 1rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article .source-list { list-style:none; padding:0; }
+        .article .source-list li { margin-bottom:0.5rem; font-size:0.85rem; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .di-cat { font-size:0.75rem; font-weight:500; color:var(--ink-tertiary); padding:4px 10px; border-radius:6px; white-space:nowrap; background:var(--surface-sunken); text-decoration:none; transition:color 0.2s, background 0.2s; }
+        .di-cat:hover { color:var(--coral); background:var(--coral-subtle); text-decoration:none; }
+        .country-card { background:var(--surface-elevated); border-radius:16px; box-shadow:var(--shadow-warm); padding:1.5rem; transition:transform 0.3s; }
+        .country-card:hover { transform:translateY(-3px); }
+        .country-card h3 { font-size:1.25rem; margin-bottom:0.25rem; }
+        .country-card .tfr { font-size:2rem; font-weight:800; font-family:'Fraunces',serif; }
+    </style>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/dating-institute/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-lg font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">Dating Institute</span>
+                </a>
+                <a href="/" class="text-sm font-medium" style="color:var(--ink-tertiary); text-decoration:none;">heartfull.online</a>
+            </div>
+            <div style="display:flex; gap:4px; padding-bottom:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;" class="di-cats">
+                <a href="../app-directory.html" class="di-cat">App Directory</a>
+                <a href="../industry-critique.html" class="di-cat">Industry</a>
+                <a href="../competitor-pricing.html" class="di-cat">Pricing</a>
+                <a href="../population-crisis.html" class="di-cat">Population</a>
+                <a href="index.html" class="di-cat">By Country</a>
+                <a href="../psychology-of-swiping.html" class="di-cat">Psychology</a>
+                <a href="../hard-questions.html" class="di-cat">Self-Critique</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="text-sm font-semibold mb-4" style="color:var(--coral);">Country Research</div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight" style="color:var(--ink);">
+                The Global <span class="gradient-text">Fertility Collapse</span>
+            </h1>
+            <p>
+                The birth rate crisis isn't an American problem. It's happening in every developed nation simultaneously. And in every one of these countries, dating apps have become the dominant way people meet &mdash; while fertility rates fall to historic lows.
+            </p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:2rem 0;">
+
+            <!-- Multi-country fertility chart -->
+            <h2>Every developed nation is declining</h2>
+            <p>
+                Six countries. Same trajectory. The replacement rate is 2.1 children per woman. Not a single developed nation is above it anymore.
+            </p>
+
+            <div style="background:var(--surface-elevated); border-radius:16px; box-shadow:var(--shadow-warm); padding:1.25rem; margin:1.5rem 0; overflow-x:auto;">
+                <svg viewBox="0 0 720 420" style="width:100%; height:auto; font-family:'DM Sans',sans-serif;" role="img" aria-label="Fertility rates declining across 6 developed countries from 2007 to 2024">
+                    <!-- Grid -->
+                    <line x1="60" y1="40" x2="60" y2="340" stroke="#E4DDD8" stroke-width="1"/>
+                    <line x1="60" y1="340" x2="660" y2="340" stroke="#E4DDD8" stroke-width="1"/>
+                    <line x1="60" y1="115" x2="660" y2="115" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="60" y1="190" x2="660" y2="190" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="60" y1="265" x2="660" y2="265" stroke="#E4DDD8" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+                    <!-- Replacement rate line -->
+                    <line x1="60" y1="58" x2="660" y2="58" stroke="#D64045" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+                    <text x="665" y="62" font-size="8" fill="#D64045">2.1 replacement</text>
+
+                    <!-- Y-axis labels -->
+                    <text x="55" y="44" text-anchor="end" font-size="9" fill="#9C8F88">2.0</text>
+                    <text x="55" y="119" text-anchor="end" font-size="9" fill="#9C8F88">1.5</text>
+                    <text x="55" y="194" text-anchor="end" font-size="9" fill="#9C8F88">1.0</text>
+                    <text x="55" y="269" text-anchor="end" font-size="9" fill="#9C8F88">0.5</text>
+                    <text x="55" y="344" text-anchor="end" font-size="9" fill="#9C8F88">0.0</text>
+
+                    <!-- X-axis labels -->
+                    <text x="60" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'07</text>
+                    <text x="160" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'10</text>
+                    <text x="260" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'13</text>
+                    <text x="360" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'16</text>
+                    <text x="460" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'19</text>
+                    <text x="560" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'22</text>
+                    <text x="660" y="358" text-anchor="middle" font-size="9" fill="#9C8F88">'24</text>
+
+                    <!-- France: 1.98, 2.03, 1.99, 1.92, 1.86, 1.78, 1.61 -->
+                    <polyline points="60,46 160,38 260,43 360,52 460,61 560,74 660,100" fill="none" stroke="#7B68EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="104" font-size="8" fill="#7B68EE" font-weight="600">France 1.61</text>
+
+                    <!-- US: 2.12, 1.93, 1.86, 1.82, 1.71, 1.66, 1.63 -->
+                    <polyline points="60,28 160,51 260,61 360,67 460,83 560,91 660,95" fill="none" stroke="#FF5870" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="91" font-size="8" fill="#FF5870" font-weight="600">US 1.63</text>
+
+                    <!-- UK: 1.86, 1.92, 1.83, 1.79, 1.63, 1.56, 1.55 -->
+                    <polyline points="60,61 160,52 260,67 360,73 460,95 560,105 660,107" fill="none" stroke="#00847F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="112" font-size="8" fill="#00847F" font-weight="600">UK 1.55</text>
+
+                    <!-- Germany: 1.37, 1.39, 1.42, 1.60, 1.54, 1.46, 1.36 -->
+                    <polyline points="60,129 160,126 260,122 360,100 460,109 560,121 660,136" fill="none" stroke="#FFB400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="140" font-size="8" fill="#FFB400" font-weight="600">Germany 1.36</text>
+
+                    <!-- Japan: 1.34, 1.39, 1.43, 1.44, 1.36, 1.26, 1.15 -->
+                    <polyline points="60,133 160,126 260,122 360,120 460,133 560,148 660,165" fill="none" stroke="#BC002D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="169" font-size="8" fill="#BC002D" font-weight="600">Japan 1.15</text>
+
+                    <!-- South Korea: 1.26, 1.23, 1.19, 1.17, 0.92, 0.78, 0.75 -->
+                    <polyline points="60,148 160,153 260,159 360,161 460,198 560,219 660,223" fill="none" stroke="#1E90FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="665" y="227" font-size="8" fill="#1E90FF" font-weight="600">S.Korea 0.75</text>
+
+                    <!-- Legend -->
+                    <rect x="65" y="375" width="90" height="28" rx="6" fill="var(--surface-sunken)" opacity="0.8"/>
+                    <text x="70" y="385" font-size="7" fill="#9C8F88">Data: World Bank API</text>
+                    <text x="70" y="395" font-size="7" fill="#9C8F88">SP.DYN.TFRT.IN</text>
+                </svg>
+            </div>
+
+            <p>
+                Every line trends downward. South Korea's collapse is the most dramatic &mdash; from 1.26 to 0.75 in just 17 years. But even France, long Europe's fertility success story, has fallen from 2.03 to 1.61. <strong>No country has solved this.</strong>
+            </p>
+
+            <!-- Country summary table -->
+            <h2>The numbers, country by country</h2>
+            <div style="overflow-x:auto; border-radius:12px; box-shadow:var(--shadow-warm);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>TFR 2007</th>
+                            <th>TFR 2024</th>
+                            <th>Change</th>
+                            <th>Dating app market</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>South Korea</strong></td><td>1.26</td><td style="color:#D64045; font-weight:700;">0.75</td><td style="color:#D64045;">-40%</td><td>$196M</td></tr>
+                        <tr><td><strong>Japan</strong></td><td>1.34</td><td style="color:#D64045; font-weight:700;">1.15</td><td style="color:#D64045;">-14%</td><td>$271M</td></tr>
+                        <tr><td><strong>France</strong></td><td>1.98</td><td style="color:#D64045; font-weight:700;">1.61</td><td style="color:#D64045;">-19%</td><td>~$200M</td></tr>
+                        <tr><td><strong>United States</strong></td><td>2.12</td><td style="color:#D64045; font-weight:700;">1.63</td><td style="color:#D64045;">-23%</td><td>$3,500M+</td></tr>
+                        <tr><td><strong>United Kingdom</strong></td><td>1.86</td><td style="color:#D64045; font-weight:700;">1.55</td><td style="color:#D64045;">-17%</td><td>~$350M</td></tr>
+                        <tr><td><strong>Germany</strong></td><td>1.37</td><td style="color:#D64045; font-weight:700;">1.36</td><td style="color:#D64045;">-1%</td><td>~$350M</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.5rem;">
+                Fertility data: World Bank 2024. Dating app market sizes: Statista, Business of Apps, industry estimates.
+            </p>
+
+            <!-- Country cards -->
+            <h2>Explore by country</h2>
+            <p>Each country tells a different story &mdash; but the pattern is the same.</p>
+
+            <div class="grid sm:grid-cols-2 gap-4" style="margin:1.5rem 0;">
+                <a href="usa.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#FF5870;">1.63</div>
+                    <h3 style="color:var(--ink);">United States</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Historic low TFR. Match Group's $3.5B home market. The US correlation chart that started this research.</p>
+                </a>
+                <a href="south-korea.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#1E90FF;">0.75</div>
+                    <h3 style="color:var(--ink);">South Korea</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Lowest fertility rate on Earth. Each generation a third the size of the last. $196M dating app market.</p>
+                </a>
+                <a href="japan.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#BC002D;">1.15</div>
+                    <h3 style="color:var(--ink);">Japan</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Adult diapers outsell baby diapers. Only 0.08% of app downloads are dating apps. $271M market.</p>
+                </a>
+                <a href="uk.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#00847F;">1.55</div>
+                    <h3 style="color:var(--ink);">United Kingdom</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">16% online dating penetration. London as the dating app capital of Europe. ~$350M market.</p>
+                </a>
+                <a href="france.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#7B68EE;">1.61</div>
+                    <h3 style="color:var(--ink);">France</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Deaths outnumbered births for the first time since WWII in 2025. Happn was born here.</p>
+                </a>
+                <a href="germany.html" class="country-card" style="text-decoration:none;">
+                    <div class="tfr" style="color:#FFB400;">1.36</div>
+                    <h3 style="color:var(--ink);">Germany</h3>
+                    <p style="font-size:0.85rem; color:var(--ink-secondary); margin:0;">Privacy-first dating culture. Parship and ElitePartner dominate. Adult diapers outselling baby diapers.</p>
+                </a>
+            </div>
+
+            <h2>The universal pattern</h2>
+            <p>
+                Despite vast cultural differences &mdash; from South Korea's competitive pressure-cooker to France's famously romantic culture to Japan's herbivore men phenomenon &mdash; the pattern is the same everywhere:
+            </p>
+            <ol style="padding-left:1.5rem; margin:1rem 0 1.5rem; color:var(--ink-secondary); line-height:2;">
+                <li>Dating apps become the dominant way to meet</li>
+                <li>The apps monetize by paywalling connections</li>
+                <li>Users report fatigue, loneliness, and dissatisfaction</li>
+                <li>Relationship formation slows</li>
+                <li>Birth rates fall</li>
+            </ol>
+            <p>
+                The specific apps differ by country &mdash; Tinder dominates in the West, Tantan in China, Pairs in Japan &mdash; but the business model is identical everywhere: <strong>charge money for human connection</strong>.
+            </p>
+            <p>
+                This is why HeartFull's model &mdash; disconnecting payments from connections entirely &mdash; isn't just a product decision. It's a thesis about what's broken in how humanity forms relationships, validated by data from every developed nation on Earth.
+            </p>
+
+            <hr style="border:none; border-top:1px solid var(--border); margin:2.5rem 0;">
+            <h3 style="font-family:'DM Sans',sans-serif; font-size:1.1rem;">Sources</h3>
+            <ul class="source-list">
+                <li><a href="https://data.worldbank.org/indicator/SP.DYN.TFRT.IN" target="_blank">World Bank — Fertility Rate, Total (SP.DYN.TFRT.IN)</a></li>
+                <li><a href="https://www.healthdata.org/news-events/newsroom/news-releases/lancet-dramatic-declines-global-fertility-rates-set-transform" target="_blank">Lancet: Dramatic Declines in Global Fertility Rates</a></li>
+                <li><a href="https://electroiq.com/stats/online-dating-statistics/" target="_blank">Online Dating Statistics by Country</a></li>
+                <li><a href="https://sensortower.com/blog/top-dating-app-countries" target="_blank">Top Dating App Countries &mdash; Sensor Tower</a></li>
+                <li><a href="https://www.businessofapps.com/data/dating-app-market/" target="_blank">Dating App Market Data 2026 &mdash; Business of Apps</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-sm" style="color:var(--ink-tertiary); border-top:1px solid var(--border);">
+        <div class="max-w-4xl mx-auto px-4">&copy; 2026 HeartFull. Made with <span style="color:var(--coral);">&#9829;</span> for authentic connections.</div>
+    </footer>
+<script>
+(function(){
+  var path = location.pathname;
+  document.querySelectorAll('.di-cat').forEach(function(a){
+    var href = a.getAttribute('href');
+    if (path.endsWith(href)) {
+      a.style.background = 'var(--coral)';
+      a.style.color = 'white';
+      a.style.fontWeight = '600';
+      a.scrollIntoView({ inline: 'center', block: 'nearest' });
+    }
+  });
+})();
+</script>
+</body>
+</html>
