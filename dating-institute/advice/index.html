@@ -121,19 +121,7 @@
     <footer class="py-8 text-center text-sm" style="color:var(--ink-tertiary); border-top:1px solid var(--border);">
         <div class="max-w-4xl mx-auto px-4">&copy; 2026 HeartFull. Made with <span style="color:var(--coral);">&#9829;</span> for authentic connections.</div>
     </footer>
-<script>
-(function(){
-  var path = location.pathname;
-  document.querySelectorAll('.di-cat').forEach(function(a){
-    var href = a.getAttribute('href');
-    if (path.endsWith(href)) {
-      a.style.background = 'var(--coral)';
-      a.style.color = 'white';
-      a.style.fontWeight = '600';
-      a.scrollIntoView({ inline: 'center', block: 'nearest' });
-    }
-  });
-})();
-</script>
+
+<script src="../nav.js"></script>
 </body>
 </html>
