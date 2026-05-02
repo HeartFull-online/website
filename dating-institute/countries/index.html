@@ -166,6 +166,143 @@
                 Fertility data: World Bank 2024. Dating app market sizes: Statista, Business of Apps, industry estimates.
             </p>
 
+            <!-- Per-country sparklines -->
+            <h2>Fertility trajectory by country</h2>
+            <p>Each sparkline shows the TFR trend from 2007 to 2024. The red dashed line is the 2.1 replacement rate.</p>
+
+            <div class="grid sm:grid-cols-2 gap-4" style="margin:1.5rem 0;">
+                <!-- US sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">United States</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#FF5870; font-family:'Fraunces',serif;">1.63</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,5 29,12 57,16 86,18 114,22 143,24 171,26 200,27" fill="none" stroke="#FF5870" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="5" r="2" fill="#FF5870"/><circle cx="200" cy="27" r="2" fill="#FF5870"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+                <!-- South Korea sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">South Korea</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#1E90FF; font-family:'Fraunces',serif;">0.75</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,18 29,19 57,21 86,22 114,30 143,36 171,38 200,39" fill="none" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="18" r="2" fill="#1E90FF"/><circle cx="200" cy="39" r="2" fill="#1E90FF"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+                <!-- Japan sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">Japan</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#BC002D; font-family:'Fraunces',serif;">1.15</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,22 29,20 57,19 86,18 114,22 143,25 171,28 200,31" fill="none" stroke="#BC002D" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="22" r="2" fill="#BC002D"/><circle cx="200" cy="31" r="2" fill="#BC002D"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+                <!-- UK sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">United Kingdom</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#00847F; font-family:'Fraunces',serif;">1.55</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,12 29,10 57,13 86,14 114,19 143,21 171,22 200,22" fill="none" stroke="#00847F" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="12" r="2" fill="#00847F"/><circle cx="200" cy="22" r="2" fill="#00847F"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+                <!-- France sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">France</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#7B68EE; font-family:'Fraunces',serif;">1.61</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,7 29,5 57,6 86,9 114,11 143,14 171,16 200,21" fill="none" stroke="#7B68EE" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="7" r="2" fill="#7B68EE"/><circle cx="200" cy="21" r="2" fill="#7B68EE"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+                <!-- Germany sparkline -->
+                <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+                        <strong style="font-size:0.9rem;">Germany</strong>
+                        <span style="font-size:1.5rem; font-weight:800; color:#FFB400; font-family:'Fraunces',serif;">1.36</span>
+                    </div>
+                    <svg viewBox="0 0 200 50" style="width:100%; height:40px;">
+                        <line x1="0" y1="5" x2="200" y2="5" stroke="#D64045" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+                        <polyline points="0,22 29,21 57,20 86,16 114,18 143,20 171,22 200,23" fill="none" stroke="#FFB400" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="0" cy="22" r="2" fill="#FFB400"/><circle cx="200" cy="23" r="2" fill="#FFB400"/>
+                        <text x="0" y="48" font-size="7" fill="#9C8F88">'07</text><text x="190" y="48" font-size="7" fill="#9C8F88">'24</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Dating app market size comparison -->
+            <h2>Dating app market size by country</h2>
+            <p>How much each country spends on dating apps annually. The US dwarfs every other market combined.</p>
+
+            <div style="background:var(--surface-elevated); border-radius:12px; box-shadow:var(--shadow-warm); padding:1.25rem; margin:1.5rem 0;">
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">US</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#FF5870; border-radius:4px; height:100%; width:100%;"></div>
+                            <span style="position:absolute; right:6px; top:2px; font-size:0.7rem; color:white; font-weight:600;">$3,500M</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">Japan</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#BC002D; border-radius:4px; height:100%; width:15.4%;"></div>
+                            <span style="position:absolute; left:calc(15.4% + 6px); top:2px; font-size:0.7rem; color:var(--ink-secondary); font-weight:600;">$530M</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">UK</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#00847F; border-radius:4px; height:100%; width:13.6%;"></div>
+                            <span style="position:absolute; left:calc(13.6% + 6px); top:2px; font-size:0.7rem; color:var(--ink-secondary); font-weight:600;">$476M</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">Germany</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#FFB400; border-radius:4px; height:100%; width:10%;"></div>
+                            <span style="position:absolute; left:calc(10% + 6px); top:2px; font-size:0.7rem; color:var(--ink-secondary); font-weight:600;">$350M</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">France</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#7B68EE; border-radius:4px; height:100%; width:5.7%;"></div>
+                            <span style="position:absolute; left:calc(5.7% + 6px); top:2px; font-size:0.7rem; color:var(--ink-secondary); font-weight:600;">$200M</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:0.8rem; width:60px; text-align:right; color:var(--ink-secondary); flex-shrink:0;">S. Korea</span>
+                        <div style="flex:1; background:var(--surface-sunken); border-radius:4px; height:20px; position:relative;">
+                            <div style="background:#1E90FF; border-radius:4px; height:100%; width:5.6%;"></div>
+                            <span style="position:absolute; left:calc(5.6% + 6px); top:2px; font-size:0.7rem; color:var(--ink-secondary); font-weight:600;">$196M</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size:0.75rem; color:var(--ink-tertiary); margin-top:10px; margin-bottom:0;">The US market is 7x larger than the next biggest. Match Group alone ($3.5B) exceeds all other countries combined.</p>
+            </div>
+
             <!-- Country cards -->
             <h2>Explore by country</h2>
             <p>Each country tells a different story &mdash; but the pattern is the same.</p>
