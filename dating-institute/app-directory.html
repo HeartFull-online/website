@@ -32,17 +32,29 @@
         .pros-cons li { margin-bottom:0.25rem; color:var(--ink-secondary); }
         .pros-cons .label { font-weight:700; margin-bottom:0.25rem; }
         @media (max-width:600px) { .pros-cons { grid-template-columns:1fr; } }
+        .di-cat { font-size:0.75rem; font-weight:500; color:var(--ink-tertiary); padding:4px 10px; border-radius:6px; white-space:nowrap; background:var(--surface-sunken); text-decoration:none; transition:color 0.2s, background 0.2s; }
+        .di-cat:hover { color:var(--coral); background:var(--coral-subtle); text-decoration:none; }
     </style>
 </head>
 <body>
-    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+    <nav style="background: rgba(250,247,245,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50;">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
-                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
-                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
-                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                <a href="/dating-institute/" class="flex items-center space-x-2" style="text-decoration: none;">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-lg font-bold" style="font-family: 'Fraunces', serif; color: var(--coral);">Dating Institute</span>
                 </a>
-                <a href="/dating-institute/" class="text-sm font-medium" style="color:var(--ink-secondary);">&larr; Dating Institute</a>
+                <a href="/" class="text-sm font-medium" style="color: var(--ink-tertiary); text-decoration:none;">heartfull.online</a>
+            </div>
+            <div style="display:flex; gap:4px; padding-bottom:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;" class="di-cats">
+                <a href="app-directory.html" class="di-cat">App Directory</a>
+                <a href="industry-critique.html" class="di-cat">Industry</a>
+                <a href="competitor-pricing.html" class="di-cat">Pricing</a>
+                <a href="competitor-reputation.html" class="di-cat">Reputation</a>
+                <a href="population-crisis.html" class="di-cat">Population</a>
+                <a href="psychology-of-swiping.html" class="di-cat">Psychology</a>
+                <a href="privacy-crisis.html" class="di-cat">Privacy</a>
+                <a href="hard-questions.html" class="di-cat">Self-Critique</a>
             </div>
         </div>
     </nav>
