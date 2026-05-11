@@ -249,17 +249,82 @@
         </div>
     </section>
 
-    <!-- Diminishing Returns -->
+    <!-- Earnings by Referral -->
     <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="p-7 sm:p-10" style="background:var(--surface-elevated); border-radius:16px; box-shadow:var(--shadow-warm);">
-                <div class="w-11 h-11 rounded-full flex items-center justify-center mb-5" style="background:var(--coral-subtle);">
-                    <span class="text-lg" style="color:var(--coral);">%</span>
-                </div>
-                <h3 class="text-xl sm:text-2xl font-bold mb-4" style="color:var(--ink);">Diminishing returns</h3>
-                <p style="color:var(--ink-secondary); line-height:1.8;">
-                    Your first referrals pay the most. Each successive signup reduces your commission rate by 1%. Referral #1 pays 100%. Referral #50 pays 51%. The floor is 1% &mdash; it never reaches zero. This rewards early effort and keeps the program sustainable.
-                </p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4" style="color:var(--ink);">
+                Earnings by <span class="gradient-text">referral</span>
+            </h2>
+            <p class="text-center mb-10" style="color:var(--ink-secondary);">
+                Your first referrals pay the most. Each successive one reduces by 1%. The floor is 1% &mdash; it never reaches zero.
+            </p>
+            <div style="border-radius:16px; box-shadow:var(--shadow-warm); overflow:hidden;">
+                <table class="commission-table">
+                    <thead>
+                        <tr>
+                            <th>Referral #</th>
+                            <th>Rate</th>
+                            <th>Signup</th>
+                            <th>3 Convos</th>
+                            <th>Date</th>
+                            <th>Max total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">1st</td>
+                            <td>100%</td>
+                            <td class="td-amount">$2.00</td>
+                            <td class="td-amount">$3.00</td>
+                            <td class="td-amount">$3.00</td>
+                            <td class="td-amount">$8.00</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">5th</td>
+                            <td>96%</td>
+                            <td class="td-amount">$1.92</td>
+                            <td class="td-amount">$2.88</td>
+                            <td class="td-amount">$2.88</td>
+                            <td class="td-amount">$7.68</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">10th</td>
+                            <td>91%</td>
+                            <td class="td-amount">$1.82</td>
+                            <td class="td-amount">$2.73</td>
+                            <td class="td-amount">$2.73</td>
+                            <td class="td-amount">$7.28</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">25th</td>
+                            <td>76%</td>
+                            <td class="td-amount">$1.52</td>
+                            <td class="td-amount">$2.28</td>
+                            <td class="td-amount">$2.28</td>
+                            <td class="td-amount">$6.08</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">50th</td>
+                            <td>51%</td>
+                            <td class="td-amount">$1.02</td>
+                            <td class="td-amount">$1.53</td>
+                            <td class="td-amount">$1.53</td>
+                            <td class="td-amount">$4.08</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:600; color:var(--ink);">100th</td>
+                            <td>1%</td>
+                            <td class="td-amount">$0.02</td>
+                            <td class="td-amount">$0.03</td>
+                            <td class="td-amount">$0.03</td>
+                            <td class="td-amount">$0.08</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="font-weight:700; color:var(--ink);">Example: 50 fully active referrals</td>
+                            <td class="td-amount" style="font-size:1.1rem;">~$303</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
