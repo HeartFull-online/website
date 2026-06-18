@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartFull vs OkCupid - Behavioural Signals vs Self-Reported Questionnaires</title>
+    <meta name="description" content="A detailed comparison of HeartFull and OkCupid examining questionnaire-based matching versus behavioural signals, Match Group ownership, and the progressive paywalling of formerly free features.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3,h4 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:800px; margin:0 auto; }
+        .article p, .article li { font-size:1.05rem; line-height:1.8; margin-bottom:1.25rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:3rem 0 1rem; color:var(--ink); }
+        .article h3 { font-size:1.3rem; margin:2rem 0 0.75rem; color:var(--ink); }
+        .article h4 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article blockquote { border-left:3px solid var(--coral); padding:0.75rem 1.25rem; margin:1.5rem 0; background:var(--coral-subtle); border-radius:0 8px 8px 0; }
+        .article blockquote p { margin-bottom:0; font-style:italic; }
+        .article ul, .article ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article tr:nth-child(even) { background:var(--surface-sunken); }
+        .tr-hf { background:var(--coral-subtle) !important; }
+        .td-coral { color:var(--coral); font-weight:700; }
+        .td-green { color:#2D8F5E; font-weight:700; }
+        .abstract { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:var(--shadow-warm); }
+        .abstract h3 { margin-top:0; }
+        .figure { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin:2rem 0; text-align:center; }
+        .figure-caption { font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.75rem; font-style:italic; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .toc { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; }
+        .toc ol { counter-reset:toc; list-style:none; padding-left:0; }
+        .toc li { counter-increment:toc; margin-bottom:0.5rem; }
+        .toc li::before { content:counter(toc) "."; font-weight:700; color:var(--coral); margin-right:0.5rem; }
+        .toc a { color:var(--ink-secondary); font-weight:500; }
+        .toc a:hover { color:var(--coral); }
+        sup { font-size:0.7em; color:var(--coral); }
+        .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
+        .footnotes p { font-size:0.85rem; line-height:1.6; }
+        .breadcrumb { font-size:0.875rem; color:var(--ink-tertiary); margin-bottom:1.5rem; }
+        .breadcrumb a { color:var(--ink-tertiary); }
+        .breadcrumb a:hover { color:var(--coral); }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/dating-institute/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Dating Institute</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="breadcrumb">
+                <a href="/">HeartFull</a> &rsaquo; <a href="/why-heartfull.html">Why HeartFull</a> &rsaquo; vs OkCupid
+            </div>
+            <div class="text-sm font-semibold mb-4" style="color:var(--coral);">Detailed Comparison</div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
+                HeartFull vs OkCupid:<br>
+                <span class="gradient-text">Behavioural Signals vs Self-Reported Questionnaires</span>
+            </h1>
+            <p style="color:var(--ink-tertiary); margin-bottom:0.5rem;">June 2026 &middot; HeartFull Research</p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1.5rem 0;">
+
+            <!-- Abstract -->
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>OkCupid pioneered data-driven dating with its questionnaire-based compatibility system, accumulating over 400 million question answers by 2014<sup>1</sup>. Its acquisition by Match Group in 2011, however, initiated a decade-long transformation from an open, free-to-use platform into a progressively paywalled product that now restricts core features behind subscriptions costing $14.99&ndash;$44.99 per month. This paper examines the structural differences between OkCupid's self-reported questionnaire model and HeartFull's behavioural signal architecture, arguing that observed actions&mdash;photo uploads, reply rates, date attendance&mdash;are more reliable indicators of intent than stated preferences, and that the transition of OkCupid under Match Group ownership illustrates the inherent fragility of ad-hoc free models compared to architecturally free systems.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <strong style="font-family:'Fraunces',serif;">Contents</strong>
+                <ol>
+                    <li><a href="#overview">Overview: OkCupid's Place in the Dating Landscape</a></li>
+                    <li><a href="#questionnaire-vs-behavioural">Questionnaire Matching vs Behavioural Signals</a></li>
+                    <li><a href="#match-group">The Match Group Problem</a></li>
+                    <li><a href="#discovery">Profile-First vs Photo-First Discovery</a></li>
+                    <li><a href="#comparison-table">Feature Comparison</a></li>
+                    <li><a href="#summary">Summary</a></li>
+                </ol>
+            </div>
+
+            <!-- 1. Overview -->
+            <h2 id="overview">1. Overview: OkCupid's Place in the Dating Landscape</h2>
+            <p>OkCupid launched in 2004 as a free alternative to subscription-based dating sites like Match.com and eHarmony. Its founding premise was radical for its time: use mathematics and user-generated questions to calculate compatibility scores between any two users. The system invited users to answer hundreds of multiple-choice questions on topics ranging from politics and religion to lifestyle preferences and hypothetical scenarios, then weighted those answers against each user's stated importance for each question to produce a percentage-based compatibility score<sup>2</sup>.</p>
+
+            <p>For several years, OkCupid was genuinely different. Messaging was free and unrestricted. Profiles were detailed, essay-driven affairs that rewarded thoughtful self-presentation. The OkTrends blog, authored by co-founder Christian Rudder, published candid statistical analyses of user behaviour that became cultural touchpoints&mdash;studies on racial bias in messaging, the relationship between profile photo angles and response rates, and the gap between stated and revealed preferences<sup>3</sup>.</p>
+
+            <p>In 2011, Match Group (then IAC) acquired OkCupid for approximately $50 million<sup>4</sup>. In the years that followed, the platform underwent a systematic transformation. Features that had been free were progressively moved behind paywalls. The open messaging system was replaced with a mutual-like requirement. The distinctive essay-based profiles were shortened. By 2026, OkCupid operates as a conventional freemium dating app with Premium tiers ranging from $14.99 to $44.99 per month, sharing both infrastructure and business logic with its corporate siblings Tinder, Hinge, and Match.com&mdash;all owned by Match Group.</p>
+
+            <!-- 2. Questionnaire vs Behavioural -->
+            <h2 id="questionnaire-vs-behavioural">2. Questionnaire Matching vs Behavioural Signals</h2>
+
+            <h3>2.1 The Self-Report Problem</h3>
+            <p>OkCupid's matching algorithm relies entirely on self-reported data. Users answer questions about who they are, what they want, and what they value. The algorithm then compares these stated preferences to produce compatibility scores. This approach has a well-documented limitation in social psychology: <strong>people are unreliable reporters of their own behaviour and preferences</strong>.</p>
+
+            <p>Research on stated versus revealed preferences consistently demonstrates that what people say they want in a partner diverges significantly from what they actually pursue. A 2008 study by Eli Finkel and Paul Eastwick at Northwestern University found that speed-daters' pre-stated preferences for traits like physical attractiveness, earning prospects, and personality had essentially zero correlation with who they actually chose to date after the event<sup>5</sup>. People who said they valued kindness over looks chose attractive partners at the same rate as everyone else. The questionnaire measured aspirational identity, not actual behaviour.</p>
+
+            <p>OkCupid's own internal research confirmed this pattern. Christian Rudder's analysis of messaging data revealed that users who claimed not to care about physical appearance messaged attractive users at the same rate as those who admitted its importance<sup>3</sup>. The questionnaire captured what users wanted to believe about themselves, not what they actually did.</p>
+
+            <h3>2.2 HeartFull's Behavioural Approach</h3>
+            <p>HeartFull does not ask users to describe themselves or their ideal partner. Instead, it observes what users actually do and assigns economic value to those actions:</p>
+
+            <ul>
+                <li><strong>Do they upload photos?</strong> Photo uploads earn +20 Hearts each. A user who consistently shares moments from their life is investing in the community. A user who creates an empty profile and browses passively is not.</li>
+                <li><strong>Do they reply to messages?</strong> When a user replies, the escrowed Heart from the sender transfers to them. Users who engage in genuine conversation accumulate Hearts naturally. Users who ignore everyone do not earn through this channel.</li>
+                <li><strong>Do they go on dates?</strong> The QR code date check-in awards +100 Hearts to both participants. This is the single largest Heart bonus in the system, by design: the platform's explicit goal is to facilitate real-world meetings, and it rewards the behaviour accordingly.</li>
+                <li><strong>Do they send thoughtful messages?</strong> The dynamic pricing formula charges more to message popular users. Mass-messaging identical openers to dozens of people is economically unsustainable. Selective, considered messaging is rewarded by the system's economics.</li>
+            </ul>
+
+            <blockquote>
+                <p>OkCupid asks who you say you are. HeartFull measures who you prove yourself to be. The difference is the gap between aspiration and action.</p>
+            </blockquote>
+
+            <h3>2.3 The Compatibility Score Illusion</h3>
+            <p>OkCupid's percentage-based compatibility scores create an illusion of mathematical precision. A "93% match" feels scientific, objective, and trustworthy. But the inputs to that calculation are subjective self-reports, and the weighting system (where users rate questions as "irrelevant," "a little important," "somewhat important," "very important," or "mandatory") introduces further subjectivity. A number derived from two layers of subjective input is not an objective measure&mdash;it is a <strong>quantified opinion</strong> wearing the appearance of rigour.</p>
+
+            <p>HeartFull has no compatibility scores because it makes no claims about algorithmic matchmaking. Discovery is driven by visual browsing&mdash;users see photos from people in their area, engage with content that interests them, and start conversations based on genuine curiosity rather than a system's numerical endorsement. The platform's position is that humans are better judges of their own attraction than any algorithm, provided they are given authentic information to work with. Photo galleries&mdash;showing how someone actually lives, what they actually do, where they actually go&mdash;are more authentic than curated questionnaire responses.</p>
+
+            <!-- 3. Match Group -->
+            <h2 id="match-group">3. The Match Group Problem</h2>
+
+            <h3>3.1 Corporate Consolidation</h3>
+            <p>Match Group, a subsidiary of IAC until its 2020 spin-off, owns Tinder, Hinge, Match.com, OkCupid, PlentyOfFish, Meetic, Pairs, and over 40 other dating brands globally. In its 2025 annual report, Match Group disclosed $3.2 billion in total revenue, the overwhelming majority derived from subscription fees and in-app purchases<sup>6</sup>. The company's fiduciary obligation is to its shareholders, and its primary metric is <strong>average revenue per paying user (ARPPU)</strong>.</p>
+
+            <p>This creates an irreconcilable tension. A dating app that successfully matches its users loses subscribers. Match Group's financial incentive is to maintain a population of hopeful, paying, unmatched users across its portfolio of apps. When users churn from one Match Group product, they often migrate to another Match Group product&mdash;the company captures value from the frustration it creates.</p>
+
+            <h3>3.2 OkCupid's Progressive Paywalling</h3>
+            <p>OkCupid's transformation under Match Group ownership is a case study in the progressive paywalling of formerly free features:</p>
+
+            <table>
+                <tr><th>Feature</th><th>Pre-Acquisition (2004&ndash;2011)</th><th>Post-Acquisition (2012&ndash;2026)</th></tr>
+                <tr><td>Messaging</td><td>Free and unlimited to anyone</td><td>Requires mutual like first; limited without Premium</td></tr>
+                <tr><td>Seeing who liked you</td><td>Free (visible in sidebar)</td><td>Paywalled behind Premium ($14.99&ndash;$44.99/mo)</td></tr>
+                <tr><td>Profile essays</td><td>9 detailed essay sections</td><td>Shortened; prompts replacing essays</td></tr>
+                <tr><td>Search filters</td><td>Extensive free filters</td><td>Advanced filters paywalled</td></tr>
+                <tr><td>Visitor tracking</td><td>Free profile visitor list</td><td>Feature removed entirely</td></tr>
+                <tr><td>Unlimited likes</td><td>Not applicable (no swipe)</td><td>Limited daily likes; unlimited requires Premium</td></tr>
+                <tr><td>Compatibility questions</td><td>Core free feature, open-ended</td><td>Still free but de-emphasised in favour of swiping</td></tr>
+            </table>
+
+            <p>The pattern is systematic: identify which free features drive user engagement, then move them behind a paywall once the user base is dependent on them. This is not unique to OkCupid&mdash;it is the standard Match Group playbook applied across all its properties&mdash;but OkCupid's case is particularly striking because it began as a platform philosophically opposed to paid dating services.</p>
+
+            <h3>3.3 HeartFull's Structural Independence</h3>
+            <p>HeartFull is not owned by a portfolio company. It has no shareholders demanding ARPPU growth. More importantly, its architecture makes paywalling structurally impossible: the Hearts currency cannot be purchased with real money. There is no premium tier that could be introduced without violating the core economic mechanism. This is not a policy decision ("we choose not to charge")&mdash;it is an <strong>architectural constraint</strong> ("the system cannot charge because the currency is non-purchasable"). The distinction matters because policies can change with ownership; architectures persist.</p>
+
+            <!-- 4. Discovery -->
+            <h2 id="discovery">4. Profile-First vs Photo-First Discovery</h2>
+
+            <h3>4.1 OkCupid's Written Profile Model</h3>
+            <p>OkCupid historically emphasised written self-description. Its original profile format included nine essay sections: "My self-summary," "What I'm doing with my life," "I'm really good at," "The first things people notice about me," "Favourite books, movies, shows, music, and food," "The six things I could never do without," "I spend a lot of time thinking about," "On a typical Friday night I am," and "You should message me if." This format rewarded articulate, reflective users and created rich, text-heavy profiles.</p>
+
+            <p>Over time, OkCupid has shortened and simplified these sections, replacing several with Hinge-style prompts and moving toward a more photo-centric card format. The result is a hybrid that does neither thing well: the profiles are too short to be genuinely informative essays, but too text-heavy to be the kind of visual storytelling that photo-first platforms enable.</p>
+
+            <h3>4.2 HeartFull's Visual Storytelling</h3>
+            <p>HeartFull eliminates written profiles entirely. A user's identity is expressed through their photo gallery&mdash;a continuously updated stream of images that show their daily life, interests, locations, and social world. This is not a static set of carefully curated profile photos; it is a living portfolio that changes as the user posts new content.</p>
+
+            <p>The design philosophy is that a photo of someone hiking with their dog on a Saturday morning communicates more authentic information than a written claim of "I love hiking and dogs." Photos are harder to fabricate than text. They convey context, mood, lifestyle, and aesthetic sensibility in ways that written descriptions cannot. And because each photo upload earns +20 Hearts, the system economically rewards users who share their lives rather than those who craft carefully worded self-descriptions.</p>
+
+            <h3>4.3 The Stated vs Revealed Preference Gap, Revisited</h3>
+            <p>OkCupid's profile model asks users to describe themselves in the most flattering terms they can compose. HeartFull's photo model asks users to show themselves as they actually are. The same stated-versus-revealed preference gap that undermines OkCupid's questionnaire system also undermines its written profiles: people describe an idealised version of themselves, not the version that exists on a Tuesday evening. A photo gallery, updated regularly, is closer to ground truth than any self-authored biography.</p>
+
+            <!-- 5. Feature Comparison -->
+            <h2 id="comparison-table">5. Feature Comparison</h2>
+
+            <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>OkCupid</th>
+                    <th style="background:var(--coral);">HeartFull</th>
+                </tr>
+                <tr>
+                    <td><strong>Matching method</strong></td>
+                    <td>Questionnaire-based compatibility %</td>
+                    <td class="td-green"><strong>Behavioural signals (actions, not words)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Corporate ownership</strong></td>
+                    <td class="td-coral">Match Group (Tinder, Hinge, Match.com)</td>
+                    <td class="td-green"><strong>Independent</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Premium cost</strong></td>
+                    <td class="td-coral">$14.99&ndash;$44.99/mo</td>
+                    <td class="td-green"><strong>$0 (no premium tier)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>See who liked you</strong></td>
+                    <td class="td-coral">Paywalled (Premium only)</td>
+                    <td class="td-green"><strong>Free (always visible)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Messaging</strong></td>
+                    <td class="td-coral">Requires mutual like; limited without Premium</td>
+                    <td class="td-green"><strong>Direct messaging (costs Hearts, not money)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery interface</strong></td>
+                    <td>Swipe-style card deck</td>
+                    <td class="td-green"><strong>Photo gallery browsing</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Profile format</strong></td>
+                    <td>Written prompts + photos</td>
+                    <td class="td-green"><strong>Photo gallery (visual storytelling)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Virtual currency</strong></td>
+                    <td>None</td>
+                    <td class="td-green"><strong>Hearts (earned, never purchased)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-spam mechanism</strong></td>
+                    <td>Report-based moderation</td>
+                    <td class="td-green"><strong>Economic throttling (Hearts cost)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Date incentive</strong></td>
+                    <td>None</td>
+                    <td class="td-green"><strong>QR check-in (+100 Hearts to both)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation UI</strong></td>
+                    <td>Standard text chat</td>
+                    <td class="td-green"><strong>Messages overlaid on photos</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Navigation model</strong></td>
+                    <td>Tab bar + scrollable inbox</td>
+                    <td class="td-green"><strong>Faces bar + horizontal swipe</strong></td>
+                </tr>
+            </table>
+            </div>
+
+            <!-- 6. Summary -->
+            <h2 id="summary">6. Summary</h2>
+            <p>OkCupid deserves credit for introducing data-driven matching to mainstream online dating. Its questionnaire system was a genuine innovation in 2004, and its willingness to publish internal research through OkTrends set a standard for transparency that no other dating company has matched. These contributions are real and should be acknowledged.</p>
+
+            <p>But OkCupid in 2026 is not the platform it was in 2010. Under Match Group ownership, it has been systematically rebuilt around the same subscription-and-paywall model that defines every other property in the Match Group portfolio. The questionnaire system remains, but it operates within an economic framework designed to extract recurring revenue from users who cannot see their likes, cannot send unlimited messages, and cannot access advanced filters without paying $14.99 to $44.99 per month.</p>
+
+            <p>HeartFull addresses the same fundamental problem&mdash;how do you help people find compatible partners?&mdash;but from opposite premises. Where OkCupid asks users to report who they are, HeartFull observes what they do. Where OkCupid generates compatibility scores from subjective inputs, HeartFull lets users discover each other through authentic visual content. Where OkCupid's free features were progressively paywalled under corporate pressure, HeartFull's free architecture is a structural property of the system, not a policy that can be reversed by a new owner.</p>
+
+            <p>The core question is whether you trust what people say about themselves or what they demonstrate through their actions. OkCupid built its system on the former. HeartFull built its system on the latter. The psychological literature consistently favours revealed preferences over stated ones<sup>7</sup>. HeartFull's architecture is designed around that evidence.</p>
+
+            <p style="margin-top:2rem;"><a href="/why-heartfull.html">&larr; Back to Why HeartFull</a></p>
+
+            <!-- Footnotes -->
+            <div class="footnotes">
+                <h3>References</h3>
+                <p><sup>1</sup> Rudder, C., <em>Dataclysm: Who We Are (When We Think No One's Looking)</em>, Crown Publishers, 2014.</p>
+                <p><sup>2</sup> OkCupid, "How OkCupid's Matching Algorithm Works," OkCupid Blog (archived), 2009.</p>
+                <p><sup>3</sup> Rudder, C., "The Big Lies People Tell In Online Dating," OkTrends Blog, July 2010.</p>
+                <p><sup>4</sup> Tsotsis, A., "IAC Acquires OkCupid For $50 Million," <em>TechCrunch</em>, February 2011.</p>
+                <p><sup>5</sup> Eastwick, P. W. &amp; Finkel, E. J., "Sex Differences in Mate Preferences Revisited: Do People Know What They Initially Desire in a Romantic Partner?," <em>Journal of Personality and Social Psychology</em>, Vol. 94, No. 2, 2008, pp. 245&ndash;264.</p>
+                <p><sup>6</sup> Match Group, Inc., "Annual Report (Form 10-K)," U.S. Securities and Exchange Commission, 2025.</p>
+                <p><sup>7</sup> Samuelson, P. A., "A Note on the Pure Theory of Consumer's Behaviour," <em>Economica</em>, Vol. 5, No. 17, 1938, pp. 61&ndash;71.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:var(--ink); color:rgba(255,255,255,0.7); padding:2rem 1rem; text-align:center; font-size:0.875rem;">
+        <p>&copy; 2026 HeartFull. All rights reserved.</p>
+    </footer>
+</body>
+</html>

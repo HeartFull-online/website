@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartFull vs Badoo - Credits, Spotlight, and the Visibility Auction</title>
+    <meta name="description" content="A detailed comparison of HeartFull and Badoo: how Badoo's purchasable Credits and Spotlight system create a pay-for-visibility marketplace, while HeartFull's earned Hearts give equal exposure to every user.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3,h4 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:800px; margin:0 auto; }
+        .article p, .article li { font-size:1.05rem; line-height:1.8; margin-bottom:1.25rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:3rem 0 1rem; color:var(--ink); }
+        .article h3 { font-size:1.3rem; margin:2rem 0 0.75rem; color:var(--ink); }
+        .article h4 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article blockquote { border-left:3px solid var(--coral); padding:0.75rem 1.25rem; margin:1.5rem 0; background:var(--coral-subtle); border-radius:0 8px 8px 0; }
+        .article blockquote p { margin-bottom:0; font-style:italic; }
+        .article ul, .article ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article tr:nth-child(even) { background:var(--surface-sunken); }
+        .tr-hf { background:var(--coral-subtle) !important; }
+        .td-coral { color:var(--coral); font-weight:700; }
+        .td-green { color:#2D8F5E; font-weight:700; }
+        .abstract { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:var(--shadow-warm); }
+        .abstract h3 { margin-top:0; }
+        .figure { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin:2rem 0; text-align:center; }
+        .figure-caption { font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.75rem; font-style:italic; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .toc { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; }
+        .toc ol { counter-reset:toc; list-style:none; padding-left:0; }
+        .toc li { counter-increment:toc; margin-bottom:0.5rem; }
+        .toc li::before { content:counter(toc) "."; font-weight:700; color:var(--coral); margin-right:0.5rem; }
+        .toc a { color:var(--ink-secondary); font-weight:500; }
+        .toc a:hover { color:var(--coral); }
+        sup { font-size:0.7em; color:var(--coral); }
+        .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
+        .footnotes p { font-size:0.85rem; line-height:1.6; }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/dating-institute/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Dating Institute</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="text-sm font-semibold mb-4" style="color:var(--ink-tertiary);">
+                <a href="/" style="color:var(--ink-tertiary);">HeartFull</a> &rsaquo;
+                <a href="/why-heartfull.html" style="color:var(--ink-tertiary);">Why HeartFull</a> &rsaquo;
+                <span style="color:var(--coral);">vs Badoo</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
+                HeartFull vs Badoo:<br>
+                <span class="gradient-text">Credits, Spotlight, and the Visibility Auction</span>
+            </h1>
+            <p style="color:var(--ink-tertiary); margin-bottom:0.5rem;">June 2026 &middot; HeartFull Research</p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1.5rem 0;">
+
+            <!-- Abstract -->
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>Badoo, owned by Bumble Inc. and claiming over 400 million registered users worldwide, operates one of the dating industry's most aggressive dual-monetisation models: a tiered subscription (Badoo Premium) layered on top of a purchasable virtual currency (Credits). Credits fuel Spotlight&mdash;a pay-for-visibility auction that places paying users at the front of others' feeds&mdash;and Super Powers, a bundle of advantages available only to those willing to spend. This paper examines how Badoo's economic architecture creates a system where visibility is proportional to expenditure, and contrasts it with HeartFull's merit-based model where every user receives equal exposure and the only currency&mdash;Hearts&mdash;cannot be purchased.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <strong style="font-family:'Fraunces',serif;">Contents</strong>
+                <ol>
+                    <li><a href="#overview">Overview: Badoo's Position in the Market</a></li>
+                    <li><a href="#credits-vs-hearts">Credits vs Hearts: Purchased Advantage vs Earned Merit</a></li>
+                    <li><a href="#visibility-auction">The Visibility Auction: Spotlight and Its Consequences</a></li>
+                    <li><a href="#encounters-vs-gallery">Encounters vs Photo Gallery</a></li>
+                    <li><a href="#feature-comparison">Feature Comparison</a></li>
+                    <li><a href="#summary">Summary</a></li>
+                </ol>
+            </div>
+
+            <!-- 1. Overview -->
+            <h2 id="overview">1. Overview: Badoo's Position in the Market</h2>
+            <p>Badoo was founded in 2006 by Andrey Andreev and grew into one of the world's most widely-used dating platforms, particularly dominant in Europe, Latin America, and Southeast Asia. In 2020, Andreev sold his stake to Blackstone, and in 2024 the platform was formally brought under the Bumble Inc. umbrella&mdash;making Badoo and Bumble siblings owned by the same parent company<sup>1</sup>. Despite this shared corporate structure, the two apps maintain distinct brand identities and separate user bases.</p>
+            <p>Badoo's scale is significant: over 400 million registered accounts across 190 countries, with the app available in 47 languages<sup>2</sup>. This global reach, however, is paired with a monetisation strategy that extracts revenue through two parallel channels simultaneously.</p>
+
+            <h3>1.1 The Dual-Monetisation Model</h3>
+            <p>Badoo operates two overlapping revenue streams:</p>
+            <ul>
+                <li><strong>Badoo Premium:</strong> A monthly subscription priced between $12.99 and $25.99 per month (depending on duration and region) that unlocks features such as seeing who liked you, undoing swipes, browsing invisibly, and accessing advanced filters.</li>
+                <li><strong>Credits:</strong> A purchasable virtual currency, bought with real money in bundles ranging from roughly $2.99 (100 Credits) to $39.99 (2,750 Credits). Credits are spent on discrete actions: activating Spotlight, sending virtual gifts, or boosting messages to the top of a recipient's inbox.</li>
+            </ul>
+            <p>This dual structure means a user can pay for Premium <em>and</em> still need to purchase Credits for additional visibility. The economic pressure is cumulative: the subscription unlocks base features, but competitive advantage requires ongoing Credit purchases. Badoo has, in effect, built a <strong>two-tier paywall</strong>&mdash;one for access, another for attention.</p>
+
+            <h3>1.2 HeartFull's Alternative</h3>
+            <p>HeartFull has no subscription, no purchasable currency, and no visibility boosting of any kind. Its single currency&mdash;Hearts&mdash;is earned exclusively through constructive community behaviour: uploading photos, receiving replies, going on dates, and referring friends. There are zero tiers. Every user sees every other user under the same conditions. The contrast with Badoo's architecture is categorical, not incremental.</p>
+
+            <!-- 2. Credits vs Hearts -->
+            <h2 id="credits-vs-hearts">2. Credits vs Hearts: Purchased Advantage vs Earned Merit</h2>
+            <p>Both Badoo and HeartFull employ a virtual currency, but the two systems operate on opposite economic principles. Understanding the distinction requires examining how each currency is acquired, what it can buy, and what incentive structure it creates.</p>
+
+            <h3>2.1 Acquisition</h3>
+            <table>
+                <tr><th>Dimension</th><th>Badoo Credits</th><th>HeartFull Hearts</th></tr>
+                <tr><td><strong>Primary acquisition</strong></td><td>Purchased with money ($2.99&ndash;$39.99)</td><td>Earned through behaviour</td></tr>
+                <tr><td><strong>Can be bought?</strong></td><td class="td-coral">Yes&mdash;unlimited purchases</td><td class="td-green">No&mdash;never</td></tr>
+                <tr><td><strong>Earned for free?</strong></td><td>Minimal (daily login bonuses, profile verification)</td><td>Yes&mdash;photo uploads (+20), date check-ins (+100), referrals (+25), replies</td></tr>
+                <tr><td><strong>Starting balance</strong></td><td>Small promotional amount for new users</td><td>100 Hearts on account creation</td></tr>
+                <tr><td><strong>Replenishment</strong></td><td>Buy more when depleted</td><td>Contribute to the community when depleted</td></tr>
+            </table>
+
+            <p>The critical difference is the <strong>source of the currency</strong>. Badoo Credits are fundamentally a proxy for money. A user with a large credit card limit has functionally unlimited Credits. A user without disposable income has functionally none. The currency encodes economic status, not social behaviour.</p>
+            <p>HeartFull Hearts encode <strong>community participation</strong>. A user who uploads interesting photos, responds to messages, and meets people in person accumulates Hearts regardless of their financial situation. A wealthy user who lurks passively depletes their balance just as quickly as anyone else. The currency is blind to income and responsive to engagement.</p>
+
+            <h3>2.2 Expenditure</h3>
+            <p>What each currency purchases reveals the platform's priorities:</p>
+            <table>
+                <tr><th>Currency Use</th><th>Badoo Credits</th><th>HeartFull Hearts</th></tr>
+                <tr><td>Boost visibility</td><td>Spotlight (Credits consumed)</td><td>Not possible&mdash;equal visibility for all</td></tr>
+                <tr><td>Send gifts</td><td>Virtual gifts (Credits consumed)</td><td>Not applicable</td></tr>
+                <tr><td>Priority messaging</td><td>Rise Up (push message to top)</td><td>Not applicable&mdash;no message ranking</td></tr>
+                <tr><td>Initiate conversation</td><td>Free (but competitive)</td><td>1 Heart escrow (refunded if replied to)</td></tr>
+                <tr><td>Ongoing messaging</td><td>Free</td><td>Dynamic Hearts cost (demand-responsive)</td></tr>
+            </table>
+
+            <p>Badoo Credits are spent to <strong>gain advantage over other users</strong>&mdash;more visibility, more prominent messages, more attention-grabbing gifts. This creates a zero-sum competition where one user's purchased advantage is another user's reduced visibility. HeartFull Hearts are spent to <strong>facilitate connections</strong>&mdash;the cost exists to ensure quality signals, not to create hierarchies. No amount of Hearts can make one user more visible than another.</p>
+
+            <!-- 3. Visibility Auction -->
+            <h2 id="visibility-auction">3. The Visibility Auction: Spotlight and Its Consequences</h2>
+            <p>Badoo's Spotlight feature is the platform's most economically significant mechanic. When a user activates Spotlight (at a cost of Credits), their profile is placed at the top of other users' "People Nearby" and "Encounters" feeds for a period of time. During this window, the Spotlighted user receives dramatically more profile views and incoming likes than they would organically<sup>3</sup>.</p>
+
+            <h3>3.1 The Auction Dynamics</h3>
+            <p>Spotlight creates an implicit <strong>attention auction</strong>. When multiple users activate Spotlight simultaneously, they compete for the same finite set of feed positions. Badoo does not publicly disclose its ranking algorithm for concurrent Spotlights, but the economic structure is clear: users who spend Credits more frequently occupy the top positions more often. Over time, the "natural" feed&mdash;the feed a non-paying user sees of other non-paying users&mdash;is displaced by a feed of Spotlight-boosted profiles.</p>
+            <p>This produces a measurable consequence: <strong>non-paying users become less visible</strong> not because they did anything wrong, but because paying users are algorithmically inserted ahead of them. Visibility is redistributed from those who cannot afford Spotlight to those who can. The platform's feed becomes, functionally, an advertising surface where the product being advertised is the users themselves.</p>
+
+            <h3>3.2 The Compounding Effect</h3>
+            <p>Spotlight's effects compound. A user who gains more visibility gets more likes, which improves their algorithmic ranking, which increases their organic visibility, which makes them appear more "popular" to the platform's recommendation systems. The initial Credit expenditure creates a <strong>feedback loop</strong> where purchased visibility converts into organic advantage. Meanwhile, a non-paying user's organic reach degrades as the platform's finite attention budget is consumed by boosted profiles.</p>
+
+            <blockquote>
+                <p>In a system where attention is finite and visibility can be purchased, non-purchasers are not merely un-boosted&mdash;they are actively suppressed by the reallocation of feed space to paying users.</p>
+            </blockquote>
+
+            <h3>3.3 HeartFull's Equal-Visibility Model</h3>
+            <p>HeartFull has no Spotlight equivalent. There is no mechanism by which any user&mdash;regardless of their Hearts balance, their activity level, or any other variable&mdash;can purchase or earn preferential placement in another user's feed. The photo gallery shows content chronologically and geographically. Every user's photos appear under identical conditions. There is no algorithmic ranking that rewards spending, no boosting, no "Rise Up," no promotional placement.</p>
+            <p>This design choice is not an omission&mdash;it is a deliberate architectural decision rooted in a specific belief: that <strong>visibility in dating should not be a commodity</strong>. When one person's visibility comes at the expense of another's, the platform is no longer a meeting place; it is a marketplace where human attention is the product being traded.</p>
+
+            <!-- 4. Encounters vs Gallery -->
+            <h2 id="encounters-vs-gallery">4. Encounters vs Photo Gallery</h2>
+            <p>Badoo's primary discovery feature, "Encounters," is a swipe-based interface functionally identical to Tinder's core mechanic. Users are presented with one profile at a time and must swipe right (interested) or left (not interested) to proceed. A mutual right-swipe creates a match and enables messaging. This binary evaluation model carries all the limitations documented extensively in the literature on swipe-based dating<sup>4</sup>:</p>
+
+            <ul>
+                <li><strong>Snap judgements:</strong> Users evaluate profiles in an average of 1&ndash;3 seconds, relying overwhelmingly on the primary photo with minimal consideration of biographical information.</li>
+                <li><strong>Infinite deck fatigue:</strong> The endless stream of profiles encourages a consumption mindset where no single profile receives sustained attention.</li>
+                <li><strong>Binary reduction:</strong> Every person is reduced to a yes/no decision, eliminating the nuance of "maybe" or "I'd need to see more."</li>
+                <li><strong>Mutual-match bottleneck:</strong> Conversation requires mutual interest, meaning that a unilateral desire to connect is blocked by a gate that the other person may never reach.</li>
+            </ul>
+
+            <p>Badoo supplements Encounters with a "People Nearby" feature that shows a grid of users sorted by proximity. While this is closer to a browsable gallery, it is heavily influenced by Spotlight rankings and Premium status, making it a curated rather than egalitarian view.</p>
+
+            <h3>4.1 HeartFull's Photo Gallery</h3>
+            <p>HeartFull replaces both the swipe deck and the algorithm-ranked grid with a chronological photo gallery. Users post photos tagged with their city district, and other users browse these photos in a feed. There is no swipe, no binary decision, and no mutual match requirement. If a user finds someone's photo interesting, they can message that person directly&mdash;at the cost of 1 Heart held in escrow.</p>
+            <p>This model preserves the browsing freedom of a social media feed while attaching an economic signal (the Heart cost) that prevents the low-effort mass-messaging that plagues open-messaging platforms. The result is an interaction model that is simultaneously <strong>more open</strong> than Encounters (no mutual match required) and <strong>more intentional</strong> (each message has a cost that signals genuine interest).</p>
+
+            <!-- 5. Feature Comparison -->
+            <h2 id="feature-comparison">5. Feature Comparison</h2>
+            <p>The following table compares Badoo and HeartFull across twelve structural dimensions.</p>
+
+            <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Badoo</th>
+                    <th style="background:var(--coral);">HeartFull</th>
+                </tr>
+                <tr>
+                    <td><strong>Revenue model</strong></td>
+                    <td>Subscription + Credits (dual)</td>
+                    <td class="td-green"><strong>None</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Subscription cost</strong></td>
+                    <td>$12.99&ndash;$25.99/mo</td>
+                    <td class="td-green"><strong>$0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Virtual currency</strong></td>
+                    <td>Credits (purchased with money)</td>
+                    <td class="td-green"><strong>Hearts (earned, never purchased)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Visibility boosting</strong></td>
+                    <td class="td-coral">Spotlight (pay Credits for top placement)</td>
+                    <td class="td-green"><strong>Not possible&mdash;equal for all</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery mechanic</strong></td>
+                    <td>Encounters (swipe deck) + People Nearby</td>
+                    <td class="td-green"><strong>Photo gallery (chronological, location-based)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mutual match required?</strong></td>
+                    <td>Yes (for Encounters)</td>
+                    <td class="td-green"><strong>No&mdash;message anyone directly</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Message cost</strong></td>
+                    <td>Free after match</td>
+                    <td class="td-green"><strong>Hearts (earned, demand-responsive)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-spam mechanism</strong></td>
+                    <td>Report-based moderation</td>
+                    <td class="td-green"><strong>Economic throttling + 5-message cap</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation UI</strong></td>
+                    <td>Standard text chat</td>
+                    <td class="td-green"><strong>Messages overlaid on photos</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Navigation</strong></td>
+                    <td>Tab bar + scrollable lists</td>
+                    <td class="td-green"><strong>Faces bar + horizontal swipe</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>See who liked you</strong></td>
+                    <td class="td-coral">Premium only ($12.99+/mo)</td>
+                    <td class="td-green"><strong>Always visible</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Date incentive</strong></td>
+                    <td>None</td>
+                    <td class="td-green"><strong>QR check-in (+100 Hearts to both)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Parent company</strong></td>
+                    <td>Bumble Inc.</td>
+                    <td>Independent</td>
+                </tr>
+                <tr>
+                    <td><strong>Connections paywalled?</strong></td>
+                    <td class="td-coral">Partially&mdash;key features behind Premium</td>
+                    <td class="td-green"><strong>Never</strong></td>
+                </tr>
+            </table>
+            </div>
+
+            <!-- 6. Summary -->
+            <h2 id="summary">6. Summary</h2>
+            <p>Badoo and HeartFull represent two fundamentally different answers to the same question: <em>how should a dating platform allocate attention?</em></p>
+            <p>Badoo's answer is <strong>market-based allocation</strong>. Attention flows to users who spend the most money. Credits buy Spotlight, Spotlight buys visibility, visibility buys likes, and likes buy matches. The system is transparent in its mechanics but opaque in its consequences: a non-paying user may never realise that their reduced match rate is not a reflection of their attractiveness but of their unwillingness to purchase Credits. The platform's feed is not a neutral meeting ground&mdash;it is an <strong>advertising surface</strong> where humans bid for exposure.</p>
+            <p>HeartFull's answer is <strong>egalitarian allocation with behavioural gating</strong>. Every user receives identical visibility. No mechanism exists to purchase preferential placement. The only constraint on interaction is the Hearts balance, and Hearts are earned through the same behaviours the platform seeks to encourage: posting content, engaging in conversations, and meeting people in the real world. The feed is not a marketplace&mdash;it is a <strong>community gallery</strong> where everyone's photos appear under the same conditions.</p>
+            <p>The distinction between these two models is not a matter of feature parity or price comparison. It is a structural divergence in how each platform conceptualises its users. In Badoo's architecture, users are both the customer and the product&mdash;they pay to be shown to other users who are also paying to be shown. In HeartFull's architecture, users are community members whose capacity to connect is determined by their participation, not their purchasing power.</p>
+
+            <blockquote>
+                <p>Badoo sells visibility. HeartFull distributes it equally. That difference is not a feature gap&mdash;it is a philosophical one.</p>
+            </blockquote>
+
+            <p style="margin-top:2rem;"><a href="/why-heartfull.html">&larr; Back to Why HeartFull</a></p>
+
+            <!-- Footnotes -->
+            <div class="footnotes">
+                <h3>References</h3>
+                <p><sup>1</sup> Bumble Inc., Annual Report (Form 10-K), filed with the SEC, February 2025. Documents the consolidation of Badoo under Bumble Inc.'s corporate structure following Blackstone's 2020 acquisition of Andreev's stake.</p>
+                <p><sup>2</sup> Badoo, "About Badoo," corporate press kit, 2025. Self-reported figures of 400M+ registered users across 190 countries.</p>
+                <p><sup>3</sup> Badoo Help Centre, "What is Spotlight and how does it work?", accessed June 2026. Badoo's own documentation states that Spotlight users receive "significantly more profile views" during activation.</p>
+                <p><sup>4</sup> Tyson, G. et al., "A First Look at User Activity on Tinder," <em>IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining</em>, 2016. Documents the rapid evaluation patterns characteristic of swipe-based interfaces.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:var(--ink); color:rgba(255,255,255,0.7); padding:2rem 1rem; text-align:center; font-size:0.875rem;">
+        <p>&copy; 2026 HeartFull. All rights reserved.</p>
+    </footer>
+</body>
+</html>

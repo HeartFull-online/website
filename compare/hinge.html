@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartFull vs Hinge - A Detailed Structural and Economic Comparison</title>
+    <meta name="description" content="An academic comparison of HeartFull and Hinge, examining profile architecture, virtual currencies (Hearts vs Roses), the Standouts problem, discovery mechanics, and the economics behind 'designed to be deleted.'">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3,h4 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:800px; margin:0 auto; }
+        .article p, .article li { font-size:1.05rem; line-height:1.8; margin-bottom:1.25rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:3rem 0 1rem; color:var(--ink); }
+        .article h3 { font-size:1.3rem; margin:2rem 0 0.75rem; color:var(--ink); }
+        .article h4 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article blockquote { border-left:3px solid var(--coral); padding:0.75rem 1.25rem; margin:1.5rem 0; background:var(--coral-subtle); border-radius:0 8px 8px 0; }
+        .article blockquote p { margin-bottom:0; font-style:italic; }
+        .article ul, .article ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article tr:nth-child(even) { background:var(--surface-sunken); }
+        .tr-hf { background:var(--coral-subtle) !important; }
+        .td-coral { color:var(--coral); font-weight:700; }
+        .td-green { color:#2D8F5E; font-weight:700; }
+        .abstract { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:var(--shadow-warm); }
+        .abstract h3 { margin-top:0; }
+        .figure { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin:2rem 0; text-align:center; }
+        .figure-caption { font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.75rem; font-style:italic; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .toc { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; }
+        .toc ol { counter-reset:toc; list-style:none; padding-left:0; }
+        .toc li { counter-increment:toc; margin-bottom:0.5rem; }
+        .toc li::before { content:counter(toc) "."; font-weight:700; color:var(--coral); margin-right:0.5rem; }
+        .toc a { color:var(--ink-secondary); font-weight:500; }
+        .toc a:hover { color:var(--coral); }
+        sup { font-size:0.7em; color:var(--coral); }
+        .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
+        .footnotes p { font-size:0.85rem; line-height:1.6; }
+        .breadcrumb { font-size:0.85rem; color:var(--ink-tertiary); margin-bottom:1rem; }
+        .breadcrumb a { color:var(--ink-tertiary); }
+        .breadcrumb a:hover { color:var(--coral); }
+        .breadcrumb span { margin:0 0.4rem; }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/dating-institute/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Dating Institute</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="breadcrumb">
+                <a href="/">HeartFull</a><span>&rsaquo;</span><a href="/why-heartfull.html">Why HeartFull</a><span>&rsaquo;</span>vs Hinge
+            </div>
+            <div class="text-sm font-semibold mb-4" style="color:var(--coral);">Comparison Analysis</div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
+                HeartFull vs Hinge:<br>
+                <span class="gradient-text">Earned Currency vs Purchased Roses</span>
+            </h1>
+            <p style="color:var(--ink-tertiary); margin-bottom:0.5rem;">June 2026 &middot; HeartFull Research</p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1.5rem 0;">
+
+            <!-- Abstract -->
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>Hinge has positioned itself as the dating app "designed to be deleted"&mdash;a tagline that implies its interests are aligned with users who want to leave the platform after finding a partner. This paper examines whether that positioning is reflected in Hinge's economic architecture or contradicted by it. We compare Hinge's prompt-based profiles, purchasable Roses, Standouts paywall, and algorithmic curation against HeartFull's photo-first discovery, earned Hearts currency, demand-responsive pricing, and organic browsing model. The analysis reveals that while Hinge represents a meaningful refinement of the swipe-and-subscribe paradigm, it remains structurally dependent on retained subscribers and in-app purchases for revenue&mdash;an incentive structure that is fundamentally at odds with its own marketing promise. HeartFull's architecture, by contrast, does not monetise connections at all.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <strong style="font-family:'Fraunces',serif;">Contents</strong>
+                <ol>
+                    <li><a href="#overview">Overview: "Designed to Be Deleted"</a></li>
+                    <li><a href="#profile-architecture">Profile Architecture: Prompts vs Photo Stories</a></li>
+                    <li><a href="#roses-vs-hearts">Roses vs Hearts</a></li>
+                    <li><a href="#standouts-problem">The Standouts Problem</a></li>
+                    <li><a href="#discovery">Discovery: Profile Cards vs Photo Gallery</a></li>
+                    <li><a href="#matching">Algorithmic Matching vs Organic Discovery</a></li>
+                    <li><a href="#comparison-table">Feature Comparison Table</a></li>
+                    <li><a href="#summary">Summary</a></li>
+                </ol>
+            </div>
+
+            <!-- 1. Overview -->
+            <h2 id="overview">1. Overview: "Designed to Be Deleted"</h2>
+            <p>Hinge launched in 2012 as a friends-of-friends matching app, pivoted in 2016 to a prompt-based profile format, and adopted the tagline "designed to be deleted" in 2019. The tagline was a masterstroke of positioning: it acknowledged that users are frustrated with dating apps that seem engineered to keep them swiping indefinitely, and it promised that Hinge was different&mdash;an app that <em>wanted</em> you to succeed and leave.</p>
+
+            <p>Hinge's design does reflect some genuine departures from the Tinder model. Profiles feature text prompts ("I'm looking for someone who...", "My most controversial opinion is...") that encourage self-expression beyond a single photograph. Likes are limited (approximately 8 per day on the free tier), which reduces the mass-swiping problem. Users can comment on specific prompts or photos when sending a like, which provides conversational entry points.</p>
+
+            <p>However, Hinge's revenue model tells a different story. Hinge+ subscriptions cost $29.99&ndash;$49.99 per month<sup>1</sup>. Roses&mdash;premium super-likes that guarantee your profile is seen&mdash;cost $3.99 each or are bundled with subscriptions. The "Standouts" feature extracts the most desirable profiles from the regular discovery feed and places them behind a Rose paywall. Seeing who liked you requires a subscription. Enhanced preferences require a subscription. The pattern is identical to every other dating app: core functionality is paywalled.</p>
+
+            <blockquote>
+                <p>A dating app "designed to be deleted" that generates revenue from monthly subscriptions has a structural contradiction at its core: every user who deletes the app is lost revenue.</p>
+            </blockquote>
+
+            <p>HeartFull has no subscription tier, no in-app purchases, and no paywalled features. Its virtual currency&mdash;Hearts&mdash;cannot be purchased with money. The comparison that follows examines how these different economic foundations produce different user experiences, different incentive structures, and different outcomes.</p>
+
+            <!-- 2. Profile Architecture -->
+            <h2 id="profile-architecture">2. Profile Architecture: Prompts vs Photo Stories</h2>
+            <p>Hinge's profile format is built around <strong>prompts</strong>&mdash;structured text responses to pre-written questions. A typical Hinge profile contains six photos interspersed with three prompts, such as "Two truths and a lie," "I geek out on," or "Together, we could." Users select prompts from a library and write short responses (typically 150 characters). This format has clear strengths: it provides conversational hooks, it surfaces personality traits that photos alone cannot convey, and it gives users a framework for self-expression that reduces the blank-page problem.</p>
+
+            <p>The limitation of prompt-based profiles is that they are <strong>performative by design</strong>. Users craft responses to present an idealised self. The prompts incentivise wit, cleverness, and memorability&mdash;qualities that correlate poorly with relationship compatibility. A person who writes "My love language is acts of sarcasm" may be entertaining to read but reveals nothing about their daily life, values, or temperament. The prompt format rewards copywriting ability, not authenticity.</p>
+
+            <h3>2.1 HeartFull's Photo Stories</h3>
+            <p>HeartFull takes a fundamentally different approach. There are no text prompts. Profiles are composed entirely of photo galleries that show a user's daily life&mdash;their morning coffee, their commute, their workspace, their weekend hike, their cooking. Photos are tagged with location districts (neighbourhood-level, never precise addresses), creating a visual diary that is inherently harder to fabricate than a clever one-liner.</p>
+
+            <p>The distinction is between <strong>curated self-description</strong> (Hinge) and <strong>ambient self-evidence</strong> (HeartFull). A Hinge prompt tells you what someone <em>wants you to think about them</em>. A HeartFull photo gallery shows you what <em>their life actually looks like</em>. The former is a marketing document; the latter is a documentary.</p>
+
+            <h3>2.2 Conversational Entry Points</h3>
+            <p>Hinge's prompts serve a secondary function: they provide conversational entry points. A user can tap "like" on a specific prompt and attach a comment, which creates a contextual opening message. This is a genuine UX improvement over Tinder's blank message field.</p>
+
+            <p>HeartFull achieves the same outcome through a different mechanism. Conversations begin directly on photos&mdash;a user sees a photo that interests them and sends a message overlaid on that image. The photo <em>is</em> the conversational context. A message sent on someone's sunset photo ("Where is this?") is inherently contextual without requiring a pre-written prompt to anchor it. The difference is that Hinge's context is <strong>manufactured</strong> (the app provides the prompt) while HeartFull's context is <strong>organic</strong> (the photo is the user's own content).</p>
+
+            <!-- 3. Roses vs Hearts -->
+            <h2 id="roses-vs-hearts">3. Roses vs Hearts</h2>
+            <p>Both Hinge and HeartFull employ virtual currencies that signal heightened interest. On Hinge, this currency is the <strong>Rose</strong>. On HeartFull, it is the <strong>Heart</strong>. The superficial similarity obscures a fundamental economic difference.</p>
+
+            <h3>3.1 Hinge Roses: Purchased Scarcity</h3>
+            <p>Roses are Hinge's premium interaction token. Sending a Rose to a profile moves your like to the top of their queue and marks it with a Rose icon, signalling stronger interest. Hinge provides one free Rose per week. Additional Roses cost $3.99 each, or are included in Hinge+ subscriptions (one per week with the base tier, more with higher tiers)<sup>2</sup>. Roses are also the <em>only</em> way to interact with profiles in the Standouts feed.</p>
+
+            <p>The economic structure is straightforward: Roses are a <strong>purchasable positional good</strong>. Their value derives entirely from scarcity&mdash;a Rose stands out because most users cannot afford to send many of them. But that scarcity is artificial. It is manufactured by Hinge, sold by Hinge, and priced by Hinge. The user who sends more Roses is not demonstrating greater interest or better character&mdash;they are demonstrating greater willingness to spend money. The signal a Rose sends is not "I am genuinely interested in you" but "I have $3.99 to spare."</p>
+
+            <h3>3.2 HeartFull Hearts: Earned Scarcity</h3>
+            <p>Hearts serve a similar signalling function&mdash;spending Hearts on a message communicates that the sender values the interaction enough to invest scarce resources. But Hearts differ from Roses in every structural dimension:</p>
+
+            <ul>
+                <li><strong>Acquisition:</strong> Hearts are earned by uploading photos (+20 per post), receiving replies (escrow transfer), going on dates (QR check-in, +100 to both users), and inviting friends (+25 to both). They cannot be purchased.</li>
+                <li><strong>Pricing:</strong> The cost to message someone is dynamically calculated based on the wealth ratio between sender and receiver and the receiver's demand multiplier. Popular users cost more to message&mdash;not because Hinge decided to monetise them, but because the market reflects their scarcity.</li>
+                <li><strong>Circulation:</strong> Hearts transfer between users. When you message someone, Hearts flow from your balance to theirs. The currency circulates within the community rather than being extracted by the platform.</li>
+                <li><strong>Signal fidelity:</strong> A Heart spent on a message represents community participation&mdash;photos uploaded, dates attended, friends invited. The signal is "I have been an active, contributing member of this community, and I am choosing to invest that social capital in you."</li>
+            </ul>
+
+            <blockquote>
+                <p>Roses measure purchasing power. Hearts measure community contribution. The distinction is between a credit card and a reputation.</p>
+            </blockquote>
+
+            <!-- 4. Standouts Problem -->
+            <h2 id="standouts-problem">4. The Standouts Problem</h2>
+            <p>Hinge's <strong>Standouts</strong> feature is perhaps the clearest illustration of the tension between Hinge's marketing and its economics. Standouts is a curated feed of the "most compatible" or most desirable profiles in a user's area. These profiles are algorithmically selected based on engagement metrics&mdash;people who receive the most likes, the most comments, the most Roses. They are, in effect, the most popular users on the platform.</p>
+
+            <p>Here is the problem: Standouts profiles can only be liked by sending a Rose. Since Roses cost $3.99 each (beyond the single free weekly Rose), interacting with the most desirable people on Hinge requires <strong>paying money</strong>. The app identifies the users you are most likely to want to connect with, removes them from the free discovery feed, and places them behind a paywall.</p>
+
+            <h3>4.1 The Economic Logic</h3>
+            <p>From Hinge's perspective, Standouts is rational. Popular users are a scarce resource. Charging for access to scarce resources is basic economics. But this reasoning reveals the underlying business model: Hinge monetises the <em>most attractive users</em> as a product. Those users' desirability is not something Hinge created&mdash;it is something those users brought to the platform. Hinge extracts rent from the attention those users generate.</p>
+
+            <p>This is structurally identical to a nightclub that charges cover for VIP access. The "VIPs" are not paid by the club; they are the <em>reason</em> the club charges money. The product being sold is not a feature&mdash;it is <strong>proximity to desirable people</strong>. "Designed to be deleted" is a difficult claim to sustain when the revenue model depends on charging users to interact with the people they most want to meet.</p>
+
+            <h3>4.2 HeartFull's Demand Multiplier</h3>
+            <p>HeartFull faces the same underlying reality: some users receive far more attention than others. HeartFull's demand multiplier addresses this through economic mechanics rather than a paywall. When a user receives a high volume of incoming messages, the cost (in Hearts) to message them increases. A user receiving 25 messages per day might cost 5x more Hearts to message than one receiving 3.</p>
+
+            <p>The critical difference is <strong>what currency is being spent</strong>. On Hinge, the currency is money. On HeartFull, the currency is community contribution. A user who has uploaded many photos, gone on dates, invited friends, and received replies from previous conversations has accumulated the Hearts balance to message popular users. Their access is earned through demonstrated community participation, not through a credit card.</p>
+
+            <p>Furthermore, HeartFull's demand multiplier is <strong>organic and continuous</strong>, not binary and imposed. There is no separate "Standouts" feed. All users appear in the same photo gallery. The pricing adjusts dynamically based on real demand signals. Popular users are not extracted and commodified&mdash;they remain part of the community, and the economic cost of reaching them reflects genuine scarcity rather than artificial gating.</p>
+
+            <!-- 5. Discovery -->
+            <h2 id="discovery">5. Discovery: Profile Cards vs Photo Gallery</h2>
+            <p>Hinge presents discovery as a stack of <strong>profile cards</strong>. Each card contains a user's photos and prompts arranged vertically. Users scroll through a single profile, then tap an "X" to pass or tap a heart (or Rose) on a specific photo or prompt to send a like. Only one profile is visible at a time. The interaction is sequential: evaluate this person, make a decision, move to the next.</p>
+
+            <p>This is a meaningful improvement over Tinder's single-photo swipe, because the vertical scroll through a full profile encourages more thorough evaluation. But the fundamental mechanic remains <strong>serial assessment</strong>&mdash;a queue of strangers to be judged one at a time.</p>
+
+            <h3>5.1 HeartFull's Gallery Model</h3>
+            <p>HeartFull does not present profiles at all in the conventional sense. The discovery surface is a <strong>photo gallery</strong>&mdash;a feed of photos from multiple users, tagged with location districts. Users browse this gallery the way they would browse a social media feed: casually, organically, at their own pace. When a photo catches their interest, they can view more photos from that user and send a message.</p>
+
+            <p>The psychological difference is significant. Hinge's card stack creates an evaluative frame: each profile demands a verdict (like or pass). HeartFull's gallery creates a browsing frame: no verdict is required. A user can look at photos, find someone interesting, and reach out&mdash;or simply continue browsing. The absence of a forced decision point reduces the cognitive load and the dehumanising "sorting" behaviour that card-based interfaces produce<sup>3</sup>.</p>
+
+            <h3>5.2 Location Context</h3>
+            <p>Hinge uses distance-based filtering: users set a radius and see profiles within that range. This is a blunt spatial filter with no contextual information beyond "X kilometres away."</p>
+
+            <p>HeartFull's photo tags include district-level locations, which provide richer spatial context. A user does not simply see "5 km away"&mdash;they see photos tagged in specific neighbourhoods, parks, cafes, and areas. This transforms distance from an abstract number into a concrete sense of shared geography. "They also spend time in Fitzroy" carries more emotional weight than "3.2 km away."</p>
+
+            <!-- 6. Algorithmic Matching -->
+            <h2 id="matching">6. Algorithmic Matching vs Organic Discovery</h2>
+            <p>Hinge's discovery feed is heavily curated by its <strong>"Most Compatible" algorithm</strong>, which uses the Gale-Shapley algorithm (a Nobel Prize-winning stable matching algorithm) to suggest daily matches that the system predicts will be mutually interested<sup>4</sup>. Users receive a daily "Most Compatible" suggestion prominently placed at the top of their feed.</p>
+
+            <p>Algorithmic matching has an inherent tension: the algorithm optimises for engagement metrics (likes, messages, response rates), not for relationship outcomes. A profile that generates high engagement is not necessarily a compatible partner&mdash;it is a profile that is broadly attractive. The algorithm cannot distinguish between "this person would be a good partner for you" and "this person is attractive to most people." The result is that algorithmically surfaced profiles tend to converge on conventional attractiveness, reinforcing the very superficiality that Hinge claims to combat.</p>
+
+            <h3>6.1 The Feedback Loop</h3>
+            <p>Algorithmic curation also creates a feedback loop: profiles that receive more engagement are shown to more users, which generates more engagement, which increases their ranking further. Early engagement advantages compound. Users who photograph well, write witty prompts, and attract initial attention dominate the discovery feed, while users who are slower to gain traction become progressively less visible. This is a well-documented dynamic in recommendation systems, variously called the "Matthew effect" or "rich-get-richer" phenomenon<sup>5</sup>.</p>
+
+            <h3>6.2 HeartFull's Organic Browsing</h3>
+            <p>HeartFull does not employ algorithmic matching. The photo gallery is not curated by engagement metrics. Discovery is <strong>organic</strong>: users see photos from people in their area, tagged with real locations, and decide for themselves who interests them. There is no "Most Compatible" suggestion. There is no algorithmic ranking that makes popular users more visible and unpopular users less visible.</p>
+
+            <p>The demand multiplier provides a natural equilibrium mechanism. Popular users cost more Hearts to message, which distributes attention more evenly across the community. This is the opposite of algorithmic amplification: instead of making popular users <em>more</em> visible, HeartFull makes them <em>more expensive</em> to contact, which naturally redirects some attention toward less popular users. The system self-balances without requiring an algorithm to curate the feed.</p>
+
+            <!-- 7. Feature Comparison Table -->
+            <h2 id="comparison-table">7. Feature Comparison Table</h2>
+            <p>The following table provides a detailed structural comparison across fourteen dimensions. Green indicates user-aligned design; coral indicates revenue-extraction or paywall-dependent design.</p>
+
+            <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Hinge</th>
+                    <th style="background:var(--coral);">HeartFull</th>
+                </tr>
+                <tr>
+                    <td><strong>Revenue model</strong></td>
+                    <td>Subscription ($29.99&ndash;$49.99/mo) + Rose IAP</td>
+                    <td class="td-green"><strong>None (no monetisation of connections)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Virtual currency</strong></td>
+                    <td class="td-coral">Roses ($3.99 each, purchasable)</td>
+                    <td class="td-green"><strong>Hearts (earned only, non-purchasable)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Currency acquisition</strong></td>
+                    <td>1 free Rose/week; buy more with money or subscription</td>
+                    <td class="td-green"><strong>Upload photos, receive replies, go on dates, invite friends</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>See who liked you</strong></td>
+                    <td class="td-coral">Requires Hinge+ subscription</td>
+                    <td class="td-green"><strong>Always visible (no hidden likes)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Daily like limit (free)</strong></td>
+                    <td>~8 likes per day</td>
+                    <td class="td-green"><strong>No arbitrary limit (limited by Hearts balance)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Standouts / premium access</strong></td>
+                    <td class="td-coral">Most desirable profiles require Roses (money) to access</td>
+                    <td class="td-green"><strong>All users in same gallery; popular users cost more Hearts</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Profile format</strong></td>
+                    <td>6 photos + 3 text prompts</td>
+                    <td class="td-green"><strong>Photo gallery with location-tagged stories</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery mechanic</strong></td>
+                    <td>Profile card stack (one at a time)</td>
+                    <td class="td-green"><strong>Photo gallery (browse freely)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Matching algorithm</strong></td>
+                    <td>Gale-Shapley "Most Compatible" + engagement ranking</td>
+                    <td class="td-green"><strong>None (organic browsing, demand-responsive pricing)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation UI</strong></td>
+                    <td>Standard text chat thread</td>
+                    <td class="td-green"><strong>Messages overlaid on photos</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation initiation</strong></td>
+                    <td>Like + optional comment on prompt/photo; mutual match required</td>
+                    <td class="td-green"><strong>Direct message on any photo (no match gate)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-spam mechanism</strong></td>
+                    <td>Daily like limit + report-based moderation</td>
+                    <td class="td-green"><strong>Economic throttling (Hearts cost) + 5-message cap</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Attention distribution</strong></td>
+                    <td class="td-coral">Algorithmic amplification (popular users get more visible)</td>
+                    <td class="td-green"><strong>Demand multiplier (popular users get more expensive)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Date incentive</strong></td>
+                    <td>None (no reward for meeting in person)</td>
+                    <td class="td-green"><strong>QR check-in: +100 Hearts to both users</strong></td>
+                </tr>
+            </table>
+            </div>
+
+            <!-- 8. Summary -->
+            <h2 id="summary">8. Summary</h2>
+            <p>Hinge represents the most thoughtful iteration of the swipe-and-subscribe model. Its prompt-based profiles are more expressive than Tinder's photo-only cards. Its limited daily likes reduce mass-swiping. Its comment-on-like feature provides conversational context. These are genuine improvements that have earned Hinge a reputation as the "relationship app" among dating platforms.</p>
+
+            <p>But Hinge's economic architecture contradicts its branding. An app "designed to be deleted" generates revenue from subscriptions ($29.99&ndash;$49.99/month) and in-app purchases ($3.99 per Rose). Every user who succeeds and deletes the app is lost revenue. The Standouts feature&mdash;which extracts the most desirable users and places them behind a paywall&mdash;is the clearest expression of this contradiction: the people you most want to meet are the ones Hinge charges you to reach.</p>
+
+            <p>HeartFull does not face this contradiction because it does not monetise connections. There is no subscription to cancel, no Roses to purchase, no Standouts paywall to circumvent. The Hearts Economy creates a genuine attention market where the currency is community contribution&mdash;photos shared, dates attended, friends invited&mdash;rather than money spent. Popular users cost more Hearts to message, but those Hearts are earned through participation, not purchased with a credit card.</p>
+
+            <p>The practical implication is a different alignment of incentives. Hinge's incentive is to keep users subscribing. HeartFull's incentive is to keep users contributing&mdash;uploading photos, going on dates, inviting friends. These are activities that directly support the platform's stated goal of facilitating real-world connections. When the business model rewards the same behaviours that users want to perform, the structural contradiction between platform and user disappears.</p>
+
+            <blockquote>
+                <p>Hinge says it is "designed to be deleted." HeartFull is designed around the economics. The difference is between a tagline and an architecture.</p>
+            </blockquote>
+
+            <!-- Footnotes -->
+            <div class="footnotes">
+                <h3>References</h3>
+                <p><sup>1</sup> Hinge pricing data sourced from App Store and Google Play listings, June 2026. Hinge+ plans range from $29.99/month (1-month plan) to lower per-month rates on 3- and 6-month commitments; HingeX costs up to $49.99/month.</p>
+                <p><sup>2</sup> Hinge Help Center, "What are Roses?", accessed June 2026. Roses are available for individual purchase ($3.99 each) or included in subscription tiers.</p>
+                <p><sup>3</sup> Ward, J., "Swiping, Matching, Chatting: Self-Presentation and Self-Disclosure on Mobile Dating Apps," <em>Human IT</em>, 2019.</p>
+                <p><sup>4</sup> Hinge Engineering Blog, "The Algorithm Behind Hinge's Most Compatible," 2019. The Gale-Shapley algorithm was originally published in Gale, D. &amp; Shapley, L.S., "College Admissions and the Stability of Marriage," <em>The American Mathematical Monthly</em>, Vol. 69, No. 1, 1962.</p>
+                <p><sup>5</sup> Merton, R.K., "The Matthew Effect in Science," <em>Science</em>, Vol. 159, No. 3810, 1968, pp. 56&ndash;63.</p>
+            </div>
+
+            <div style="margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+                <p><a href="/why-heartfull.html">&larr; Back to Why HeartFull</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:var(--ink); color:rgba(255,255,255,0.7); padding:2rem 1rem; text-align:center; font-size:0.875rem;">
+        <p>&copy; 2026 HeartFull. All rights reserved.</p>
+    </footer>
+</body>
+</html>

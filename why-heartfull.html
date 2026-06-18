@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why HeartFull Is Fundamentally Different - A Technical and Economic Analysis</title>
+    <meta name="description" content="An academic analysis of how HeartFull's Hearts Economy, photo-first messaging, and merit-based architecture represent a structural departure from every major dating app on the market.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3,h4 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:800px; margin:0 auto; }
+        .article p, .article li { font-size:1.05rem; line-height:1.8; margin-bottom:1.25rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:3rem 0 1rem; color:var(--ink); }
+        .article h3 { font-size:1.3rem; margin:2rem 0 0.75rem; color:var(--ink); }
+        .article h4 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article blockquote { border-left:3px solid var(--coral); padding:0.75rem 1.25rem; margin:1.5rem 0; background:var(--coral-subtle); border-radius:0 8px 8px 0; }
+        .article blockquote p { margin-bottom:0; font-style:italic; }
+        .article ul, .article ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article tr:nth-child(even) { background:var(--surface-sunken); }
+        .tr-hf { background:var(--coral-subtle) !important; }
+        .td-coral { color:var(--coral); font-weight:700; }
+        .td-green { color:#2D8F5E; font-weight:700; }
+        .abstract { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:var(--shadow-warm); }
+        .abstract h3 { margin-top:0; }
+        .figure { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin:2rem 0; text-align:center; }
+        .figure-caption { font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.75rem; font-style:italic; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .compare-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
+        .compare-card { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.25rem; transition:box-shadow 0.2s; }
+        .compare-card:hover { box-shadow:var(--shadow-warm); }
+        .compare-card h4 { margin:0 0 0.5rem; font-size:1rem; }
+        .compare-card p { font-size:0.875rem; margin-bottom:0.75rem; }
+        .compare-card a { font-size:0.875rem; font-weight:600; }
+        .toc { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; }
+        .toc ol { counter-reset:toc; list-style:none; padding-left:0; }
+        .toc li { counter-increment:toc; margin-bottom:0.5rem; }
+        .toc li::before { content:counter(toc) "."; font-weight:700; color:var(--coral); margin-right:0.5rem; }
+        .toc a { color:var(--ink-secondary); font-weight:500; }
+        .toc a:hover { color:var(--coral); }
+        sup { font-size:0.7em; color:var(--coral); }
+        .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
+        .footnotes p { font-size:0.85rem; line-height:1.6; }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/dating-institute/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Dating Institute</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="text-sm font-semibold mb-4" style="color:var(--coral);">Technical Whitepaper</div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
+                Why HeartFull Is Fundamentally Different:<br>
+                <span class="gradient-text">A Structural Analysis of Merit-Based Dating</span>
+            </h1>
+            <p style="color:var(--ink-tertiary); margin-bottom:0.5rem;">June 2026 &middot; HeartFull Research</p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1.5rem 0;">
+
+            <!-- Abstract -->
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>This paper presents a comprehensive analysis of how HeartFull differs architecturally, economically, and experientially from every major dating application currently on the market. We demonstrate that HeartFull introduces three novel systems&mdash;a merit-based virtual economy, a photo-first messaging paradigm, and a behavioural rationing mechanism&mdash;that collectively represent a structural departure from the subscription-and-swipe model that defines the existing dating app landscape. Where incumbent apps monetise loneliness by paywalling connections, HeartFull employs an earned-currency model that aligns platform incentives with user outcomes. This is not an incremental improvement to an existing category; it is a fundamentally different product architecture built on different economic principles.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <strong style="font-family:'Fraunces',serif;">Contents</strong>
+                <ol>
+                    <li><a href="#market-failure">The Dating App Market Failure</a></li>
+                    <li><a href="#swipe-critique">The Swipe Paradigm: A Critical Analysis</a></li>
+                    <li><a href="#payment-gating">Payment Gating and Misaligned Incentives</a></li>
+                    <li><a href="#hearts-economy">The Hearts Economy: A Novel Rationing Mechanism</a></li>
+                    <li><a href="#ui-architecture">UI Architecture: Photo-First Messaging</a></li>
+                    <li><a href="#anti-spam">Behavioural Anti-Spam Without Moderation Overhead</a></li>
+                    <li><a href="#structural-comparison">Structural Comparison Matrix</a></li>
+                    <li><a href="#individual-comparisons">Individual App Comparisons</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ol>
+            </div>
+
+            <!-- 1. Market Failure -->
+            <h2 id="market-failure">1. The Dating App Market Failure</h2>
+            <p>The modern dating app industry has converged on a single business model: offer basic matching for free, then charge a monthly subscription to unlock the features that make the app usable. Tinder, Bumble, Hinge, OkCupid, Badoo, and nearly every competitor follow this pattern with remarkable uniformity. The result is an industry worth over $6 billion annually<sup>1</sup> that profits not when users find partners, but when they <em>don't</em>.</p>
+            <p>This creates a structural misalignment. An app that successfully matches users loses paying customers. An app that keeps users searching&mdash;frustrated but hopeful&mdash;retains subscribers. The industry's incentive is to optimise for engagement and retention, not for successful outcomes. Dating apps have become, in the language of mechanism design, <strong>adversarial platforms</strong>: their economic interests are opposed to their users' stated goals.</p>
+            <p>HeartFull was designed from first principles to resolve this misalignment. It does not monetise connections. It does not sell advantage. Its currency cannot be purchased. Instead, it introduces a merit-based economy where a user's capacity to connect is determined by their behaviour within the community, not their willingness to pay.</p>
+
+            <!-- 2. Swipe Critique -->
+            <h2 id="swipe-critique">2. The Swipe Paradigm: A Critical Analysis</h2>
+            <p>The swipe mechanic&mdash;pioneered by Tinder in 2012&mdash;reduced human connection to a binary classification task performed on a single photograph in approximately 1.5 seconds<sup>2</sup>. While this interface was revolutionary in its simplicity, it introduced three systemic problems that every swipe-based app inherits:</p>
+
+            <h3>2.1 Cognitive Dehumanisation</h3>
+            <p>Swipe interfaces present people as interchangeable items in an infinite scroll. Research published in <em>Computers in Human Behavior</em> (2019) found that swipe-based evaluation activates the same neural pathways as consumer product selection, not interpersonal assessment<sup>3</sup>. Users are not evaluating potential partners&mdash;they are shopping. The cognitive frame of "sorting" replaces the cognitive frame of "meeting."</p>
+
+            <h3>2.2 The Paradox of Choice</h3>
+            <p>Barry Schwartz's paradox of choice is acute in swipe-based systems. When the next profile is always one swipe away, every match competes against the phantom of someone better. Studies from the Pew Research Center (2023) found that 45% of dating app users report feeling that there are "too many options," leading to decision paralysis and reduced satisfaction with chosen matches<sup>4</sup>.</p>
+
+            <h3>2.3 Asymmetric Investment</h3>
+            <p>A right-swipe costs nothing. A message costs nothing (until paywalled). This zero-cost interaction creates a tragedy of the commons: users mass-swipe with minimal consideration because there is no cost to doing so. The result is that popular users&mdash;disproportionately women&mdash;receive hundreds of low-effort signals, while less conventionally attractive users receive few or none. The system rewards indiscriminate behaviour and punishes selectivity.</p>
+
+            <h4>HeartFull's Alternative</h4>
+            <p>HeartFull has no swipe mechanic whatsoever. Users browse a gallery of photos posted by other users, see their daily life through photo stories tagged with location districts, and begin conversations directly on photos they find interesting. There is no binary accept/reject decision. There is no infinite deck. The interaction model is <strong>browsing and engaging</strong>, not <strong>sorting and discarding</strong>.</p>
+
+            <!-- 3. Payment Gating -->
+            <h2 id="payment-gating">3. Payment Gating and Misaligned Incentives</h2>
+            <p>Every major dating app employs payment gating&mdash;restricting access to core features behind a recurring subscription. The specific mechanisms vary, but the economic structure is identical:</p>
+
+            <table>
+                <tr><th>App</th><th>What's Paywalled</th><th>Monthly Cost (2026)</th></tr>
+                <tr><td>Tinder</td><td>Unlimited likes, Super Likes, Passport, see who liked you</td><td>$14.99&ndash;$39.99</td></tr>
+                <tr><td>Bumble</td><td>Unlimited extends, Beeline (see who liked you), Travel Mode</td><td>$19.99&ndash;$49.99</td></tr>
+                <tr><td>Hinge</td><td>Unlimited likes, see who liked you, enhanced preferences</td><td>$29.99&ndash;$49.99</td></tr>
+                <tr><td>OkCupid</td><td>See likes, unlimited likes, advanced filters</td><td>$14.99&ndash;$44.99</td></tr>
+                <tr><td>Coffee Meets Bagel</td><td>Activity reports, read receipts, additional Beans</td><td>$15.00&ndash;$35.00</td></tr>
+                <tr><td>The League</td><td>Basic access itself requires membership</td><td>$67.00&ndash;$349.99</td></tr>
+                <tr class="tr-hf"><td><strong>HeartFull</strong></td><td class="td-green"><strong>Nothing is paywalled</strong></td><td class="td-green"><strong>$0</strong></td></tr>
+            </table>
+
+            <p>The critical insight is not merely that these apps charge money&mdash;it is <em>what</em> they charge for. Seeing who is interested in you, sending more than a handful of messages per day, and filtering by basic preferences are not luxury features. They are the fundamental mechanics of finding a partner. Paywalling them is equivalent to a job board that lets you see listings but charges to apply.</p>
+
+            <h3>3.1 The Perverse Incentive</h3>
+            <p>When connections are the revenue mechanism, the platform's incentive is to withhold them. Tinder's "see who liked you" feature is the clearest example: the app already knows that someone is interested in you, but it withholds that information unless you pay. The platform is not facilitating connection&mdash;it is <strong>ransoming</strong> it.</p>
+            <p>HeartFull inverts this entirely. There are no hidden likes. No paywalled filters. No premium queue placement. Every user has the same tools. The only variable is their Hearts balance&mdash;and Hearts cannot be purchased.</p>
+
+            <!-- 4. Hearts Economy -->
+            <h2 id="hearts-economy">4. The Hearts Economy: A Novel Rationing Mechanism</h2>
+            <p>HeartFull's most significant innovation is its Hearts Economy&mdash;a virtual currency system that replaces both the swipe mechanic and payment gating with a <strong>behavioural rationing mechanism</strong>. Hearts are earned through constructive community participation and spent on interpersonal interactions. They cannot be purchased with real money.</p>
+
+            <h3>4.1 Earning Hearts</h3>
+            <p>Hearts are awarded for behaviours that build the community:</p>
+            <table>
+                <tr><th>Behaviour</th><th>Hearts Earned</th><th>Rationale</th></tr>
+                <tr><td>Account creation (one-time)</td><td>+100</td><td>Starting balance to enable initial interactions</td></tr>
+                <tr><td>Photo upload</td><td>+20 per post</td><td>Content creation enriches the community</td></tr>
+                <tr><td>Date check-in (QR code)</td><td>+100 to both</td><td>Rewards real-world meetings&mdash;the platform's ultimate goal</td></tr>
+                <tr><td>Referral</td><td>+25 to both</td><td>Network growth benefits everyone</td></tr>
+                <tr><td>Receiving messages</td><td>varies</td><td>Hearts transfer from sender to receiver</td></tr>
+                <tr><td>Receiving photo likes</td><td>+1 per like</td><td>Rewarding engaging content</td></tr>
+            </table>
+
+            <p>This earning structure creates a self-reinforcing cycle: users who contribute to the community (uploading photos, meeting people, inviting friends) accumulate social capital. Users who only consume (lurking without posting, messaging without reciprocating) deplete their balance. The currency is a <strong>proxy for community citizenship</strong>.</p>
+
+            <h3>4.2 Spending Hearts: The Three-Phase Messaging Model</h3>
+            <p>Messaging is HeartFull's primary heart sink, and it operates through three distinct phases:</p>
+
+            <h4>Phase 1: Escrow</h4>
+            <p>The first message in any new conversation costs 1 Heart, held in escrow. This heart is not given to the receiver&mdash;it is held by the system. It represents the sender's commitment: "I am willing to invest in this interaction." If the receiver never replies, the heart is consumed. This micro-cost eliminates the zero-cost mass-messaging that plagues every free dating app.</p>
+
+            <h4>Phase 2: Redemption</h4>
+            <p>When the receiver replies, the escrowed heart transfers to them. The receiver is now compensated for their attention. This is a critical economic signal: the receiver's time has value, and the system recognises it.</p>
+
+            <h4>Phase 3: Dynamic Pricing</h4>
+            <p>In ongoing conversations, the system periodically charges the sender based on a two-factor formula:</p>
+
+            <blockquote>
+                <p><strong>Charge = Wealth Ratio &times; Demand Multiplier</strong></p>
+            </blockquote>
+
+            <p>The <strong>wealth ratio</strong> implements progressive pricing: users with many Hearts pay a small percentage, users with few Hearts pay a slightly larger percentage, and users with similar balances pay a flat rate. This prevents wealth hoarding and ensures that Heart-rich users don't dominate the platform.</p>
+
+            <p>The <strong>demand multiplier</strong> is calculated from the receiver's incoming message rate. A user receiving 25 messages per day costs 5&times; more to message than one receiving 3. This is not a penalty&mdash;it is supply-and-demand economics applied to human attention. Popular users' attention is scarce; the pricing reflects that scarcity.</p>
+
+            <h3>4.3 Why This Is Novel</h3>
+            <p>No other dating app implements anything resembling this system:</p>
+            <ul>
+                <li><strong>Tinder</strong> uses a binary swipe with no cost and no economic signal.</li>
+                <li><strong>Bumble</strong> restricts who initiates contact (women first) but assigns no cost to the interaction.</li>
+                <li><strong>Hinge</strong> limits free likes to ~8/day and sells "Roses" as premium super-likes. Roses are purchased with money, not earned through behaviour.</li>
+                <li><strong>Coffee Meets Bagel</strong> has "Beans," but Beans are primarily purchased, not earned.</li>
+                <li><strong>HeartFull</strong> Hearts are exclusively earned. They cannot be bought. They implement dynamic, demand-responsive pricing. They create a genuine market for attention where the currency is community contribution.</li>
+            </ul>
+
+            <p>The Hearts Economy is, to our knowledge, the first implementation of a <strong>non-purchasable, behaviour-derived, demand-responsive attention economy</strong> in a social platform. It borrows from mechanism design (revelation principle), token economics (earned vs. purchased tokens), and market microstructure (dynamic pricing) to create a system that naturally throttles low-quality interactions while rewarding genuine engagement.</p>
+
+            <!-- 5. UI Architecture -->
+            <h2 id="ui-architecture">5. UI Architecture: Photo-First Messaging</h2>
+            <p>HeartFull's interface diverges from every major dating app at the structural level. The differences are not cosmetic&mdash;they represent a fundamentally different information architecture.</p>
+
+            <h3>5.1 The Faces Bar (vs. The Swipe Deck)</h3>
+            <p>Instead of a swipe deck that presents one person at a time, HeartFull displays a horizontal bar of D-shaped face tabs at the top of the screen. Each tab represents an active conversation. Users swipe horizontally between conversations, not between people. The navigation metaphor is <strong>"move between people I'm talking to"</strong> rather than <strong>"judge the next stranger."</strong></p>
+            <p>This design eliminates the evaluative sorting behaviour that swipe decks create. There is no accept/reject gate. Users discover people through their photo galleries, not through a single profile card.</p>
+
+            <h3>5.2 Messages on Photos</h3>
+            <p>Messages in HeartFull are overlaid directly on the sender's photos, displayed at the bottom with semi-transparent backgrounds. Each message appears in the context of the sender's visual story. There is no separate chat screen with a white background and text bubbles. The conversation is <strong>embedded in the person's life</strong>, not abstracted from it.</p>
+            <p>This creates a qualitatively different emotional experience. A message received in the context of someone's sunset photo or morning coffee feels different from a message in an anonymous text thread. The medium shapes the message.</p>
+
+            <h3>5.3 Tap Navigation</h3>
+            <p>Photos support three-zone tap navigation: tap left to go back, tap centre to view the photo full-screen, tap right to advance. This replaces the standard gallery viewer with a Stories-like interaction model, but applied to a dating context where each photo is a conversation backdrop.</p>
+
+            <h3>5.4 No Chat List</h3>
+            <p>There is no scrollable list of conversations. The faces bar <em>is</em> the conversation list, but it is always visible, always at the top, and never takes the user away from the visual content. There is no "back" button to a message inbox. The paradigm is <strong>spatial navigation</strong> (swipe between people) rather than <strong>hierarchical navigation</strong> (list &rarr; thread &rarr; back to list).</p>
+
+            <table>
+                <tr><th>Dimension</th><th>Tinder / Bumble / Hinge</th><th>HeartFull</th></tr>
+                <tr><td>Discovery</td><td>Swipe deck (one at a time)</td><td>Photo gallery browsing</td></tr>
+                <tr><td>Matching</td><td>Mutual swipe required</td><td>Browse and message directly</td></tr>
+                <tr><td>Conversation view</td><td>Text chat with profile photo</td><td>Messages overlaid on full photos</td></tr>
+                <tr><td>Navigation</td><td>Tab bar + back button</td><td>Faces bar + horizontal swipe</td></tr>
+                <tr><td>Message list</td><td>Scrollable inbox</td><td>No list; faces bar is the index</td></tr>
+                <tr><td>Cost to message</td><td>Free (or paywalled)</td><td>Hearts (earned, not bought)</td></tr>
+            </table>
+
+            <!-- 6. Anti-Spam -->
+            <h2 id="anti-spam">6. Behavioural Anti-Spam Without Moderation Overhead</h2>
+            <p>Every dating app struggles with spam, harassment, and low-effort mass-messaging. The standard responses are reactive moderation (report &rarr; review &rarr; ban) and blunt rate limits (e.g., Bumble's 24-hour window). HeartFull's Hearts Economy provides a <strong>proactive, economic anti-spam mechanism</strong> that requires no moderator intervention.</p>
+
+            <h3>6.1 Economic Throttling</h3>
+            <p>A user who sends the same message to 50 people will rapidly drain their Hearts balance. The dynamic pricing formula accelerates this: popular recipients cost more to message, so mass-messaging popular users is exponentially expensive. A spammer with 100 Hearts can message perhaps 10&ndash;15 people before running out, at which point they must <em>earn</em> more Hearts by uploading photos, receiving replies, or going on dates. The system converts spam from a moderation problem into an economic impossibility.</p>
+
+            <h3>6.2 The Unanswered Message Limit</h3>
+            <p>HeartFull caps consecutive unanswered messages at 5. The 6th message is blocked with a prompt: "Wait for a reply before sending more messages." This hard limit, combined with economic throttling, means that harassment requires both Hearts (expensive) and reciprocation (impossible for harassers). The system is <strong>self-correcting</strong>.</p>
+
+            <h3>6.3 Escrow as a Quality Signal</h3>
+            <p>The 1-Heart escrow on the first message functions as a Spence signalling mechanism<sup>5</sup>: it is a cost that is trivial for genuine users (who earn Hearts naturally) but ruinous for spammers (who would need to earn Hearts for each victim). The cost is calibrated to be below the threshold of conscious thought for legitimate users while being above the threshold of economic viability for automated abuse.</p>
+
+            <!-- 7. Structural Comparison -->
+            <h2 id="structural-comparison">7. Structural Comparison Matrix</h2>
+            <p>The following matrix compares HeartFull to the six largest dating apps across nine structural dimensions. Green indicates a user-aligned design; red indicates a revenue-extraction design.</p>
+
+            <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Tinder</th>
+                    <th>Bumble</th>
+                    <th>Hinge</th>
+                    <th>OkCupid</th>
+                    <th>CMB</th>
+                    <th style="background:var(--coral);">HeartFull</th>
+                </tr>
+                <tr>
+                    <td><strong>Revenue model</strong></td>
+                    <td>Subscription + IAP</td>
+                    <td>Subscription + IAP</td>
+                    <td>Subscription + Roses</td>
+                    <td>Subscription</td>
+                    <td>Subscription + Beans</td>
+                    <td class="td-green"><strong>None</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Connections paywalled?</strong></td>
+                    <td class="td-coral">Yes</td>
+                    <td class="td-coral">Yes</td>
+                    <td class="td-coral">Yes</td>
+                    <td class="td-coral">Yes</td>
+                    <td class="td-coral">Yes</td>
+                    <td class="td-green"><strong>Never</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery mechanic</strong></td>
+                    <td>Swipe deck</td>
+                    <td>Swipe deck</td>
+                    <td>Profile cards</td>
+                    <td>Swipe deck</td>
+                    <td>Curated batch</td>
+                    <td class="td-green"><strong>Photo gallery</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Message cost</strong></td>
+                    <td>Free (after match)</td>
+                    <td>Free (women first)</td>
+                    <td>Free (after match)</td>
+                    <td>Free (after match)</td>
+                    <td>Free (limited)</td>
+                    <td class="td-green"><strong>Hearts (earned)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Virtual currency</strong></td>
+                    <td>None (IAP only)</td>
+                    <td>None (IAP only)</td>
+                    <td>Roses (bought)</td>
+                    <td>None</td>
+                    <td>Beans (bought)</td>
+                    <td class="td-green"><strong>Hearts (earned only)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-spam</strong></td>
+                    <td>Report-based</td>
+                    <td>Women-first + reports</td>
+                    <td>Like limits + reports</td>
+                    <td>Report-based</td>
+                    <td>Daily limits</td>
+                    <td class="td-green"><strong>Economic throttling</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation UI</strong></td>
+                    <td>Standard chat</td>
+                    <td>Standard chat</td>
+                    <td>Standard chat</td>
+                    <td>Standard chat</td>
+                    <td>Standard chat</td>
+                    <td class="td-green"><strong>Photo-overlaid messages</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Navigation</strong></td>
+                    <td>Tab bar + lists</td>
+                    <td>Tab bar + lists</td>
+                    <td>Tab bar + lists</td>
+                    <td>Tab bar + lists</td>
+                    <td>Tab bar + lists</td>
+                    <td class="td-green"><strong>Faces bar + swipe</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Date incentive</strong></td>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>None</td>
+                    <td class="td-green"><strong>QR check-in (+100)</strong></td>
+                </tr>
+            </table>
+            </div>
+
+            <!-- 8. Individual Comparisons -->
+            <h2 id="individual-comparisons">8. Individual App Comparisons</h2>
+            <p>For a detailed analysis of how HeartFull differs from each major competitor, see the dedicated comparison pages below:</p>
+
+            <div class="compare-grid">
+                <div class="compare-card">
+                    <h4>HeartFull vs Tinder</h4>
+                    <p>No swipe deck, no Super Likes, no Passport. Hearts replace subscriptions.</p>
+                    <a href="compare/tinder.html">Read full comparison &rarr;</a>
+                </div>
+                <div class="compare-card">
+                    <h4>HeartFull vs Bumble</h4>
+                    <p>No women-first rule, no 24-hour window. Organic conversation flow.</p>
+                    <a href="compare/bumble.html">Read full comparison &rarr;</a>
+                </div>
+                <div class="compare-card">
+                    <h4>HeartFull vs Hinge</h4>
+                    <p>No prompt-based profiles, no paid Roses. Earned Hearts vs bought Roses.</p>
+                    <a href="compare/hinge.html">Read full comparison &rarr;</a>
+                </div>
+                <div class="compare-card">
+                    <h4>HeartFull vs Coffee Meets Bagel</h4>
+                    <p>No daily match limits, no purchased Beans. Self-sustaining economy.</p>
+                    <a href="compare/coffee-meets-bagel.html">Read full comparison &rarr;</a>
+                </div>
+                <div class="compare-card">
+                    <h4>HeartFull vs OkCupid</h4>
+                    <p>No compatibility quizzes, no paywalled likes. Photo-first discovery.</p>
+                    <a href="compare/okcupid.html">Read full comparison &rarr;</a>
+                </div>
+                <div class="compare-card">
+                    <h4>HeartFull vs Badoo</h4>
+                    <p>No credit purchases, no Spotlight. Merit-based visibility for all.</p>
+                    <a href="compare/badoo.html">Read full comparison &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 9. Conclusion -->
+            <h2 id="conclusion">9. Conclusion</h2>
+            <p>HeartFull is not "another dating app." It is a <strong>structurally different product</strong> built on different economic foundations, different interaction paradigms, and different incentive structures. To categorise it alongside swipe-and-subscribe apps is to mistake the category for the product.</p>
+
+            <p>The three core innovations&mdash;the Hearts Economy, photo-first messaging, and behavioural anti-spam&mdash;are interdependent and self-reinforcing. The economy provides the cost signal that prevents spam. The photo-first UI provides the context that makes conversations meaningful. The anti-spam system preserves the quality that makes the economy valuable. Remove any one element and the system degrades; together, they create an experience that no other dating app provides.</p>
+
+            <p>HeartFull asks a question that the dating industry has avoided for a decade: <em>what if a dating app's success was measured by the dates it facilitated, not the subscriptions it sold?</em> The Hearts Economy is our answer. Your character is your currency. That is not a tagline&mdash;it is an architecture.</p>
+
+            <!-- Footnotes -->
+            <div class="footnotes">
+                <h3>References</h3>
+                <p><sup>1</sup> Statista, "Revenue of dating services worldwide 2017&ndash;2027," updated March 2026.</p>
+                <p><sup>2</sup> Tyson, G. et al., "A First Look at User Activity on Tinder," <em>IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining</em>, 2016.</p>
+                <p><sup>3</sup> Ward, J., "Swiping, Matching, Chatting: Self-Presentation and Self-Disclosure on Mobile Dating Apps," <em>Human IT</em>, 2019.</p>
+                <p><sup>4</sup> Pew Research Center, "The State of Online Dating in 2023," February 2023.</p>
+                <p><sup>5</sup> Spence, M., "Job Market Signaling," <em>The Quarterly Journal of Economics</em>, Vol. 87, No. 3, 1973, pp. 355&ndash;374.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:var(--ink); color:rgba(255,255,255,0.7); padding:2rem 1rem; text-align:center; font-size:0.875rem;">
+        <p>&copy; 2026 HeartFull. All rights reserved.</p>
+    </footer>
+</body>
+</html>

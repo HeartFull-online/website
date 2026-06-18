@@ -129,6 +129,9 @@
         .nav-brand, .nav-link, .nav-cta, .nav-menu-btn {
             transition: color 0.3s, background 0.3s;
         }
+        .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-left:0.5rem}.lang-switcher a{text-decoration:none;transition:color 0.3s}.lang-switcher .active{font-weight:700}
+        nav:not(.nav-scrolled) .lang-switcher a{color:rgba(255,255,255,0.5)}nav:not(.nav-scrolled) .lang-switcher a:hover{color:white}nav:not(.nav-scrolled) .lang-switcher .active{color:white}
+        nav.nav-scrolled .lang-switcher a{color:var(--ink-tertiary)}nav.nav-scrolled .lang-switcher a:hover{color:var(--coral)}nav.nav-scrolled .lang-switcher .active{color:var(--ink)}
 
         /* Hero — warm dark gradient matching app sign-in */
         .hero-section {
@@ -179,7 +182,7 @@
                     <a href="#why" class="nav-link font-medium">Why Different</a>
                     <a href="/dating-institute/" class="nav-link font-medium">Dating Institute</a>
                     <a href="/promoters.html" class="nav-link font-medium">Promoters</a>
-                    <a href="/zh/" class="nav-link font-medium">中文</a>
+                    <span class="lang-switcher"><span class="active">EN</span>|<a href="/es/">ES</a>|<a href="/zh/">&#20013;&#25991;</a>|<a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>|<a href="/vi/">VI</a></span>
                 </div>
 
                 <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hidden md:block">
@@ -203,7 +206,7 @@
                 <a href="#why" class="block py-2 font-medium" style="color: var(--ink-secondary);">Why Different</a>
                 <a href="/dating-institute/" class="block py-2 font-medium" style="color: var(--ink-secondary);">Dating Institute</a>
                 <a href="/promoters.html" class="block py-2 font-medium" style="color: var(--ink-secondary);">Promoters</a>
-                <a href="/zh/" class="block py-2 font-medium" style="color: var(--ink-secondary);">中文</a>
+                <div class="py-2" style="display:flex;gap:0.75rem;font-size:0.85rem;"><span style="font-weight:700;color:var(--ink);">EN</span><a href="/es/" style="color:var(--ink-secondary);text-decoration:none;">ES</a><a href="/zh/" style="color:var(--ink-secondary);text-decoration:none;">&#20013;&#25991;</a><a href="/ar/" style="color:var(--ink-secondary);text-decoration:none;">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a><a href="/vi/" style="color:var(--ink-secondary);text-decoration:none;">VI</a></div>
                 <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
                     <button class="text-white px-6 py-2 font-semibold w-full mt-1" style="background: var(--coral); border-radius: 12px;">
                         Open App
@@ -1161,11 +1164,16 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
                 <h2 class="text-3xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif; color: var(--ink);">
-                    No app store. <span class="gradient-text">Just open and go.</span>
+                    Get HeartFull. <span class="gradient-text">Multiple ways.</span>
                 </h2>
                 <p class="text-lg max-w-3xl mx-auto" style="color: var(--ink-secondary);">
-                    HeartFull works right in your browser. Save it to your home screen for the full app experience with push notifications.
+                    Download from Google Play, or use the web app directly in your browser. Save it to your home screen for the full experience with push notifications.
                 </p>
+                <div class="flex justify-center mt-6 mb-4">
+                    <a href="https://play.google.com/store/apps/details?id=online.heartfull.app" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:60px;">
+                    </a>
+                </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
@@ -1256,11 +1264,14 @@
             <p class="text-xl lg:text-2xl mb-10" style="font-weight: 300;">
                 The only dating app where connections are never paywalled.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
                     <button class="bg-white px-10 py-4 font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto" style="color: var(--coral); border-radius: 12px;">
                         Open App
                     </button>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=online.heartfull.app" target="_blank" rel="noopener noreferrer">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:52px;">
                 </a>
                 <a href="https://www.linkedin.com/company/heartfull-online/" target="_blank" rel="noopener noreferrer">
                     <button class="border-2 border-white text-white px-10 py-4 font-bold text-lg hover:bg-white transition-all w-full sm:w-auto cta-outline" style="border-radius: 12px; background: transparent;">

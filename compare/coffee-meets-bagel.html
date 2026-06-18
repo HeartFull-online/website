@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartFull vs Coffee Meets Bagel - A Detailed Comparison of Two Currency-Based Dating Apps</title>
+    <meta name="description" content="An academic comparison of HeartFull and Coffee Meets Bagel. Both apps use virtual currencies, but Beans are purchased while Hearts are earned. A structural analysis of curated matches vs open discovery.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-light:#FF8A9A; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3,h4 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        .article { max-width:800px; margin:0 auto; }
+        .article p, .article li { font-size:1.05rem; line-height:1.8; margin-bottom:1.25rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.75rem; margin:3rem 0 1rem; color:var(--ink); }
+        .article h3 { font-size:1.3rem; margin:2rem 0 0.75rem; color:var(--ink); }
+        .article h4 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article strong { color:var(--ink); }
+        .article blockquote { border-left:3px solid var(--coral); padding:0.75rem 1.25rem; margin:1.5rem 0; background:var(--coral-subtle); border-radius:0 8px 8px 0; }
+        .article blockquote p { margin-bottom:0; font-style:italic; }
+        .article ul, .article ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+        .article table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+        .article th { background:var(--ink); color:white; padding:10px 14px; text-align:left; }
+        .article td { padding:10px 14px; border-bottom:1px solid var(--border); }
+        .article tr:nth-child(even) { background:var(--surface-sunken); }
+        .tr-hf { background:var(--coral-subtle) !important; }
+        .td-coral { color:var(--coral); font-weight:700; }
+        .td-green { color:#2D8F5E; font-weight:700; }
+        .abstract { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:2rem; margin:2rem 0; box-shadow:var(--shadow-warm); }
+        .abstract h3 { margin-top:0; }
+        .figure { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin:2rem 0; text-align:center; }
+        .figure-caption { font-size:0.85rem; color:var(--ink-tertiary); margin-top:0.75rem; font-style:italic; }
+        .gradient-text { background:linear-gradient(135deg,#FF5870,#FF8A9A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .toc { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; }
+        .toc ol { counter-reset:toc; list-style:none; padding-left:0; }
+        .toc li { counter-increment:toc; margin-bottom:0.5rem; }
+        .toc li::before { content:counter(toc) "."; font-weight:700; color:var(--coral); margin-right:0.5rem; }
+        .toc a { color:var(--ink-secondary); font-weight:500; }
+        .toc a:hover { color:var(--coral); }
+        sup { font-size:0.7em; color:var(--coral); }
+        .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
+        .footnotes p { font-size:0.85rem; line-height:1.6; }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/dating-institute/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Dating Institute</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <div class="text-sm font-semibold mb-4" style="color:var(--ink-tertiary);">
+                <a href="/why-heartfull.html" style="color:var(--ink-tertiary);">HeartFull</a> &rsaquo;
+                <a href="/why-heartfull.html" style="color:var(--ink-tertiary);">Why HeartFull</a> &rsaquo;
+                <span style="color:var(--coral);">vs Coffee Meets Bagel</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
+                HeartFull vs Coffee Meets Bagel:<br>
+                <span class="gradient-text">Earned Currency vs Purchased Currency</span>
+            </h1>
+            <p style="color:var(--ink-tertiary); margin-bottom:0.5rem;">June 2026 &middot; HeartFull Research</p>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1.5rem 0;">
+
+            <!-- Abstract -->
+            <div class="abstract">
+                <h3>Abstract</h3>
+                <p>Coffee Meets Bagel and HeartFull share a rare distinction among dating apps: both employ virtual currencies as core mechanics. CMB's Beans and HeartFull's Hearts each attempt to solve the same problem&mdash;incentivising thoughtful interaction over mass-swiping. However, the two currencies differ in a fundamental way that determines everything downstream. Beans are primarily purchased with real money ($1.99&ndash;$24.99 per pack), making CMB's economy a monetisation layer disguised as a quality mechanism. Hearts are exclusively earned through community participation and can never be bought. This paper examines how that single architectural difference&mdash;purchased vs earned currency&mdash;creates divergent incentive structures, user experiences, and platform outcomes. We further analyse CMB's curated daily match model against HeartFull's open discovery paradigm and assess whether artificial scarcity or behavioural economics better serves users seeking meaningful relationships.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <strong style="font-family:'Fraunces',serif;">Contents</strong>
+                <ol>
+                    <li><a href="#overview">Overview: Two Approaches to Quality Dating</a></li>
+                    <li><a href="#beans-vs-hearts">Beans vs Hearts: A Tale of Two Currencies</a></li>
+                    <li><a href="#curated-vs-open">Curated Daily Matches vs Open Discovery</a></li>
+                    <li><a href="#quality-quantity">The Quality-vs-Quantity Tradeoff</a></li>
+                    <li><a href="#feature-comparison">Feature Comparison</a></li>
+                    <li><a href="#summary">Summary</a></li>
+                </ol>
+            </div>
+
+            <!-- 1. Overview -->
+            <h2 id="overview">1. Overview: Two Approaches to Quality Dating</h2>
+            <p>Coffee Meets Bagel launched in 2012 with a thesis that was unusual for the time: less is more. Founded by three sisters&mdash;Arum, Dawoon, and Soo Kang&mdash;CMB positioned itself as the antidote to Tinder's infinite swipe deck. Instead of presenting an endless stream of profiles, CMB sends users a small batch of curated daily matches, which it calls "Bagels." The premise is that limiting choice reduces decision fatigue and encourages more deliberate evaluation of each potential partner.</p>
+
+            <p>CMB operates on a tiered model. Free users receive a limited number of daily Bagels selected by the app's algorithm. Premium subscribers ($15&ndash;$35/month depending on plan length) receive additional features: Activity Reports showing who has engaged with their profile, Read Receipts on messages, enhanced match preferences, and a monthly allocation of Beans<sup>1</sup>. Beans&mdash;CMB's virtual currency&mdash;can be used to "like" profiles in the Discover section (users outside your daily Bagels), send priority messages, and unlock Activity Reports for non-subscribers.</p>
+
+            <p>HeartFull begins from a different premise entirely. Rather than artificially restricting supply to simulate quality, HeartFull allows open browsing of a photo-based gallery while using an earned-currency economy to organically regulate the quality of interactions. There are no daily match limits, no subscription tiers, and no purchasable currency. Every user has the same tools. The only variable is their Hearts balance&mdash;earned through uploading photos, receiving replies, going on dates, and referring friends.</p>
+
+            <p>Both apps reject the swipe-and-subscribe orthodoxy. Both recognise that unlimited, zero-cost interactions produce low-quality outcomes. But they diverge sharply on how to solve that problem: CMB restricts access through algorithmic curation and paid features; HeartFull regulates behaviour through an earned-currency economy that makes quality interactions cheap and low-effort interactions expensive.</p>
+
+            <!-- 2. Beans vs Hearts -->
+            <h2 id="beans-vs-hearts">2. Beans vs Hearts: A Tale of Two Currencies</h2>
+            <p>The comparison between CMB's Beans and HeartFull's Hearts is the most instructive lens for understanding these two platforms, because both currencies are solving the same problem&mdash;attention allocation&mdash;through fundamentally different economic mechanisms.</p>
+
+            <h3>2.1 How Beans Work</h3>
+            <p>Beans are CMB's virtual currency. Users receive a small daily allocation for free, but the primary acquisition method is purchase. Bean packs range from 100 Beans for $1.99 to 3,000 Beans for $24.99<sup>2</sup>. Beans are spent on several actions:</p>
+            <ul>
+                <li><strong>"Liking" Discover profiles:</strong> Users outside your daily Bagels appear in a Discover feed. Sending a like costs Beans, effectively making broader discovery a paid feature.</li>
+                <li><strong>Priority messaging:</strong> Spending Beans on a match places your message at the top of their inbox.</li>
+                <li><strong>Activity Reports:</strong> Non-subscribers can spend Beans to see who has viewed their profile.</li>
+                <li><strong>Read Receipts:</strong> Confirm whether a match has read your message.</li>
+            </ul>
+
+            <p>The critical observation is that Beans buy <em>information advantages</em> and <em>visibility boosts</em>. A user who spends more money sees more data, reaches more people, and stands out more prominently. The currency functions as a proxy for willingness to pay, not as a measure of community contribution.</p>
+
+            <h3>2.2 How Hearts Work</h3>
+            <p>Hearts are HeartFull's virtual currency. Every new user receives 100 Hearts. Additional Hearts are earned exclusively through community participation:</p>
+            <ul>
+                <li><strong>+20 per photo uploaded:</strong> Content creation enriches the community for everyone.</li>
+                <li><strong>+1 per photo like received:</strong> Engaging content is rewarded.</li>
+                <li><strong>+100 per date check-in (QR code):</strong> Meeting in person is the platform's ultimate goal.</li>
+                <li><strong>+25 per successful referral:</strong> Growing the network benefits all users.</li>
+                <li><strong>Message replies transfer Hearts from sender to receiver:</strong> Your attention has economic value.</li>
+            </ul>
+
+            <p>Hearts cannot be purchased at any price. There is no in-app purchase screen, no Bean-pack equivalent, no premium tier that grants bonus Hearts. The only way to accumulate Hearts is to participate constructively in the community. This distinction has profound downstream effects:</p>
+
+            <blockquote>
+                <p>When currency is purchased, wealth correlates with disposable income. When currency is earned, wealth correlates with community engagement. These are fundamentally different sorting mechanisms, and they produce fundamentally different communities.</p>
+            </blockquote>
+
+            <h3>2.3 The Incentive Divergence</h3>
+            <p>CMB has a financial incentive to make Beans scarce. If free Bean allocation were generous, fewer users would purchase packs. The daily free allocation must be calibrated to feel <em>almost</em> sufficient&mdash;enough to demonstrate value, not enough to satisfy need. This creates the classic freemium tension where the free experience is deliberately degraded to drive conversions.</p>
+
+            <p>HeartFull has no such tension. Since Hearts cannot be purchased, there is no revenue motive to restrict their supply. The earning rates are calibrated purely for behavioural outcomes: enough to reward constructive participation, scarce enough to make low-effort mass-messaging unsustainable. The platform's incentive is aligned with the user's incentive&mdash;both benefit when the user uploads quality photos, responds to messages, and goes on dates.</p>
+
+            <!-- 3. Curated vs Open Discovery -->
+            <h2 id="curated-vs-open">3. Curated Daily Matches vs Open Discovery</h2>
+
+            <h3>3.1 CMB's Curation Model</h3>
+            <p>CMB's signature feature is its daily Bagel delivery. Each day, the algorithm selects a small batch of profiles (typically 6&ndash;10 for free users, more for Premium) based on stated preferences, location, and behavioural signals. Users review each Bagel and choose to "like" or "pass." Mutual likes open a chat window that expires after 7 days of inactivity<sup>3</sup>.</p>
+
+            <p>The 7-day chat expiration is designed to create urgency&mdash;if you match with someone, you have one week to exchange numbers or make plans before the conversation vanishes. This mechanism forces decisive action but also creates artificial pressure. A user who is travelling, ill, or simply busy during that window loses the connection permanently.</p>
+
+            <p>The Discover section allows users to browse beyond their daily Bagels, but each "like" in Discover costs Beans. This means broader discovery is gated behind either time (earning daily free Beans) or money (purchasing Bean packs). The core discovery experience is algorithmically constrained by design.</p>
+
+            <h3>3.2 HeartFull's Open Discovery Model</h3>
+            <p>HeartFull has no algorithmic matchmaker. Users browse a gallery of photos posted by other users, filtered by location district. Discovery is visual and self-directed: you see someone's photo, find it interesting, and start a conversation directly on that photo. There is no daily quota, no batch delivery, and no algorithm deciding who you should see.</p>
+
+            <p>The key difference is where the quality filter operates. CMB places it <em>before</em> discovery: an algorithm decides who you see. HeartFull places it <em>after</em> discovery: anyone can see anyone, but the Hearts Economy ensures that interactions are thoughtful. The filter is not on access&mdash;it is on behaviour.</p>
+
+            <p>There is also no chat expiration window. Conversations in HeartFull persist indefinitely. Users message at their own pace without artificial deadlines. The only constraint is the Hearts cost of sending messages, which self-regulates conversation volume without imposing arbitrary time limits.</p>
+
+            <!-- 4. Quality-vs-Quantity -->
+            <h2 id="quality-quantity">4. The Quality-vs-Quantity Tradeoff</h2>
+
+            <h3>4.1 Does Curation Solve the Problem?</h3>
+            <p>CMB's thesis&mdash;that fewer matches lead to better matches&mdash;is intuitively appealing but empirically incomplete. The problem with unlimited swiping is not merely volume. It is the <em>absence of cost</em>. When swiping right is free and unlimited, users adopt mass-approval strategies because there is no penalty for indiscriminate behaviour. CMB's solution is to restrict volume (fewer daily matches), but it does not address the cost structure of interactions within those matches.</p>
+
+            <p>Once two CMB users match, messaging is free and unlimited within the 7-day window. There is no economic signal differentiating a thoughtful opening message from a copy-pasted "Hey." The curation model filters <em>who</em> you see but not <em>how</em> you interact. It addresses the paradox of choice but ignores the tragedy of the commons.</p>
+
+            <h3>4.2 HeartFull's Economic Solution</h3>
+            <p>HeartFull does not restrict who you see. It restricts the <em>cost</em> of low-quality behaviour. The first message in any new conversation costs 1 Heart, held in escrow until the recipient replies. If they reply, the Heart transfers to them&mdash;compensating their attention. If they never reply, the Heart is consumed. This micro-cost eliminates zero-effort mass-messaging without restricting discovery.</p>
+
+            <p>In ongoing conversations, HeartFull applies dynamic pricing based on the wealth ratio between sender and receiver and the receiver's demand (incoming message rate). Popular users cost more to message&mdash;not as a punishment, but as supply-and-demand economics applied to human attention. This mechanism achieves what CMB's daily limits attempt&mdash;thoughtful, high-quality interactions&mdash;without restricting the user's ability to discover new people.</p>
+
+            <blockquote>
+                <p>CMB restricts the <em>supply</em> of potential matches. HeartFull prices the <em>cost</em> of low-quality interactions. Both aim for quality, but only one preserves user agency.</p>
+            </blockquote>
+
+            <h3>4.3 The Expiration Problem</h3>
+            <p>CMB's 7-day chat window introduces an additional failure mode: time-constrained connections. Genuine interest does not always conform to a weekly schedule. A user on a business trip, a user processing a recent breakup, or a user who simply prefers slow-paced conversation may lose a promising match to an arbitrary deadline. HeartFull's persistent conversations respect that human connection operates on its own timeline. The only "expiration" is economic: if a user stops participating in the community (no photo uploads, no engagement), their Hearts balance naturally declines, organically reducing their messaging capacity until they re-engage.</p>
+
+            <!-- 5. Feature Comparison -->
+            <h2 id="feature-comparison">5. Feature Comparison</h2>
+            <p>The following table compares Coffee Meets Bagel and HeartFull across twelve structural dimensions.</p>
+
+            <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Coffee Meets Bagel</th>
+                    <th style="background:var(--coral);">HeartFull</th>
+                </tr>
+                <tr>
+                    <td><strong>Revenue model</strong></td>
+                    <td>Subscription + Bean purchases</td>
+                    <td class="td-green"><strong>None (no monetisation)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Subscription cost</strong></td>
+                    <td>$15&ndash;$35/month</td>
+                    <td class="td-green"><strong>$0 (no subscription)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Virtual currency</strong></td>
+                    <td>Beans (purchased: $1.99&ndash;$24.99)</td>
+                    <td class="td-green"><strong>Hearts (earned only, never purchased)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Currency purpose</strong></td>
+                    <td>Buy visibility, info advantages</td>
+                    <td class="td-green"><strong>Facilitate and regulate connections</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Discovery model</strong></td>
+                    <td>Curated daily Bagels (6&ndash;10/day)</td>
+                    <td class="td-green"><strong>Open photo gallery browsing</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Daily match limit</strong></td>
+                    <td class="td-coral">Yes (algorithm-controlled)</td>
+                    <td class="td-green"><strong>No limit</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Chat expiration</strong></td>
+                    <td class="td-coral">7-day window</td>
+                    <td class="td-green"><strong>No expiration</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Message cost</strong></td>
+                    <td>Free after mutual like</td>
+                    <td class="td-green"><strong>1 Heart (escrow, returned on reply)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-spam mechanism</strong></td>
+                    <td>Daily limits + moderation</td>
+                    <td class="td-green"><strong>Economic throttling (Hearts cost)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Conversation UI</strong></td>
+                    <td>Standard text chat</td>
+                    <td class="td-green"><strong>Messages overlaid on photos</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Navigation</strong></td>
+                    <td>Tab bar + message list</td>
+                    <td class="td-green"><strong>Faces bar + horizontal swipe</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Date incentive</strong></td>
+                    <td>None</td>
+                    <td class="td-green"><strong>QR check-in (+100 Hearts to both)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Read receipts</strong></td>
+                    <td class="td-coral">Premium or Beans required</td>
+                    <td class="td-green"><strong>Not needed (photo-first context)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Activity reports</strong></td>
+                    <td class="td-coral">Premium or Beans required</td>
+                    <td class="td-green"><strong>Not applicable (no hidden data)</strong></td>
+                </tr>
+            </table>
+            </div>
+
+            <!-- 6. Summary -->
+            <h2 id="summary">6. Summary</h2>
+            <p>Coffee Meets Bagel deserves credit for identifying a real problem: unlimited, zero-cost swiping produces low-quality interactions and decision fatigue. Its curated daily match model was a genuine innovation when it launched, and its emphasis on "quality over quantity" was a meaningful departure from Tinder's volume-first approach.</p>
+
+            <p>However, CMB's solution is architectural restriction rather than economic realignment. It limits <em>how many</em> people you see, but it does not change <em>the economics</em> of how you interact with them. Once matched, messaging is free and undifferentiated. The Beans currency, while conceptually interesting, is undermined by its purchasability&mdash;the moment a currency can be bought with real money, it ceases to measure engagement and begins to measure disposable income. And the 7-day chat window, while designed to create urgency, also creates unnecessary pressure and arbitrary connection loss.</p>
+
+            <p>HeartFull addresses the same problem at a deeper structural level. Rather than restricting supply (daily Bagel limits) or selling advantages (Bean packs and Premium subscriptions), it introduces an earned-currency economy that makes quality interactions naturally cheap and low-quality interactions naturally expensive. The escrow system, dynamic pricing, and demand-responsive messaging costs achieve what CMB's daily limits aspire to&mdash;thoughtful, high-quality connections&mdash;without restricting discovery, imposing arbitrary deadlines, or selling advantage to the highest bidder.</p>
+
+            <p>Both apps believe dating should be intentional. The difference is that CMB enforces intentionality through external constraints&mdash;algorithmic curation, daily limits, time windows. HeartFull cultivates intentionality through internal incentives&mdash;an earned-currency economy where your character, not your credit card, determines your capacity to connect.</p>
+
+            <blockquote>
+                <p>Coffee Meets Bagel asks: "What if we showed you fewer people?" HeartFull asks: "What if connecting with people required earning the right through community participation?" The first question restricts access. The second transforms behaviour.</p>
+            </blockquote>
+
+            <!-- Footnotes -->
+            <div class="footnotes">
+                <h3>References</h3>
+                <p><sup>1</sup> Coffee Meets Bagel, "Premium membership plans," coffeemeetsbagel.com, accessed June 2026.</p>
+                <p><sup>2</sup> Coffee Meets Bagel, "In-app purchase pricing (iOS App Store)," Apple Inc., accessed June 2026.</p>
+                <p><sup>3</sup> Coffee Meets Bagel Help Center, "How long do conversations last?" coffeemeetsbagel.com, accessed June 2026.</p>
+            </div>
+
+            <hr style="border:none; border-top:1px solid var(--border); margin:2rem 0;">
+            <p style="text-align:center;"><a href="/why-heartfull.html">&larr; Back to Why HeartFull</a></p>
+        </div>
+    </main>
+
+    <footer style="background:var(--ink); color:rgba(255,255,255,0.7); padding:2rem 1rem; text-align:center; font-size:0.875rem;">
+        <p>&copy; 2026 HeartFull. All rights reserved.</p>
+    </footer>
+</body>
+</html>
