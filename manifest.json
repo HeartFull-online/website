@@ -2,7 +2,7 @@
   "name": "HeartFull",
   "short_name": "HeartFull",
   "description": "The first merit-based dating platform. Your character is your currency.",
-  "start_url": "https://app.heartfull.online",
+  "start_url": "https://heartfull.online",
   "display": "standalone",
   "background_color": "#FAF7F5",
   "theme_color": "#FF5870",

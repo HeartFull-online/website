@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/HeartFull-online/website#readme",
   "devDependencies": {
-    "html-validate": "^10.13.1",
+    "html-validate": "10.0.0",
     "tailwindcss": "^3.4.19"
   }
 }
