@@ -48,6 +48,10 @@
         sup { font-size:0.7em; color:var(--coral); }
         .footnotes { border-top:1px solid var(--border); margin-top:3rem; padding-top:1.5rem; }
         .footnotes p { font-size:0.85rem; line-height:1.6; }
+        .breadcrumb { font-size:0.875rem; color:var(--ink-tertiary); margin-bottom:1rem; }
+        .breadcrumb a { color:var(--ink-tertiary); }
+        .breadcrumb a:hover { color:var(--coral); }
+        .breadcrumb span { margin:0 0.35rem; }
     </style>
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
@@ -76,10 +80,8 @@
 
     <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div class="article">
-            <div class="text-sm font-semibold mb-4" style="color:var(--ink-tertiary);">
-                <a href="/" style="color:var(--ink-tertiary);">HeartFull</a> &rsaquo;
-                <a href="/why-heartfull.html" style="color:var(--ink-tertiary);">Why HeartFull</a> &rsaquo;
-                <span style="color:var(--coral);">vs Badoo</span>
+            <div class="breadcrumb">
+                <a href="/">HeartFull</a><span>&rsaquo;</span><a href="/why-heartfull.html">Why HeartFull</a><span>&rsaquo;</span>vs Badoo
             </div>
             <h1 class="text-3xl sm:text-4xl font-bold mb-2 leading-tight" style="color:var(--ink);">
                 HeartFull vs Badoo:<br>
