@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.."
 
 ERRORS=0
 WARNINGS=0
+HTML_FILES=$(find . -type f -name '*.html' -not -path './node_modules/*' | sort)
 
 echo "============================================"
 echo "  HeartFull Website — Pre-Publish Checks"
@@ -15,7 +16,7 @@ echo ""
 
 # 1. HTML Validation
 echo "--- HTML Validation ---"
-if npx html-validate "*.html" "compare/*.html" "dating-institute/*.html" "es/*.html" "ar/*.html" "vi/*.html" "zh/*.html" 2>&1; then
+if npx html-validate $HTML_FILES 2>&1; then
   echo "✓ HTML valid"
 else
   echo "✗ HTML validation failed"
@@ -26,7 +27,7 @@ echo ""
 # 2. Check for broken internal links
 echo "--- Internal Link Check ---"
 BROKEN_LINKS=0
-for file in *.html compare/*.html dating-institute/*.html es/*.html ar/*.html vi/*.html zh/*.html; do
+for file in $HTML_FILES; do
   # Extract href values that are internal (not http/mailto/tel/#)
   hrefs=$(grep -oP 'href="(?!https?://|mailto:|tel:|#|javascript:)[^"]*"' "$file" 2>/dev/null | sed 's/href="//;s/"$//' || true)
   for href in $hrefs; do

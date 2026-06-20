@@ -5,7 +5,7 @@
   "scripts": {
     "test": "bash scripts/check.sh",
     "build": "npx tailwindcss -i src/input.css -o style.css --minify",
-    "validate": "html-validate '*.html' 'compare/*.html' 'dating-institute/*.html' 'es/*.html' 'ar/*.html' 'vi/*.html' 'zh/*.html'"
+    "validate": "html-validate '**/*.html' --ignore 'node_modules/**/*.html'"
   },
   "repository": {
     "type": "git",
