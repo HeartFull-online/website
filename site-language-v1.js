@@ -35,24 +35,32 @@
     return languages[saved] ? saved : 'en';
   }
 
-  function localizedHref(lang, pagePath, hash) {
+  function querySuffix(params) {
+    const query = params.toString();
+    return query ? `?${query}` : '';
+  }
+
+  function localizedHref(lang, pagePath, hash, search) {
     const suffix = hash || '';
+    const params = new URLSearchParams(search || '');
+    params.delete('lang');
     const publicPath = pagePath === 'index.html'
       ? ''
       : pagePath.endsWith('/index.html')
         ? pagePath.slice(0, -'index.html'.length)
         : pagePath;
     if (lang === 'en') {
-      return '/' + publicPath + suffix;
+      return '/' + publicPath + querySuffix(params) + suffix;
     }
 
     if (translatedPages.has(pagePath)) {
       return pagePath === 'index.html'
-        ? `/${lang}/${suffix}`
-        : `/${lang}/${pagePath}${suffix}`;
+        ? `/${lang}/${querySuffix(params)}${suffix}`
+        : `/${lang}/${pagePath}${querySuffix(params)}${suffix}`;
     }
 
-    return `/${publicPath}?lang=${encodeURIComponent(lang)}${suffix}`;
+    params.set('lang', lang);
+    return `/${publicPath}${querySuffix(params)}${suffix}`;
   }
 
   function rewriteInternalLinks(lang) {
@@ -70,12 +78,12 @@
       if (url.origin !== window.location.origin) return;
 
       const pagePath = normalizePath(url.pathname);
-      const href = localizedHref(lang, pagePath, url.hash);
+      const href = localizedHref(lang, pagePath, url.hash, url.search);
       anchor.setAttribute('href', href);
     });
   }
 
-  function buildLanguageMenu(lang, pagePath) {
+  function buildLanguageMenu(lang, pagePath, search) {
     const current = languages[lang] || languages.en;
     const details = document.createElement('details');
     details.className = 'hf-language-menu';
@@ -84,7 +92,7 @@
       <div class="hf-language-list">
         ${Object.entries(languages).map(([code, item]) => {
           const active = code === lang ? ' class="active"' : '';
-          return `<a${active} data-lang="${code}" href="${localizedHref(code, pagePath)}"><span>${item.flag}</span><span>${item.name}</span></a>`;
+          return `<a${active} data-lang="${code}" href="${localizedHref(code, pagePath, '', search)}"><span>${item.flag}</span><span>${item.name}</span></a>`;
         }).join('')}
       </div>
     `;
@@ -148,22 +156,22 @@
     document.head.appendChild(style);
   }
 
-  function replaceOldLanguageSelectors(lang, pagePath) {
+  function replaceOldLanguageSelectors(lang, pagePath, search) {
     document.querySelectorAll('.lang-switcher, .language-menu').forEach((oldMenu) => {
-      oldMenu.replaceWith(buildLanguageMenu(lang, pagePath));
+      oldMenu.replaceWith(buildLanguageMenu(lang, pagePath, search));
     });
   }
 
-  function insertMissingMenu(lang, pagePath) {
+  function insertMissingMenu(lang, pagePath, search) {
     if (document.querySelector('.hf-language-menu')) return;
     const navCluster = document.querySelector('nav .hidden.md\\:flex, nav .hidden.md\\:block')?.parentElement;
     if (navCluster) {
-      navCluster.appendChild(buildLanguageMenu(lang, pagePath));
+      navCluster.appendChild(buildLanguageMenu(lang, pagePath, search));
       return;
     }
     const floating = document.createElement('div');
     floating.className = 'hf-language-floating';
-    floating.appendChild(buildLanguageMenu(lang, pagePath));
+    floating.appendChild(buildLanguageMenu(lang, pagePath, search));
     document.body.appendChild(floating);
   }
 
@@ -178,10 +186,11 @@
   document.addEventListener('DOMContentLoaded', () => {
     const lang = requestedLanguage();
     const pagePath = normalizePath(window.location.pathname);
+    const search = window.location.search;
     localStorage.setItem('hf_language', lang);
     installStyles();
-    replaceOldLanguageSelectors(lang, pagePath);
-    insertMissingMenu(lang, pagePath);
+    replaceOldLanguageSelectors(lang, pagePath, search);
+    insertMissingMenu(lang, pagePath, search);
     rewriteInternalLinks(lang);
     closeMenusOnOutsideClick();
   });
