@@ -15,7 +15,7 @@ echo ""
 
 # 1. HTML Validation
 echo "--- HTML Validation ---"
-if npx html-validate "*.html" "dating-institute/*.html" 2>&1; then
+if npx html-validate "*.html" "compare/*.html" "dating-institute/*.html" "es/*.html" "ar/*.html" "vi/*.html" "zh/*.html" 2>&1; then
   echo "✓ HTML valid"
 else
   echo "✗ HTML validation failed"
@@ -26,7 +26,7 @@ echo ""
 # 2. Check for broken internal links
 echo "--- Internal Link Check ---"
 BROKEN_LINKS=0
-for file in *.html dating-institute/*.html; do
+for file in *.html compare/*.html dating-institute/*.html es/*.html ar/*.html vi/*.html zh/*.html; do
   # Extract href values that are internal (not http/mailto/tel/#)
   hrefs=$(grep -oP 'href="(?!https?://|mailto:|tel:|#|javascript:)[^"]*"' "$file" 2>/dev/null | sed 's/href="//;s/"$//' || true)
   for href in $hrefs; do
@@ -34,13 +34,23 @@ for file in *.html dating-institute/*.html; do
     target=$(echo "$href" | sed 's/[?#].*//')
     # Resolve relative paths
     dir=$(dirname "$file")
-    if [ "$dir" = "." ]; then
+    if [[ "$target" == /* ]]; then
+      resolved="${target#/}"
+    elif [ "$dir" = "." ]; then
       resolved="$target"
     else
       resolved="$dir/$target"
     fi
-    # Check if target exists (allow directory paths ending in /)
-    if [ ! -f "$resolved" ] && [ ! -f "${resolved}index.html" ] && [ ! -d "${resolved%/}" ]; then
+    # Directory links must have an index file. A bare directory is not enough
+    # on GitHub Pages and caused /es/ to ship as a 404.
+    if [[ "$target" == */ ]]; then
+      if [ ! -f "${resolved}index.html" ]; then
+        echo "  ✗ $file → $href (directory missing index: ${resolved}index.html)"
+        BROKEN_LINKS=$((BROKEN_LINKS + 1))
+      fi
+      continue
+    fi
+    if [ ! -f "$resolved" ] && [ ! -f "${resolved}index.html" ]; then
       echo "  ✗ $file → $href (not found: $resolved)"
       BROKEN_LINKS=$((BROKEN_LINKS + 1))
     fi

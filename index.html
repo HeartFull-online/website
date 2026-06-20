@@ -11,7 +11,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://about.heartfull.online/">
     <link rel="alternate" hreflang="en" href="https://about.heartfull.online/">
+    <link rel="alternate" hreflang="es" href="https://about.heartfull.online/es/">
     <link rel="alternate" hreflang="zh" href="https://about.heartfull.online/zh/">
+    <link rel="alternate" hreflang="ar" href="https://about.heartfull.online/ar/">
+    <link rel="alternate" hreflang="vi" href="https://about.heartfull.online/vi/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -129,9 +132,49 @@
         .nav-brand, .nav-link, .nav-cta, .nav-menu-btn {
             transition: color 0.3s, background 0.3s;
         }
-        .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-left:0.5rem}.lang-switcher a{text-decoration:none;transition:color 0.3s}.lang-switcher .active{font-weight:700}
-        nav:not(.nav-scrolled) .lang-switcher a{color:rgba(255,255,255,0.5)}nav:not(.nav-scrolled) .lang-switcher a:hover{color:white}nav:not(.nav-scrolled) .lang-switcher .active{color:white}
-        nav.nav-scrolled .lang-switcher a{color:var(--ink-tertiary)}nav.nav-scrolled .lang-switcher a:hover{color:var(--coral)}nav.nav-scrolled .lang-switcher .active{color:var(--ink)}
+        .language-menu { position: relative; margin-left: 0.25rem; }
+        .language-menu summary {
+            list-style: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.3s, border-color 0.3s, background 0.3s;
+        }
+        .language-menu summary::-webkit-details-marker { display: none; }
+        .language-menu summary::after { content: "▾"; font-size: 0.7rem; opacity: 0.75; }
+        .language-list {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 0.5rem);
+            min-width: 12.5rem;
+            padding: 0.4rem;
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(30,25,22,0.14);
+            display: grid;
+            gap: 0.15rem;
+        }
+        .language-list a {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 0.7rem;
+            border-radius: 8px;
+            color: var(--ink-secondary);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .language-list a:hover { background: var(--coral-subtle); color: var(--coral); text-decoration: none; }
+        .language-list .active { color: var(--ink); font-weight: 700; }
+        nav:not(.nav-scrolled) .language-menu summary { color: white; border-color: rgba(255,255,255,0.24); background: rgba(255,255,255,0.08); }
+        nav.nav-scrolled .language-menu summary { color: var(--ink); border-color: var(--border); background: var(--surface-elevated); }
 
         /* Hero — warm dark gradient matching app sign-in */
         .hero-section {
@@ -180,9 +223,19 @@
                     <a href="#app" class="nav-link font-medium">Our App</a>
                     <a href="#hearts-economy" class="nav-link font-medium">Hearts</a>
                     <a href="#why" class="nav-link font-medium">Why Different</a>
+                    <a href="/why-heartfull.html" class="nav-link font-medium">Compare Apps</a>
                     <a href="/dating-institute/" class="nav-link font-medium">Dating Institute</a>
                     <a href="/promoters.html" class="nav-link font-medium">Promoters</a>
-                    <span class="lang-switcher"><span class="active">EN</span>|<a href="/es/">ES</a>|<a href="/zh/">&#20013;&#25991;</a>|<a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>|<a href="/vi/">VI</a></span>
+                    <details class="language-menu">
+                        <summary><span>🇺🇸</span><span>English</span></summary>
+                        <div class="language-list">
+                            <a class="active" href="/"><span>🇺🇸</span><span>English</span></a>
+                            <a href="/es/"><span>🇪🇸</span><span>Español</span></a>
+                            <a href="/zh/"><span>🇨🇳</span><span>中文</span></a>
+                            <a href="/ar/"><span>🇸🇦</span><span>العربية</span></a>
+                            <a href="/vi/"><span>🇻🇳</span><span>Tiếng Việt</span></a>
+                        </div>
+                    </details>
                 </div>
 
                 <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hidden md:block">
@@ -204,9 +257,16 @@
                 <a href="#app" class="block py-2 font-medium" style="color: var(--ink-secondary);">Our App</a>
                 <a href="#hearts-economy" class="block py-2 font-medium" style="color: var(--ink-secondary);">Hearts</a>
                 <a href="#why" class="block py-2 font-medium" style="color: var(--ink-secondary);">Why Different</a>
+                <a href="/why-heartfull.html" class="block py-2 font-medium" style="color: var(--ink-secondary);">Compare Apps</a>
                 <a href="/dating-institute/" class="block py-2 font-medium" style="color: var(--ink-secondary);">Dating Institute</a>
                 <a href="/promoters.html" class="block py-2 font-medium" style="color: var(--ink-secondary);">Promoters</a>
-                <div class="py-2" style="display:flex;gap:0.75rem;font-size:0.85rem;"><span style="font-weight:700;color:var(--ink);">EN</span><a href="/es/" style="color:var(--ink-secondary);text-decoration:none;">ES</a><a href="/zh/" style="color:var(--ink-secondary);text-decoration:none;">&#20013;&#25991;</a><a href="/ar/" style="color:var(--ink-secondary);text-decoration:none;">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a><a href="/vi/" style="color:var(--ink-secondary);text-decoration:none;">VI</a></div>
+                <div class="py-2" style="display:grid;gap:0.35rem;font-size:0.9rem;">
+                    <a href="/" style="color:var(--ink);font-weight:700;text-decoration:none;">🇺🇸 English</a>
+                    <a href="/es/" style="color:var(--ink-secondary);text-decoration:none;">🇪🇸 Español</a>
+                    <a href="/zh/" style="color:var(--ink-secondary);text-decoration:none;">🇨🇳 中文</a>
+                    <a href="/ar/" style="color:var(--ink-secondary);text-decoration:none;">🇸🇦 العربية</a>
+                    <a href="/vi/" style="color:var(--ink-secondary);text-decoration:none;">🇻🇳 Tiếng Việt</a>
+                </div>
                 <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
                     <button class="text-white px-6 py-2 font-semibold w-full mt-1" style="background: var(--coral); border-radius: 12px;">
                         Open App
@@ -1277,6 +1337,50 @@
         </div>
     </section>
 
+    <!-- Comparison Hub -->
+    <section class="py-16 sm:py-20" style="background: var(--surface-sunken);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <p class="text-sm font-semibold mb-3" style="color: var(--coral);">Compare Apps</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-4" style="font-family: 'Fraunces', serif; font-weight: 600;">
+                    HeartFull vs the swipe-and-subscribe model
+                </h2>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--ink-secondary);">
+                    The detailed comparisons already exist. They were just buried. Read how HeartFull differs from Tinder, Bumble, Hinge, OkCupid, Badoo, and Coffee Meets Bagel.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/compare/tinder.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs Tinder</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Swipe decks, subscriptions, Super Likes, and why HeartFull rejects the whole mechanic.</p>
+                </a>
+                <a href="/compare/bumble.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs Bumble</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Gender rules and 24-hour timers versus economic anti-spam and user-paced messaging.</p>
+                </a>
+                <a href="/compare/hinge.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs Hinge</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Prompt profiles, paid Roses, Standouts, and why earned Hearts are different.</p>
+                </a>
+                <a href="/compare/coffee-meets-bagel.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs Coffee Meets Bagel</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Purchased Beans versus earned Hearts, daily scarcity versus open discovery.</p>
+                </a>
+                <a href="/compare/okcupid.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs OkCupid</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Questionnaires and self-reported compatibility versus behavioural signals.</p>
+                </a>
+                <a href="/compare/badoo.html" class="p-5 card-hover" style="background: var(--surface-elevated); border:1px solid var(--border); border-radius:12px; text-decoration:none;">
+                    <h3 class="font-bold mb-2" style="color:var(--ink);">HeartFull vs Badoo</h3>
+                    <p class="text-sm" style="color:var(--ink-secondary);">Credits, Spotlight, and visibility auctions versus merit-based visibility.</p>
+                </a>
+            </div>
+            <div class="text-center mt-8">
+                <a href="/why-heartfull.html" class="inline-flex items-center font-bold" style="color: var(--coral); text-decoration:none;">Read the full structural analysis &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="py-16 sm:py-20 text-white" style="background: var(--coral);">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1337,6 +1441,7 @@
                     <h3 class="font-bold mb-4" style="color: var(--coral);">Quick Links</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#why" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Why HeartFull</a></li>
+                        <li><a href="/why-heartfull.html" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Compare Apps</a></li>
                         <li><a href="#hearts-economy" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Hearts Economy</a></li>
                         <li><a href="#install" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Install</a></li>
                         <li><a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Open App</a></li>
@@ -1357,6 +1462,7 @@
                 <div class="flex flex-wrap justify-center gap-4 mb-3">
                     <a href="/privacy.html" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Privacy Policy</a>
                     <a href="/terms.html" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Terms of Use</a>
+                    <a href="/why-heartfull.html" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Compare Apps</a>
                     <a href="/dating-institute/" class="hover:text-white transition-colors" style="color: var(--ink-tertiary);">Dating Institute</a>
                 </div>
                 <p class="text-center" style="color: var(--ink-tertiary);">
