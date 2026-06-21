@@ -132,6 +132,9 @@
         .nav-brand, .nav-link, .nav-cta, .nav-menu-btn {
             transition: color 0.3s, background 0.3s;
         }
+        nav .home-nav-inner {
+            max-width: 76rem;
+        }
         .language-menu { position: relative; margin-left: 0.25rem; }
         .language-menu summary {
             list-style: none;
@@ -175,6 +178,90 @@
         .language-list .active { color: var(--ink); font-weight: 700; }
         nav:not(.nav-scrolled) .language-menu summary { color: white; border-color: rgba(255,255,255,0.24); background: rgba(255,255,255,0.08); }
         nav.nav-scrolled .language-menu summary { color: var(--ink); border-color: var(--border); background: var(--surface-elevated); }
+        .home-mobile-menu {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            box-shadow: 0 18px 48px rgba(30,25,22,0.16);
+        }
+        .home-mobile-menu-inner {
+            display: grid;
+            gap: 0.4rem;
+            padding: 0.85rem 1rem 1rem;
+        }
+        .home-mobile-menu a {
+            display: flex;
+            align-items: center;
+            min-height: 3rem;
+            padding: 0.78rem 0.9rem;
+            border-radius: 10px;
+            color: var(--ink-secondary);
+            font-weight: 750;
+            text-decoration: none;
+        }
+        .home-mobile-menu a:hover {
+            background: var(--coral-subtle);
+            color: var(--coral);
+            text-decoration: none;
+        }
+        .home-mobile-languages {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.35rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.35rem;
+            padding-top: 0.75rem;
+        }
+        .home-mobile-languages a {
+            min-height: 2.75rem;
+            padding: 0.68rem 0.8rem;
+            font-size: 0.92rem;
+        }
+        .home-mobile-app {
+            justify-content: center;
+            background: var(--coral);
+            color: white !important;
+            margin-top: 0.35rem;
+        }
+        .home-mobile-app:hover {
+            background: var(--coral) !important;
+            color: white !important;
+        }
+        .nav-menu-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+        }
+        nav.nav-scrolled .nav-menu-btn {
+            border-color: var(--border);
+            background: var(--surface-elevated);
+        }
+        @media (max-width: 1100px) {
+            .home-nav-links,
+            .home-nav-cta {
+                display: none !important;
+            }
+            .home-nav-menu-button {
+                display: inline-flex !important;
+            }
+        }
+        @media (min-width: 1101px) {
+            .home-nav-menu-button {
+                display: none !important;
+            }
+            .home-mobile-menu {
+                display: none !important;
+            }
+        }
+        @media (max-width: 330px) {
+            .home-mobile-languages {
+                grid-template-columns: 1fr;
+            }
+        }
 
         /* Hero — warm dark gradient matching app sign-in */
         .hero-section {
@@ -209,7 +296,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="home-nav-inner max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center space-x-2">
                     <svg class="w-10 h-10 pulse-heart" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +306,7 @@
                     <span class="text-xl font-bold nav-brand" style="font-family: 'Fraunces', serif;">HeartFull</span>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-7">
+                <div class="home-nav-links hidden md:flex items-center space-x-7">
                     <a href="#app" class="nav-link font-medium">Our App</a>
                     <a href="#hearts-economy" class="nav-link font-medium">Hearts</a>
                     <a href="#why" class="nav-link font-medium">Why Different</a>
@@ -238,13 +325,13 @@
                     </details>
                 </div>
 
-                <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hidden md:block">
+                <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="home-nav-cta hidden md:block">
                     <button class="nav-cta px-6 py-2 font-semibold hover:shadow-lg transform hover:scale-105 transition-all" style="border-radius: 12px;">
                         Open App
                     </button>
                 </a>
 
-                <button class="md:hidden nav-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+                <button class="home-nav-menu-button md:hidden nav-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
                     <svg class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -252,26 +339,22 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden hidden" style="background: var(--surface); border-top: 1px solid var(--border);">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#app" class="block py-2 font-medium" style="color: var(--ink-secondary);">Our App</a>
-                <a href="#hearts-economy" class="block py-2 font-medium" style="color: var(--ink-secondary);">Hearts</a>
-                <a href="#why" class="block py-2 font-medium" style="color: var(--ink-secondary);">Why Different</a>
-                <a href="/why-heartfull.html" class="block py-2 font-medium" style="color: var(--ink-secondary);">Compare Apps</a>
-                <a href="/dating-institute/" class="block py-2 font-medium" style="color: var(--ink-secondary);">Dating Institute</a>
-                <a href="/promoters.html" class="block py-2 font-medium" style="color: var(--ink-secondary);">Promoters</a>
-                <div class="py-2" style="display:grid;gap:0.35rem;font-size:0.9rem;">
-                    <a href="/" style="color:var(--ink);font-weight:700;text-decoration:none;">🇺🇸 English</a>
-                    <a href="/es/" style="color:var(--ink-secondary);text-decoration:none;">🇪🇸 Español</a>
-                    <a href="/zh/" style="color:var(--ink-secondary);text-decoration:none;">🇨🇳 中文</a>
-                    <a href="/ar/" style="color:var(--ink-secondary);text-decoration:none;">🇸🇦 العربية</a>
-                    <a href="/vi/" style="color:var(--ink-secondary);text-decoration:none;">🇻🇳 Tiếng Việt</a>
+        <div id="mobile-menu" class="home-mobile-menu md:hidden hidden">
+            <div class="home-mobile-menu-inner">
+                <a href="#app">Our App</a>
+                <a href="#hearts-economy">Hearts</a>
+                <a href="#why">Why Different</a>
+                <a href="/why-heartfull.html">Compare Apps</a>
+                <a href="/dating-institute/">Dating Institute</a>
+                <a href="/promoters.html">Promoters</a>
+                <div class="home-mobile-languages">
+                    <a href="/" style="color:var(--ink);font-weight:800;">🇺🇸 English</a>
+                    <a href="/es/">🇪🇸 Español</a>
+                    <a href="/zh/">🇨🇳 中文</a>
+                    <a href="/ar/">🇸🇦 العربية</a>
+                    <a href="/vi/">🇻🇳 Tiếng Việt</a>
                 </div>
-                <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
-                    <button class="text-white px-6 py-2 font-semibold w-full mt-1" style="background: var(--coral); border-radius: 12px;">
-                        Open App
-                    </button>
-                </a>
+                <a class="home-mobile-app" href="https://heartfull.online" target="_blank" rel="noopener noreferrer">Open App</a>
             </div>
         </div>
     </nav>
