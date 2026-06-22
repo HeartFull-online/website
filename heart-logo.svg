@@ -1,9 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="hf" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="hf-outer" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FF5870"/>
       <stop offset="100%" stop-color="#FF8A9A"/>
     </linearGradient>
+    <linearGradient id="hf-middle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8455D"/>
+      <stop offset="100%" stop-color="#FF5870"/>
+    </linearGradient>
+    <linearGradient id="hf-inner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B92B3D"/>
+      <stop offset="100%" stop-color="#E8455D"/>
+    </linearGradient>
   </defs>
-  <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf)"/>
+  <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-outer)"/>
+  <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-middle)" transform="translate(16 15.5) scale(0.72) translate(-16 -15.5)"/>
+  <path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-inner)" transform="translate(16 15.9) scale(0.48) translate(-16 -15.5)"/>
 </svg>
