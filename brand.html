@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartFull Brand Guidelines</title>
+    <meta name="description" content="HeartFull brand guidelines: logo usage, color palette, typography, product voice, UI rules, and implementation references.">
+    <meta name="color-scheme" content="light">
+    <link rel="canonical" href="https://about.heartfull.online/brand.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --coral:#FF5870;
+            --coral-light:#FF8A9A;
+            --coral-subtle:#FFF0F2;
+            --ink:#1E1916;
+            --ink-secondary:#6B5E57;
+            --ink-tertiary:#9C8F88;
+            --border:#E4DDD8;
+            --surface:#FAF7F5;
+            --surface-elevated:#FFFFFF;
+            --surface-sunken:#F2EDEA;
+            --success:#2D8F5E;
+            --error:#D64045;
+            --shadow-warm:0 2px 8px rgba(30,25,22,0.08);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); }
+        .page { max-width:980px; margin:0 auto; padding:3rem 1rem 4rem; }
+        .eyebrow { color:var(--coral); font-weight:800; margin-bottom:0.75rem; }
+        .lead { font-size:1.15rem; line-height:1.8; color:var(--ink-secondary); max-width:780px; }
+        .section { margin-top:3rem; }
+        .section h2 { font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:1rem; }
+        .section p, .section li { color:var(--ink-secondary); line-height:1.8; font-size:1rem; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem; margin-top:1.25rem; }
+        .card { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.25rem; box-shadow:var(--shadow-warm); }
+        .card h3 { font-size:1.05rem; margin-bottom:0.45rem; }
+        .swatch { min-height:7.5rem; border-radius:12px; border:1px solid rgba(30,25,22,0.08); display:flex; align-items:flex-end; padding:1rem; margin-bottom:0.75rem; }
+        .swatch.dark { color:white; }
+        .hex { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--ink-tertiary); font-size:0.9rem; }
+        .logo-stage { background:var(--ink); border-radius:16px; padding:2rem; display:flex; align-items:center; justify-content:center; min-height:14rem; }
+        .logo-lockup { display:flex; align-items:center; gap:0.9rem; color:white; font-family:'Fraunces',serif; font-size:2.2rem; font-weight:800; }
+        .logo-lockup svg { width:4rem; height:4rem; flex:0 0 auto; }
+        .do-dont { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:1.25rem; }
+        .do-dont ul { padding-left:1.2rem; margin-top:0.75rem; }
+        .note { background:var(--coral-subtle); border-radius:12px; padding:1rem 1.25rem; margin-top:1.5rem; color:var(--ink); }
+        code { background:var(--surface-sunken); border-radius:6px; padding:0.1rem 0.35rem; color:var(--ink); }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-brand-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-brand-nav)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:700;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page">
+        <p class="eyebrow">Brand Guidelines</p>
+        <h1 class="text-4xl sm:text-6xl font-bold mb-5">Warm, direct, and unmistakably HeartFull.</h1>
+        <p class="lead">HeartFull should feel human before it feels technical. The brand is built around earned trust, real dates, and the promise that connection is never sold to the highest bidder.</p>
+
+        <section class="section">
+            <h2>Logo</h2>
+            <div class="logo-stage">
+                <div class="logo-lockup">
+                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><defs><linearGradient id="hf-brand-heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-brand-heart)"/></svg>
+                    <span>HeartFull</span>
+                </div>
+            </div>
+            <div class="do-dont">
+                <div class="card">
+                    <h3>Use</h3>
+                    <ul>
+                        <li>Use the coral-to-rose heart gradient whenever possible.</li>
+                        <li>Keep clear space around the mark equal to at least half the heart width.</li>
+                        <li>Use warm light surfaces or deep ink backgrounds.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Avoid</h3>
+                    <ul>
+                        <li>Do not stretch, rotate, outline, or recolor the heart arbitrarily.</li>
+                        <li>Do not place the logo over noisy imagery without a solid contrast layer.</li>
+                        <li>Do not use cold blue as the primary brand color.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Color</h2>
+            <p>HeartFull's color system comes from the logo: vivid coral, soft rose, warm neutrals, and deep ink. Blue is reserved for provider-specific or technical states only, not brand expression.</p>
+            <div class="grid">
+                <div class="card"><div class="swatch dark" style="background:#FF5870;">Primary</div><h3>Heart Coral</h3><p class="hex">#FF5870</p></div>
+                <div class="card"><div class="swatch" style="background:#FF8A9A;">Secondary</div><h3>Heart Rose</h3><p class="hex">#FF8A9A</p></div>
+                <div class="card"><div class="swatch" style="background:#FFF0F2;">Subtle</div><h3>Coral Subtle</h3><p class="hex">#FFF0F2</p></div>
+                <div class="card"><div class="swatch dark" style="background:#1E1916;">Text</div><h3>Ink</h3><p class="hex">#1E1916</p></div>
+                <div class="card"><div class="swatch" style="background:#FAF7F5;">Background</div><h3>Cream</h3><p class="hex">#FAF7F5</p></div>
+                <div class="card"><div class="swatch" style="background:#F2EDEA;">Band</div><h3>Surface Sunken</h3><p class="hex">#F2EDEA</p></div>
+                <div class="card"><div class="swatch dark" style="background:#2D8F5E;">Success</div><h3>Success</h3><p class="hex">#2D8F5E</p></div>
+                <div class="card"><div class="swatch dark" style="background:#D64045;">Error</div><h3>Error</h3><p class="hex">#D64045</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Typography</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="font-size:2rem;">Fraunces</h3>
+                    <p>Use for brand, hero, and major page headings. It gives HeartFull its warmer, less generic voice.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-family:'DM Sans',sans-serif;font-size:2rem;">DM Sans</h3>
+                    <p>Use for body copy, controls, dense admin screens, labels, forms, and navigation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Product UI</h2>
+            <div class="grid">
+                <div class="card"><h3>Primary actions</h3><p>Use Heart Coral for primary buttons, active states, hearts, and important progress moments.</p></div>
+                <div class="card"><h3>Surfaces</h3><p>Use warm cream backgrounds and white elevated surfaces. Avoid sterile white-and-blue layouts.</p></div>
+                <div class="card"><h3>Shape</h3><p>Use 12px button radii and 8-12px cards unless a component already has a stronger local convention.</p></div>
+                <div class="card"><h3>Admin</h3><p>Admin screens should stay calm and operational, but they still use the HeartFull palette for theme seed and active states.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Voice</h2>
+            <p>Write like a clear person, not a growth funnel. HeartFull copy should be direct, warm, and honest about tradeoffs. Avoid shaming users, implying scarcity tricks, or framing paid features as access to people.</p>
+            <div class="note"><strong>Core line:</strong> character over credit card. Connection is earned through behavior, not purchased through advantage.</div>
+        </section>
+
+        <section class="section">
+            <h2>Imagery</h2>
+            <p>Use real lifestyle and social-context imagery where the person, place, or moment is readable. Profile backgrounds from FreeDesignStore should feel safe, warm, and human, not like generic dark stock photography.</p>
+        </section>
+
+        <section class="section">
+            <h2>Implementation References</h2>
+            <div class="grid">
+                <div class="card"><h3>Website</h3><p>Public pages define the palette with CSS variables such as <code>--coral</code>, <code>--coral-light</code>, and <code>--surface</code>.</p></div>
+                <div class="card"><h3>Android and web app</h3><p>The user app uses <code>app/lib/app/theme.dart</code> and <code>app/lib/app/mobile_theme.dart</code> for the coral-led product theme.</p></div>
+                <div class="card"><h3>Admin portal</h3><p>The admin portal should seed Material colors from Heart Coral, not default blue.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-sm" style="color:var(--ink-tertiary); border-top:1px solid var(--border);">
+        <div class="max-w-4xl mx-auto px-4">&copy; 2026 HeartFull.</div>
+    </footer>
+    <script defer src="/site-language-v1.js"></script>
+</body>
+</html>

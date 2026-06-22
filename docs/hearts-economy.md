@@ -6,7 +6,7 @@ The Hearts Economy is HeartFull's core differentiator. It replaces the pay-to-wi
 
 **Payments are completely disconnected from connections.** Matching, messaging, and visibility will never cost money. Hearts can never be purchased — they can only be earned through genuine effort and good behavior.
 
-HeartFull will monetize through premium tools (AI assistance, voice messages, speech-to-text, etc.) — features that enhance the experience but never gate who you can meet or talk to. This is the cornerstone issue that every competitor failed at: they tied money to connections.
+HeartFull may monetize through optional tools such as AI assistance, speech-to-text, analytics, or workflow enhancements. Core connection features stay outside the paywall: matching, messaging, visibility, voice messages, calls, events, and Hearts.
 
 ## Starting Balance
 
@@ -17,15 +17,12 @@ New users receive **100 Hearts** on their first visit. This is enough to start e
 | Action | Reward | Notes |
 |--------|--------|-------|
 | Sign up (first visit) | +100 | One-time welcome bonus |
-| Upload a photo | +20 | Per photo, repeatable |
+| Upload a photo or video | +20 | Up to the daily upload limit |
 | Receive a message | +variable | Hearts transfer from sender (see Dynamic Pricing) |
 | Claim a first-message escrow | +1 | When you reply to someone's first message |
-
-### Future earning opportunities (planned):
-- Complete profile prompts
-- AI-verified selfie
-- Responsiveness streaks
-- Positive interaction ratings
+| Receive a photo like | +1 | Like transfers a Heart from the liker |
+| Verified QR date check-in | +100 each | One verified date reward per pair |
+| Referral | +25 to the new user, +25 to the inviter | Promoter invite links can award +50 to the inviter |
 
 ## How Users Spend Hearts
 
@@ -122,11 +119,17 @@ Matching in HeartFull is automatic based on:
 - Gender preferences (mutual)
 - Age range overlap (mutual)
 - Both users have completed their profile (name + active)
+- The user's matching toggle
 
 When matched:
 - Both users appear in each other's browsing feed
 - Newest matches appear first
 - Either user can initiate a conversation (by spending Hearts)
+- Matching is periodically refreshed when matching is enabled, rather than reshuffling constantly
+
+## Communication Features
+
+Hearts govern access fairly, but they do not restrict the form of communication. HeartFull supports text messages, voice messages, 1-on-1 video calls, photo likes, event group chat, and online event calls. Calls and voice messages are product features, not purchasable shortcuts to other people.
 
 ## Anti-Gaming Protections
 
@@ -159,5 +162,7 @@ When matched:
 - `app/lib/services/user_service.dart` — `calculateCharge()`, `transferCoins()`
 - `app/lib/services/messaging_service.dart` — Message cost trigger logic
 - `app/lib/features/faces/components/heart_escrow.dart` — Escrow state computation
-- `app/lib/features/gallery/photos_page.dart` — Photo upload reward (+20)
+- `app/lib/features/gallery/upload_service.dart` — Photo/video upload reward (+20)
 - `app/lib/features/faces/faces_page.dart` — Welcome bonus (+100)
+- `app/lib/features/date_checkin/date_checkin_page.dart` — QR date check-in reward (+100 each)
+- `app/lib/features/calls/` and `app/lib/services/webrtc/` — 1-on-1 and event calls
