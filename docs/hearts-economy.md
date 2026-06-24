@@ -17,11 +17,11 @@ New users receive **100 Hearts** on their first visit. This is enough to start e
 | Action | Reward | Notes |
 |--------|--------|-------|
 | Sign up (first visit) | +100 | One-time welcome bonus |
-| Upload a photo or video | +20 | Up to the daily upload limit |
+| Upload a photo or video | +10 | Up to 3 posts per day |
 | Receive a message | +variable | Hearts transfer from sender (see Dynamic Pricing) |
 | Claim a first-message escrow | +1 | When you reply to someone's first message |
-| Receive a photo like | +1 | Like transfers a Heart from the liker |
-| Verified QR date check-in | +100 each | One verified date reward per pair |
+| Receive a photo like | +1 | Like transfers a Heart from the liker; up to 20 Hearts/day from likes |
+| Verified QR date check-in | +50 each | One verified date reward per pair; scanner capped at 3 check-ins/day |
 | Referral | +25 to the new user, +25 to the inviter | Promoter invite links can award +50 to the inviter |
 
 ## How Users Spend Hearts
@@ -38,38 +38,57 @@ The escrow is visible on profile cards:
 - **Filled heart (red)**: They have a Heart reserved for you (they reached out first)
 - **Outlined heart**: You have a Heart reserved for them (you reached out)
 
-### Follow-up Messages: Anti-Spam Threshold
+### Follow-up Messages: A fair, predictable price
 
-After the first message:
-1. The next **3–5 messages** are free (threshold is randomized to prevent gaming)
-2. After the threshold, a **dynamic charge** kicks in
-3. The charge is calculated using the **Wealth Ratio** (see below)
+After the first message, **every message the conversation initiator sends is
+charged** — deterministically, not on a random threshold. The person who was
+**approached never pays**, and replies are always free. The price is:
 
-This prevents message spam while allowing natural conversation flow.
+```
+price = base × demand,  clamped to [1, your balance]
+```
 
-### Dynamic Pricing: The Wealth Ratio
+### Dynamic Pricing, part 1: The Wealth Base
 
-The cost to send a charged message is based on the **ratio between your Hearts and theirs**:
+The base is set by the **ratio between your Hearts and theirs**:
 
 ```
 ratio = (your Hearts + 1) / (their Hearts + 1)
 ```
 
-| Scenario | Ratio | Cost | Why |
+| Scenario | Ratio | Base | Why |
 |----------|-------|------|-----|
-| You have way more Hearts | > 2.0 | 1% of your Hearts | You're established — small relative cost to reach down |
 | Similar Heart counts | 0.5 – 2.0 | 1 Heart | Fair exchange between equals |
-| They have way more Hearts | < 0.5 | 10% of your Hearts | You're reaching up — shows serious investment |
+| They have far more Hearts | < 0.5 | 1 Heart (floor) | You're reaching up — never penalised for it |
+| You have far more | > 2.0 | 0.5% of your Hearts, **capped at 10** | You're established — pay a little more so you can't cheaply blast newcomers |
+
+### Dynamic Pricing, part 2: The Demand Multiplier
+
+The base is multiplied by how busy the recipient's inbox is — protecting
+popular people from being buried.
+
+| Messages received per day | Multiplier |
+|---------------------------|------------|
+| Under 5 (most people) | ×1 |
+| 5 – 10 | ×2 |
+| 10 – 20 | ×3 |
+| 20+ (very popular) | ×5 |
+
+Demand = `incomingMsgCount / accountAgeDays` (incremented on each charged
+transfer). Receiver's heart balance does NOT inflate demand — it's already
+captured by the wealth ratio.
 
 #### Real examples:
 
-| Your Hearts | Their Hearts | Ratio | Cost |
-|------------|-------------|-------|------|
-| 1,000 | 100 | 9.9 | 10 Hearts (1%) |
-| 100 | 100 | 1.0 | 1 Heart |
-| 20 | 1,000 | 0.02 | 2 Hearts (10%) |
-| 500 | 200 | 2.5 | 5 Hearts (1%) |
-| 50 | 500 | 0.1 | 5 Hearts (10%) |
+| Your Hearts | Their Hearts | Their inbox | Price | Why |
+|------------|-------------|-------------|-------|-----|
+| 100 | 100 | quiet | **1** | similar wealth, ×1 demand |
+| 80 | 2,000 | 15/day | **3** | reaching up → base 1, ×3 demand |
+| 2,000 | 60 | quiet | **10** | 0.5% of 2,000 capped at 10, ×1 |
+| 1,000 | 100 | 15/day | **15** | base 5 (0.5%), ×3 demand |
+
+For the vast majority of conversations — two regular people chatting — it's just
+**1 Heart per message**.
 
 ### Key insight: Hearts transfer from sender to recipient
 
@@ -133,10 +152,11 @@ Hearts govern access fairly, but they do not restrict the form of communication.
 
 ## Anti-Gaming Protections
 
-- **Randomized thresholds**: The free-message window is 3–5 messages (randomized), preventing users from gaming exact numbers
-- **Percentage-based costs**: Charging a percentage of Hearts (not a flat fee) means the cost scales with your balance
+- **Daily earn caps**: Uploads (3/day), check-ins (3/day per scanner), and like income (20/day) are capped so the supply can't be farmed via alt accounts
+- **Demand-aware pricing**: Messaging a flooded inbox costs more (×2–×5), so spam against popular users gets expensive fast
+- **Wealth base, capped**: A much richer sender pays more per message (0.5%, capped at 10), so heavy accounts can't cheaply blast newcomers
 - **No purchase path**: Since Hearts can't be bought, there's no shortcut to circumvent the system
-- **Transfer economy**: Hearts flow between users, not to the platform, keeping the total supply finite and meaningful
+- **Transfer economy**: Charged Hearts flow between users, not to the platform, keeping the total supply finite and meaningful
 
 ## Why People Prefer This Over Pay-to-Win
 
@@ -153,16 +173,20 @@ Hearts govern access fairly, but they do not restrict the form of communication.
 
 ### Firestore Schema
 - `user/{uid}.coinCount` — Heart balance
+- `user/{uid}.incomingMsgCount` — Messages received (drives the demand multiplier)
 - `reserveHeart/{from-to}` — Escrow documents for first messages
-- `user/{uid}.peopleOrder` — Ordered list of matches (newest first)
+- `userDailyUploads/{uid}`, `userDailyCheckins/{uid}`, `userDailyLikeIncome/{uid}` — Anti-farming daily counters
 - `comm/{uid1:uid2}.messages[].transaction` — Heart cost per message
 - `comm/{uid1:uid2}.messages[].fromReserve` — Whether message claims an escrow
 
 ### Key Code Locations
-- `app/lib/services/user_service.dart` — `calculateCharge()`, `transferCoins()`
-- `app/lib/services/messaging_service.dart` — Message cost trigger logic
-- `app/lib/features/faces/components/heart_escrow.dart` — Escrow state computation
-- `app/lib/features/gallery/upload_service.dart` — Photo/video upload reward (+20)
-- `app/lib/features/faces/faces_page.dart` — Welcome bonus (+100)
-- `app/lib/features/date_checkin/date_checkin_page.dart` — QR date check-in reward (+100 each)
-- `app/lib/features/calls/` and `app/lib/services/webrtc/` — 1-on-1 and event calls
+- `app/lib/services/user_service.dart` — `calculateCharge()` (base × demand), `transferHeartDynamic()` (live charge path), escrow hold/redeem
+- `app/lib/services/messaging_service.dart` — charges every initiator message via `transferHeartDynamic`
+- `app/lib/features/gallery/upload_service.dart` — Photo/video upload reward (+10, 3/day)
+- `app/lib/features/onboarding/onboarding_page.dart` — Welcome bonus (+100)
+- `app/lib/features/date_checkin/date_checkin_page.dart` — QR date check-in reward (+50 each, 3/day cap)
+- `app/lib/features/faces/components/photo_heart_button.dart` — Photo-like transfer (+1, 20/day cap)
+
+> **Integrity note (Phase 2, in progress):** today these Heart movements run
+> client-side; a hardening pass will make `coinCount` server-authoritative via a
+> Cloud-Functions ledger so balances can't be forged.

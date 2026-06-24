@@ -25,6 +25,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://about.heartfull.online/how-hearts-work.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://about.heartfull.online/why-heartfull.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>

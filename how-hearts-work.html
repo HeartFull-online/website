@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Hearts Work - HeartFull's free, merit-based currency</title>
+    <meta name="description" content="Hearts are HeartFull's currency - earned through being a real, active person, never bought. Here's exactly how you earn and spend them, with real-life examples.">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --coral:#FF5870; --coral-subtle:#FFF0F2; --ink:#1E1916; --ink-secondary:#6B5E57; --ink-tertiary:#9C8F88; --border:#E4DDD8; --surface:#FAF7F5; --surface-elevated:#FFFFFF; --surface-sunken:#F2EDEA; --shadow-warm:0 2px 8px rgba(30,25,22,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--surface); }
+        h1,h2,h3 { font-family:'Fraunces',serif; }
+        a { color:var(--coral); }
+        .article { max-width:860px; margin:0 auto; }
+        .article p, .article li { font-size:1rem; line-height:1.8; margin-bottom:1rem; color:var(--ink-secondary); }
+        .article h2 { font-size:1.7rem; margin:2.5rem 0 0.9rem; color:var(--ink); }
+        .article h3 { font-size:1.15rem; margin:1.5rem 0 0.5rem; color:var(--ink); }
+        .article ul { padding-left:1.5rem; margin-bottom:1rem; }
+        .feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0; }
+        .feature-card { background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; padding:1.25rem; box-shadow:var(--shadow-warm); }
+        .feature-card h3 { margin-top:0; }
+        .note { background:var(--coral-subtle); border-radius:12px; padding:1rem 1.25rem; margin:1.5rem 0; color:var(--ink); }
+        table.hearts { width:100%; border-collapse:collapse; margin:1.25rem 0; background:var(--surface-elevated); border:1px solid var(--border); border-radius:12px; overflow:hidden; font-size:0.95rem; }
+        table.hearts th, table.hearts td { text-align:left; padding:0.7rem 0.9rem; border-bottom:1px solid var(--border); color:var(--ink-secondary); vertical-align:top; }
+        table.hearts th { background:var(--surface-sunken); color:var(--ink); font-weight:600; font-family:'DM Sans',sans-serif; }
+        table.hearts tr:last-child td { border-bottom:none; }
+        table.hearts td strong, table.hearts .amt { color:var(--coral); font-weight:700; white-space:nowrap; }
+        .story { background:var(--surface-elevated); border:1px solid var(--border); border-left:4px solid var(--coral); border-radius:12px; padding:1.1rem 1.3rem; margin:1.1rem 0; box-shadow:var(--shadow-warm); }
+        .story h3 { margin:0 0 0.4rem; }
+        .story p { margin-bottom:0.6rem; }
+        .story .math { font-size:0.9rem; color:var(--ink-tertiary); }
+        .lead { font-size:1.15rem; }
+    </style>
+<!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
+</head>
+<body>
+    <nav style="background:rgba(250,247,245,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex items-center space-x-2" style="text-decoration:none;">
+                    <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px;"><defs><linearGradient id="hf-n" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF5870"/><stop offset="100%" stop-color="#FF8A9A"/></linearGradient></defs><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="url(#hf-n)"/><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="#D64045" transform="translate(16 15.5) scale(0.72) translate(-16 -15.5)"/><path d="M16 28C15.6 27.6 3 18.8 3 11C3 6.6 6.2 3 10.2 3C12.7 3 14.9 4.3 16 6.3C17.1 4.3 19.3 3 21.8 3C25.8 3 29 6.6 29 11C29 18.8 16.4 27.6 16 28Z" fill="#8F1D2C" transform="translate(16 15.9) scale(0.48) translate(-16 -15.5)"/></svg>
+                    <span class="text-xl font-bold" style="font-family:'Fraunces',serif; color:var(--coral);">HeartFull</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="/" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Home</a>
+                    <a href="/features.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Features</a>
+                    <a href="/why-heartfull.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Compare Apps</a>
+                    <a href="/promoters.html" class="font-medium" style="color:var(--ink-secondary); text-decoration:none;">Promoters</a>
+                </div>
+                <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer" class="hidden md:block" style="text-decoration:none;">
+                    <button style="background:var(--coral); color:white; border-radius:12px; border:none; cursor:pointer; padding:0.5rem 1.5rem; font-weight:600;">Open App</button>
+                </a>
+                <a href="/" class="md:hidden text-sm font-medium" style="color:var(--ink-secondary); text-decoration:none;">&larr; Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="article">
+            <p style="color:var(--coral); font-weight:700;">The HeartFull economy</p>
+            <h1 class="text-3xl sm:text-5xl font-bold mb-4" style="color:var(--ink);">How Hearts work</h1>
+            <p class="lead">Hearts are how you connect on HeartFull. You <strong>earn</strong> them by being a real, active person, and you spend a few to start conversations. You can <strong>never buy them</strong> &mdash; on HeartFull, your character is your currency. Everyone starts with <strong>100 Hearts</strong>.</p>
+
+            <div class="note">
+                <strong>The one-line version:</strong> Saying hi costs 1 Heart, and it goes to the other person the moment they reply. After that, each message you send in a normal chat costs about 1 Heart. <strong>Replying is always free</strong> &mdash; and it earns you the Heart they sent.
+            </div>
+
+            <h2>Earning Hearts</h2>
+            <p>Every way to earn rewards something genuine &mdash; showing up, sharing yourself, and actually meeting people. Most earns are capped per day so nobody can farm the system and flood the app.</p>
+            <table class="hearts">
+                <tr><th>What you do</th><th>You earn</th><th>Notes</th></tr>
+                <tr><td>Join HeartFull</td><td class="amt">+100</td><td>One-time welcome &mdash; enough to start real conversations.</td></tr>
+                <tr><td>Post a photo or video</td><td class="amt">+10</td><td>Up to 3 posts a day.</td></tr>
+                <tr><td>Get a like on your photo</td><td class="amt">+1</td><td>Up to 20 Hearts a day from likes.</td></tr>
+                <tr><td>Go on a real date &amp; scan each other's QR code</td><td class="amt">+50 each</td><td>The whole point. One reward per pair.</td></tr>
+                <tr><td>Invite a friend who joins</td><td class="amt">+25</td><td>Both of you get it.</td></tr>
+                <tr><td>Someone messages you (and you reply)</td><td class="amt">+ their cost</td><td>Their Hearts become yours. Kind, popular people earn the most.</td></tr>
+            </table>
+            <p>Notice the last row: when a message costs Hearts, those Hearts don't go to HeartFull &mdash; they go <em>to the person you're talking to</em>. The total supply stays finite and meaningful, and the most engaging people naturally accumulate the most.</p>
+
+            <h2>The first message: a held Heart</h2>
+            <p>When you message someone new, <strong>1 Heart is held aside</strong> (not spent yet). The moment they reply, that Heart becomes <em>theirs</em>. It's a small, honest signal that you mean it &mdash; and a thank-you to them for engaging. If you unmatch before they ever reply, the held Heart comes straight back to you.</p>
+
+            <h2>Ongoing messages: a fair, predictable price</h2>
+            <p>After the first hello, each message <strong>you</strong> send is priced by a simple formula. The person who was approached <strong>never pays a thing</strong>, and replies are always free.</p>
+            <p style="font-size:1.1rem; color:var(--ink); text-align:center; font-family:'Fraunces',serif;">price = <strong style="color:var(--coral);">base</strong> &times; <strong style="color:var(--coral);">how busy their inbox is</strong></p>
+
+            <h3>The base</h3>
+            <table class="hearts">
+                <tr><th>Your Hearts vs. theirs</th><th>Base cost</th><th>Why</th></tr>
+                <tr><td>About the same</td><td class="amt">1</td><td>A fair exchange between equals.</td></tr>
+                <tr><td>You have far fewer than them</td><td class="amt">1</td><td>You're never penalised for reaching up &mdash; you pay the floor.</td></tr>
+                <tr><td>You have far more (2&times;+)</td><td class="amt">0.5%, max 10</td><td>If you're Heart-rich, you pay a little more so you can't cheaply blast newcomers &mdash; capped at 10 so it's never a wall.</td></tr>
+            </table>
+
+            <h3>How busy their inbox is</h3>
+            <p>Messaging someone whose inbox is already flooded costs a bit more &mdash; this protects popular people from being buried, and nudges you to make your message count.</p>
+            <table class="hearts">
+                <tr><th>Messages they get per day</th><th>Multiplier</th></tr>
+                <tr><td>Under 5 (most people)</td><td class="amt">&times;1</td></tr>
+                <tr><td>5 &ndash; 10</td><td class="amt">&times;2</td></tr>
+                <tr><td>10 &ndash; 20</td><td class="amt">&times;3</td></tr>
+                <tr><td>20+ (very popular)</td><td class="amt">&times;5</td></tr>
+            </table>
+            <p>The price is always at least 1 Heart, and <strong>never more than you actually have</strong>. For the vast majority of conversations &mdash; two regular people chatting &mdash; it's just <strong>1 Heart per message</strong>.</p>
+
+            <h2>Real-life examples</h2>
+
+            <div class="story">
+                <h3>Maya &amp; Sam, two newcomers</h3>
+                <p>Both joined this week with 100 Hearts. Maya spots Sam and says hi &mdash; 1 Heart is held. Sam replies, so that Heart becomes his (he's now at 101, Maya at 99). They get talking. Each follow-up Maya sends costs <strong>1 Heart</strong> (similar Hearts, quiet inboxes). Sam pays nothing to reply.</p>
+                <p class="math">Base 1 &times; demand &times;1 = <strong>1 Heart</strong> per message. After 20 messages Maya has spent ~20 Hearts &mdash; easily topped up by posting a photo or two.</p>
+            </div>
+
+            <div class="story">
+                <h3>Priya messages Leo, who's very popular</h3>
+                <p>Priya has 80 Hearts. Leo gets about 15 messages a day, so his inbox is busy. Priya's messages cost a little more &mdash; and every Heart she spends goes to Leo.</p>
+                <p class="math">Base 1 (she's reaching up, so no penalty) &times; demand &times;3 = <strong>3 Hearts</strong> per message. She can still send ~26 messages on her balance &mdash; the price just nudges her to lead with something real instead of "hey".</p>
+            </div>
+
+            <div class="story">
+                <h3>Dana, a Heart-rich regular, messages newcomer Tom</h3>
+                <p>Dana has earned 2,000 Hearts over months of activity. Tom just joined with 60. Because Dana is far wealthier, her messages to Tom cost a bit more &mdash; and those Hearts lift the newcomer.</p>
+                <p class="math">Base = 0.5% of 2,000 = 10 (capped) &times; demand &times;1 = <strong>10 Hearts</strong> per message, flowing straight to Tom. Dana can still chat freely; she just can't cheaply spray hundreds of new people.</p>
+            </div>
+
+            <div class="story">
+                <h3>Running low on Hearts?</h3>
+                <p>You're never locked out. Even at 0 Hearts you can <strong>always reply</strong> to anyone (free &mdash; and you collect the Heart they held for you), and you can always earn by posting, getting likes, or going on a real date. Hearts run low only if you're starting lots of conversations and engaging in none.</p>
+            </div>
+
+            <h2>Why it's built this way</h2>
+            <div class="feature-grid">
+                <div class="feature-card"><h3>Fair to newcomers</h3><p>Reaching up never costs a penalty &mdash; you pay the floor. Your first 100 Hearts are always enough to start real conversations.</p></div>
+                <div class="feature-card"><h3>Protects popular people</h3><p>The busier someone's inbox, the more a message costs &mdash; so genuine interest rises to the top instead of getting buried under "hey".</p></div>
+                <div class="feature-card"><h3>No pay-to-win</h3><p>Hearts can't be bought at any price. The only way up is genuine effort: posting, replying, and meeting people in real life.</p></div>
+                <div class="feature-card"><h3>Rewards meeting</h3><p>The biggest single reward &mdash; 50 Hearts each &mdash; is for actually going on a date and scanning each other's QR code.</p></div>
+            </div>
+
+            <div class="note">
+                <strong>Always true:</strong> the person who was approached never pays, replying is always free, and you can never be charged more Hearts than you have. Matching, messaging, visibility, and Hearts are never for sale.
+            </div>
+
+            <p style="margin-top:2rem;">Want to see it in action? <a href="https://heartfull.online">Open HeartFull</a> &mdash; you've already got 100 Hearts waiting. Curious about the rest of the product? See <a href="/features.html">all features</a>.</p>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-sm" style="color:var(--ink-tertiary); border-top:1px solid var(--border);">
+        <div class="max-w-4xl mx-auto px-4">&copy; 2026 HeartFull.</div>
+    </footer>
+    <script defer src="/site-language-v1.js"></script>
+</body>
+</html>
