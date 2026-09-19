@@ -83,7 +83,7 @@
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Cómo <span class="gradient-text">funciona</span></h2>
             <p class="text-center mb-12" style="color:var(--ink-secondary);">Todos comienzan con la adquisición de usuarios &mdash; trayendo personas reales a HeartFull. Esta es la base. Una vez que estés activo, desbloqueas fuentes de ingresos adicionales.</p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">Adquisición de Usuarios</h3><p class="text-sm" style="color:var(--ink-secondary);">La base. Comparte tu enlace, código QR o código promocional. Gana hasta <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> por persona.</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">Obligatorio para todos</p></div>
+                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">Adquisición de Usuarios</h3><p class="text-sm" style="color:var(--ink-secondary);">La base. Comparte tu enlace, código QR o código promocional. Gana una tarifa fija de <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> por persona.</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">Obligatorio para todos</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#128241;</div><h3 class="text-lg font-bold mb-2">Redes Sociales</h3><p class="text-sm" style="color:var(--ink-secondary);">Gestiona la presencia de HeartFull en TikTok, Instagram u otras plataformas. Crea contenido, involucra audiencias.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Se desbloquea después de 10 referidos</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#127881;</div><h3 class="text-lg font-bold mb-2">Eventos</h3><p class="text-sm" style="color:var(--ink-secondary);">Organiza o asiste a eventos de citas, noches de citas rápidas, encuentros sociales. Los eventos convierten mejor.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Se desbloquea después de 10 referidos</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#128172;</div><h3 class="text-lg font-bold mb-2">Comunidad</h3><p class="text-sm" style="color:var(--ink-secondary);">Modera grupos, dirige discusiones, gestiona chats de eventos, apoya a los usuarios.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Se desbloquea después de 10 referidos</p></div>
@@ -112,42 +112,26 @@
     <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Lo que <span class="gradient-text">ganas</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Ganas en cada hito, hasta <span data-tariff="max">$5.00</span> por persona que traigas. Como referencia: <strong>10 amigos activos &asymp; <span data-tariff="guide10">$50</span></strong>, <strong>50 &asymp; <span data-tariff="guide50">$250</span></strong> — y no hay límite de cuántos traes.</p>
+            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Ganas una tarifa fija de <span data-tariff="max">$5.00</span> por cada persona que traigas &mdash; tu referido número 100 paga lo mismo que el primero. <strong>10 amigos = <span data-tariff="guide10">$50</span></strong>, <strong>50 = <span data-tariff="guide50">$250</span></strong> — y no hay límite de cuántos traes.</p>
 
-            <h3 class="text-xl font-bold mb-4">Por referido (hasta <span data-tariff="max">$5.00</span>)</h3>
+            <h3 class="text-xl font-bold mb-4">Por referido (tarifa fija de <span data-tariff="max">$5.00</span>)</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>Cuando tu referido...</th><th style="text-align:right;">Tú ganas</th></tr></thead>
                 <tbody>
                     <tr><td>Se registra y confirma la cuenta</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
                     <tr data-tariff-row="conversation" hidden><td>Tiene 3 conversaciones genuinas (ambos envían 2+ mensajes)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
                     <tr data-tariff-row="date" hidden><td>Va a una primera cita (check-in QR verificado)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
-                    <tr><td><strong>Máximo por referido</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
+                    <tr><td><strong>Total por referido</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
                 </tbody></table>
             </div>
 
             <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">Las comisiones por referidos se pagan en dólares australianos (AUD).</p>
-            <div data-tariff-row="diminishing" hidden>
-            <h3 class="text-xl font-bold mb-4">Ganancias por número de referido</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">Tus primeros referidos pagan más. La tasa disminuye 0.5% por referido. El mínimo es 10% &mdash; cada referido siempre vale la pena.</p>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
-                <table class="commission-table"><thead><tr><th>Referido #</th><th style="text-align:right;">Tasa</th><th style="text-align:right;">Solo registro</th><th style="text-align:right;" data-tariff-row="all" hidden>Todos los hitos</th></tr></thead>
-                <tbody data-tariff-tiers>
-                    <tr><td style="font-weight:600;">1ro</td><td>100%</td><td class="td-amount">$5.00</td><td class="td-amount" data-tariff-row="all" hidden>$5.00</td></tr>
-                    <tr><td style="font-weight:600;">10mo</td><td>95.5%</td><td class="td-amount">$4.78</td><td class="td-amount" data-tariff-row="all" hidden>$4.78</td></tr>
-                    <tr><td style="font-weight:600;">25to</td><td>88%</td><td class="td-amount">$4.40</td><td class="td-amount" data-tariff-row="all" hidden>$4.40</td></tr>
-                    <tr><td style="font-weight:600;">50mo</td><td>75.5%</td><td class="td-amount">$3.78</td><td class="td-amount" data-tariff-row="all" hidden>$3.78</td></tr>
-                    <tr><td style="font-weight:600;">100mo</td><td>50.5%</td><td class="td-amount">$2.53</td><td class="td-amount" data-tariff-row="all" hidden>$2.53</td></tr>
-                    <tr><td style="font-weight:600;">181ro+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
-                    <tr><td colspan="2"><strong>Ejemplo: 50 referidos completamente activos</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
-                </tbody></table>
-            </div>
-            </div>
 
             <h3 class="text-xl font-bold mb-4">Fuentes de ingresos adicionales</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;">
                 <table class="commission-table"><thead><tr><th>Tarea</th><th style="text-align:right;">Comisión</th></tr></thead>
                 <tbody>
-                    <tr data-tariff-row="recruit"><td>Recluta a un promotor (se paga cuando alcanza <span data-tariff="recruitThreshold">5</span> referidos confirmados)</td><td class="td-amount">hasta <span data-tariff="recruit">$25.00</span></td></tr>
+                    <tr data-tariff-row="recruit"><td>Recluta a un promotor &mdash; además de los <span data-tariff="signup">$5.00</span> por su registro, se paga cuando alcanza <span data-tariff="recruitThreshold">5</span> referidos confirmados</td><td class="td-amount"><span data-tariff="recruit">$25.00</span></td></tr>
                     <tr><td>Publicación en redes sociales (contenido aprobado con enlace de referido)</td><td class="td-amount">$5 &ndash; $20/post</td></tr>
                     <tr><td>Gestión de cuenta en redes sociales (semanal)</td><td class="td-amount">$50 &ndash; $100/semana</td></tr>
                     <tr><td>Organizar un evento de citas (presencial u online)</td><td class="td-amount">$30 &ndash; $100/evento</td></tr>
@@ -236,46 +220,22 @@
         var s = num('signupCents'), c = num('conversationCents'), d = num('dateCents');
         if (s == null || c == null || d == null || s + c + d === 0) return;
         var r = num('promoterRecruitmentCents', 0);
-        var pct = num('diminishingPercentPerSignup', 0.5), floor = num('diminishingFloorPercent', 10);
-        function adj(base, prior) {
-          var mult = (100 - Math.min(prior * pct, 100 - floor)) / 100;
-          return Math.max(Math.round(base * mult), Math.ceil(base * floor / 100));
-        }
-        var sum10 = 0, sum50 = 0;
-        for (var n = 1; n <= 50; n++) {
-          var t = adj(s, n - 1) + adj(c, n - 1) + adj(d, n - 1);
-          if (n <= 10) sum10 += t;
-          sum50 += t;
-        }
         var texts = {
           signup: fmt(s), conversation: fmt(c), date: fmt(d),
           max: fmt(s + c + d),
           recruit: fmt(r),
           recruitThreshold: String(num('promoterRecruitmentThreshold', 5)),
-          guide10: '$' + Math.round(sum10 / 100),
-          guide50: '$' + Math.round(sum50 / 100),
-          example50: '~$' + Math.round(sum50 / 100)
+          guide10: '$' + Math.round((s + c + d) * 10 / 100),
+          guide50: '$' + Math.round((s + c + d) * 50 / 100)
         };
         document.querySelectorAll('[data-tariff]').forEach(function (el) {
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });
-        var tiers = document.querySelector('[data-tariff-tiers]');
-        if (tiers) {
-          var rows = tiers.querySelectorAll('tr');
-          [1, 10, 25, 50, 100, 181].forEach(function (n, i) {
-            var cells = rows[i] && rows[i].querySelectorAll('td');
-            if (!cells || cells.length < 4) return;
-            var prior = n - 1;
-            cells[1].textContent = Math.max(100 - pct * prior, floor) + '%';
-            cells[2].textContent = fmt(adj(s, prior));
-            cells[3].textContent = fmt(adj(s, prior) + adj(c, prior) + adj(d, prior));
-          });
-        }
       }).catch(function () { /* keep static fallback amounts */ });
     })();
     </script>

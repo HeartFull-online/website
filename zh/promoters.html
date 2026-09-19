@@ -63,7 +63,7 @@
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">如何<span class="gradient-text">运作</span></h2>
             <p class="text-center mb-12" style="color:var(--ink-secondary);">每个人都从用户获取开始 &mdash; 将真实的人带到HeartFull。这是基础。一旦你活跃起来，就能解锁更多收入来源。</p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">用户获取</h3><p class="text-sm" style="color:var(--ink-secondary);">基础任务。分享你的链接、二维码或推广码。每人最高赚取 <strong style="color:var(--coral);" data-tariff="max">$5.00</strong>。</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">所有人必须参与</p></div>
+                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">用户获取</h3><p class="text-sm" style="color:var(--ink-secondary);">基础任务。分享你的链接、二维码或推广码。每人固定赚取 <strong style="color:var(--coral);" data-tariff="max">$5.00</strong>。</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">所有人必须参与</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#128241;</div><h3 class="text-lg font-bold mb-2">社交媒体</h3><p class="text-sm" style="color:var(--ink-secondary);">管理HeartFull在TikTok、Instagram或其他平台上的存在。创建内容，吸引受众。</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">10个推荐后解锁</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#127881;</div><h3 class="text-lg font-bold mb-2">活动</h3><p class="text-sm" style="color:var(--ink-secondary);">举办或参加约会活动、快速约会之夜、社交聚会。活动转化率最高。</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">10个推荐后解锁</p></div>
                 <div class="card text-center"><div class="text-3xl mb-3">&#128172;</div><h3 class="text-lg font-bold mb-2">社区</h3><p class="text-sm" style="color:var(--ink-secondary);">管理群组、主持讨论、管理活动聊天、支持用户。</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">10个推荐后解锁</p></div>
@@ -75,42 +75,26 @@
     <section class="py-16 sm:py-20" style="background:var(--surface);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">你能<span class="gradient-text">赚多少</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">每个里程碑都有收入。每带来一个人最高可赚<span data-tariff="max">$5.00</span>。</p>
+            <p class="text-center mb-10" style="color:var(--ink-secondary);">每带来一个人固定赚取<span data-tariff="max">$5.00</span> &mdash; 第100个推荐和第1个报酬相同。</p>
 
-            <h3 class="text-xl font-bold mb-4">每个推荐（最高<span data-tariff="max">$5.00</span>）</h3>
+            <h3 class="text-xl font-bold mb-4">每个推荐（固定<span data-tariff="max">$5.00</span>）</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>当你的推荐人...</th><th style="text-align:right;">你赚取</th></tr></thead>
                 <tbody>
                     <tr><td>注册并确认账户</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
                     <tr data-tariff-row="conversation" hidden><td>进行3次真实对话（双方各发送2+条消息）</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
                     <tr data-tariff-row="date" hidden><td>进行第一次约会（经过验证的二维码签到）</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
-                    <tr><td><strong>每个推荐最高</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
+                    <tr><td><strong>每个推荐合计</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
                 </tbody></table>
             </div>
 
             <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">推荐佣金以澳元（AUD）支付。</p>
-            <div data-tariff-row="diminishing" hidden>
-            <h3 class="text-xl font-bold mb-4">按推荐数量计算的收入</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">你的前几个推荐报酬最高。每个推荐费率降低0.5%。底线是10% &mdash; 每个推荐都是值得的。</p>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
-                <table class="commission-table"><thead><tr><th>推荐 #</th><th style="text-align:right;">费率</th><th style="text-align:right;">仅注册</th><th style="text-align:right;" data-tariff-row="all" hidden>所有里程碑</th></tr></thead>
-                <tbody data-tariff-tiers>
-                    <tr><td style="font-weight:600;">第1个</td><td>100%</td><td class="td-amount">$5.00</td><td class="td-amount" data-tariff-row="all" hidden>$5.00</td></tr>
-                    <tr><td style="font-weight:600;">第10个</td><td>95.5%</td><td class="td-amount">$4.78</td><td class="td-amount" data-tariff-row="all" hidden>$4.78</td></tr>
-                    <tr><td style="font-weight:600;">第25个</td><td>88%</td><td class="td-amount">$4.40</td><td class="td-amount" data-tariff-row="all" hidden>$4.40</td></tr>
-                    <tr><td style="font-weight:600;">第50个</td><td>75.5%</td><td class="td-amount">$3.78</td><td class="td-amount" data-tariff-row="all" hidden>$3.78</td></tr>
-                    <tr><td style="font-weight:600;">第100个</td><td>50.5%</td><td class="td-amount">$2.53</td><td class="td-amount" data-tariff-row="all" hidden>$2.53</td></tr>
-                    <tr><td style="font-weight:600;">第181个+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
-                    <tr><td colspan="2"><strong>示例：50个完全活跃的推荐</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
-                </tbody></table>
-            </div>
-            </div>
 
             <h3 class="text-xl font-bold mb-4">额外收入来源</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;">
                 <table class="commission-table"><thead><tr><th>任务</th><th style="text-align:right;">佣金</th></tr></thead>
                 <tbody>
-                    <tr data-tariff-row="recruit"><td>招募一名推广员（当其达到<span data-tariff="recruitThreshold">5</span>个已确认推荐时支付）</td><td class="td-amount">最高<span data-tariff="recruit">$25.00</span></td></tr>
+                    <tr data-tariff-row="recruit"><td>招募一名推广员 &mdash; 在其注册的<span data-tariff="signup">$5.00</span>之外额外支付，当其达到<span data-tariff="recruitThreshold">5</span>个已确认推荐时支付</td><td class="td-amount"><span data-tariff="recruit">$25.00</span></td></tr>
                     <tr><td>社交媒体帖子（带推荐链接的已批准内容）</td><td class="td-amount">$5 &ndash; $20/帖</td></tr>
                     <tr><td>社交媒体账号管理（每周）</td><td class="td-amount">$50 &ndash; $100/周</td></tr>
                     <tr><td>举办约会活动（线下或线上）</td><td class="td-amount">$30 &ndash; $100/场</td></tr>
@@ -199,46 +183,22 @@
         var s = num('signupCents'), c = num('conversationCents'), d = num('dateCents');
         if (s == null || c == null || d == null || s + c + d === 0) return;
         var r = num('promoterRecruitmentCents', 0);
-        var pct = num('diminishingPercentPerSignup', 0.5), floor = num('diminishingFloorPercent', 10);
-        function adj(base, prior) {
-          var mult = (100 - Math.min(prior * pct, 100 - floor)) / 100;
-          return Math.max(Math.round(base * mult), Math.ceil(base * floor / 100));
-        }
-        var sum10 = 0, sum50 = 0;
-        for (var n = 1; n <= 50; n++) {
-          var t = adj(s, n - 1) + adj(c, n - 1) + adj(d, n - 1);
-          if (n <= 10) sum10 += t;
-          sum50 += t;
-        }
         var texts = {
           signup: fmt(s), conversation: fmt(c), date: fmt(d),
           max: fmt(s + c + d),
           recruit: fmt(r),
           recruitThreshold: String(num('promoterRecruitmentThreshold', 5)),
-          guide10: '$' + Math.round(sum10 / 100),
-          guide50: '$' + Math.round(sum50 / 100),
-          example50: '~$' + Math.round(sum50 / 100)
+          guide10: '$' + Math.round((s + c + d) * 10 / 100),
+          guide50: '$' + Math.round((s + c + d) * 50 / 100)
         };
         document.querySelectorAll('[data-tariff]').forEach(function (el) {
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });
-        var tiers = document.querySelector('[data-tariff-tiers]');
-        if (tiers) {
-          var rows = tiers.querySelectorAll('tr');
-          [1, 10, 25, 50, 100, 181].forEach(function (n, i) {
-            var cells = rows[i] && rows[i].querySelectorAll('td');
-            if (!cells || cells.length < 4) return;
-            var prior = n - 1;
-            cells[1].textContent = Math.max(100 - pct * prior, floor) + '%';
-            cells[2].textContent = fmt(adj(s, prior));
-            cells[3].textContent = fmt(adj(s, prior) + adj(c, prior) + adj(d, prior));
-          });
-        }
       }).catch(function () { /* keep static fallback amounts */ });
     })();
     </script>
