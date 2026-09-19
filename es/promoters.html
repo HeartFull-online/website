@@ -112,7 +112,7 @@
     <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Lo que <span class="gradient-text">ganas</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Ganas en cada hito, hasta <span data-tariff="max">$5.00</span> por persona que traigas. Como referencia: <strong>10 amigos activos &asymp; <span data-tariff="guide10">$49</span></strong>, <strong>50 &asymp; <span data-tariff="guide50">$220</span></strong> — y no hay límite de cuántos traes.</p>
+            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Ganas en cada hito, hasta <span data-tariff="max">$5.00</span> por persona que traigas. Como referencia: <strong>10 amigos activos &asymp; <span data-tariff="guide10">$50</span></strong>, <strong>50 &asymp; <span data-tariff="guide50">$250</span></strong> — y no hay límite de cuántos traes.</p>
 
             <h3 class="text-xl font-bold mb-4">Por referido (hasta <span data-tariff="max">$5.00</span>)</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
@@ -125,8 +125,10 @@
                 </tbody></table>
             </div>
 
+            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">Las comisiones por referidos se pagan en dólares australianos (AUD).</p>
+            <div data-tariff-row="diminishing" hidden>
             <h3 class="text-xl font-bold mb-4">Ganancias por número de referido</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">Tus primeros referidos pagan más. La tasa disminuye 0.5% por referido. El mínimo es 10% &mdash; cada referido siempre vale la pena. Las comisiones por referidos se pagan en dólares australianos (AUD).</p>
+            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">Tus primeros referidos pagan más. La tasa disminuye 0.5% por referido. El mínimo es 10% &mdash; cada referido siempre vale la pena.</p>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>Referido #</th><th style="text-align:right;">Tasa</th><th style="text-align:right;">Solo registro</th><th style="text-align:right;" data-tariff-row="all" hidden>Todos los hitos</th></tr></thead>
                 <tbody data-tariff-tiers>
@@ -138,6 +140,7 @@
                     <tr><td style="font-weight:600;">181ro+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
                     <tr><td colspan="2"><strong>Ejemplo: 50 referidos completamente activos</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
                 </tbody></table>
+            </div>
             </div>
 
             <h3 class="text-xl font-bold mb-4">Fuentes de ingresos adicionales</h3>
@@ -257,7 +260,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });

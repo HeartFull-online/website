@@ -88,8 +88,10 @@
                 </tbody></table>
             </div>
 
+            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">推荐佣金以澳元（AUD）支付。</p>
+            <div data-tariff-row="diminishing" hidden>
             <h3 class="text-xl font-bold mb-4">按推荐数量计算的收入</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">你的前几个推荐报酬最高。每个推荐费率降低0.5%。底线是10% &mdash; 每个推荐都是值得的。 推荐佣金以澳元（AUD）支付。</p>
+            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">你的前几个推荐报酬最高。每个推荐费率降低0.5%。底线是10% &mdash; 每个推荐都是值得的。</p>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>推荐 #</th><th style="text-align:right;">费率</th><th style="text-align:right;">仅注册</th><th style="text-align:right;" data-tariff-row="all" hidden>所有里程碑</th></tr></thead>
                 <tbody data-tariff-tiers>
@@ -101,6 +103,7 @@
                     <tr><td style="font-weight:600;">第181个+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
                     <tr><td colspan="2"><strong>示例：50个完全活跃的推荐</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
                 </tbody></table>
+            </div>
             </div>
 
             <h3 class="text-xl font-bold mb-4">额外收入来源</h3>
@@ -220,7 +223,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });

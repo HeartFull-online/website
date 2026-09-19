@@ -112,7 +112,7 @@
     <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">ما <span class="gradient-text">تكسبه</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">تكسب عند كل مرحلة، حتى <span data-tariff="max">$5.00</span> لكل شخص تجلبه. كدليل تقريبي: <strong>10 أصدقاء نشطين &asymp; <span data-tariff="guide10">$49</span></strong>، و<strong>50 &asymp; <span data-tariff="guide50">$220</span></strong> — ولا حدّ لعدد من تجلبهم.</p>
+            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">تكسب عند كل مرحلة، حتى <span data-tariff="max">$5.00</span> لكل شخص تجلبه. كدليل تقريبي: <strong>10 أصدقاء نشطين &asymp; <span data-tariff="guide10">$50</span></strong>، و<strong>50 &asymp; <span data-tariff="guide50">$250</span></strong> — ولا حدّ لعدد من تجلبهم.</p>
 
             <h3 class="text-xl font-bold mb-4">لكل إحالة (حتى <span data-tariff="max">$5.00</span>)</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
@@ -125,8 +125,10 @@
                 </tbody></table>
             </div>
 
+            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">تُدفع عمولات الإحالة بالدولار الأسترالي (AUD).</p>
+            <div data-tariff-row="diminishing" hidden>
             <h3 class="text-xl font-bold mb-4">الأرباح حسب رقم الإحالة</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">إحالاتك الأولى تدفع الأكثر. ينخفض المعدل بنسبة 0.5% لكل إحالة. الحد الأدنى 10% &mdash; كل إحالة تستحق دائمًا. تُدفع عمولات الإحالة بالدولار الأسترالي (AUD).</p>
+            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">إحالاتك الأولى تدفع الأكثر. ينخفض المعدل بنسبة 0.5% لكل إحالة. الحد الأدنى 10% &mdash; كل إحالة تستحق دائمًا.</p>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>الإحالة #</th><th style="text-align:left;">المعدل</th><th style="text-align:left;">التسجيل فقط</th><th style="text-align:left;" data-tariff-row="all" hidden>جميع المراحل</th></tr></thead>
                 <tbody data-tariff-tiers>
@@ -138,6 +140,7 @@
                     <tr><td style="font-weight:600;">181+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
                     <tr><td colspan="2"><strong>مثال: 50 إحالة نشطة بالكامل</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
                 </tbody></table>
+            </div>
             </div>
 
             <h3 class="text-xl font-bold mb-4">مصادر دخل إضافية</h3>
@@ -257,7 +260,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });

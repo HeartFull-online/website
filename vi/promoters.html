@@ -112,7 +112,7 @@
     <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">B&#7841;n <span class="gradient-text">ki&#7871;m &#273;&#432;&#7907;c</span> g&#236;</h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Bạn kiếm ở mỗi cột mốc, tới <span data-tariff="max">$5.00</span> cho mỗi người bạn giới thiệu. Tham khảo nhanh: <strong>10 bạn bè hoạt động &asymp; <span data-tariff="guide10">$49</span></strong>, <strong>50 &asymp; <span data-tariff="guide50">$220</span></strong> — và không giới hạn số lượng bạn đưa vào.</p>
+            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Bạn kiếm ở mỗi cột mốc, tới <span data-tariff="max">$5.00</span> cho mỗi người bạn giới thiệu. Tham khảo nhanh: <strong>10 bạn bè hoạt động &asymp; <span data-tariff="guide10">$50</span></strong>, <strong>50 &asymp; <span data-tariff="guide50">$250</span></strong> — và không giới hạn số lượng bạn đưa vào.</p>
 
             <h3 class="text-xl font-bold mb-4">M&#7895;i gi&#7899;i thi&#7879;u (t&#7889;i &#273;a <span data-tariff="max">$5.00</span>)</h3>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
@@ -125,8 +125,10 @@
                 </tbody></table>
             </div>
 
+            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">Hoa hồng giới thiệu được trả bằng đô la Úc (AUD).</p>
+            <div data-tariff-row="diminishing" hidden>
             <h3 class="text-xl font-bold mb-4">Thu nh&#7853;p theo s&#7889; gi&#7899;i thi&#7879;u</h3>
-            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">Nh&#7919;ng gi&#7899;i thi&#7879;u &#273;&#7847;u ti&#234;n tr&#7843; nhi&#7873;u nh&#7845;t. T&#7927; l&#7879; gi&#7843;m 0.5% m&#7895;i gi&#7899;i thi&#7879;u. S&#224;n l&#224; 10% &mdash; m&#7895;i gi&#7899;i thi&#7879;u lu&#244;n &#273;&#225;ng gi&#225;. Hoa hồng giới thiệu được trả bằng đô la Úc (AUD).</p>
+            <p class="mb-4 text-sm" style="color:var(--ink-secondary);">Nh&#7919;ng gi&#7899;i thi&#7879;u &#273;&#7847;u ti&#234;n tr&#7843; nhi&#7873;u nh&#7845;t. T&#7927; l&#7879; gi&#7843;m 0.5% m&#7895;i gi&#7899;i thi&#7879;u. S&#224;n l&#224; 10% &mdash; m&#7895;i gi&#7899;i thi&#7879;u lu&#244;n &#273;&#225;ng gi&#225;.</p>
             <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
                 <table class="commission-table"><thead><tr><th>Gi&#7899;i thi&#7879;u #</th><th style="text-align:right;">T&#7927; l&#7879;</th><th style="text-align:right;">Ch&#7881; &#273;&#259;ng k&#253;</th><th style="text-align:right;" data-tariff-row="all" hidden>T&#7845;t c&#7843; c&#7897;t m&#7889;c</th></tr></thead>
                 <tbody data-tariff-tiers>
@@ -138,6 +140,7 @@
                     <tr><td style="font-weight:600;">Th&#7913; 181+</td><td>10%</td><td class="td-amount">$0.50</td><td class="td-amount" data-tariff-row="all" hidden>$0.50</td></tr>
                     <tr><td colspan="2"><strong>V&#237; d&#7909;: 50 gi&#7899;i thi&#7879;u ho&#7841;t &#273;&#7897;ng &#273;&#7847;y &#273;&#7911;</strong></td><td class="td-amount" colspan="2" style="font-size:1.1rem;" data-tariff="example50">~$220</td></tr>
                 </tbody></table>
+            </div>
             </div>
 
             <h3 class="text-xl font-bold mb-4">Ngu&#7891;n thu nh&#7853;p b&#7893; sung</h3>
@@ -257,7 +260,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, all: c + d > 0, diminishing: pct > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });
