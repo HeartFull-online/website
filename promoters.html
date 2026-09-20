@@ -21,16 +21,43 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA;--shadow-warm:0 2px 8px rgba(30,25,22,0.08)}
-        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface)}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
-        .gradient-text{background:linear-gradient(135deg,#FF5870,#FF8A9A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .card{background:var(--surface-elevated);border-radius:16px;box-shadow:var(--shadow-warm);padding:2rem;transition:transform 0.3s,box-shadow 0.3s}.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(30,25,22,0.12)}
-        .commission-table{width:100%;border-collapse:collapse;background:var(--surface-elevated);font-size:0.95rem}
-        .commission-table thead th{background:var(--surface-sunken);text-align:left;padding:0.875rem 1.25rem;font-weight:600;border-bottom:2px solid var(--border)}
-        .commission-table tbody td{padding:0.875rem 1.25rem;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
-        .commission-table tbody tr:last-child td{border-bottom:none;font-weight:700;color:var(--ink)}
-        .td-amount{color:var(--coral);font-weight:700;text-align:right;white-space:nowrap}
-        .commission-table thead th:last-child,.commission-table thead th:nth-child(2){text-align:right}
+        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA}
+        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface);line-height:1.65}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
+        .wrap{max-width:66rem;margin:0 auto;padding:0 1.25rem}
+        .band{padding:4.5rem 0}.band-sunken{background:var(--surface-sunken)}.band-blush{background:var(--coral-subtle)}
+        h1{font-weight:600;font-size:clamp(2.4rem,5.5vw,3.9rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:1.5rem}
+        h2{font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-0.01em;margin-bottom:1rem}
+        h3{font-weight:600;font-size:1.2rem;line-height:1.3;margin-bottom:.4rem}
+        h1 em,h2 em{font-style:italic;font-weight:500;color:var(--coral)}
+        .kicker{font-size:.85rem;font-weight:600;color:var(--coral);margin-bottom:1rem}
+        .lede{font-size:1.1rem;color:var(--ink-secondary);max-width:40rem}
+        .muted{color:var(--ink-secondary)}.small{font-size:.9rem}.fine{font-size:.85rem;color:var(--ink-tertiary)}
+        .split{display:grid;gap:2.5rem;align-items:center}
+        .cols{display:grid;gap:2.5rem;align-items:start}
+        @media(min-width:800px){.split{grid-template-columns:1.15fr .85fr;gap:4rem}.split.flip{grid-template-columns:.85fr 1.15fr}.cols{grid-template-columns:1fr 1fr;gap:4rem}}
+        .doodle{display:block;width:100%;max-width:26rem;height:auto;margin:0 auto}
+        .btn{display:inline-block;background:var(--coral);color:#fff;border-radius:12px;padding:.875rem 1.75rem;font-size:1.05rem;font-weight:600;text-decoration:none}.btn:hover{background:#E8465E}
+        .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem}
+        .plain{list-style:none}.plain li{padding:.85rem 0;border-top:1px solid var(--border)}.plain li:last-child{border-bottom:1px solid var(--border)}.plain strong{display:block;color:var(--ink)}
+        .start{border-inline-start:3px solid var(--coral);padding-inline-start:1.5rem}
+        .ways{list-style:none;counter-reset:way;display:grid;gap:0 4rem}
+        @media(min-width:800px){.ways{grid-template-columns:1fr 1fr}}
+        .ways li{counter-increment:way;position:relative;padding:1.4rem 0;padding-inline-start:3.25rem;border-top:1px solid var(--border)}
+        .ways li::before{content:counter(way);position:absolute;inset-inline-start:0;top:1.1rem;font-family:'Fraunces',serif;font-style:italic;font-size:2rem;line-height:1;color:var(--coral)}
+        .ticket{display:flex;flex-direction:column;background:var(--surface-elevated);border:1px solid var(--border);border-radius:14px;max-width:26rem;margin:0 auto;transform:rotate(-1.5deg)}
+        .ticket>div{padding:1.25rem 1.5rem;flex:1 1 auto}.ticket>div+div{border-top:2px dashed var(--border)}
+        .t-label{display:block;font-size:.75rem;color:var(--ink-tertiary);margin-bottom:.25rem}.t-code{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:600;letter-spacing:.04em}.t-link{font-weight:600;font-size:.95rem;word-break:break-all}
+        .figs{display:grid;gap:2rem;margin:2rem 0}@media(min-width:560px){.figs{grid-template-columns:1fr 1fr}}
+        .fig{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.75rem,6vw,3.75rem);line-height:1;color:var(--coral);margin-bottom:.5rem}
+        .commission-table{width:100%;border-collapse:collapse;font-size:.95rem}
+        .commission-table th{text-align:start;padding:.75rem 0;font-weight:600;border-bottom:2px solid var(--ink)}
+        .commission-table td{padding:.85rem 0;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
+        .commission-table th:last-child{text-align:end}
+        .td-amount{color:var(--ink);font-weight:700;text-align:end;white-space:nowrap;padding-inline-start:1rem}
+        .path{list-style:none;border-inline-start:2px solid var(--border);margin-inline-start:.5rem}
+        .path li{position:relative;padding:0 0 2rem;padding-inline-start:2rem}.path li:last-child{padding-bottom:0}
+        .path li::before{content:'';position:absolute;inset-inline-start:-.45rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px var(--surface)}
+        .terms{list-style:disc;padding-inline-start:1.25rem}.terms li{margin-bottom:.5rem}
         .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-left:1rem}.lang-switcher a{color:var(--ink-tertiary);text-decoration:none}.lang-switcher a:hover{color:var(--coral)}.lang-switcher .active{font-weight:700;color:var(--ink)}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
@@ -47,150 +74,181 @@
     </nav>
 
     <!-- Hero -->
-    <section style="background:linear-gradient(160deg,#1E1916 0%,#2C2622 40%,#1E1916 100%);position:relative;overflow:hidden;">
-        <div style="position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(255,88,112,0.1) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative" style="z-index:1;"><div class="text-center">
-            <p class="text-sm font-semibold mb-4 tracking-widest" style="color:var(--coral);">CASUAL INCOME &middot; WORK WHENEVER</p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight" style="font-weight:600;">Get paid to help people find <span style="color:var(--coral);">real connections</span></h1>
-            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style="color:rgba(255,255,255,0.65);font-family:'Fraunces',serif;">HeartFull is a free dating app where being genuine &mdash; not paying &mdash; gets you noticed. Tell people about it, and earn real cash for everyone who joins. It&rsquo;s casual: no office, no boss, no set hours. Just your phone, whenever you have a spare minute.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">Start earning &mdash; free</button></a>
-        </div></div>
+    <section class="band">
+        <div class="wrap split">
+            <div>
+                <p class="kicker">Casual income &middot; work whenever</p>
+                <h1>Get paid to help people find <em>real connections</em></h1>
+                <p class="lede">HeartFull is a free dating app where being genuine &mdash; not paying &mdash; gets you noticed. Tell people about it, and earn real cash for everyone who joins. It&rsquo;s casual: no office, no boss, no set hours. Just your phone, whenever you have a spare minute.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">Start earning &mdash; free</a><p class="small muted">A flat <span data-tariff="signup">$5.00</span> for every person who joins. Paid weekly.</p></div>
+            </div>
+            <img class="doodle" src="/illustrations/selfie.svg" alt="" width="1024" height="768">
+        </div>
     </section>
 
     <!-- New here -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">New here? <span class="gradient-text">Here&rsquo;s the deal</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Never heard of HeartFull, or not sure what this is? No problem &mdash; here&rsquo;s the whole idea in plain words.</p>
-            <div class="grid sm:grid-cols-2 gap-6 mb-12">
-                <div class="card"><h3 class="text-lg font-bold mb-2">First, what&rsquo;s HeartFull?</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">A <strong>free</strong> dating app with a twist: there are no paywalls and nothing to buy. Instead of paying to be seen, people earn &ldquo;Hearts&rdquo; by being genuine and active &mdash; your character is your currency. People love that it feels human, not pay-to-win. <a href="/how-hearts-work.html">See how it works &rarr;</a></p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-2">And what&rsquo;s this page?</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">A relaxed way to make some money by telling people about HeartFull. Anyone who joins through your link or QR code is credited to you &mdash; and you get paid for each person who signs up and starts connecting. You don&rsquo;t need to have used the app yourself to start.</p></div>
+    <section class="band" style="border-top:1px solid var(--border);">
+        <div class="wrap">
+            <h2>New here? <em>Here&rsquo;s the deal</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">Never heard of HeartFull, or not sure what this is? No problem &mdash; here&rsquo;s the whole idea in plain words.</p>
+            <div class="cols" style="margin-bottom:4.5rem;">
+                <div><h3>First, what&rsquo;s HeartFull?</h3><p class="muted">A <strong>free</strong> dating app with a twist: there are no paywalls and nothing to buy. Instead of paying to be seen, people earn &ldquo;Hearts&rdquo; by being genuine and active &mdash; your character is your currency. People love that it feels human, not pay-to-win. <a href="/how-hearts-work.html">See how it works &rarr;</a></p></div>
+                <div><h3>And what&rsquo;s this page?</h3><p class="muted">A relaxed way to make some money by telling people about HeartFull. Anyone who joins through your link or QR code is credited to you &mdash; and you get paid for each person who signs up and confirms their account. You don&rsquo;t need to have used the app yourself to start.</p></div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-center mb-2">It&rsquo;s casual income &mdash; <span class="gradient-text">not a job</span></h3>
-            <p class="text-center mb-8 max-w-xl mx-auto text-sm" style="color:var(--ink-secondary);">No interview, no contract, no coming into an office. Treat it as a little side hustle on your own terms.</p>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">⏰</div><h3 class="text-base font-bold mb-1">Work whenever</h3><p class="text-sm" style="color:var(--ink-secondary);">No fixed hours. Five minutes or five hours &mdash; up to you.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">📱</div><h3 class="text-base font-bold mb-1">No office, no boss</h3><p class="text-sm" style="color:var(--ink-secondary);">Fully remote, all from your phone. Nobody managing you.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">🎚️</div><h3 class="text-base font-bold mb-1">No quotas</h3><p class="text-sm" style="color:var(--ink-secondary);">Share as little or as much as you like. Pause or stop anytime.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">💸</div><h3 class="text-base font-bold mb-1">Paid per result</h3><p class="text-sm" style="color:var(--ink-secondary);">Real cash for the real people you bring, paid weekly.</p></div>
+            <div class="split flip">
+                <img class="doodle" src="/illustrations/chilling.svg" alt="" width="1024" height="768" loading="lazy">
+                <div>
+                    <h2>It&rsquo;s casual income &mdash; <em>not a job</em></h2>
+                    <p class="muted" style="margin-bottom:1.5rem;">No interview, no contract, no coming into an office. Treat it as a little side hustle on your own terms.</p>
+                    <ul class="plain muted">
+                        <li><strong>Work whenever</strong>No fixed hours. Five minutes or five hours &mdash; up to you.</li>
+                        <li><strong>No office, no boss</strong>Fully remote, all from your phone. Nobody managing you.</li>
+                        <li><strong>No quotas</strong>Share as little or as much as you like. Pause or stop anytime.</li>
+                        <li><strong>Paid per result</strong>Real cash for the real people you bring, paid weekly.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What you'll do -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">How it <span class="gradient-text">works</span></h2>
-            <p class="text-center mb-12" style="color:var(--ink-secondary);">Everyone starts with user acquisition &mdash; bringing real people to HeartFull. This is the foundation. Once you&rsquo;re active, you unlock additional earning streams.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">🎯</div><h3 class="text-lg font-bold mb-2">User Acquisition</h3><p class="text-sm" style="color:var(--ink-secondary);">The foundation. Share your link, QR code, or promo code. Earn a flat <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> per person.</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">Required for all</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">📱</div><h3 class="text-lg font-bold mb-2">Social Media</h3><p class="text-sm" style="color:var(--ink-secondary);">Manage HeartFull&rsquo;s presence on TikTok, Instagram, or other platforms. Create content, engage audiences.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Unlocks after 10 referrals</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">🎉</div><h3 class="text-lg font-bold mb-2">Events</h3><p class="text-sm" style="color:var(--ink-secondary);">Host or attend dating events, speed dating nights, social mixers. Events convert best.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Unlocks after 10 referrals</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">💬</div><h3 class="text-lg font-bold mb-2">Community</h3><p class="text-sm" style="color:var(--ink-secondary);">Moderate groups, run discussions, manage event chats, support users.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">Unlocks after 10 referrals</p></div>
+    <!-- How it works -->
+    <section class="band band-sunken">
+        <div class="wrap">
+            <h2>How it <em>works</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">Everyone starts with user acquisition &mdash; bringing real people to HeartFull. This is the foundation. Once you&rsquo;re active, you unlock additional earning streams.</p>
+            <div class="cols">
+                <div class="start">
+                    <p class="kicker">Required for all</p>
+                    <h3>User Acquisition</h3>
+                    <p class="muted">The foundation. Share your link, QR code, or promo code. Earn a flat <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> per person.</p>
+                </div>
+                <div>
+                    <p class="kicker" style="color:var(--ink-tertiary);">Unlocks after 10 referrals</p>
+                    <ul class="plain muted">
+                        <li><strong>Social Media</strong>Manage HeartFull&rsquo;s presence on TikTok, Instagram, or other platforms. Create content, engage audiences.</li>
+                        <li><strong>Events</strong>Host or attend dating events, speed dating nights, social mixers. Events convert best.</li>
+                        <li><strong>Community</strong>Moderate groups, run discussions, manage event chats, support users.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How to promote -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">How to bring <span class="gradient-text">people in</span></h2>
-            <p class="text-center mb-12 max-w-2xl mx-auto" style="color:var(--ink-secondary);">You don&rsquo;t need a big audience. Anyone who joins with your link, QR code, or promo code is credited to you automatically. Here are simple ways real promoters do it &mdash; pick the ones that fit you.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card"><div class="text-3xl mb-3">💬</div><h3 class="text-lg font-bold mb-2">Invite people you already chat with</h3><p class="text-sm" style="color:var(--ink-secondary);">On WhatsApp, Telegram, or Instagram DMs, send your link: &ldquo;I&rsquo;m on HeartFull &mdash; a free dating app, no paywalls. Join with my code and add me.&rdquo;</p></div>
-                <div class="card"><div class="text-3xl mb-3">📲</div><h3 class="text-lg font-bold mb-2">Share your QR code in person</h3><p class="text-sm" style="color:var(--ink-secondary);">Show or print your QR at meetups, cafés, campus, or the gym. People scan it and land in the app already linked to you &mdash; nothing to type.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🔗</div><h3 class="text-lg font-bold mb-2">Send your link to friends</h3><p class="text-sm" style="color:var(--ink-secondary);">One tap shares your personal link in any messenger. They open it, sign up, and you&rsquo;re credited automatically &mdash; no code to type.</p></div>
-                <div class="card"><div class="text-3xl mb-3">❤️</div><h3 class="text-lg font-bold mb-2">Recommend it on other dating apps</h3><p class="text-sm" style="color:var(--ink-secondary);">Matched on Tinder, Bumble, or Hinge? Suggest moving to HeartFull (it&rsquo;s free) and ask them to add you as their promoter with your code when they sign up.</p></div>
-                <div class="card"><div class="text-3xl mb-3">📱</div><h3 class="text-lg font-bold mb-2">Post on your socials</h3><p class="text-sm" style="color:var(--ink-secondary);">A quick story or post &mdash; &ldquo;trying this free dating app&rdquo; &mdash; with your link or QR. Approved posts can earn $5&ndash;$20 each, on top of your referrals.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🎉</div><h3 class="text-lg font-bold mb-2">Bring friends to events</h3><p class="text-sm" style="color:var(--ink-secondary);">Invite people to a HeartFull dating event or mixer. Events convert best &mdash; everyone who shows up is ready to meet.</p></div>
+    <section class="band">
+        <div class="wrap">
+            <div class="split" style="margin-bottom:2.5rem;">
+                <div><h2>How to bring <em>people in</em></h2><p class="lede">You don&rsquo;t need a big audience. Anyone who joins with your link, QR code, or promo code is credited to you automatically. Here are simple ways real promoters do it &mdash; pick the ones that fit you.</p></div>
+                <img class="doodle" src="/illustrations/dancing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
             </div>
-            <div class="card" style="margin-top:2rem;background:var(--coral-subtle);"><p style="color:var(--ink);line-height:1.8;"><strong>Everything you need is in your dashboard:</strong> your promo code, a one-tap share link, and a downloadable QR flyer &mdash; ready to send. New users who use your link or code are linked to you in one step.</p></div>
+            <ol class="ways">
+                <li><h3>Invite people you already chat with</h3><p class="muted small">On WhatsApp, Telegram, or Instagram DMs, send your link: &ldquo;I&rsquo;m on HeartFull &mdash; a free dating app, no paywalls. Join with my code and add me.&rdquo;</p></li>
+                <li><h3>Share your QR code in person</h3><p class="muted small">Show or print your QR at meetups, cafés, campus, or the gym. People scan it and land in the app already linked to you &mdash; nothing to type.</p></li>
+                <li><h3>Send your link to friends</h3><p class="muted small">One tap shares your personal link in any messenger. They open it, sign up, and you&rsquo;re credited automatically &mdash; no code to type.</p></li>
+                <li><h3>Recommend it on other dating apps</h3><p class="muted small">Matched on Tinder, Bumble, or Hinge? Suggest moving to HeartFull (it&rsquo;s free) and ask them to add you as their promoter with your code when they sign up.</p></li>
+                <li><h3>Post on your socials</h3><p class="muted small">A quick story or post &mdash; &ldquo;trying this free dating app&rdquo; &mdash; with your link or QR. Once you&rsquo;ve passed 10 referrals, approved posts can also earn $5&ndash;$20 each.</p></li>
+                <li><h3>Bring friends to events</h3><p class="muted small">Invite people to a HeartFull dating event or mixer. Events convert best &mdash; everyone who shows up is ready to meet.</p></li>
+            </ol>
+            <div class="split" style="margin-top:3.5rem;">
+                <p class="muted"><strong>Everything you need is in your dashboard:</strong> your promo code, a one-tap share link, and a downloadable QR flyer &mdash; ready to send. New users who use your link or code are linked to you in one step.</p>
+                <div>
+                    <div class="ticket">
+                        <div><span class="t-label">Your promo code</span><span class="t-code">MAYA24</span></div>
+                        <div><span class="t-label">Your link</span><span class="t-link" dir="ltr">heartfull.online/?ref=MAYA24</span></div>
+                    </div>
+                    <p class="fine" style="text-align:center;margin-top:1rem;">Example</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Commission Structure -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">What you <span class="gradient-text">earn</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">You earn a flat <span data-tariff="max">$5.00</span> for every person you bring in &mdash; your 100th referral pays the same as your 1st. <strong>10 friends = <span data-tariff="guide10">$50</span></strong>, <strong>50 = <span data-tariff="guide50">$250</span></strong> &mdash; and there&rsquo;s no limit on how many you bring.</p>
-
-            <h3 class="text-xl font-bold mb-4">Per referral (flat <span data-tariff="max">$5.00</span>)</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
-                <table class="commission-table"><thead><tr><th>When your referral...</th><th style="text-align:right;">You earn</th></tr></thead>
-                <tbody>
-                    <tr><td>Signs up and confirms account</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
-                    <tr data-tariff-row="conversation" hidden><td>Has 3 genuine conversations (both send 2+ messages)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
-                    <tr data-tariff-row="date" hidden><td>Goes on a first date (verified QR check-in)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
-                    <tr><td><strong>Total per referral</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
-                </tbody></table>
+    <section class="band band-sunken">
+        <div class="wrap">
+            <div class="split">
+                <div>
+                    <h2>What you <em>earn</em></h2>
+                    <p class="lede">You earn a flat <span data-tariff="max">$5.00</span> for every person you bring in &mdash; your 100th referral pays the same as your 1st. <strong>10 friends = <span data-tariff="guide10">$50</span></strong>, <strong>50 = <span data-tariff="guide50">$250</span></strong> &mdash; and there&rsquo;s no limit on how many you bring.</p>
+                </div>
+                <img class="doodle" src="/illustrations/unboxing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            </div>
+            <div class="figs">
+                <div><div class="fig" data-tariff="max">$5.00</div><p class="muted">Signs up and confirms account</p></div>
+                <div data-tariff-row="recruit"><div class="fig" data-tariff="recruit">$25.00</div><p class="muted">Recruit a promoter &mdash; on top of the <span data-tariff="signup">$5.00</span> for their signup, paid once they&rsquo;ve brought in <span data-tariff="recruitThreshold">5</span> confirmed referrals</p></div>
             </div>
 
-            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">Referral commissions are paid in Australian dollars (AUD).</p>
-
-            <h3 class="text-xl font-bold mb-4">Additional earning streams</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;">
-                <table class="commission-table"><thead><tr><th>Task</th><th style="text-align:right;">Commission</th></tr></thead>
-                <tbody>
-                    <tr data-tariff-row="recruit"><td>Recruit a promoter &mdash; on top of the <span data-tariff="signup">$5.00</span> for their signup, paid once they&rsquo;ve brought in <span data-tariff="recruitThreshold">5</span> confirmed referrals</td><td class="td-amount"><span data-tariff="recruit">$25.00</span></td></tr>
-                    <tr><td>Social media post (approved content with referral link)</td><td class="td-amount">$5 &ndash; $20/post</td></tr>
-                    <tr><td>Social media account management (weekly)</td><td class="td-amount">$50 &ndash; $100/week</td></tr>
-                    <tr><td>Host a dating event (in-person or online)</td><td class="td-amount">$30 &ndash; $100/event</td></tr>
-                    <tr><td>Community/group moderation (weekly)</td><td class="td-amount">$20 &ndash; $50/week</td></tr>
-                    <tr><td>Ad campaign management (per campaign)</td><td class="td-amount">$50 &ndash; $200/campaign</td></tr>
-                </tbody></table>
+            <div data-tariff-row="milestones" hidden style="margin-bottom:2.5rem;">
+            <h3>Per referral (flat <span data-tariff="max">$5.00</span>)</h3>
+            <table class="commission-table"><thead><tr><th>When your referral...</th><th>You earn</th></tr></thead>
+            <tbody>
+                <tr><td>Signs up and confirms account</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
+                <tr data-tariff-row="conversation" hidden><td>Has 3 genuine conversations (both send 2+ messages)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
+                <tr data-tariff-row="date" hidden><td>Goes on a first date (verified QR check-in)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
+                <tr><td><strong><strong>Total per referral</strong></strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
+            </tbody></table>
             </div>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">Additional tasks assigned based on performance. All rates negotiable based on scope and results.</p>
+
+            <h3 style="margin-top:1rem;">Additional earning streams</h3>
+            <table class="commission-table"><thead><tr><th>Task</th><th>Commission</th></tr></thead>
+            <tbody>
+                <tr><td>Social media post (approved content with referral link)</td><td class="td-amount">$5 &ndash; $20/post</td></tr>
+                <tr><td>Social media account management (weekly)</td><td class="td-amount">$50 &ndash; $100/week</td></tr>
+                <tr><td>Host a dating event (in-person or online)</td><td class="td-amount">$30 &ndash; $100/event</td></tr>
+                <tr><td>Community/group moderation (weekly)</td><td class="td-amount">$20 &ndash; $50/week</td></tr>
+                <tr><td>Ad campaign management (per campaign)</td><td class="td-amount">$50 &ndash; $200/campaign</td></tr>
+            </tbody></table>
+            <p class="fine" style="margin-top:1rem;">Unlocks after 10 referrals. Additional tasks assigned based on performance. All rates negotiable based on scope and results. Referral commissions are paid in Australian dollars (AUD).</p>
         </div>
     </section>
 
-    <!-- Growth Path -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Your <span class="gradient-text">growth path</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">Start with promotion. Prove yourself. Unlock more responsibility and higher pay.</p>
-            <div class="space-y-6">
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">1</span></div><div><h3 class="font-bold text-lg">Promoter</h3><p style="color:var(--ink-secondary);">Share your link, bring people in, earn per referral. Everyone starts here.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">2</span></div><div><h3 class="font-bold text-lg">Marketing Contributor</h3><p style="color:var(--ink-secondary);">After 10+ active referrals, unlock social media, events, and community tasks. Mix and match based on your skills.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">3</span></div><div><h3 class="font-bold text-lg">Marketing Lead</h3><p style="color:var(--ink-secondary);">Top performers lead a city or channel. Manage team members, run campaigns, negotiate higher rates.</p></div></div>
+    <!-- Growth Path + Getting Paid -->
+    <section class="band">
+        <div class="wrap cols">
+            <div>
+                <h2>Your <em>growth path</em></h2>
+                <p class="muted" style="margin-bottom:2rem;">Start with promotion. Prove yourself. Unlock more responsibility and higher pay.</p>
+                <ol class="path">
+                    <li><h3>Promoter</h3><p class="muted">Share your link, bring people in, earn per referral. Everyone starts here.</p></li>
+                    <li><h3>Marketing Contributor</h3><p class="muted">After 10 confirmed referrals, unlock social media, events, and community tasks. Mix and match based on your skills.</p></li>
+                    <li><h3>Marketing Lead</h3><p class="muted">Top performers lead a city or channel. Manage team members, run campaigns, negotiate higher rates.</p></li>
+                </ol>
             </div>
-        </div>
-    </section>
-
-    <!-- Getting Paid -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Getting <span class="gradient-text">paid</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">Weekly payouts. No invoicing. No chasing.</p>
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div class="card"><h3 class="text-lg font-bold mb-3">Weekly payouts</h3><p style="color:var(--ink-secondary);line-height:1.8;">Earnings calculated every Friday, paid over the weekend via bank transfer. Balances over <strong>$10</strong> paid automatically.</p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-3">Your dashboard</h3><p style="color:var(--ink-secondary);line-height:1.8;">Track referrals, milestones, earnings, and payout history in real time. See exactly who signed up and what they did.</p></div>
+            <div>
+                <h2>Getting <em>paid</em></h2>
+                <p class="muted" style="margin-bottom:2rem;">Weekly payouts. No invoicing. No chasing.</p>
+                <h3>Weekly payouts</h3><p class="muted" style="margin-bottom:1.5rem;">Earnings calculated every Friday, paid over the weekend via bank transfer. Balances over <strong>$10</strong> paid automatically.</p>
+                <h3>Your dashboard</h3><p class="muted">Track referrals, earnings, and payout history in real time.</p>
             </div>
         </div>
     </section>
 
     <!-- Apply -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to <span class="gradient-text">start</span>?</h2>
-            <p class="mb-8 max-w-xl mx-auto" style="color:var(--ink-secondary);line-height:1.8;">Sign in with Google and tell us a bit about yourself &mdash; it takes a few minutes, no CV and no interview. Most people are approved within a day, and you get your promo code, personal link, QR code, and dashboard right away. Start whenever you like, stop whenever you like.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">Apply Now</button></a>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">No experience required. Passion for genuine connections and willingness to hustle is all you need.</p>
+    <section class="band band-blush">
+        <div class="wrap split flip">
+            <img class="doodle" src="/illustrations/loving.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            <div>
+                <h2>Ready to <em>start</em>?</h2>
+                <p class="muted">Sign in with Google and tell us a bit about yourself &mdash; it takes a few minutes, no CV and no interview. Most people are approved within a day, and you get your promo code, personal link, QR code, and dashboard right away. Start whenever you like, stop whenever you like.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">Apply Now</a></div>
+                <p class="fine" style="margin-top:1rem;">No experience required. Passion for genuine connections and willingness to hustle is all you need.</p>
+            </div>
         </div>
     </section>
 
     <!-- Terms -->
-    <section class="py-12" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-lg font-bold mb-4" style="color:var(--ink-tertiary);">Program terms</h3>
-            <ul class="space-y-2 text-sm" style="list-style:none;padding:0;color:var(--ink-tertiary);">
-                <li>&bull; Commissions are for genuine users only. Fake accounts or self-referrals result in removal.</li>
-                <li>&bull; A &ldquo;genuine conversation&rdquo; means both people sent at least 2 meaningful messages.</li>
-                <li>&bull; A &ldquo;first date&rdquo; is verified through in-person QR check-in inside the app.</li>
-                <li>&bull; Additional task rates are negotiated individually based on scope and results.</li>
-                <li>&bull; HeartFull reserves the right to modify rates with 14 days notice.</li>
+    <section class="band" style="padding:3rem 0;">
+        <div class="wrap">
+            <h3 style="color:var(--ink-tertiary);">Program terms</h3>
+            <ul class="terms fine">
+                <li>Commissions are for genuine users only. Fake accounts or self-referrals result in removal.</li>
+                <li data-tariff-row="conversation" hidden>A &ldquo;genuine conversation&rdquo; means both people sent at least 2 meaningful messages.</li>
+                <li data-tariff-row="date" hidden>A &ldquo;first date&rdquo; is verified through in-person QR check-in inside the app.</li>
+                <li>Additional task rates are negotiated individually based on scope and results.</li>
+                <li>HeartFull reserves the right to modify rates with 14 days notice.</li>
             </ul>
         </div>
     </section>
+
 
     <footer class="py-10" style="background:#1E1916;color:white;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,7 +290,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, milestones: c + d > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });

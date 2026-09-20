@@ -21,16 +21,43 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
-        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA;--shadow-warm:0 2px 8px rgba(30,25,22,0.08)}
-        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface)}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
-        .gradient-text{background:linear-gradient(135deg,#FF5870,#FF8A9A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .card{background:var(--surface-elevated);border-radius:16px;box-shadow:var(--shadow-warm);padding:2rem;transition:transform 0.3s,box-shadow 0.3s}.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(30,25,22,0.12)}
-        .commission-table{width:100%;border-collapse:collapse;background:var(--surface-elevated);font-size:0.95rem}
-        .commission-table thead th{background:var(--surface-sunken);text-align:left;padding:0.875rem 1.25rem;font-weight:600;border-bottom:2px solid var(--border)}
-        .commission-table tbody td{padding:0.875rem 1.25rem;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
-        .commission-table tbody tr:last-child td{border-bottom:none;font-weight:700;color:var(--ink)}
-        .td-amount{color:var(--coral);font-weight:700;text-align:right;white-space:nowrap}
-        .commission-table thead th:last-child,.commission-table thead th:nth-child(2){text-align:right}
+        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA}
+        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface);line-height:1.65}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
+        .wrap{max-width:66rem;margin:0 auto;padding:0 1.25rem}
+        .band{padding:4.5rem 0}.band-sunken{background:var(--surface-sunken)}.band-blush{background:var(--coral-subtle)}
+        h1{font-weight:600;font-size:clamp(2.4rem,5.5vw,3.9rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:1.5rem}
+        h2{font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-0.01em;margin-bottom:1rem}
+        h3{font-weight:600;font-size:1.2rem;line-height:1.3;margin-bottom:.4rem}
+        h1 em,h2 em{font-style:italic;font-weight:500;color:var(--coral)}
+        .kicker{font-size:.85rem;font-weight:600;color:var(--coral);margin-bottom:1rem}
+        .lede{font-size:1.1rem;color:var(--ink-secondary);max-width:40rem}
+        .muted{color:var(--ink-secondary)}.small{font-size:.9rem}.fine{font-size:.85rem;color:var(--ink-tertiary)}
+        .split{display:grid;gap:2.5rem;align-items:center}
+        .cols{display:grid;gap:2.5rem;align-items:start}
+        @media(min-width:800px){.split{grid-template-columns:1.15fr .85fr;gap:4rem}.split.flip{grid-template-columns:.85fr 1.15fr}.cols{grid-template-columns:1fr 1fr;gap:4rem}}
+        .doodle{display:block;width:100%;max-width:26rem;height:auto;margin:0 auto}
+        .btn{display:inline-block;background:var(--coral);color:#fff;border-radius:12px;padding:.875rem 1.75rem;font-size:1.05rem;font-weight:600;text-decoration:none}.btn:hover{background:#E8465E}
+        .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem}
+        .plain{list-style:none}.plain li{padding:.85rem 0;border-top:1px solid var(--border)}.plain li:last-child{border-bottom:1px solid var(--border)}.plain strong{display:block;color:var(--ink)}
+        .start{border-inline-start:3px solid var(--coral);padding-inline-start:1.5rem}
+        .ways{list-style:none;counter-reset:way;display:grid;gap:0 4rem}
+        @media(min-width:800px){.ways{grid-template-columns:1fr 1fr}}
+        .ways li{counter-increment:way;position:relative;padding:1.4rem 0;padding-inline-start:3.25rem;border-top:1px solid var(--border)}
+        .ways li::before{content:counter(way);position:absolute;inset-inline-start:0;top:1.1rem;font-family:'Fraunces',serif;font-style:italic;font-size:2rem;line-height:1;color:var(--coral)}
+        .ticket{display:flex;flex-direction:column;background:var(--surface-elevated);border:1px solid var(--border);border-radius:14px;max-width:26rem;margin:0 auto;transform:rotate(-1.5deg)}
+        .ticket>div{padding:1.25rem 1.5rem;flex:1 1 auto}.ticket>div+div{border-top:2px dashed var(--border)}
+        .t-label{display:block;font-size:.75rem;color:var(--ink-tertiary);margin-bottom:.25rem}.t-code{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:600;letter-spacing:.04em}.t-link{font-weight:600;font-size:.95rem;word-break:break-all}
+        .figs{display:grid;gap:2rem;margin:2rem 0}@media(min-width:560px){.figs{grid-template-columns:1fr 1fr}}
+        .fig{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.75rem,6vw,3.75rem);line-height:1;color:var(--coral);margin-bottom:.5rem}
+        .commission-table{width:100%;border-collapse:collapse;font-size:.95rem}
+        .commission-table th{text-align:start;padding:.75rem 0;font-weight:600;border-bottom:2px solid var(--ink)}
+        .commission-table td{padding:.85rem 0;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
+        .commission-table th:last-child{text-align:end}
+        .td-amount{color:var(--ink);font-weight:700;text-align:end;white-space:nowrap;padding-inline-start:1rem}
+        .path{list-style:none;border-inline-start:2px solid var(--border);margin-inline-start:.5rem}
+        .path li{position:relative;padding:0 0 2rem;padding-inline-start:2rem}.path li:last-child{padding-bottom:0}
+        .path li::before{content:'';position:absolute;inset-inline-start:-.45rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px var(--surface)}
+        .terms{list-style:disc;padding-inline-start:1.25rem}.terms li{margin-bottom:.5rem}
         .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-left:1rem}.lang-switcher a{color:var(--ink-tertiary);text-decoration:none}.lang-switcher a:hover{color:var(--coral)}.lang-switcher .active{font-weight:700;color:var(--ink)}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
@@ -47,150 +74,181 @@
     </nav>
 
     <!-- Hero -->
-    <section style="background:linear-gradient(160deg,#1E1916 0%,#2C2622 40%,#1E1916 100%);position:relative;overflow:hidden;">
-        <div style="position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(255,88,112,0.1) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative" style="z-index:1;"><div class="text-center">
-            <p class="text-sm font-semibold mb-4 tracking-widest" style="color:var(--coral);">THU NHẬP LINH HOẠT &middot; LÀM KHI NÀO BẠN MUỐN</p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight" style="font-weight:600;">Được trả tiền để giúp mọi người tìm thấy <span style="color:var(--coral);">kết nối thật sự</span></h1>
-            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style="color:rgba(255,255,255,0.65);font-family:'Fraunces',serif;">HeartFull là ứng dụng hẹn hò miễn phí, nơi sự chân thật &mdash; chứ không phải tiền &mdash; giúp bạn được chú ý. Hãy giới thiệu nó cho mọi người và kiếm tiền thật cho mỗi người tham gia. Rất thoải mái: không văn phòng, không sếp, không giờ cố định. Chỉ cần điện thoại của bạn, bất cứ khi nào bạn rảnh.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">Bắt đầu kiếm tiền &mdash; miễn phí</button></a>
-        </div></div>
+    <section class="band">
+        <div class="wrap split">
+            <div>
+                <p class="kicker">THU NHẬP LINH HOẠT &middot; LÀM KHI NÀO BẠN MUỐN</p>
+                <h1>Được trả tiền để giúp mọi người tìm thấy <em>kết nối thật sự</em></h1>
+                <p class="lede">HeartFull là ứng dụng hẹn hò miễn phí, nơi sự chân thật &mdash; chứ không phải tiền &mdash; giúp bạn được chú ý. Hãy giới thiệu nó cho mọi người và kiếm tiền thật cho mỗi người tham gia. Rất thoải mái: không văn phòng, không sếp, không giờ cố định. Chỉ cần điện thoại của bạn, bất cứ khi nào bạn rảnh.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">Bắt đầu kiếm tiền &mdash; miễn phí</a><p class="small muted">Cố định <span data-tariff="signup">$5.00</span> cho mỗi người tham gia. Trả hàng tuần.</p></div>
+            </div>
+            <img class="doodle" src="/illustrations/selfie.svg" alt="" width="1024" height="768">
+        </div>
     </section>
 
     <!-- New here -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Mới đến? <span class="gradient-text">Đây là toàn bộ ý tưởng</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Chưa từng nghe về HeartFull, hoặc chưa rõ đây là gì? Không sao &mdash; đây là toàn bộ ý tưởng bằng lời đơn giản.</p>
-            <div class="grid sm:grid-cols-2 gap-6 mb-12">
-                <div class="card"><h3 class="text-lg font-bold mb-2">Trước tiên, HeartFull là gì?</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">Một ứng dụng hẹn hò <strong>miễn phí</strong> với điểm khác biệt: không có rào trả phí, không có gì để mua. Thay vì trả tiền để được chú ý, mọi người kiếm &ldquo;Trái tim&rdquo; bằng cách chân thật và năng động &mdash; tính cách của bạn là đơn vị tiền tệ. Mọi người thích cảm giác đậm chất con người, không phải trả-tiền-để-thắng. <a href="/how-hearts-work.html">Xem cách hoạt động &rarr;</a></p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-2">Còn trang này là gì?</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">Một cách thoải mái để kiếm chút tiền bằng cách giới thiệu HeartFull cho mọi người. Bất kỳ ai tham gia qua liên kết hoặc mã QR của bạn đều được ghi nhận cho bạn &mdash; và bạn được trả tiền cho mỗi người đăng ký và bắt đầu kết nối. Bạn không cần phải từng dùng ứng dụng mới bắt đầu được.</p></div>
+    <section class="band" style="border-top:1px solid var(--border);">
+        <div class="wrap">
+            <h2>Mới đến? <em>Đây là toàn bộ ý tưởng</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">Chưa từng nghe về HeartFull, hoặc chưa rõ đây là gì? Không sao &mdash; đây là toàn bộ ý tưởng bằng lời đơn giản.</p>
+            <div class="cols" style="margin-bottom:4.5rem;">
+                <div><h3>Trước tiên, HeartFull là gì?</h3><p class="muted">Một ứng dụng hẹn hò <strong>miễn phí</strong> với điểm khác biệt: không có rào trả phí, không có gì để mua. Thay vì trả tiền để được chú ý, mọi người kiếm &ldquo;Trái tim&rdquo; bằng cách chân thật và năng động &mdash; tính cách của bạn là đơn vị tiền tệ. Mọi người thích cảm giác đậm chất con người, không phải trả-tiền-để-thắng. <a href="/how-hearts-work.html">Xem cách hoạt động &rarr;</a></p></div>
+                <div><h3>Còn trang này là gì?</h3><p class="muted">Một cách thoải mái để kiếm chút tiền bằng cách giới thiệu HeartFull cho mọi người. Bất kỳ ai tham gia qua liên kết hoặc mã QR của bạn đều được ghi nhận cho bạn &mdash; và bạn được trả tiền cho mỗi người đăng ký và xác nhận tài khoản. Bạn không cần phải từng dùng ứng dụng mới bắt đầu được.</p></div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-center mb-2">Đây là thu nhập linh hoạt &mdash; <span class="gradient-text">không phải công việc</span></h3>
-            <p class="text-center mb-8 max-w-xl mx-auto text-sm" style="color:var(--ink-secondary);">Không phỏng vấn, không hợp đồng, không phải đến văn phòng. Hãy xem đây như một nguồn thu nhập phụ theo cách của bạn.</p>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">⏰</div><h3 class="text-base font-bold mb-1">Làm khi nào bạn muốn</h3><p class="text-sm" style="color:var(--ink-secondary);">Không giờ cố định. Năm phút hay năm tiếng &mdash; tùy bạn.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">📱</div><h3 class="text-base font-bold mb-1">Không văn phòng, không sếp</h3><p class="text-sm" style="color:var(--ink-secondary);">Hoàn toàn từ xa, ngay trên điện thoại. Không ai quản lý bạn.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">🎚️</div><h3 class="text-base font-bold mb-1">Không chỉ tiêu</h3><p class="text-sm" style="color:var(--ink-secondary);">Chia sẻ ít hay nhiều tùy bạn. Tạm dừng hoặc nghỉ bất cứ lúc nào.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">💸</div><h3 class="text-base font-bold mb-1">Trả theo kết quả</h3><p class="text-sm" style="color:var(--ink-secondary);">Tiền thật cho những người thật bạn đưa vào, trả theo tuần.</p></div>
+            <div class="split flip">
+                <img class="doodle" src="/illustrations/chilling.svg" alt="" width="1024" height="768" loading="lazy">
+                <div>
+                    <h2>Đây là thu nhập linh hoạt &mdash; <em>không phải công việc</em></h2>
+                    <p class="muted" style="margin-bottom:1.5rem;">Không phỏng vấn, không hợp đồng, không phải đến văn phòng. Hãy xem đây như một nguồn thu nhập phụ theo cách của bạn.</p>
+                    <ul class="plain muted">
+                        <li><strong>Làm khi nào bạn muốn</strong>Không giờ cố định. Năm phút hay năm tiếng &mdash; tùy bạn.</li>
+                        <li><strong>Không văn phòng, không sếp</strong>Hoàn toàn từ xa, ngay trên điện thoại. Không ai quản lý bạn.</li>
+                        <li><strong>Không chỉ tiêu</strong>Chia sẻ ít hay nhiều tùy bạn. Tạm dừng hoặc nghỉ bất cứ lúc nào.</li>
+                        <li><strong>Trả theo kết quả</strong>Tiền thật cho những người thật bạn đưa vào, trả theo tuần.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What you'll do -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">C&#225;ch <span class="gradient-text">ho&#7841;t &#273;&#7897;ng</span></h2>
-            <p class="text-center mb-12" style="color:var(--ink-secondary);">M&#7885;i ng&#432;&#7901;i &#273;&#7873;u b&#7855;t &#273;&#7847;u v&#7899;i vi&#7879;c thu h&#250;t ng&#432;&#7901;i d&#249;ng &mdash; &#273;&#432;a ng&#432;&#7901;i th&#7853;t &#273;&#7871;n HeartFull. &#272;&#226;y l&#224; n&#7873;n t&#7843;ng. Khi b&#7841;n ho&#7841;t &#273;&#7897;ng t&#237;ch c&#7921;c, b&#7841;n s&#7869; m&#7903; kh&#243;a c&#225;c ngu&#7891;n thu nh&#7853;p b&#7893; sung.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">Thu H&#250;t Ng&#432;&#7901;i D&#249;ng</h3><p class="text-sm" style="color:var(--ink-secondary);">N&#7873;n t&#7843;ng. Chia s&#7867; li&#234;n k&#7871;t, m&#227; QR ho&#7863;c m&#227; khuy&#7871;n m&#227;i c&#7911;a b&#7841;n. Kiếm cố định <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> m&#7895;i ng&#432;&#7901;i.</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">B&#7855;t bu&#7897;c cho t&#7845;t c&#7843;</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#128241;</div><h3 class="text-lg font-bold mb-2">M&#7841;ng X&#227; H&#7897;i</h3><p class="text-sm" style="color:var(--ink-secondary);">Qu&#7843;n l&#253; s&#7921; hi&#7879;n di&#7879;n c&#7911;a HeartFull tr&#234;n TikTok, Instagram ho&#7863;c c&#225;c n&#7873;n t&#7843;ng kh&#225;c. T&#7841;o n&#7897;i dung, thu h&#250;t kh&#225;n gi&#7843;.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">M&#7903; kh&#243;a sau 10 gi&#7899;i thi&#7879;u</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#127881;</div><h3 class="text-lg font-bold mb-2">S&#7921; Ki&#7879;n</h3><p class="text-sm" style="color:var(--ink-secondary);">T&#7893; ch&#7913;c ho&#7863;c tham gia c&#225;c s&#7921; ki&#7879;n h&#7865;n h&#242;, &#273;&#234;m speed dating, bu&#7893;i g&#7863;p m&#7863;t x&#227; h&#7897;i. S&#7921; ki&#7879;n chuy&#7875;n &#273;&#7893;i t&#7889;t nh&#7845;t.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">M&#7903; kh&#243;a sau 10 gi&#7899;i thi&#7879;u</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#128172;</div><h3 class="text-lg font-bold mb-2">C&#7897;ng &#272;&#7891;ng</h3><p class="text-sm" style="color:var(--ink-secondary);">Qu&#7843;n l&#253; nh&#243;m, &#273;i&#7873;u h&#224;nh th&#7843;o lu&#7853;n, qu&#7843;n l&#253; chat s&#7921; ki&#7879;n, h&#7895; tr&#7907; ng&#432;&#7901;i d&#249;ng.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">M&#7903; kh&#243;a sau 10 gi&#7899;i thi&#7879;u</p></div>
+    <!-- How it works -->
+    <section class="band band-sunken">
+        <div class="wrap">
+            <h2>C&#225;ch <em>ho&#7841;t &#273;&#7897;ng</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">M&#7885;i ng&#432;&#7901;i &#273;&#7873;u b&#7855;t &#273;&#7847;u v&#7899;i vi&#7879;c thu h&#250;t ng&#432;&#7901;i d&#249;ng &mdash; &#273;&#432;a ng&#432;&#7901;i th&#7853;t &#273;&#7871;n HeartFull. &#272;&#226;y l&#224; n&#7873;n t&#7843;ng. Khi b&#7841;n ho&#7841;t &#273;&#7897;ng t&#237;ch c&#7921;c, b&#7841;n s&#7869; m&#7903; kh&#243;a c&#225;c ngu&#7891;n thu nh&#7853;p b&#7893; sung.</p>
+            <div class="cols">
+                <div class="start">
+                    <p class="kicker">B&#7855;t bu&#7897;c cho t&#7845;t c&#7843;</p>
+                    <h3>Thu H&#250;t Ng&#432;&#7901;i D&#249;ng</h3>
+                    <p class="muted">N&#7873;n t&#7843;ng. Chia s&#7867; li&#234;n k&#7871;t, m&#227; QR ho&#7863;c m&#227; khuy&#7871;n m&#227;i c&#7911;a b&#7841;n. Kiếm cố định <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> m&#7895;i ng&#432;&#7901;i.</p>
+                </div>
+                <div>
+                    <p class="kicker" style="color:var(--ink-tertiary);">M&#7903; kh&#243;a sau 10 gi&#7899;i thi&#7879;u</p>
+                    <ul class="plain muted">
+                        <li><strong>M&#7841;ng X&#227; H&#7897;i</strong>Qu&#7843;n l&#253; s&#7921; hi&#7879;n di&#7879;n c&#7911;a HeartFull tr&#234;n TikTok, Instagram ho&#7863;c c&#225;c n&#7873;n t&#7843;ng kh&#225;c. T&#7841;o n&#7897;i dung, thu h&#250;t kh&#225;n gi&#7843;.</li>
+                        <li><strong>S&#7921; Ki&#7879;n</strong>T&#7893; ch&#7913;c ho&#7863;c tham gia c&#225;c s&#7921; ki&#7879;n h&#7865;n h&#242;, &#273;&#234;m speed dating, bu&#7893;i g&#7863;p m&#7863;t x&#227; h&#7897;i. S&#7921; ki&#7879;n chuy&#7875;n &#273;&#7893;i t&#7889;t nh&#7845;t.</li>
+                        <li><strong>C&#7897;ng &#272;&#7891;ng</strong>Qu&#7843;n l&#253; nh&#243;m, &#273;i&#7873;u h&#224;nh th&#7843;o lu&#7853;n, qu&#7843;n l&#253; chat s&#7921; ki&#7879;n, h&#7895; tr&#7907; ng&#432;&#7901;i d&#249;ng.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How to promote -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">Cách thu hút <span class="gradient-text">mọi người</span></h2>
-            <p class="text-center mb-12 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Bạn không cần lượng theo dõi lớn. Bất kỳ ai tham gia bằng liên kết, mã QR hoặc mã giới thiệu của bạn đều được ghi nhận cho bạn tự động. Đây là những cách đơn giản mà các nhà quảng bá thực sự áp dụng — hãy chọn cách phù hợp với bạn.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card"><div class="text-3xl mb-3">💬</div><h3 class="text-lg font-bold mb-2">Mời những người bạn đang trò chuyện</h3><p class="text-sm" style="color:var(--ink-secondary);">Trên WhatsApp, Telegram hay tin nhắn Instagram, gửi liên kết của bạn: «Mình đang dùng HeartFull — ứng dụng hẹn hò miễn phí, không trả phí. Tham gia bằng mã của mình và thêm mình nhé.»</p></div>
-                <div class="card"><div class="text-3xl mb-3">📲</div><h3 class="text-lg font-bold mb-2">Chia sẻ mã QR trực tiếp</h3><p class="text-sm" style="color:var(--ink-secondary);">Đưa hoặc in mã QR của bạn tại buổi gặp mặt, quán cà phê, trường học hay phòng gym. Mọi người quét và vào ứng dụng đã được liên kết với bạn — không cần gõ gì.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🔗</div><h3 class="text-lg font-bold mb-2">Gửi liên kết cho bạn bè</h3><p class="text-sm" style="color:var(--ink-secondary);">Chỉ một chạm để chia sẻ liên kết cá nhân qua bất kỳ ứng dụng nhắn tin nào. Họ mở ra, đăng ký, và bạn được ghi nhận tự động — không cần nhập mã.</p></div>
-                <div class="card"><div class="text-3xl mb-3">❤️</div><h3 class="text-lg font-bold mb-2">Giới thiệu trên các ứng dụng hẹn hò khác</h3><p class="text-sm" style="color:var(--ink-secondary);">Đã match trên Tinder, Bumble hay Hinge? Đề nghị chuyển sang HeartFull (miễn phí) và nhờ họ thêm bạn làm người quảng bá bằng mã của bạn khi đăng ký.</p></div>
-                <div class="card"><div class="text-3xl mb-3">📱</div><h3 class="text-lg font-bold mb-2">Đăng lên mạng xã hội</h3><p class="text-sm" style="color:var(--ink-secondary);">Một story hay bài đăng nhanh — «đang thử ứng dụng hẹn hò miễn phí này» — kèm liên kết hoặc mã QR. Bài được duyệt có thể kiếm $5–$20 mỗi bài, ngoài tiền giới thiệu.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🎉</div><h3 class="text-lg font-bold mb-2">Đưa bạn bè đến sự kiện</h3><p class="text-sm" style="color:var(--ink-secondary);">Mời mọi người đến một sự kiện hẹn hò hoặc buổi giao lưu của HeartFull. Sự kiện chuyển đổi tốt nhất — ai đến cũng sẵn sàng gặp gỡ.</p></div>
+    <section class="band">
+        <div class="wrap">
+            <div class="split" style="margin-bottom:2.5rem;">
+                <div><h2>Cách thu hút <em>mọi người</em></h2><p class="lede">Bạn không cần lượng theo dõi lớn. Bất kỳ ai tham gia bằng liên kết, mã QR hoặc mã giới thiệu của bạn đều được ghi nhận cho bạn tự động. Đây là những cách đơn giản mà các nhà quảng bá thực sự áp dụng — hãy chọn cách phù hợp với bạn.</p></div>
+                <img class="doodle" src="/illustrations/dancing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
             </div>
-            <div class="card" style="margin-top:2rem;background:var(--coral-subtle);"><p style="color:var(--ink);line-height:1.8;"><strong>Mọi thứ bạn cần đều ở trong bảng điều khiển:</strong> mã giới thiệu, liên kết chia sẻ một chạm, và tờ rơi QR tải về được — sẵn sàng để gửi. Người dùng mới dùng liên kết hoặc mã của bạn được liên kết với bạn chỉ trong một bước.</p></div>
+            <ol class="ways">
+                <li><h3>Mời những người bạn đang trò chuyện</h3><p class="muted small">Trên WhatsApp, Telegram hay tin nhắn Instagram, gửi liên kết của bạn: «Mình đang dùng HeartFull — ứng dụng hẹn hò miễn phí, không trả phí. Tham gia bằng mã của mình và thêm mình nhé.»</p></li>
+                <li><h3>Chia sẻ mã QR trực tiếp</h3><p class="muted small">Đưa hoặc in mã QR của bạn tại buổi gặp mặt, quán cà phê, trường học hay phòng gym. Mọi người quét và vào ứng dụng đã được liên kết với bạn — không cần gõ gì.</p></li>
+                <li><h3>Gửi liên kết cho bạn bè</h3><p class="muted small">Chỉ một chạm để chia sẻ liên kết cá nhân qua bất kỳ ứng dụng nhắn tin nào. Họ mở ra, đăng ký, và bạn được ghi nhận tự động — không cần nhập mã.</p></li>
+                <li><h3>Giới thiệu trên các ứng dụng hẹn hò khác</h3><p class="muted small">Đã match trên Tinder, Bumble hay Hinge? Đề nghị chuyển sang HeartFull (miễn phí) và nhờ họ thêm bạn làm người quảng bá bằng mã của bạn khi đăng ký.</p></li>
+                <li><h3>Đăng lên mạng xã hội</h3><p class="muted small">Một story hay bài đăng nhanh — «đang thử ứng dụng hẹn hò miễn phí này» — kèm liên kết hoặc mã QR. Khi bạn đã vượt 10 lượt giới thiệu, bài được duyệt còn có thể kiếm thêm $5–$20 mỗi bài.</p></li>
+                <li><h3>Đưa bạn bè đến sự kiện</h3><p class="muted small">Mời mọi người đến một sự kiện hẹn hò hoặc buổi giao lưu của HeartFull. Sự kiện chuyển đổi tốt nhất — ai đến cũng sẵn sàng gặp gỡ.</p></li>
+            </ol>
+            <div class="split" style="margin-top:3.5rem;">
+                <p class="muted"><strong>Mọi thứ bạn cần đều ở trong bảng điều khiển:</strong> mã giới thiệu, liên kết chia sẻ một chạm, và tờ rơi QR tải về được — sẵn sàng để gửi. Người dùng mới dùng liên kết hoặc mã của bạn được liên kết với bạn chỉ trong một bước.</p>
+                <div>
+                    <div class="ticket">
+                        <div><span class="t-label">Mã khuyến mãi của bạn</span><span class="t-code">MAYA24</span></div>
+                        <div><span class="t-label">Liên kết của bạn</span><span class="t-link" dir="ltr">heartfull.online/?ref=MAYA24</span></div>
+                    </div>
+                    <p class="fine" style="text-align:center;margin-top:1rem;">Ví dụ</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Commission Structure -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">B&#7841;n <span class="gradient-text">ki&#7871;m &#273;&#432;&#7907;c</span> g&#236;</h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">Bạn kiếm cố định <span data-tariff="max">$5.00</span> cho mỗi người bạn giới thiệu &mdash; lượt giới thiệu thứ 100 được trả bằng lượt đầu tiên. <strong>10 bạn bè = <span data-tariff="guide10">$50</span></strong>, <strong>50 = <span data-tariff="guide50">$250</span></strong> — và không giới hạn số lượng bạn đưa vào.</p>
-
-            <h3 class="text-xl font-bold mb-4">Mỗi giới thiệu (cố định <span data-tariff="max">$5.00</span>)</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
-                <table class="commission-table"><thead><tr><th>Khi ng&#432;&#7901;i &#273;&#432;&#7907;c gi&#7899;i thi&#7879;u...</th><th style="text-align:right;">B&#7841;n ki&#7871;m</th></tr></thead>
-                <tbody>
-                    <tr><td>&#272;&#259;ng k&#253; v&#224; x&#225;c nh&#7853;n t&#224;i kho&#7843;n</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
-                    <tr data-tariff-row="conversation" hidden><td>C&#243; 3 cu&#7897;c tr&#242; chuy&#7879;n ch&#226;n th&#7853;t (c&#7843; hai g&#7917;i 2+ tin nh&#7855;n)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
-                    <tr data-tariff-row="date" hidden><td>&#272;i h&#7865;n h&#242; l&#7847;n &#273;&#7847;u (check-in QR x&#225;c minh)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
-                    <tr><td><strong>Tổng mỗi giới thiệu</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
-                </tbody></table>
+    <section class="band band-sunken">
+        <div class="wrap">
+            <div class="split">
+                <div>
+                    <h2>B&#7841;n <em>ki&#7871;m &#273;&#432;&#7907;c</em> g&#236;</h2>
+                    <p class="lede">Bạn kiếm cố định <span data-tariff="max">$5.00</span> cho mỗi người bạn giới thiệu &mdash; lượt giới thiệu thứ 100 được trả bằng lượt đầu tiên. <strong>10 bạn bè = <span data-tariff="guide10">$50</span></strong>, <strong>50 = <span data-tariff="guide50">$250</span></strong> — và không giới hạn số lượng bạn đưa vào.</p>
+                </div>
+                <img class="doodle" src="/illustrations/unboxing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            </div>
+            <div class="figs">
+                <div><div class="fig" data-tariff="max">$5.00</div><p class="muted">&#272;&#259;ng k&#253; v&#224; x&#225;c nh&#7853;n t&#224;i kho&#7843;n</p></div>
+                <div data-tariff-row="recruit"><div class="fig" data-tariff="recruit">$25.00</div><p class="muted">Tuyển một Người Quảng Bá &mdash; cộng thêm vào <span data-tariff="signup">$5.00</span> cho lượt đăng ký của họ, trả khi họ đạt <span data-tariff="recruitThreshold">5</span> lượt giới thiệu đã xác nhận</p></div>
             </div>
 
-            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">Hoa hồng giới thiệu được trả bằng đô la Úc (AUD).</p>
-
-            <h3 class="text-xl font-bold mb-4">Ngu&#7891;n thu nh&#7853;p b&#7893; sung</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;">
-                <table class="commission-table"><thead><tr><th>Nhi&#7879;m v&#7909;</th><th style="text-align:right;">Hoa h&#7891;ng</th></tr></thead>
-                <tbody>
-                    <tr data-tariff-row="recruit"><td>Tuyển một Người Quảng Bá &mdash; cộng thêm vào <span data-tariff="signup">$5.00</span> cho lượt đăng ký của họ, trả khi họ đạt <span data-tariff="recruitThreshold">5</span> lượt giới thiệu đã xác nhận</td><td class="td-amount"><span data-tariff="recruit">$25.00</span></td></tr>
-                    <tr><td>B&#224;i &#273;&#259;ng m&#7841;ng x&#227; h&#7897;i (n&#7897;i dung &#273;&#432;&#7907;c duy&#7879;t v&#7899;i li&#234;n k&#7871;t gi&#7899;i thi&#7879;u)</td><td class="td-amount">$5 &ndash; $20/b&#224;i</td></tr>
-                    <tr><td>Qu&#7843;n l&#253; t&#224;i kho&#7843;n m&#7841;ng x&#227; h&#7897;i (h&#224;ng tu&#7847;n)</td><td class="td-amount">$50 &ndash; $100/tu&#7847;n</td></tr>
-                    <tr><td>T&#7893; ch&#7913;c s&#7921; ki&#7879;n h&#7865;n h&#242; (tr&#7921;c ti&#7871;p ho&#7863;c tr&#7921;c tuy&#7871;n)</td><td class="td-amount">$30 &ndash; $100/s&#7921; ki&#7879;n</td></tr>
-                    <tr><td>Qu&#7843;n l&#253; c&#7897;ng &#273;&#7891;ng/nh&#243;m (h&#224;ng tu&#7847;n)</td><td class="td-amount">$20 &ndash; $50/tu&#7847;n</td></tr>
-                    <tr><td>Qu&#7843;n l&#253; chi&#7871;n d&#7883;ch qu&#7843;ng c&#225;o (m&#7895;i chi&#7871;n d&#7883;ch)</td><td class="td-amount">$50 &ndash; $200/chi&#7871;n d&#7883;ch</td></tr>
-                </tbody></table>
+            <div data-tariff-row="milestones" hidden style="margin-bottom:2.5rem;">
+            <h3>Mỗi giới thiệu (cố định <span data-tariff="max">$5.00</span>)</h3>
+            <table class="commission-table"><thead><tr><th>Khi ng&#432;&#7901;i &#273;&#432;&#7907;c gi&#7899;i thi&#7879;u...</th><th>B&#7841;n ki&#7871;m</th></tr></thead>
+            <tbody>
+                <tr><td>&#272;&#259;ng k&#253; v&#224; x&#225;c nh&#7853;n t&#224;i kho&#7843;n</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
+                <tr data-tariff-row="conversation" hidden><td>C&#243; 3 cu&#7897;c tr&#242; chuy&#7879;n ch&#226;n th&#7853;t (c&#7843; hai g&#7917;i 2+ tin nh&#7855;n)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
+                <tr data-tariff-row="date" hidden><td>&#272;i h&#7865;n h&#242; l&#7847;n &#273;&#7847;u (check-in QR x&#225;c minh)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
+                <tr><td><strong><strong>Tổng mỗi giới thiệu</strong></strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
+            </tbody></table>
             </div>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">C&#225;c nhi&#7879;m v&#7909; b&#7893; sung &#273;&#432;&#7907;c giao d&#7921;a tr&#234;n hi&#7879;u su&#7845;t. T&#7845;t c&#7843; m&#7913;c ph&#237; c&#243; th&#7875; th&#432;&#417;ng l&#432;&#7907;ng d&#7921;a tr&#234;n ph&#7841;m vi v&#224; k&#7871;t qu&#7843;.</p>
+
+            <h3 style="margin-top:1rem;">Ngu&#7891;n thu nh&#7853;p b&#7893; sung</h3>
+            <table class="commission-table"><thead><tr><th>Nhi&#7879;m v&#7909;</th><th>Hoa h&#7891;ng</th></tr></thead>
+            <tbody>
+                <tr><td>B&#224;i &#273;&#259;ng m&#7841;ng x&#227; h&#7897;i (n&#7897;i dung &#273;&#432;&#7907;c duy&#7879;t v&#7899;i li&#234;n k&#7871;t gi&#7899;i thi&#7879;u)</td><td class="td-amount">$5 &ndash; $20/b&#224;i</td></tr>
+                <tr><td>Qu&#7843;n l&#253; t&#224;i kho&#7843;n m&#7841;ng x&#227; h&#7897;i (h&#224;ng tu&#7847;n)</td><td class="td-amount">$50 &ndash; $100/tu&#7847;n</td></tr>
+                <tr><td>T&#7893; ch&#7913;c s&#7921; ki&#7879;n h&#7865;n h&#242; (tr&#7921;c ti&#7871;p ho&#7863;c tr&#7921;c tuy&#7871;n)</td><td class="td-amount">$30 &ndash; $100/s&#7921; ki&#7879;n</td></tr>
+                <tr><td>Qu&#7843;n l&#253; c&#7897;ng &#273;&#7891;ng/nh&#243;m (h&#224;ng tu&#7847;n)</td><td class="td-amount">$20 &ndash; $50/tu&#7847;n</td></tr>
+                <tr><td>Qu&#7843;n l&#253; chi&#7871;n d&#7883;ch qu&#7843;ng c&#225;o (m&#7895;i chi&#7871;n d&#7883;ch)</td><td class="td-amount">$50 &ndash; $200/chi&#7871;n d&#7883;ch</td></tr>
+            </tbody></table>
+            <p class="fine" style="margin-top:1rem;">M&#7903; kh&#243;a sau 10 gi&#7899;i thi&#7879;u. C&#225;c nhi&#7879;m v&#7909; b&#7893; sung &#273;&#432;&#7907;c giao d&#7921;a tr&#234;n hi&#7879;u su&#7845;t. T&#7845;t c&#7843; m&#7913;c ph&#237; c&#243; th&#7875; th&#432;&#417;ng l&#432;&#7907;ng d&#7921;a tr&#234;n ph&#7841;m vi v&#224; k&#7871;t qu&#7843;. Hoa hồng giới thiệu được trả bằng đô la Úc (AUD).</p>
         </div>
     </section>
 
-    <!-- Growth Path -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4"><span class="gradient-text">L&#7897; tr&#236;nh ph&#225;t tri&#7875;n</span> c&#7911;a b&#7841;n</h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">B&#7855;t &#273;&#7847;u v&#7899;i qu&#7843;ng b&#225;. Ch&#7913;ng minh b&#7843;n th&#226;n. M&#7903; kh&#243;a nhi&#7873;u tr&#225;ch nhi&#7879;m v&#224; thu nh&#7853;p cao h&#417;n.</p>
-            <div class="space-y-6">
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">1</span></div><div><h3 class="font-bold text-lg">Ng&#432;&#7901;i Qu&#7843;ng B&#225;</h3><p style="color:var(--ink-secondary);">Chia s&#7867; li&#234;n k&#7871;t, gi&#7899;i thi&#7879;u ng&#432;&#7901;i m&#7899;i, ki&#7871;m theo gi&#7899;i thi&#7879;u. T&#7845;t c&#7843; b&#7855;t &#273;&#7847;u t&#7915; &#273;&#226;y.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">2</span></div><div><h3 class="font-bold text-lg">Ng&#432;&#7901;i &#272;&#243;ng G&#243;p Marketing</h3><p style="color:var(--ink-secondary);">Sau 10+ gi&#7899;i thi&#7879;u t&#237;ch c&#7921;c, m&#7903; kh&#243;a nhi&#7879;m v&#7909; m&#7841;ng x&#227; h&#7897;i, s&#7921; ki&#7879;n v&#224; c&#7897;ng &#273;&#7891;ng. K&#7871;t h&#7907;p theo k&#7929; n&#259;ng c&#7911;a b&#7841;n.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">3</span></div><div><h3 class="font-bold text-lg">Tr&#432;&#7903;ng Nh&#243;m Marketing</h3><p style="color:var(--ink-secondary);">Ng&#432;&#7901;i xu&#7845;t s&#7855;c nh&#7845;t d&#7851;n d&#7855;t m&#7897;t th&#224;nh ph&#7889; ho&#7863;c k&#234;nh. Qu&#7843;n l&#253; th&#224;nh vi&#234;n, ch&#7841;y chi&#7871;n d&#7883;ch, th&#432;&#417;ng l&#432;&#7907;ng m&#7913;c ph&#237; cao h&#417;n.</p></div></div>
+    <!-- Growth Path + Getting Paid -->
+    <section class="band">
+        <div class="wrap cols">
+            <div>
+                <h2><em>L&#7897; tr&#236;nh ph&#225;t tri&#7875;n</em> c&#7911;a b&#7841;n</h2>
+                <p class="muted" style="margin-bottom:2rem;">B&#7855;t &#273;&#7847;u v&#7899;i qu&#7843;ng b&#225;. Ch&#7913;ng minh b&#7843;n th&#226;n. M&#7903; kh&#243;a nhi&#7873;u tr&#225;ch nhi&#7879;m v&#224; thu nh&#7853;p cao h&#417;n.</p>
+                <ol class="path">
+                    <li><h3>Ng&#432;&#7901;i Qu&#7843;ng B&#225;</h3><p class="muted">Chia s&#7867; li&#234;n k&#7871;t, gi&#7899;i thi&#7879;u ng&#432;&#7901;i m&#7899;i, ki&#7871;m theo gi&#7899;i thi&#7879;u. T&#7845;t c&#7843; b&#7855;t &#273;&#7847;u t&#7915; &#273;&#226;y.</p></li>
+                    <li><h3>Ng&#432;&#7901;i &#272;&#243;ng G&#243;p Marketing</h3><p class="muted">Sau 10 lượt giới thiệu đã xác nhận, mở khóa nhiệm vụ mạng xã hội, sự kiện và cộng đồng. Kết hợp theo kỹ năng của bạn.</p></li>
+                    <li><h3>Tr&#432;&#7903;ng Nh&#243;m Marketing</h3><p class="muted">Ng&#432;&#7901;i xu&#7845;t s&#7855;c nh&#7845;t d&#7851;n d&#7855;t m&#7897;t th&#224;nh ph&#7889; ho&#7863;c k&#234;nh. Qu&#7843;n l&#253; th&#224;nh vi&#234;n, ch&#7841;y chi&#7871;n d&#7883;ch, th&#432;&#417;ng l&#432;&#7907;ng m&#7913;c ph&#237; cao h&#417;n.</p></li>
+                </ol>
             </div>
-        </div>
-    </section>
-
-    <!-- Getting Paid -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">C&#225;ch <span class="gradient-text">nh&#7853;n thanh to&#225;n</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">Thanh to&#225;n h&#224;ng tu&#7847;n. Kh&#244;ng c&#7847;n h&#243;a &#273;&#417;n. Kh&#244;ng c&#7847;n &#273;&#242;i h&#7887;i.</p>
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div class="card"><h3 class="text-lg font-bold mb-3">Thanh to&#225;n h&#224;ng tu&#7847;n</h3><p style="color:var(--ink-secondary);line-height:1.8;">Thu nh&#7853;p &#273;&#432;&#7907;c t&#237;nh m&#7895;i th&#7913; S&#225;u, thanh to&#225;n cu&#7889;i tu&#7847;n qua chuy&#7875;n kho&#7843;n ng&#226;n h&#224;ng. S&#7889; d&#432; tr&#234;n <strong>$10</strong> &#273;&#432;&#7907;c thanh to&#225;n t&#7921; &#273;&#7897;ng.</p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-3">B&#7843;ng &#273;i&#7873;u khi&#7875;n c&#7911;a b&#7841;n</h3><p style="color:var(--ink-secondary);line-height:1.8;">Theo d&#245;i gi&#7899;i thi&#7879;u, c&#7897;t m&#7889;c, thu nh&#7853;p v&#224; l&#7883;ch s&#7917; thanh to&#225;n theo th&#7901;i gian th&#7921;c. Xem ch&#237;nh x&#225;c ai &#273;&#227; &#273;&#259;ng k&#253; v&#224; h&#7885; &#273;&#227; l&#224;m g&#236;.</p></div>
+            <div>
+                <h2>C&#225;ch <em>nh&#7853;n thanh to&#225;n</em></h2>
+                <p class="muted" style="margin-bottom:2rem;">Thanh to&#225;n h&#224;ng tu&#7847;n. Kh&#244;ng c&#7847;n h&#243;a &#273;&#417;n. Kh&#244;ng c&#7847;n &#273;&#242;i h&#7887;i.</p>
+                <h3>Thanh to&#225;n h&#224;ng tu&#7847;n</h3><p class="muted" style="margin-bottom:1.5rem;">Thu nh&#7853;p &#273;&#432;&#7907;c t&#237;nh m&#7895;i th&#7913; S&#225;u, thanh to&#225;n cu&#7889;i tu&#7847;n qua chuy&#7875;n kho&#7843;n ng&#226;n h&#224;ng. S&#7889; d&#432; tr&#234;n <strong>$10</strong> &#273;&#432;&#7907;c thanh to&#225;n t&#7921; &#273;&#7897;ng.</p>
+                <h3>B&#7843;ng &#273;i&#7873;u khi&#7875;n c&#7911;a b&#7841;n</h3><p class="muted">Theo dõi lượt giới thiệu, thu nhập và lịch sử thanh toán theo thời gian thực.</p>
             </div>
         </div>
     </section>
 
     <!-- Apply -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-4">S&#7861;n s&#224;ng <span class="gradient-text">b&#7855;t &#273;&#7847;u</span>?</h2>
-            <p class="mb-8 max-w-xl mx-auto" style="color:var(--ink-secondary);line-height:1.8;">Đăng nhập bằng Google và kể cho chúng tôi đôi chút về bạn &mdash; chỉ mất vài phút, không cần CV và không phỏng vấn. Hầu hết được duyệt trong một ngày, và bạn nhận ngay mã khuyến mãi, liên kết cá nhân, mã QR và bảng điều khiển. Bắt đầu khi nào bạn muốn, dừng khi nào bạn muốn.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">&#7912;ng Tuy&#7875;n Ngay</button></a>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">Kh&#244;ng c&#7847;n kinh nghi&#7879;m. Ni&#7873;m &#273;am m&#234; v&#7899;i k&#7871;t n&#7889;i ch&#226;n th&#7853;t v&#224; s&#7921; s&#7861;n s&#224;ng n&#7895; l&#7921;c l&#224; t&#7845;t c&#7843; nh&#7919;ng g&#236; b&#7841;n c&#7847;n.</p>
+    <section class="band band-blush">
+        <div class="wrap split flip">
+            <img class="doodle" src="/illustrations/loving.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            <div>
+                <h2>S&#7861;n s&#224;ng <em>b&#7855;t &#273;&#7847;u</em>?</h2>
+                <p class="muted">Đăng nhập bằng Google và kể cho chúng tôi đôi chút về bạn &mdash; chỉ mất vài phút, không cần CV và không phỏng vấn. Hầu hết được duyệt trong một ngày, và bạn nhận ngay mã khuyến mãi, liên kết cá nhân, mã QR và bảng điều khiển. Bắt đầu khi nào bạn muốn, dừng khi nào bạn muốn.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">&#7912;ng Tuy&#7875;n Ngay</a></div>
+                <p class="fine" style="margin-top:1rem;">Kh&#244;ng c&#7847;n kinh nghi&#7879;m. Ni&#7873;m &#273;am m&#234; v&#7899;i k&#7871;t n&#7889;i ch&#226;n th&#7853;t v&#224; s&#7921; s&#7861;n s&#224;ng n&#7895; l&#7921;c l&#224; t&#7845;t c&#7843; nh&#7919;ng g&#236; b&#7841;n c&#7847;n.</p>
+            </div>
         </div>
     </section>
 
     <!-- Terms -->
-    <section class="py-12" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-lg font-bold mb-4" style="color:var(--ink-tertiary);">&#272;i&#7873;u kho&#7843;n ch&#432;&#417;ng tr&#236;nh</h3>
-            <ul class="space-y-2 text-sm" style="list-style:none;padding:0;color:var(--ink-tertiary);">
-                <li>&bull; Hoa h&#7891;ng ch&#7881; d&#224;nh cho ng&#432;&#7901;i d&#249;ng th&#7853;t. T&#224;i kho&#7843;n gi&#7843; ho&#7863;c t&#7921; gi&#7899;i thi&#7879;u s&#7869; b&#7883; lo&#7841;i.</li>
-                <li>&bull; "Cu&#7897;c tr&#242; chuy&#7879;n ch&#226;n th&#7853;t" ngh&#297;a l&#224; c&#7843; hai ng&#432;&#7901;i &#273;&#7873;u g&#7917;i &#237;t nh&#7845;t 2 tin nh&#7855;n c&#243; &#253; ngh&#297;a.</li>
-                <li>&bull; "Bu&#7893;i h&#7865;n h&#242; &#273;&#7847;u ti&#234;n" &#273;&#432;&#7907;c x&#225;c minh qua check-in QR tr&#7921;c ti&#7871;p trong &#7913;ng d&#7909;ng.</li>
-                <li>&bull; M&#7913;c ph&#237; nhi&#7879;m v&#7909; b&#7893; sung &#273;&#432;&#7907;c th&#432;&#417;ng l&#432;&#7907;ng ri&#234;ng d&#7921;a tr&#234;n ph&#7841;m vi v&#224; k&#7871;t qu&#7843;.</li>
-                <li>&bull; HeartFull c&#243; quy&#7873;n thay &#273;&#7893;i m&#7913;c ph&#237; v&#7899;i th&#244;ng b&#225;o tr&#432;&#7899;c 14 ng&#224;y.</li>
+    <section class="band" style="padding:3rem 0;">
+        <div class="wrap">
+            <h3 style="color:var(--ink-tertiary);">&#272;i&#7873;u kho&#7843;n ch&#432;&#417;ng tr&#236;nh</h3>
+            <ul class="terms fine">
+                <li>Hoa h&#7891;ng ch&#7881; d&#224;nh cho ng&#432;&#7901;i d&#249;ng th&#7853;t. T&#224;i kho&#7843;n gi&#7843; ho&#7863;c t&#7921; gi&#7899;i thi&#7879;u s&#7869; b&#7883; lo&#7841;i.</li>
+                <li data-tariff-row="conversation" hidden>"Cu&#7897;c tr&#242; chuy&#7879;n ch&#226;n th&#7853;t" ngh&#297;a l&#224; c&#7843; hai ng&#432;&#7901;i &#273;&#7873;u g&#7917;i &#237;t nh&#7845;t 2 tin nh&#7855;n c&#243; &#253; ngh&#297;a.</li>
+                <li data-tariff-row="date" hidden>"Bu&#7893;i h&#7865;n h&#242; &#273;&#7847;u ti&#234;n" &#273;&#432;&#7907;c x&#225;c minh qua check-in QR tr&#7921;c ti&#7871;p trong &#7913;ng d&#7909;ng.</li>
+                <li>M&#7913;c ph&#237; nhi&#7879;m v&#7909; b&#7893; sung &#273;&#432;&#7907;c th&#432;&#417;ng l&#432;&#7907;ng ri&#234;ng d&#7921;a tr&#234;n ph&#7841;m vi v&#224; k&#7871;t qu&#7843;.</li>
+                <li>HeartFull c&#243; quy&#7873;n thay &#273;&#7893;i m&#7913;c ph&#237; v&#7899;i th&#244;ng b&#225;o tr&#432;&#7899;c 14 ng&#224;y.</li>
             </ul>
         </div>
     </section>
+
 
     <footer class="py-10" style="background:#1E1916;color:white;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,7 +290,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, milestones: c + d > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });

@@ -21,17 +21,44 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
-        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA;--shadow-warm:0 2px 8px rgba(30,25,22,0.08)}
-        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface)}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
-        .gradient-text{background:linear-gradient(135deg,#FF5870,#FF8A9A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .card{background:var(--surface-elevated);border-radius:16px;box-shadow:var(--shadow-warm);padding:2rem;transition:transform 0.3s,box-shadow 0.3s}.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(30,25,22,0.12)}
-        .commission-table{width:100%;border-collapse:collapse;background:var(--surface-elevated);font-size:0.95rem}
-        .commission-table thead th{background:var(--surface-sunken);text-align:right;padding:0.875rem 1.25rem;font-weight:600;border-bottom:2px solid var(--border)}
-        .commission-table tbody td{padding:0.875rem 1.25rem;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
-        .commission-table tbody tr:last-child td{border-bottom:none;font-weight:700;color:var(--ink)}
-        .td-amount{color:var(--coral);font-weight:700;text-align:left;white-space:nowrap}
-        .commission-table thead th:last-child,.commission-table thead th:nth-child(2){text-align:left}
-        .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-right:1rem}.lang-switcher a{color:var(--ink-tertiary);text-decoration:none}.lang-switcher a:hover{color:var(--coral)}.lang-switcher .active{font-weight:700;color:var(--ink)}
+        :root{--coral:#FF5870;--coral-light:#FF8A9A;--coral-subtle:#FFF0F2;--ink:#1E1916;--ink-secondary:#6B5E57;--ink-tertiary:#9C8F88;--border:#E4DDD8;--surface:#FAF7F5;--surface-elevated:#FFFFFF;--surface-sunken:#F2EDEA}
+        *{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden;width:100%}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface);line-height:1.65}h1,h2,h3{font-family:'Fraunces',serif}a{color:var(--coral)}
+        .wrap{max-width:66rem;margin:0 auto;padding:0 1.25rem}
+        .band{padding:4.5rem 0}.band-sunken{background:var(--surface-sunken)}.band-blush{background:var(--coral-subtle)}
+        h1{font-weight:600;font-size:clamp(2.4rem,5.5vw,3.9rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:1.5rem}
+        h2{font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-0.01em;margin-bottom:1rem}
+        h3{font-weight:600;font-size:1.2rem;line-height:1.3;margin-bottom:.4rem}
+        h1 em,h2 em{font-style:italic;font-weight:500;color:var(--coral)}
+        .kicker{font-size:.85rem;font-weight:600;color:var(--coral);margin-bottom:1rem}
+        .lede{font-size:1.1rem;color:var(--ink-secondary);max-width:40rem}
+        .muted{color:var(--ink-secondary)}.small{font-size:.9rem}.fine{font-size:.85rem;color:var(--ink-tertiary)}
+        .split{display:grid;gap:2.5rem;align-items:center}
+        .cols{display:grid;gap:2.5rem;align-items:start}
+        @media(min-width:800px){.split{grid-template-columns:1.15fr .85fr;gap:4rem}.split.flip{grid-template-columns:.85fr 1.15fr}.cols{grid-template-columns:1fr 1fr;gap:4rem}}
+        .doodle{display:block;width:100%;max-width:26rem;height:auto;margin:0 auto}
+        .btn{display:inline-block;background:var(--coral);color:#fff;border-radius:12px;padding:.875rem 1.75rem;font-size:1.05rem;font-weight:600;text-decoration:none}.btn:hover{background:#E8465E}
+        .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem}
+        .plain{list-style:none}.plain li{padding:.85rem 0;border-top:1px solid var(--border)}.plain li:last-child{border-bottom:1px solid var(--border)}.plain strong{display:block;color:var(--ink)}
+        .start{border-inline-start:3px solid var(--coral);padding-inline-start:1.5rem}
+        .ways{list-style:none;counter-reset:way;display:grid;gap:0 4rem}
+        @media(min-width:800px){.ways{grid-template-columns:1fr 1fr}}
+        .ways li{counter-increment:way;position:relative;padding:1.4rem 0;padding-inline-start:3.25rem;border-top:1px solid var(--border)}
+        .ways li::before{content:counter(way);position:absolute;inset-inline-start:0;top:1.1rem;font-family:'Fraunces',serif;font-style:italic;font-size:2rem;line-height:1;color:var(--coral)}
+        .ticket{display:flex;flex-direction:column;background:var(--surface-elevated);border:1px solid var(--border);border-radius:14px;max-width:26rem;margin:0 auto;transform:rotate(-1.5deg)}
+        .ticket>div{padding:1.25rem 1.5rem;flex:1 1 auto}.ticket>div+div{border-top:2px dashed var(--border)}
+        .t-label{display:block;font-size:.75rem;color:var(--ink-tertiary);margin-bottom:.25rem}.t-code{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:600;letter-spacing:.04em}.t-link{font-weight:600;font-size:.95rem;word-break:break-all}
+        .figs{display:grid;gap:2rem;margin:2rem 0}@media(min-width:560px){.figs{grid-template-columns:1fr 1fr}}
+        .fig{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.75rem,6vw,3.75rem);line-height:1;color:var(--coral);margin-bottom:.5rem}
+        .commission-table{width:100%;border-collapse:collapse;font-size:.95rem}
+        .commission-table th{text-align:start;padding:.75rem 0;font-weight:600;border-bottom:2px solid var(--ink)}
+        .commission-table td{padding:.85rem 0;border-bottom:1px solid var(--border);color:var(--ink-secondary)}
+        .commission-table th:last-child{text-align:end}
+        .td-amount{color:var(--ink);font-weight:700;text-align:end;white-space:nowrap;padding-inline-start:1rem}
+        .path{list-style:none;border-inline-start:2px solid var(--border);margin-inline-start:.5rem}
+        .path li{position:relative;padding:0 0 2rem;padding-inline-start:2rem}.path li:last-child{padding-bottom:0}
+        .path li::before{content:'';position:absolute;inset-inline-start:-.45rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px var(--surface)}
+        .terms{list-style:disc;padding-inline-start:1.25rem}.terms li{margin-bottom:.5rem}
+        .lang-switcher{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;margin-left:1rem}.lang-switcher a{color:var(--ink-tertiary);text-decoration:none}.lang-switcher a:hover{color:var(--coral)}.lang-switcher .active{font-weight:700;color:var(--ink)}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QWQ0HF3H6"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1QWQ0HF3H6');</script>
@@ -47,150 +74,181 @@
     </nav>
 
     <!-- Hero -->
-    <section style="background:linear-gradient(160deg,#1E1916 0%,#2C2622 40%,#1E1916 100%);position:relative;overflow:hidden;">
-        <div style="position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(255,88,112,0.1) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative" style="z-index:1;"><div class="text-center">
-            <p class="text-sm font-semibold mb-4 tracking-widest" style="color:var(--coral);">دخل مرن &middot; اعمل وقتما تشاء</p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight" style="font-weight:600;">احصل على أجر مقابل مساعدة الناس في إيجاد <span style="color:var(--coral);">روابط حقيقية</span></h1>
-            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style="color:rgba(255,255,255,0.65);font-family:'Fraunces',serif;">HeartFull تطبيق مواعدة مجاني، حيث الأصالة &mdash; لا الدفع &mdash; هي ما يجعلك مرئيًا. أخبر الناس عنه واكسب نقودًا حقيقية عن كل شخص ينضم. الأمر غير رسمي: بلا مكتب، بلا مدير، بلا ساعات ثابتة. فقط هاتفك، وقتما تجد لحظة فراغ.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">ابدأ الكسب &mdash; مجانًا</button></a>
-        </div></div>
+    <section class="band">
+        <div class="wrap split">
+            <div>
+                <p class="kicker">دخل مرن &middot; اعمل وقتما تشاء</p>
+                <h1>احصل على أجر مقابل مساعدة الناس في إيجاد <em>روابط حقيقية</em></h1>
+                <p class="lede">HeartFull تطبيق مواعدة مجاني، حيث الأصالة &mdash; لا الدفع &mdash; هي ما يجعلك مرئيًا. أخبر الناس عنه واكسب نقودًا حقيقية عن كل شخص ينضم. الأمر غير رسمي: بلا مكتب، بلا مدير، بلا ساعات ثابتة. فقط هاتفك، وقتما تجد لحظة فراغ.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">ابدأ الكسب &mdash; مجانًا</a><p class="small muted">مبلغ ثابت قدره <span data-tariff="signup">$5.00</span> عن كل شخص ينضم. الدفع أسبوعيًا.</p></div>
+            </div>
+            <img class="doodle" src="/illustrations/selfie.svg" alt="" width="1024" height="768">
+        </div>
     </section>
 
     <!-- New here -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">جديد هنا؟ <span class="gradient-text">إليك الفكرة كاملة</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">لم تسمع بـ HeartFull من قبل، أو لست متأكدًا ما هذا؟ لا مشكلة &mdash; إليك الفكرة كاملة بكلمات بسيطة.</p>
-            <div class="grid sm:grid-cols-2 gap-6 mb-12">
-                <div class="card"><h3 class="text-lg font-bold mb-2">أولًا، ما هو HeartFull؟</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">تطبيق مواعدة <strong>مجاني</strong> بلمسة مختلفة: لا جدران دفع ولا شيء للشراء. بدلًا من الدفع لتكون مرئيًا، يكسب الناس &ldquo;قلوبًا&rdquo; بكونهم صادقين ونشطين &mdash; شخصيتك هي عملتك. يحب الناس أنه يبدو إنسانيًا، لا «ادفع لتفوز». <a href="/how-hearts-work.html">شاهد كيف يعمل &rarr;</a></p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-2">وما هذه الصفحة؟</h3><p class="text-sm" style="color:var(--ink-secondary);line-height:1.7;">طريقة مريحة لكسب بعض المال بإخبار الناس عن HeartFull. أي شخص ينضم عبر رابطك أو رمز QR يُحتسب لك &mdash; وتتقاضى أجرًا عن كل شخص يسجّل ويبدأ بالتواصل. لا تحتاج إلى أن تكون قد استخدمت التطبيق لتبدأ.</p></div>
+    <section class="band" style="border-top:1px solid var(--border);">
+        <div class="wrap">
+            <h2>جديد هنا؟ <em>إليك الفكرة كاملة</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">لم تسمع بـ HeartFull من قبل، أو لست متأكدًا ما هذا؟ لا مشكلة &mdash; إليك الفكرة كاملة بكلمات بسيطة.</p>
+            <div class="cols" style="margin-bottom:4.5rem;">
+                <div><h3>أولًا، ما هو HeartFull؟</h3><p class="muted">تطبيق مواعدة <strong>مجاني</strong> بلمسة مختلفة: لا جدران دفع ولا شيء للشراء. بدلًا من الدفع لتكون مرئيًا، يكسب الناس &ldquo;قلوبًا&rdquo; بكونهم صادقين ونشطين &mdash; شخصيتك هي عملتك. يحب الناس أنه يبدو إنسانيًا، لا «ادفع لتفوز». <a href="/how-hearts-work.html">شاهد كيف يعمل &rarr;</a></p></div>
+                <div><h3>وما هذه الصفحة؟</h3><p class="muted">طريقة مريحة لكسب بعض المال بإخبار الناس عن HeartFull. أي شخص ينضم عبر رابطك أو رمز QR يُحتسب لك &mdash; وتتقاضى أجرًا عن كل شخص يسجّل ويؤكّد حسابه. لا تحتاج إلى أن تكون قد استخدمت التطبيق لتبدأ.</p></div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-center mb-2">إنه دخل مرن &mdash; <span class="gradient-text">وليس وظيفة</span></h3>
-            <p class="text-center mb-8 max-w-xl mx-auto text-sm" style="color:var(--ink-secondary);">بلا مقابلة، بلا عقد، بلا حضور إلى مكتب. اعتبره دخلًا جانبيًا صغيرًا على طريقتك.</p>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">⏰</div><h3 class="text-base font-bold mb-1">اعمل وقتما تشاء</h3><p class="text-sm" style="color:var(--ink-secondary);">بلا ساعات ثابتة. خمس دقائق أو خمس ساعات &mdash; القرار لك.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">📱</div><h3 class="text-base font-bold mb-1">بلا مكتب، بلا مدير</h3><p class="text-sm" style="color:var(--ink-secondary);">عن بُعد بالكامل، من هاتفك. لا أحد يديرك.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">🎚️</div><h3 class="text-base font-bold mb-1">بلا حصص</h3><p class="text-sm" style="color:var(--ink-secondary);">شارك قليلًا أو كثيرًا كما تحب. أوقِف أو توقّف وقتما تشاء.</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">💸</div><h3 class="text-base font-bold mb-1">أجر مقابل النتيجة</h3><p class="text-sm" style="color:var(--ink-secondary);">نقود حقيقية عن الأشخاص الحقيقيين الذين تجلبهم، تُدفع أسبوعيًا.</p></div>
+            <div class="split flip">
+                <img class="doodle" src="/illustrations/chilling.svg" alt="" width="1024" height="768" loading="lazy">
+                <div>
+                    <h2>إنه دخل مرن &mdash; <em>وليس وظيفة</em></h2>
+                    <p class="muted" style="margin-bottom:1.5rem;">بلا مقابلة، بلا عقد، بلا حضور إلى مكتب. اعتبره دخلًا جانبيًا صغيرًا على طريقتك.</p>
+                    <ul class="plain muted">
+                        <li><strong>اعمل وقتما تشاء</strong>بلا ساعات ثابتة. خمس دقائق أو خمس ساعات &mdash; القرار لك.</li>
+                        <li><strong>بلا مكتب، بلا مدير</strong>عن بُعد بالكامل، من هاتفك. لا أحد يديرك.</li>
+                        <li><strong>بلا حصص</strong>شارك قليلًا أو كثيرًا كما تحب. أوقِف أو توقّف وقتما تشاء.</li>
+                        <li><strong>أجر مقابل النتيجة</strong>نقود حقيقية عن الأشخاص الحقيقيين الذين تجلبهم، تُدفع أسبوعيًا.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What you'll do -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">كيف <span class="gradient-text">يعمل</span></h2>
-            <p class="text-center mb-12" style="color:var(--ink-secondary);">يبدأ الجميع بجذب المستخدمين &mdash; جلب أشخاص حقيقيين إلى HeartFull. هذا هو الأساس. بمجرد أن تكون نشطًا، ستفتح مصادر دخل إضافية.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card text-center"><div class="text-3xl mb-3">&#127919;</div><h3 class="text-lg font-bold mb-2">جذب المستخدمين</h3><p class="text-sm" style="color:var(--ink-secondary);">الأساس. شارك رابطك أو رمز QR أو رمزك الترويجي. اكسب مبلغًا ثابتًا قدره <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> لكل شخص.</p><p class="text-xs mt-2 font-semibold" style="color:var(--coral);">مطلوب من الجميع</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#128241;</div><h3 class="text-lg font-bold mb-2">وسائل التواصل</h3><p class="text-sm" style="color:var(--ink-secondary);">أدِر تواجد HeartFull على TikTok أو Instagram أو منصات أخرى. أنشئ محتوى واجذب الجمهور.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">يُفتح بعد 10 إحالات</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#127881;</div><h3 class="text-lg font-bold mb-2">الفعاليات</h3><p class="text-sm" style="color:var(--ink-secondary);">استضف أو احضر فعاليات مواعدة وأمسيات المواعدة السريعة واللقاءات الاجتماعية. الفعاليات تحقق أفضل معدل تحويل.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">يُفتح بعد 10 إحالات</p></div>
-                <div class="card text-center"><div class="text-3xl mb-3">&#128172;</div><h3 class="text-lg font-bold mb-2">المجتمع</h3><p class="text-sm" style="color:var(--ink-secondary);">أدِر المجموعات وقُد النقاشات وأدِر محادثات الفعاليات وادعم المستخدمين.</p><p class="text-xs mt-2 font-semibold" style="color:var(--ink-tertiary);">يُفتح بعد 10 إحالات</p></div>
+    <!-- How it works -->
+    <section class="band band-sunken">
+        <div class="wrap">
+            <h2>كيف <em>يعمل</em></h2>
+            <p class="lede" style="margin-bottom:3rem;">يبدأ الجميع بجذب المستخدمين &mdash; جلب أشخاص حقيقيين إلى HeartFull. هذا هو الأساس. بمجرد أن تكون نشطًا، ستفتح مصادر دخل إضافية.</p>
+            <div class="cols">
+                <div class="start">
+                    <p class="kicker">مطلوب من الجميع</p>
+                    <h3>جذب المستخدمين</h3>
+                    <p class="muted">الأساس. شارك رابطك أو رمز QR أو رمزك الترويجي. اكسب مبلغًا ثابتًا قدره <strong style="color:var(--coral);" data-tariff="max">$5.00</strong> لكل شخص.</p>
+                </div>
+                <div>
+                    <p class="kicker" style="color:var(--ink-tertiary);">يُفتح بعد 10 إحالات</p>
+                    <ul class="plain muted">
+                        <li><strong>وسائل التواصل</strong>أدِر تواجد HeartFull على TikTok أو Instagram أو منصات أخرى. أنشئ محتوى واجذب الجمهور.</li>
+                        <li><strong>الفعاليات</strong>استضف أو احضر فعاليات مواعدة وأمسيات المواعدة السريعة واللقاءات الاجتماعية. الفعاليات تحقق أفضل معدل تحويل.</li>
+                        <li><strong>المجتمع</strong>أدِر المجموعات وقُد النقاشات وأدِر محادثات الفعاليات وادعم المستخدمين.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How to promote -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">كيف تجلب <span class="gradient-text">الناس</span></h2>
-            <p class="text-center mb-12 max-w-2xl mx-auto" style="color:var(--ink-secondary);">لا تحتاج إلى جمهور كبير. أي شخص ينضم عبر رابطك أو رمز QR أو رمز الترويج الخاص بك يُحتسب لك تلقائيًا. إليك طرقًا بسيطة يستخدمها المروّجون الحقيقيون — اختر ما يناسبك.</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card"><div class="text-3xl mb-3">💬</div><h3 class="text-lg font-bold mb-2">ادعُ من تتحدث معهم بالفعل</h3><p class="text-sm" style="color:var(--ink-secondary);">على واتساب أو تيليجرام أو رسائل إنستغرام، أرسل رابطك: «أنا على HeartFull — تطبيق مواعدة مجاني بلا رسوم. انضم برمزي وأضِفني.»</p></div>
-                <div class="card"><div class="text-3xl mb-3">📲</div><h3 class="text-lg font-bold mb-2">شارك رمز QR وجهًا لوجه</h3><p class="text-sm" style="color:var(--ink-secondary);">اعرض أو اطبع رمز QR في اللقاءات أو المقاهي أو الجامعة أو النادي الرياضي. يمسحه الناس فيدخلون التطبيق مرتبطين بك بالفعل — دون كتابة أي شيء.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🔗</div><h3 class="text-lg font-bold mb-2">أرسل رابطك للأصدقاء</h3><p class="text-sm" style="color:var(--ink-secondary);">بنقرة واحدة تشارك رابطك الشخصي عبر أي تطبيق مراسلة. يفتحونه ويسجّلون، وتُحتسب لك تلقائيًا — دون كتابة رمز.</p></div>
-                <div class="card"><div class="text-3xl mb-3">❤️</div><h3 class="text-lg font-bold mb-2">أوصِ به على تطبيقات المواعدة الأخرى</h3><p class="text-sm" style="color:var(--ink-secondary);">تطابقت على Tinder أو Bumble أو Hinge؟ اقترح الانتقال إلى HeartFull (مجاني) واطلب منهم إضافتك كمروّج لهم برمزك عند التسجيل.</p></div>
-                <div class="card"><div class="text-3xl mb-3">📱</div><h3 class="text-lg font-bold mb-2">انشر على حساباتك</h3><p class="text-sm" style="color:var(--ink-secondary);">قصة أو منشور سريع — «أجرّب تطبيق المواعدة المجاني هذا» — مع رابطك أو رمز QR. المنشورات المعتمدة قد تكسب $5–$20 لكل منشور، إضافةً إلى إحالاتك.</p></div>
-                <div class="card"><div class="text-3xl mb-3">🎉</div><h3 class="text-lg font-bold mb-2">اصطحب الأصدقاء إلى الفعاليات</h3><p class="text-sm" style="color:var(--ink-secondary);">ادعُ الناس إلى فعالية مواعدة أو لقاء اجتماعي من HeartFull. الفعاليات هي الأفضل تحويلًا — كل من يحضر مستعد للقاء.</p></div>
+    <section class="band">
+        <div class="wrap">
+            <div class="split" style="margin-bottom:2.5rem;">
+                <div><h2>كيف تجلب <em>الناس</em></h2><p class="lede">لا تحتاج إلى جمهور كبير. أي شخص ينضم عبر رابطك أو رمز QR أو رمز الترويج الخاص بك يُحتسب لك تلقائيًا. إليك طرقًا بسيطة يستخدمها المروّجون الحقيقيون — اختر ما يناسبك.</p></div>
+                <img class="doodle" src="/illustrations/dancing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
             </div>
-            <div class="card" style="margin-top:2rem;background:var(--coral-subtle);"><p style="color:var(--ink);line-height:1.8;"><strong>كل ما تحتاجه في لوحة التحكم:</strong> رمز الترويج، ورابط مشاركة بنقرة واحدة، ونشرة QR قابلة للتنزيل — جاهزة للإرسال. المستخدمون الجدد الذين يستعملون رابطك أو رمزك يُربطون بك في خطوة واحدة.</p></div>
+            <ol class="ways">
+                <li><h3>ادعُ من تتحدث معهم بالفعل</h3><p class="muted small">على واتساب أو تيليجرام أو رسائل إنستغرام، أرسل رابطك: «أنا على HeartFull — تطبيق مواعدة مجاني بلا رسوم. انضم برمزي وأضِفني.»</p></li>
+                <li><h3>شارك رمز QR وجهًا لوجه</h3><p class="muted small">اعرض أو اطبع رمز QR في اللقاءات أو المقاهي أو الجامعة أو النادي الرياضي. يمسحه الناس فيدخلون التطبيق مرتبطين بك بالفعل — دون كتابة أي شيء.</p></li>
+                <li><h3>أرسل رابطك للأصدقاء</h3><p class="muted small">بنقرة واحدة تشارك رابطك الشخصي عبر أي تطبيق مراسلة. يفتحونه ويسجّلون، وتُحتسب لك تلقائيًا — دون كتابة رمز.</p></li>
+                <li><h3>أوصِ به على تطبيقات المواعدة الأخرى</h3><p class="muted small">تطابقت على Tinder أو Bumble أو Hinge؟ اقترح الانتقال إلى HeartFull (مجاني) واطلب منهم إضافتك كمروّج لهم برمزك عند التسجيل.</p></li>
+                <li><h3>انشر على حساباتك</h3><p class="muted small">قصة أو منشور سريع — «أجرّب تطبيق المواعدة المجاني هذا» — مع رابطك أو رمز QR. بعد تجاوزك 10 إحالات، يمكن للمنشورات المعتمدة أن تكسب أيضًا $5–$20 لكل منشور.</p></li>
+                <li><h3>اصطحب الأصدقاء إلى الفعاليات</h3><p class="muted small">ادعُ الناس إلى فعالية مواعدة أو لقاء اجتماعي من HeartFull. الفعاليات هي الأفضل تحويلًا — كل من يحضر مستعد للقاء.</p></li>
+            </ol>
+            <div class="split" style="margin-top:3.5rem;">
+                <p class="muted"><strong>كل ما تحتاجه في لوحة التحكم:</strong> رمز الترويج، ورابط مشاركة بنقرة واحدة، ونشرة QR قابلة للتنزيل — جاهزة للإرسال. المستخدمون الجدد الذين يستعملون رابطك أو رمزك يُربطون بك في خطوة واحدة.</p>
+                <div>
+                    <div class="ticket">
+                        <div><span class="t-label">رمزك الترويجي</span><span class="t-code">MAYA24</span></div>
+                        <div><span class="t-label">رابطك</span><span class="t-link" dir="ltr">heartfull.online/?ref=MAYA24</span></div>
+                    </div>
+                    <p class="fine" style="text-align:center;margin-top:1rem;">مثال</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Commission Structure -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">ما <span class="gradient-text">تكسبه</span></h2>
-            <p class="text-center mb-10 max-w-2xl mx-auto" style="color:var(--ink-secondary);">تكسب مبلغًا ثابتًا قدره <span data-tariff="max">$5.00</span> عن كل شخص تجلبه &mdash; إحالتك المائة تُدفع مثل الأولى. <strong>10 أصدقاء = <span data-tariff="guide10">$50</span></strong>، و<strong>50 = <span data-tariff="guide50">$250</span></strong> — ولا حدّ لعدد من تجلبهم.</p>
-
-            <h3 class="text-xl font-bold mb-4">لكل إحالة (مبلغ ثابت <span data-tariff="max">$5.00</span>)</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;margin-bottom:2rem;">
-                <table class="commission-table"><thead><tr><th>عندما يقوم المُحال...</th><th style="text-align:left;">تكسب</th></tr></thead>
-                <tbody>
-                    <tr><td>يسجل ويؤكد الحساب</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
-                    <tr data-tariff-row="conversation" hidden><td>يجري 3 محادثات حقيقية (كلاهما يرسل 2+ رسائل)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
-                    <tr data-tariff-row="date" hidden><td>يذهب في أول موعد (تسجيل دخول QR موثق)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
-                    <tr><td><strong>الإجمالي لكل إحالة</strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
-                </tbody></table>
+    <section class="band band-sunken">
+        <div class="wrap">
+            <div class="split">
+                <div>
+                    <h2>ما <em>تكسبه</em></h2>
+                    <p class="lede">تكسب مبلغًا ثابتًا قدره <span data-tariff="max">$5.00</span> عن كل شخص تجلبه &mdash; إحالتك المائة تُدفع مثل الأولى. <strong>10 أصدقاء = <span data-tariff="guide10">$50</span></strong>، و<strong>50 = <span data-tariff="guide50">$250</span></strong> — ولا حدّ لعدد من تجلبهم.</p>
+                </div>
+                <img class="doodle" src="/illustrations/unboxing.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            </div>
+            <div class="figs">
+                <div><div class="fig" data-tariff="max">$5.00</div><p class="muted">يسجل ويؤكد الحساب</p></div>
+                <div data-tariff-row="recruit"><div class="fig" data-tariff="recruit">$25.00</div><p class="muted">جنّد مروّجًا &mdash; إضافةً إلى <span data-tariff="signup">$5.00</span> مقابل تسجيله، تُدفع عندما يصل إلى <span data-tariff="recruitThreshold">5</span> إحالات مؤكدة</p></div>
             </div>
 
-            <p class="text-sm" style="color:var(--ink-secondary);margin-bottom:2rem;">تُدفع عمولات الإحالة بالدولار الأسترالي (AUD).</p>
-
-            <h3 class="text-xl font-bold mb-4">مصادر دخل إضافية</h3>
-            <div style="border-radius:16px;box-shadow:var(--shadow-warm);overflow:hidden;">
-                <table class="commission-table"><thead><tr><th>المهمة</th><th style="text-align:left;">العمولة</th></tr></thead>
-                <tbody>
-                    <tr data-tariff-row="recruit"><td>جنّد مروّجًا &mdash; إضافةً إلى <span data-tariff="signup">$5.00</span> مقابل تسجيله، تُدفع عندما يصل إلى <span data-tariff="recruitThreshold">5</span> إحالات مؤكدة</td><td class="td-amount"><span data-tariff="recruit">$25.00</span></td></tr>
-                    <tr><td>منشور على وسائل التواصل (محتوى معتمد مع رابط الإحالة)</td><td class="td-amount">$5 &ndash; $20/منشور</td></tr>
-                    <tr><td>إدارة حساب وسائل التواصل (أسبوعيًا)</td><td class="td-amount">$50 &ndash; $100/أسبوع</td></tr>
-                    <tr><td>استضافة فعالية مواعدة (حضوريًا أو عبر الإنترنت)</td><td class="td-amount">$30 &ndash; $100/فعالية</td></tr>
-                    <tr><td>إدارة المجتمع/المجموعة (أسبوعيًا)</td><td class="td-amount">$20 &ndash; $50/أسبوع</td></tr>
-                    <tr><td>إدارة حملة إعلانية (لكل حملة)</td><td class="td-amount">$50 &ndash; $200/حملة</td></tr>
-                </tbody></table>
+            <div data-tariff-row="milestones" hidden style="margin-bottom:2.5rem;">
+            <h3>لكل إحالة (مبلغ ثابت <span data-tariff="max">$5.00</span>)</h3>
+            <table class="commission-table"><thead><tr><th>عندما يقوم المُحال...</th><th>تكسب</th></tr></thead>
+            <tbody>
+                <tr><td>يسجل ويؤكد الحساب</td><td class="td-amount" data-tariff="signup">$5.00</td></tr>
+                <tr data-tariff-row="conversation" hidden><td>يجري 3 محادثات حقيقية (كلاهما يرسل 2+ رسائل)</td><td class="td-amount" data-tariff="conversation">$4.69</td></tr>
+                <tr data-tariff-row="date" hidden><td>يذهب في أول موعد (تسجيل دخول QR موثق)</td><td class="td-amount" data-tariff="date">$4.69</td></tr>
+                <tr><td><strong><strong>الإجمالي لكل إحالة</strong></strong></td><td class="td-amount" data-tariff="max">$5.00</td></tr>
+            </tbody></table>
             </div>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">يتم تعيين المهام الإضافية بناءً على الأداء. جميع الأسعار قابلة للتفاوض بناءً على النطاق والنتائج.</p>
+
+            <h3 style="margin-top:1rem;">مصادر دخل إضافية</h3>
+            <table class="commission-table"><thead><tr><th>المهمة</th><th>العمولة</th></tr></thead>
+            <tbody>
+                <tr><td>منشور على وسائل التواصل (محتوى معتمد مع رابط الإحالة)</td><td class="td-amount">$5 &ndash; $20/منشور</td></tr>
+                <tr><td>إدارة حساب وسائل التواصل (أسبوعيًا)</td><td class="td-amount">$50 &ndash; $100/أسبوع</td></tr>
+                <tr><td>استضافة فعالية مواعدة (حضوريًا أو عبر الإنترنت)</td><td class="td-amount">$30 &ndash; $100/فعالية</td></tr>
+                <tr><td>إدارة المجتمع/المجموعة (أسبوعيًا)</td><td class="td-amount">$20 &ndash; $50/أسبوع</td></tr>
+                <tr><td>إدارة حملة إعلانية (لكل حملة)</td><td class="td-amount">$50 &ndash; $200/حملة</td></tr>
+            </tbody></table>
+            <p class="fine" style="margin-top:1rem;">يُفتح بعد 10 إحالات. يتم تعيين المهام الإضافية بناءً على الأداء. جميع الأسعار قابلة للتفاوض بناءً على النطاق والنتائج. تُدفع عمولات الإحالة بالدولار الأسترالي (AUD).</p>
         </div>
     </section>
 
-    <!-- Growth Path -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4"><span class="gradient-text">مسار نموك</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">ابدأ بالترويج. أثبت نفسك. افتح المزيد من المسؤولية وأجرًا أعلى.</p>
-            <div class="space-y-6">
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">1</span></div><div><h3 class="font-bold text-lg">مروّج</h3><p style="color:var(--ink-secondary);">شارك رابطك واجلب الناس واكسب لكل إحالة. الجميع يبدأ من هنا.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">2</span></div><div><h3 class="font-bold text-lg">مساهم تسويقي</h3><p style="color:var(--ink-secondary);">بعد 10+ إحالات نشطة، افتح مهام وسائل التواصل والفعاليات والمجتمع. امزج وطابق حسب مهاراتك.</p></div></div>
-                <div class="card flex items-start gap-4"><div style="width:48px;height:48px;border-radius:50%;background:var(--coral-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Fraunces',serif;font-weight:700;color:var(--coral);font-size:1.25rem;">3</span></div><div><h3 class="font-bold text-lg">قائد التسويق</h3><p style="color:var(--ink-secondary);">أفضل الأداء يقودون مدينة أو قناة. أدِر أعضاء الفريق وقُد الحملات وتفاوض على أسعار أعلى.</p></div></div>
+    <!-- Growth Path + Getting Paid -->
+    <section class="band">
+        <div class="wrap cols">
+            <div>
+                <h2><em>مسار نموك</em></h2>
+                <p class="muted" style="margin-bottom:2rem;">ابدأ بالترويج. أثبت نفسك. افتح المزيد من المسؤولية وأجرًا أعلى.</p>
+                <ol class="path">
+                    <li><h3>مروّج</h3><p class="muted">شارك رابطك واجلب الناس واكسب لكل إحالة. الجميع يبدأ من هنا.</p></li>
+                    <li><h3>مساهم تسويقي</h3><p class="muted">بعد 10 إحالات مؤكدة، افتح مهام وسائل التواصل والفعاليات والمجتمع. امزج وطابق حسب مهاراتك.</p></li>
+                    <li><h3>قائد التسويق</h3><p class="muted">أفضل الأداء يقودون مدينة أو قناة. أدِر أعضاء الفريق وقُد الحملات وتفاوض على أسعار أعلى.</p></li>
+                </ol>
             </div>
-        </div>
-    </section>
-
-    <!-- Getting Paid -->
-    <section class="py-16 sm:py-20" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4">كيف <span class="gradient-text">تُدفع</span></h2>
-            <p class="text-center mb-10" style="color:var(--ink-secondary);">دفعات أسبوعية. بدون فواتير. بدون مطاردة.</p>
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div class="card"><h3 class="text-lg font-bold mb-3">دفعات أسبوعية</h3><p style="color:var(--ink-secondary);line-height:1.8;">تُحسب الأرباح كل يوم جمعة وتُدفع خلال عطلة نهاية الأسبوع عبر التحويل المصرفي. الأرصدة التي تتجاوز <strong>$10</strong> تُدفع تلقائيًا.</p></div>
-                <div class="card"><h3 class="text-lg font-bold mb-3">لوحة التحكم</h3><p style="color:var(--ink-secondary);line-height:1.8;">تتبع الإحالات والمراحل والأرباح وسجل الدفعات في الوقت الفعلي. شاهد بالضبط من سجّل وماذا فعل.</p></div>
+            <div>
+                <h2>كيف <em>تُدفع</em></h2>
+                <p class="muted" style="margin-bottom:2rem;">دفعات أسبوعية. بدون فواتير. بدون مطاردة.</p>
+                <h3>دفعات أسبوعية</h3><p class="muted" style="margin-bottom:1.5rem;">تُحسب الأرباح كل يوم جمعة وتُدفع خلال عطلة نهاية الأسبوع عبر التحويل المصرفي. الأرصدة التي تتجاوز <strong>$10</strong> تُدفع تلقائيًا.</p>
+                <h3>لوحة التحكم</h3><p class="muted">تتبع الإحالات والأرباح وسجل الدفعات في الوقت الفعلي.</p>
             </div>
         </div>
     </section>
 
     <!-- Apply -->
-    <section class="py-16 sm:py-20" style="background:var(--surface-sunken);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-4">مستعد <span class="gradient-text">للبدء</span>؟</h2>
-            <p class="mb-8 max-w-xl mx-auto" style="color:var(--ink-secondary);line-height:1.8;">سجّل الدخول بحساب Google وأخبرنا قليلًا عن نفسك &mdash; يستغرق بضع دقائق، بلا سيرة ذاتية وبلا مقابلة. تتم الموافقة على معظم الناس خلال يوم، وتحصل فورًا على رمزك الترويجي ورابطك الشخصي ورمز QR ولوحة التحكم. ابدأ وقتما تشاء، وتوقّف وقتما تشاء.</p>
-            <a href="https://portal.heartfull.online" target="_blank" style="text-decoration:none;"><button style="background:var(--coral);color:white;border-radius:14px;border:none;cursor:pointer;padding:0.875rem 2rem;font-size:1.125rem;font-weight:600;">قدّم الآن</button></a>
-            <p class="text-sm mt-4" style="color:var(--ink-tertiary);">لا تحتاج إلى خبرة. الشغف بالروابط الحقيقية والاستعداد للعمل هو كل ما تحتاجه.</p>
+    <section class="band band-blush">
+        <div class="wrap split flip">
+            <img class="doodle" src="/illustrations/loving.svg" alt="" width="1024" height="768" loading="lazy" style="max-width:20rem;">
+            <div>
+                <h2>مستعد <em>للبدء</em>؟</h2>
+                <p class="muted">سجّل الدخول بحساب Google وأخبرنا قليلًا عن نفسك &mdash; يستغرق بضع دقائق، بلا سيرة ذاتية وبلا مقابلة. تتم الموافقة على معظم الناس خلال يوم، وتحصل فورًا على رمزك الترويجي ورابطك الشخصي ورمز QR ولوحة التحكم. ابدأ وقتما تشاء، وتوقّف وقتما تشاء.</p>
+                <div class="cta-row"><a class="btn" href="https://portal.heartfull.online" target="_blank">قدّم الآن</a></div>
+                <p class="fine" style="margin-top:1rem;">لا تحتاج إلى خبرة. الشغف بالروابط الحقيقية والاستعداد للعمل هو كل ما تحتاجه.</p>
+            </div>
         </div>
     </section>
 
     <!-- Terms -->
-    <section class="py-12" style="background:var(--surface);">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-lg font-bold mb-4" style="color:var(--ink-tertiary);">شروط البرنامج</h3>
-            <ul class="space-y-2 text-sm" style="list-style:none;padding:0;color:var(--ink-tertiary);">
-                <li>&bull; العمولات للمستخدمين الحقيقيين فقط. الحسابات المزيفة أو الإحالات الذاتية تؤدي إلى الإزالة.</li>
-                <li>&bull; "المحادثة الحقيقية" تعني أن كلا الشخصين أرسلا رسالتين ذات معنى على الأقل.</li>
-                <li>&bull; "الموعد الأول" يتم التحقق منه عبر تسجيل دخول QR حضوري داخل التطبيق.</li>
-                <li>&bull; أسعار المهام الإضافية تُتفاوض بشكل فردي بناءً على النطاق والنتائج.</li>
-                <li>&bull; يحتفظ HeartFull بالحق في تعديل الأسعار مع إشعار قبل 14 يومًا.</li>
+    <section class="band" style="padding:3rem 0;">
+        <div class="wrap">
+            <h3 style="color:var(--ink-tertiary);">شروط البرنامج</h3>
+            <ul class="terms fine">
+                <li>العمولات للمستخدمين الحقيقيين فقط. الحسابات المزيفة أو الإحالات الذاتية تؤدي إلى الإزالة.</li>
+                <li data-tariff-row="conversation" hidden>"المحادثة الحقيقية" تعني أن كلا الشخصين أرسلا رسالتين ذات معنى على الأقل.</li>
+                <li data-tariff-row="date" hidden>"الموعد الأول" يتم التحقق منه عبر تسجيل دخول QR حضوري داخل التطبيق.</li>
+                <li>أسعار المهام الإضافية تُتفاوض بشكل فردي بناءً على النطاق والنتائج.</li>
+                <li>يحتفظ HeartFull بالحق في تعديل الأسعار مع إشعار قبل 14 يومًا.</li>
             </ul>
         </div>
     </section>
+
 
     <footer class="py-10" style="background:#1E1916;color:white;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,7 +290,7 @@
           var key = el.getAttribute('data-tariff');
           if (texts[key]) el.textContent = texts[key];
         });
-        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0 };
+        var shown = { conversation: c > 0, date: d > 0, recruit: r > 0, milestones: c + d > 0 };
         document.querySelectorAll('[data-tariff-row]').forEach(function (el) {
           el.hidden = !shown[el.getAttribute('data-tariff-row')];
         });
