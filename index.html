@@ -64,10 +64,6 @@
     <!-- Preload -->
     <link rel="preload" href="heart-logo.svg" as="image">
 
-    <!-- Swiper (deferred) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous"></noscript>
-
     <!-- Fonts: Fraunces (display) + DM Sans (body) — matches app -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
 
@@ -808,8 +804,8 @@
                 </div>
             </div>
 
-            <!-- Phone Comparison: Them vs HeartFull -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-12 mb-16" hidden>
+            <!-- Retained only as an inert template while the hero is the sole comparison. -->
+            <template id="retired-comparison">
                 <!-- Competitor Phone (Swipeable) -->
                 <div class="flex flex-col items-center flex-shrink-0">
                     <div class="phone-compare">
@@ -1217,7 +1213,7 @@
                     </div>
                     <span class="mt-3 font-bold text-lg" style="color: var(--coral);">HeartFull</span>
                 </div>
-            </div>
+            </template>
 
             <!-- Pricing Comparison Table -->
             <div class="mb-16">
@@ -2033,10 +2029,6 @@
             font-size: 11px; color: #bbb;
         }
 
-        /* Swiper overrides */
-        #competitor-swiper .swiper-wrapper { height: 100%; }
-        #competitor-swiper .swiper-slide { height: 100%; }
-
         /* Person silhouette for competitor mockup photos */
         .mockup-photo { position: relative; }
         .mockup-photo::after {
@@ -2763,40 +2755,6 @@
     </style>
 
     <script>
-        // Swiper init (lazy — only when visible)
-        function initSwiper() {
-            if (typeof Swiper === 'undefined') return setTimeout(initSwiper, 200);
-            var el = document.querySelector('#competitor-swiper');
-            if (!el) return;
-            var observer = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) {
-                    var label = document.getElementById('competitor-label');
-                    new Swiper('#competitor-swiper', {
-                        slidesPerView: 1,
-                        loop: true,
-                        autoplay: { delay: 2500, disableOnInteraction: false },
-                        effect: 'fade',
-                        fadeEffect: { crossFade: true },
-                        on: {
-                            slideChange: function () {
-                                var slide = this.slides[this.activeIndex];
-                                if (slide && label) {
-                                    label.style.opacity = '0';
-                                    setTimeout(function() {
-                                        label.textContent = slide.getAttribute('data-label') || '';
-                                        label.style.opacity = '1';
-                                    }, 150);
-                                }
-                            }
-                        }
-                    });
-                    observer.disconnect();
-                }
-            }, { threshold: 0.1 });
-            observer.observe(el);
-        }
-        window.addEventListener('load', initSwiper);
-
         // Nav scroll effect
         const nav = document.querySelector('nav');
         function updateNav() {
@@ -2830,7 +2788,6 @@
             });
         });
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="/site-language-v1.js"></script>
 </body>
 </html>
