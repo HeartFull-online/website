@@ -285,6 +285,97 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
+        .hero-content-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            text-align: center;
+        }
+        .hero-copy {
+            display: contents;
+        }
+        .hero-copy h1 { order: 1; }
+        .hero-comparison { order: 2; }
+        .hero-copy > p {
+            order: 3;
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+        .hero-actions {
+            order: 4;
+            justify-content: center !important;
+        }
+        .hero-social {
+            order: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+            color: rgba(255,255,255,.52);
+            font-size: .85rem;
+        }
+        .hero-social a {
+            color: rgba(255,255,255,.8);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .hero-social a:hover { color: var(--coral); }
+        .hero-stats {
+            order: 6;
+            width: min(100%, 640px);
+        }
+        .hero-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .9rem;
+        }
+        .hero-comparison .phone-compare {
+            width: min(39vw, 205px);
+            height: min(75vw, 400px);
+            padding: 7px;
+            border-radius: 32px;
+            box-shadow: 0 22px 50px rgba(0,0,0,.32);
+        }
+        .hero-comparison .phone-compare-notch {
+            width: 72px;
+            height: 18px;
+        }
+        .hero-comparison .app-slide,
+        .hero-comparison .hf-demo { border-radius: 25px; }
+        .hero-comparison .hf-demo { padding-top: 19px; }
+        .hero-comparison .hf-face { width: 31px; height: 43px; flex-basis: 31px; }
+        .hero-comparison .hf-face img { border-radius: 15px 15px 5px 5px; }
+        .hero-comparison .hf-face span { font-size: 5px; line-height: 8px; }
+        .hero-comparison .hf-faces-bar { min-height: 50px; gap: 3px; }
+        .hero-comparison .hf-profile-info strong { font-size: 11px; }
+        .hero-comparison .hf-profile-info span { font-size: 6px; }
+        .hero-comparison .hf-message-preview { font-size: 6px; padding: 4px 6px; }
+        .hero-comparison .hf-input-text { min-height: 22px; font-size: 6px; }
+        .hero-comparison .hf-heart-attach,
+        .hero-comparison .hf-send { width: 22px; min-width: 22px; height: 22px; font-size: 6px; }
+        .hero-vs {
+            color: var(--coral);
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .hero-phone-label {
+            margin-top: .65rem;
+            color: rgba(255,255,255,.55);
+            font-size: .75rem;
+            font-weight: 700;
+        }
+        .hero-phone-label-heartfull { color: var(--coral); }
+        @media (min-width: 1024px) {
+            .hero-section { min-height: 820px; }
+            .hero-content-grid { gap: 2.5rem; }
+            .hero-comparison { gap: 1.25rem; }
+            .hero-comparison .phone-compare { width: 205px; height: 400px; }
+            .hero-comparison .hf-face { width: 37px; height: 48px; flex-basis: 37px; }
+            .hero-comparison .hf-faces-bar { min-height: 56px; }
+        }
     </style>
 
     <!-- Tailwind -->
@@ -362,65 +453,84 @@
     <!-- Hero -->
     <section class="hero-section">
         <div class="hero-glow"></div>
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white mb-6 leading-tight" style="font-family: 'Fraunces', serif; font-weight: 600;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="hero-content-grid">
+                <div class="hero-copy">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-tight" style="font-family: 'Fraunces', serif; font-weight: 600;">
                     Other apps are heartless.<br>We're <span style="color: var(--coral);">HeartFull.</span>
-                </h1>
-                <p class="text-lg sm:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto" style="color: rgba(255,255,255,0.65); font-family: 'Fraunces', serif; font-weight: 400;">
-                    The first dating app where your character matters more than your credit card.
-                </p>
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-2xl mb-9 max-w-3xl mx-auto lg:mx-0" style="color: rgba(255,255,255,0.65); font-family: 'Fraunces', serif; font-weight: 400;">
+                        The first dating app where your character matters more than your credit card.
+                    </p>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                    <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
-                        <button class="px-10 py-4 font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto" style="background: var(--coral); color: white; border-radius: 12px;">
-                            Open App
-                        </button>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=online.heartfull.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:58px; text-decoration:none;">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:58px; width:auto;">
-                    </a>
+                    <div class="hero-actions flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                        <a href="https://heartfull.online" target="_blank" rel="noopener noreferrer">
+                            <button class="px-10 py-4 font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto" style="background: var(--coral); color: white; border-radius: 12px;">
+                                Open App
+                            </button>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=online.heartfull.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:58px; text-decoration:none;">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:58px; width:auto;">
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <span>Follow us</span>
+                        <a href="https://www.linkedin.com/company/heartfull-online/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <span aria-hidden="true">&middot;</span>
+                        <a href="https://www.facebook.com/profile.php?id=61579023050009" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </div>
+
+                    <div class="hero-stats grid grid-cols-2 gap-3 sm:gap-4 mt-10">
+                        <div class="text-center p-3 sm:p-4 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+                            <div class="text-2xl sm:text-3xl font-bold text-white">$0</div>
+                            <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">To connect &amp; chat</div>
+                        </div>
+                        <div class="text-center p-3 sm:p-4 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+                            <div class="text-2xl sm:text-3xl font-bold text-white">0</div>
+                            <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Paywalled connections</div>
+                        </div>
+                        <div class="text-center p-3 sm:p-4 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+                            <div class="text-2xl sm:text-3xl font-bold text-white">100%</div>
+                            <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Merit-based</div>
+                        </div>
+                        <div class="text-center p-3 sm:p-4 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+                            <div class="text-2xl sm:text-3xl font-bold" style="color: var(--coral);">&#9829;</div>
+                            <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Earn, don't buy</div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16 sm:mt-20">
-                    <div class="text-center p-4 sm:p-5 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">$0</div>
-                        <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">To connect &amp; chat</div>
+                <div class="hero-comparison">
+                    <div class="flex flex-col items-center">
+                        <div class="phone-compare">
+                            <div class="phone-compare-notch"></div>
+                            <div class="app-slide" style="background:linear-gradient(135deg,#FE3C72,#FF6036);">
+                                <div class="app-slide-name">Swipe app</div>
+                                <div class="app-slide-mockup">
+                                    <div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;">
+                                        <div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div>
+                                        <div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Jessica, 26</div><div style="font-size:7px;color:rgba(255,255,255,.7);">5 miles away</div></div>
+                                    </div>
+                                    <div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#2ecc71;">&#9829;</div></div>
+                                </div>
+                                <div class="app-slide-quote">&ldquo;Swipe. Wait. Pay.&rdquo;</div>
+                            </div>
+                        </div>
+                        <span class="hero-phone-label">The old model</span>
                     </div>
-                    <div class="text-center p-4 sm:p-5 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">0</div>
-                        <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Paywalled connections</div>
+                    <div class="hero-vs">vs</div>
+                    <div class="flex flex-col items-center">
+                        <div class="phone-compare">
+                            <div class="phone-compare-notch"></div>
+                            <div class="hf-demo">
+                                <div class="hf-demo-topbar"><span>Nearby</span><span class="hf-balance">&#9829; 42</span></div>
+                                <div class="hf-faces-bar"><div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div><div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div><div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div></div>
+                                <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-hearts-badge"><span>&#9829;</span> 247</div><div class="hf-profile-info"><div class="hf-profile-meta hf-profile-meta-1"><strong>Amelia, 29</strong><span>Fitzroy &middot; 2.4 km away</span></div><div class="hf-profile-meta hf-profile-meta-2"><strong>Maya, 27</strong><span>Carlton &middot; 1.1 km away</span></div><div class="hf-profile-meta hf-profile-meta-3"><strong>Sofia, 30</strong><span>St Kilda &middot; 4.8 km away</span></div></div><div class="hf-gallery-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                                <div class="hf-message-preview"><span class="hf-message-copy hf-message-copy-1"><span>That coffee spot looks lovely</span><b>&#9829; 3</b></span><span class="hf-message-copy hf-message-copy-2"><span>That hike looks like fun</span><b>&#9829; 2</b></span><span class="hf-message-copy hf-message-copy-3"><span>I love your style</span><b>&#9829; 4</b></span></div>
+                                <div class="hf-input"><div class="hf-input-text"><span class="hf-typing-copy hf-typing-copy-1">That coffee spot looks lovely</span><span class="hf-typing-copy hf-typing-copy-2">That hike looks like fun</span><span class="hf-typing-copy hf-typing-copy-3">I love your style</span></div><div class="hf-heart-attach">&#9829; 3</div><button class="hf-send" type="button" aria-label="Send message">&#10148;</button></div>
+                            </div>
+                        </div>
+                        <span class="hero-phone-label hero-phone-label-heartfull">HeartFull</span>
                     </div>
-                    <div class="text-center p-4 sm:p-5 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">100%</div>
-                        <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Merit-based</div>
-                    </div>
-                    <div class="text-center p-4 sm:p-5 stat-card" style="background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: var(--coral);">&#9829;</div>
-                        <div style="color: rgba(255,255,255,0.5);" class="text-xs sm:text-sm font-medium mt-1">Earn, don't buy</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Showcase -->
-    <section class="py-16 sm:py-20 overflow-hidden" style="background: var(--surface-sunken);">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl lg:text-5xl font-bold mb-6" style="font-family: 'Fraunces', serif;">
-                    Dating that feels <span class="gradient-text">human</span>
-                </h2>
-                <p class="text-lg max-w-3xl mx-auto" style="color: var(--ink-secondary);">
-                    See people nearby, get a feel for their life, and start a thoughtful conversation &mdash; all in one calm, simple view.
-                </p>
-            </div>
-
-            <div class="device-showcase">
-                <!-- Real Android store-listing capture: mobile is the product hero. -->
-                <div class="phone-frame phone-frame-showcase">
-                    <div class="phone-notch"></div>
-                    <img src="illustrations/heartfull-mobile-discover.png" alt="HeartFull mobile app showing nearby people and Amelia's profile" width="1080" height="2160" loading="eager" />
                 </div>
             </div>
         </div>
@@ -894,29 +1004,31 @@
                             </div>
                             <!-- Faces is a photo rail, not a swipe deck. -->
                             <div class="hf-faces-bar">
-                                <div class="hf-face hf-face-1"><img src="illustrations/hf-demo-alex.jpg" alt=""><span>Alex</span></div>
-                                <div class="hf-face hf-face-2"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div>
-                                <div class="hf-face hf-face-3"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div>
-                                <div class="hf-face hf-face-4"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div>
+                                <div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div>
+                                <div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div>
+                                <div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div>
                             </div>
                             <div class="hf-profile-card">
                                 <img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt="">
                                 <img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt="">
                                 <img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt="">
                                 <div class="hf-profile-shade"></div>
+                                <div class="hf-photo-tap" aria-hidden="true"></div>
                                 <div class="hf-hearts-badge"><span>&#9829;</span> 247</div>
                                 <div class="hf-profile-info">
-                                    <strong>Alex, 29</strong>
-                                    <span>Fitzroy &middot; 2.4 km away</span>
+                                    <div class="hf-profile-meta hf-profile-meta-1"><strong>Amelia, 29</strong><span>Fitzroy &middot; 2.4 km away</span></div>
+                                    <div class="hf-profile-meta hf-profile-meta-2"><strong>Maya, 27</strong><span>Carlton &middot; 1.1 km away</span></div>
+                                    <div class="hf-profile-meta hf-profile-meta-3"><strong>Sofia, 30</strong><span>St Kilda &middot; 4.8 km away</span></div>
                                 </div>
                                 <div class="hf-gallery-dots" aria-hidden="true"><i></i><i></i><i></i></div>
                             </div>
                             <div class="hf-message-preview">
-                                <span>That looks like a great coffee spot</span>
-                                <b>&#9829; 3</b>
+                                <span class="hf-message-copy hf-message-copy-1"><span>That coffee spot looks lovely</span><b>&#9829; 3</b></span>
+                                <span class="hf-message-copy hf-message-copy-2"><span>That hike looks like fun</span><b>&#9829; 2</b></span>
+                                <span class="hf-message-copy hf-message-copy-3"><span>I love your style</span><b>&#9829; 4</b></span>
                             </div>
                             <div class="hf-input">
-                                <div class="hf-input-text">Write a message</div>
+                                <div class="hf-input-text"><span class="hf-typing-copy hf-typing-copy-1">That coffee spot looks lovely</span><span class="hf-typing-copy hf-typing-copy-2">That hike looks like fun</span><span class="hf-typing-copy hf-typing-copy-3">I love your style</span></div>
                                 <div class="hf-heart-attach">&#9829; 3</div>
                                 <button class="hf-send" type="button" aria-label="Send message">&#10148;</button>
                             </div>
@@ -2197,13 +2309,105 @@
             animation: hf-heart-pulse 12s ease-in-out infinite;
         }
         @keyframes hf-heart-pulse { 0%,16%,100% { transform:scale(1); } 20% { transform:scale(1.12); } 24% { transform:scale(1); } }
-        .hf-send { width:25px; height:25px; border:0; font-size:9px; box-shadow:0 3px 7px rgba(255,88,112,.25); animation:none; }
+        /* Each loop: choose a nearby person, tap through a lifestyle photo,
+           type a thoughtful message with Hearts, send it, then move on. */
+        .hf-face-1 { animation: hf-face-active-1 12s ease-in-out infinite; }
+        .hf-face-2 { animation: hf-face-active-2 12s ease-in-out infinite; }
+        .hf-face-3 { animation: hf-face-active-3 12s ease-in-out infinite; }
+        @keyframes hf-face-active-1 { 0%,29%,100% { border-color:#FF5870; transform:scale(1.06); } 34%,95% { border-color:transparent; transform:scale(1); } }
+        @keyframes hf-face-active-2 { 0%,29%,100% { border-color:transparent; transform:scale(1); } 34%,62% { border-color:#FF5870; transform:scale(1.06); } 67%,95% { border-color:transparent; transform:scale(1); } }
+        @keyframes hf-face-active-3 { 0%,62%,100% { border-color:transparent; transform:scale(1); } 67%,95% { border-color:#FF5870; transform:scale(1.06); } }
+        .hf-lifestyle-1 { animation: hf-photo-1 12s ease-in-out infinite; }
+        .hf-lifestyle-2 { animation: hf-photo-2 12s ease-in-out infinite; }
+        .hf-lifestyle-3 { animation: hf-photo-3 12s ease-in-out infinite; }
+        @keyframes hf-photo-1 { 0%,29%,100% { opacity:1; transform:scale(1.02); } 34%,95% { opacity:0; transform:scale(1.08); } }
+        @keyframes hf-photo-2 { 0%,29%,100% { opacity:0; transform:scale(1.06); } 34%,62% { opacity:1; transform:scale(1.02); } 67%,95% { opacity:0; transform:scale(1.07); } }
+        @keyframes hf-photo-3 { 0%,62%,100% { opacity:0; transform:scale(1.07); } 67%,95% { opacity:1; transform:scale(1.02); } }
+        .hf-photo-tap {
+            position: absolute;
+            z-index: 3;
+            top: 42%;
+            left: 72%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,.9);
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px rgba(255,255,255,.18);
+            pointer-events: none;
+            animation: hf-photo-tap 12s ease-out infinite;
+        }
+        @keyframes hf-photo-tap {
+            0%,25%,100% { opacity:0; transform:scale(.45); }
+            28% { opacity:.95; transform:scale(1); }
+            32% { opacity:0; transform:scale(1.65); }
+            33%,58% { opacity:0; transform:scale(.45); }
+            61% { opacity:.95; transform:scale(1); }
+            65% { opacity:0; transform:scale(1.65); }
+            66%,91% { opacity:0; transform:scale(.45); }
+            94% { opacity:.95; transform:scale(1); }
+            98% { opacity:0; transform:scale(1.65); }
+        }
+        .hf-profile-info { display:block; min-height:25px; }
+        .hf-profile-meta {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+        }
+        .hf-profile-meta-1 { animation: hf-meta-1 12s ease-in-out infinite; }
+        .hf-profile-meta-2 { animation: hf-meta-2 12s ease-in-out infinite; }
+        .hf-profile-meta-3 { animation: hf-meta-3 12s ease-in-out infinite; }
+        @keyframes hf-meta-1 { 0%,29%,100% { opacity:1; transform:translateY(0); } 34%,95% { opacity:0; transform:translateY(4px); } }
+        @keyframes hf-meta-2 { 0%,29%,100% { opacity:0; transform:translateY(4px); } 34%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(4px); } }
+        @keyframes hf-meta-3 { 0%,62%,100% { opacity:0; transform:translateY(4px); } 67%,95% { opacity:1; transform:translateY(0); } }
+        .hf-message-preview {
+            position: relative;
+            display: block;
+            min-height: 27px;
+            animation: none;
+        }
+        .hf-message-copy {
+            position: absolute;
+            inset: 5px 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            opacity: 0;
+        }
+        .hf-message-copy-1 { animation: hf-message-1 12s ease-in-out infinite; }
+        .hf-message-copy-2 { animation: hf-message-2 12s ease-in-out infinite; }
+        .hf-message-copy-3 { animation: hf-message-3 12s ease-in-out infinite; }
+        @keyframes hf-message-1 { 0%,15%,100% { opacity:0; transform:translateY(5px); } 18%,29% { opacity:1; transform:translateY(0); } 34%,95% { opacity:0; transform:translateY(5px); } }
+        @keyframes hf-message-2 { 0%,49%,100% { opacity:0; transform:translateY(5px); } 52%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(5px); } }
+        @keyframes hf-message-3 { 0%,82%,100% { opacity:0; transform:translateY(5px); } 85%,95% { opacity:1; transform:translateY(0); } }
+        .hf-input-text { position:relative; overflow:hidden; }
+        .hf-typing-copy {
+            position: absolute;
+            left: 8px;
+            overflow: hidden;
+            max-width: calc(100% - 12px);
+            opacity: 0;
+            color: #6B5E57;
+            white-space: nowrap;
+        }
+        .hf-typing-copy-1 { animation: hf-type-1 12s steps(18) infinite; }
+        .hf-typing-copy-2 { animation: hf-type-2 12s steps(18) infinite; }
+        .hf-typing-copy-3 { animation: hf-type-3 12s steps(16) infinite; }
+        @keyframes hf-type-1 { 0%,3%,100% { width:0; opacity:0; } 5% { opacity:1; width:0; } 14% { opacity:1; width:100%; } 18%,95% { opacity:0; width:100%; } }
+        @keyframes hf-type-2 { 0%,37%,100% { width:0; opacity:0; } 39% { opacity:1; width:0; } 48% { opacity:1; width:100%; } 52%,95% { opacity:0; width:100%; } }
+        @keyframes hf-type-3 { 0%,70%,100% { width:0; opacity:0; } 72% { opacity:1; width:0; } 81% { opacity:1; width:100%; } 85%,95% { opacity:0; width:100%; } }
+        .hf-send { width:25px; height:25px; border:0; font-size:9px; box-shadow:0 3px 7px rgba(255,88,112,.25); animation:hf-send-pulse 12s ease-in-out infinite; }
+        @keyframes hf-send-pulse { 0%,13%,100% { transform:scale(1); } 15% { transform:scale(1.18); } 17% { transform:scale(1); } 46% { transform:scale(1); } 49% { transform:scale(1.18); } 51% { transform:scale(1); } 79% { transform:scale(1); } 82% { transform:scale(1.18); } 84% { transform:scale(1); } }
         @media (prefers-reduced-motion: reduce) {
             .hf-demo *, .hf-demo *::before, .hf-demo *::after { animation: none !important; }
             .hf-lifestyle-1 { opacity: 1; }
             .hf-lifestyle-2, .hf-lifestyle-3 { opacity: 0; }
             .hf-face-1 { border-color: #FF5870; }
-            .hf-message-preview { opacity: 1; transform: none; }
+            .hf-profile-meta-1, .hf-message-copy-1, .hf-typing-copy-1 { opacity: 1; transform: none; }
         }
 
         /* Device showcase */
