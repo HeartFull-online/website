@@ -24,6 +24,13 @@
       path = parts.join('/') || 'index.html';
     }
     if (path.endsWith('/')) path += 'index.html';
+
+    // GitHub Pages also serves top-level HTML pages without their `.html`
+    // suffix (for example, `/promoters`). Map those aliases back to the
+    // translated file name before building a language-switch link.
+    if (!path.includes('/') && translatedPages.has(`${path}.html`)) {
+      path += '.html';
+    }
     return path;
   }
 
