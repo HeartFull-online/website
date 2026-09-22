@@ -419,6 +419,22 @@
         .badoo-online { position:absolute; top:8px; right:8px; width:8px; height:8px; background:#49c56d; border:2px solid #fff; border-radius:50%; }
         .badoo-profile-copy { position:absolute; right:0; bottom:0; left:0; padding:20px 10px 9px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.72)); }.badoo-profile-copy strong { font-size:13px; }.badoo-profile-copy small { display:block; font-size:7px; margin-top:2px; }
         .badoo-actions { display:flex; justify-content:center; gap:8px; padding-top:6px; }.badoo-actions span { display:grid; place-items:center; width:25px; height:25px; border-radius:50%; background:#f4f0fb; color:#6942ad; font-size:12px; }
+        /* Ten recognisable product patterns rotate in the comparison. */
+        .hero-other-tinder, .hero-other-bumble, .hero-other-hinge, .hero-other-badoo, .hero-other-grindr, .hero-other-okcupid, .hero-other-match, .hero-other-eharmony, .hero-other-cmb, .hero-other-happn { animation:hero-app-cycle 30s ease-in-out infinite; }
+        .hero-other-tinder { animation-delay:0s; }.hero-other-bumble { animation-delay:3s; }.hero-other-hinge { animation-delay:6s; }.hero-other-badoo { animation-delay:9s; }.hero-other-grindr { animation-delay:12s; }.hero-other-okcupid { animation-delay:15s; }.hero-other-match { animation-delay:18s; }.hero-other-eharmony { animation-delay:21s; }.hero-other-cmb { animation-delay:24s; }.hero-other-happn { animation-delay:27s; }
+        @keyframes hero-app-cycle { 0%,8.5% { opacity:1; transform:scale(1); } 10%,100% { opacity:0; transform:scale(1.03); } }
+        .hero-competitor-label-tinder, .hero-competitor-label-bumble, .hero-competitor-label-hinge, .hero-competitor-label-badoo, .hero-competitor-label-grindr, .hero-competitor-label-okcupid, .hero-competitor-label-match, .hero-competitor-label-eharmony, .hero-competitor-label-cmb, .hero-competitor-label-happn { animation:hero-label-cycle 30s ease-in-out infinite; }
+        .hero-competitor-label-tinder { animation-delay:0s; }.hero-competitor-label-bumble { animation-delay:3s; }.hero-competitor-label-hinge { animation-delay:6s; }.hero-competitor-label-badoo { animation-delay:9s; }.hero-competitor-label-grindr { animation-delay:12s; }.hero-competitor-label-okcupid { animation-delay:15s; }.hero-competitor-label-match { animation-delay:18s; }.hero-competitor-label-eharmony { animation-delay:21s; }.hero-competitor-label-cmb { animation-delay:24s; }.hero-competitor-label-happn { animation-delay:27s; }
+        @keyframes hero-label-cycle { 0%,8.5% { opacity:1; } 10%,100% { opacity:0; } }
+        .grindr-ui { background:#191919; color:#fff !important; }
+        .grindr-ui .legacy-top { color:#ffd400; }.grindr-search { padding:5px 7px; border-radius:7px; background:#303030; color:#aaa; font-size:6px; }.grindr-filters { display:flex; gap:4px; }.grindr-filters span { padding:3px 5px; border:1px solid #555; border-radius:10px; color:#ddd; font-size:5px; }.grindr-filters span:first-child { border-color:#ffd400; color:#ffd400; }
+        .grindr-grid { display:grid; flex:1; grid-template-columns:repeat(3,1fr); gap:3px; min-height:0; }.grindr-grid span { position:relative; overflow:hidden; border-radius:4px; background:linear-gradient(135deg,#4a4a4a,#272727); }.grindr-grid span:nth-child(2n) { background:linear-gradient(135deg,#766c5a,#302a22); }.grindr-grid span:nth-child(3n) { background:linear-gradient(135deg,#354953,#1d2528); }.grindr-grid i { position:absolute; right:3px; bottom:3px; width:5px; height:5px; border-radius:50%; background:#4dd276; }.grindr-ui .legacy-bottom-nav { color:#888; }.grindr-ui .legacy-bottom-nav span:nth-child(2) { color:#ffd400; }
+        .okcupid-ui { background:#1f1f24; color:#fff !important; }.okcupid-ui .legacy-top { color:#fff; }.okcupid-mark { color:#ff5d88; font-weight:800; }.okcupid-tabs { display:flex; justify-content:space-between; gap:3px; }.okcupid-tabs span { display:flex; flex:1; flex-direction:column; align-items:center; gap:2px; color:#aaa; font-size:5px; }.okcupid-tabs b { display:grid; place-items:center; width:19px; height:19px; border:1px solid #53535c; border-radius:50%; color:#fff; font-size:8px; }.okcupid-tabs span:first-child b { border-color:#ff5d88; color:#ff89a6; }
+        .okcupid-profile { position:relative; flex:1; min-height:0; overflow:hidden; border-radius:12px; }.okcupid-profile img { width:100%; height:100%; object-fit:cover; }.okcupid-percent { position:absolute; top:7px; right:7px; display:grid; place-items:center; width:28px; height:28px; border-radius:50%; color:#fff; background:#7555e7; border:2px solid rgba(255,255,255,.75); font-size:8px; font-weight:800; }.okcupid-copy { position:absolute; right:0; bottom:0; left:0; padding:22px 9px 8px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.75)); }.okcupid-copy strong { font-size:13px; }.okcupid-copy small { display:block; margin-top:2px; color:#ddd; font-size:6px; }.okcupid-ui .legacy-bottom-nav { color:#aaa; }.okcupid-ui .legacy-bottom-nav span:first-child { color:#ff5d88; }
+        .match-ui { background:#f6f8ff; }.match-ui .legacy-top { color:#173dbe; }.match-filter { display:flex; align-items:center; justify-content:space-between; padding:5px 7px; border:1px solid #dbe1f5; border-radius:8px; color:#617096; background:#fff; font-size:6px; }.match-grid { display:grid; flex:1; grid-template-columns:repeat(2,1fr); gap:5px; min-height:0; }.match-person { position:relative; overflow:hidden; border-radius:8px; background:#dce2f2; }.match-person img { width:100%; height:100%; object-fit:cover; }.match-person small { position:absolute; right:0; bottom:0; left:0; padding:10px 4px 4px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.65)); font-size:6px; }.match-ui .legacy-bottom-nav span:first-child { color:#1f4bd7; font-weight:700; }
+        .eharmony-ui { background:#f9f8f4; }.eharmony-ui .legacy-top { color:#287c77; }.eharmony-ring { display:grid; place-items:center; width:56px; height:56px; margin:0 auto; border:6px solid #c1e0d9; border-top-color:#287c77; border-right-color:#287c77; border-radius:50%; color:#287c77; font-size:12px; font-weight:800; }.eharmony-user { display:flex; align-items:center; gap:7px; padding:6px; background:#fff; border-radius:10px; box-shadow:0 1px 4px rgba(0,0,0,.08); }.eharmony-user img { width:35px; height:35px; border-radius:50%; object-fit:cover; }.eharmony-user b { display:block; color:#262322; font-size:9px; }.eharmony-user small { display:block; margin-top:2px; color:#748079; font-size:6px; }.eharmony-question { padding:7px; border-radius:9px; background:#e9f4f1; color:#39726e; font-size:7px; line-height:1.3; }.eharmony-ui .legacy-bottom-nav span:nth-child(2) { color:#287c77; font-weight:700; }
+        .cmb-ui { background:#fff5ed; }.cmb-ui .legacy-top { color:#7754a6; }.cmb-date { display:flex; align-items:center; justify-content:space-between; padding:5px 7px; border-radius:9px; background:#fff; color:#7f6d61; font-size:6px; }.cmb-date b { color:#e87462; }.cmb-card { position:relative; flex:1; min-height:0; overflow:hidden; border-radius:13px; background:#fff; box-shadow:0 3px 10px rgba(115,75,51,.13); }.cmb-card img { width:100%; height:100%; object-fit:cover; }.cmb-card-copy { position:absolute; right:0; bottom:0; left:0; padding:19px 9px 8px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.72)); }.cmb-card-copy strong { font-size:13px; }.cmb-card-copy small { display:block; font-size:6px; margin-top:2px; }.cmb-countdown { align-self:center; color:#8f6d5e; font-size:6px; }.cmb-ui .legacy-bottom-nav span:nth-child(2) { color:#7754a6; font-weight:700; }
+        .happn-ui { background:#f7f7fa; }.happn-ui .legacy-top { color:#176f96; }.happn-map { position:relative; flex:1; min-height:0; overflow:hidden; border-radius:12px; background:linear-gradient(135deg,#d7e9ed 0 35%,#f2e3d6 35% 45%,#dce9d8 45% 100%); }.happn-map::before, .happn-map::after { content:''; position:absolute; background:rgba(255,255,255,.86); }.happn-map::before { top:-10%; left:42%; width:14px; height:125%; transform:rotate(30deg); }.happn-map::after { top:46%; left:-10%; width:125%; height:9px; transform:rotate(-14deg); }.happn-route { position:absolute; z-index:2; top:36%; left:24%; width:52%; height:22%; border-top:3px dashed #2c99c7; border-radius:50%; transform:rotate(12deg); }.happn-person { position:absolute; z-index:3; right:10px; bottom:10px; display:flex; align-items:center; gap:5px; padding:4px; border-radius:18px; color:#314852; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.12); font-size:6px; }.happn-person img { width:22px; height:22px; border-radius:50%; object-fit:cover; }.happn-ui .legacy-bottom-nav span:first-child { color:#176f96; font-weight:700; }
         .hero-comparison .hf-demo { padding-top: 19px; }
         .hero-comparison .hf-face { width: 31px; height: 43px; flex-basis: 31px; }
         .hero-comparison .hf-face img { border-radius: 15px 15px 5px 5px; }
@@ -627,6 +643,45 @@
                                     <div class="badoo-actions"><span>&#10005;</span><span>&#9825;</span><span>&#9993;</span></div>
                                     <div class="legacy-bottom-nav"><span><b>&#8982;</b>People</span><span><b>&#9825;</b>Encounters</span><span><b>&#10084;</b>Likes</span><span><b>&#9993;</b>Chats</span><span><b>&#9786;</b>You</span></div>
                                 </div>
+                                <div class="hero-other-app hero-other-grindr app-slide grindr-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">grindr</span><span>&#9881;</span></div>
+                                    <div class="grindr-search">&#9906; Explore more profiles</div><div class="grindr-filters"><span>Online</span><span>Popular</span><span>Fresh</span></div>
+                                    <div class="grindr-grid" aria-hidden="true"><span><i></i></span><span></span><span><i></i></span><span></span><span><i></i></span><span></span><span></span><span><i></i></span><span></span></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#8982;</b>Nearby</span><span><b>&#9783;</b>Explore</span><span><b>&#9825;</b>Favourites</span><span><b>&#9993;</b>Chats</span></div>
+                                </div>
+                                <div class="hero-other-app hero-other-okcupid app-slide okcupid-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo"><span class="okcupid-mark">ok</span>cupid</span><span>&#9881;</span></div>
+                                    <div class="okcupid-tabs"><span><b>&#10024;</b>Recommended</span><span><b>&#9825;</b>Cupid's Picks</span><span><b>&#9829;</b>Likes You</span><span><b>%</b>Match %</span></div>
+                                    <div class="okcupid-profile"><img src="illustrations/hf-demo-isla.jpg" alt=""><span class="okcupid-percent">87%</span><div class="okcupid-copy"><strong>Emma, 28</strong><small>Melbourne &middot; Long-term</small></div></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9681;</b>Discover</span><span><b>&#9825;</b>Likes</span><span><b>&#9993;</b>Messages</span><span><b>&#9786;</b>Profile</span></div>
+                                </div>
+                                <div class="hero-other-app hero-other-match app-slide match-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">match</span><span>&#9881;</span></div>
+                                    <div class="match-filter">Search nearby <span>&#9662;</span></div>
+                                    <div class="match-grid"><div class="match-person"><img src="illustrations/hf-demo-amelia.jpg" alt=""><small>Amy, 31</small></div><div class="match-person"><img src="illustrations/hf-demo-chloe.jpg" alt=""><small>Mia, 27</small></div><div class="match-person"><img src="illustrations/hf-demo-sofia.jpg" alt=""><small>Lily, 29</small></div><div class="match-person"><img src="illustrations/hf-demo-maya.jpg" alt=""><small>Rose, 33</small></div></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9906;</b>Search</span><span><b>&#9825;</b>Likes</span><span><b>&#9993;</b>Messages</span><span><b>&#9786;</b>Profile</span></div>
+                                </div>
+                                <div class="hero-other-app hero-other-eharmony app-slide eharmony-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">eharmony</span><span>&#9881;</span></div>
+                                    <div class="eharmony-ring">72%</div><div class="eharmony-user"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span><b>Kate, 30</b><small>Highly compatible</small></span></div><div class="eharmony-question">You both love a quiet Sunday and a good conversation.</div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9825;</b>Discover</span><span><b>&#10022;</b>Matches</span><span><b>&#9993;</b>Messages</span><span><b>&#9786;</b>You</span></div>
+                                </div>
+                                <div class="hero-other-app hero-other-cmb app-slide cmb-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">Coffee Meets Bagel</span><span>&#9786;</span></div>
+                                    <div class="cmb-date"><span>Your daily bagel</span><b>1 left</b></div><div class="cmb-card"><img src="illustrations/hf-demo-chloe.jpg" alt=""><div class="cmb-card-copy"><strong>Olivia, 26</strong><small>4 km away &middot; 85% match</small></div></div><div class="cmb-countdown">Next bagel in 23:42:01</div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9782;</b>Suggested</span><span><b>&#9825;</b>Likes You</span><span><b>&#9993;</b>Chats</span><span><b>&#9786;</b>Profile</span></div>
+                                </div>
+                                <div class="hero-other-app hero-other-happn app-slide happn-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">happn</span><span>&#9881;</span></div>
+                                    <div class="happn-map"><span class="happn-route"></span><span class="happn-person"><img src="illustrations/hf-demo-amelia.jpg" alt="">Claire, 27</span></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#8982;</b>Discover</span><span><b>&#9678;</b>Crossed paths</span><span><b>&#9993;</b>Messages</span><span><b>&#9786;</b>Profile</span></div>
+                                </div>
                             </div>
                         </div>
                         <div class="hero-competitor-labels">
@@ -634,6 +689,12 @@
                             <span class="hero-competitor-label hero-competitor-label-bumble">Tinder, but yellow</span>
                             <span class="hero-competitor-label hero-competitor-label-hinge">Designed to delete your wallet</span>
                             <span class="hero-competitor-label hero-competitor-label-badoo">The one nobody chose on purpose</span>
+                            <span class="hero-competitor-label hero-competitor-label-grindr">A grid of thumbnails. That's the whole app.</span>
+                            <span class="hero-competitor-label hero-competitor-label-okcupid">RIP the free dating site</span>
+                            <span class="hero-competitor-label hero-competitor-label-match">Where profiles never die</span>
+                            <span class="hero-competitor-label hero-competitor-label-eharmony">29 dimensions of emptying your wallet</span>
+                            <span class="hero-competitor-label hero-competitor-label-cmb">One bagel a day, none that reply</span>
+                            <span class="hero-competitor-label hero-competitor-label-happn">Stalking, but make it romantic</span>
                         </div>
                     </div>
                     <div class="hero-vs">vs</div>
@@ -643,7 +704,7 @@
                             <div class="hf-demo">
                                 <div class="hf-demo-topbar"><span>Nearby</span><span class="hf-balance">&#9829; 42</span></div>
                                 <div class="hf-faces-bar"><div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div><div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div><div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div><div class="hf-face hf-face-4"><img src="illustrations/hf-demo-chloe.jpg" alt=""><span>Chloe</span></div><div class="hf-face hf-face-5"><img src="illustrations/hf-demo-isla.jpg" alt=""><span>Isla</span></div></div>
-                                <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-hearts-badge"><span>&#9829;</span> 247</div><div class="hf-profile-info"><div class="hf-profile-meta hf-profile-meta-1"><strong>Amelia, 29</strong><span>Fitzroy &middot; 2.4 km away</span></div><div class="hf-profile-meta hf-profile-meta-2"><strong>Maya, 27</strong><span>Carlton &middot; 1.1 km away</span></div><div class="hf-profile-meta hf-profile-meta-3"><strong>Sofia, 30</strong><span>St Kilda &middot; 4.8 km away</span></div></div><div class="hf-gallery-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
+                                <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-swipe-cue" aria-hidden="true">&#9757;</div><div class="hf-hearts-badge"><span>&#9829;</span> 247</div><div class="hf-profile-info"><div class="hf-profile-meta hf-profile-meta-1"><strong>Amelia, 29</strong><span>Fitzroy &middot; 2.4 km away</span></div><div class="hf-profile-meta hf-profile-meta-2"><strong>Maya, 27</strong><span>Carlton &middot; 1.1 km away</span></div><div class="hf-profile-meta hf-profile-meta-3"><strong>Sofia, 30</strong><span>St Kilda &middot; 4.8 km away</span></div></div><div class="hf-gallery-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
                                 <div class="hf-message-preview"><span class="hf-message-copy hf-message-copy-1"><span>That coffee spot looks lovely</span><b>&#9829; 3</b></span><span class="hf-message-copy hf-message-copy-2"><span>That hike looks like fun</span><b>&#9829; 2</b></span><span class="hf-message-copy hf-message-copy-3"><span>I love your style</span><b>&#9829; 4</b></span></div>
                                 <div class="hf-input"><div class="hf-input-text"><span class="hf-typing-copy hf-typing-copy-1">That coffee spot looks lovely</span><span class="hf-typing-copy hf-typing-copy-2">That hike looks like fun</span><span class="hf-typing-copy hf-typing-copy-3">I love your style</span></div><div class="hf-heart-attach">&#9829; 3</div><button class="hf-send" type="button" aria-label="Send message">&#10148;</button></div>
                             </div>
@@ -2328,6 +2389,18 @@
             border-radius: 12px;
             background: #D8CEC7;
             box-shadow: inset 0 0 0 1px rgba(30,25,22,.08), 0 5px 16px rgba(30,25,22,.12);
+            animation: hf-profile-swipe 12s ease-in-out infinite;
+        }
+        @keyframes hf-profile-swipe {
+            0%,27%,100% { opacity:1; transform:translateX(0) rotate(0); }
+            30% { opacity:0; transform:translateX(-118%) rotate(-3deg); }
+            30.1% { opacity:0; transform:translateX(118%) rotate(3deg); }
+            34%,60% { opacity:1; transform:translateX(0) rotate(0); }
+            63% { opacity:0; transform:translateX(-118%) rotate(-3deg); }
+            63.1% { opacity:0; transform:translateX(118%) rotate(3deg); }
+            67%,93% { opacity:1; transform:translateX(0) rotate(0); }
+            96% { opacity:0; transform:translateX(-118%) rotate(-3deg); }
+            96.1% { opacity:0; transform:translateX(118%) rotate(3deg); }
         }
         .hf-lifestyle {
             position: absolute;
@@ -2467,6 +2540,37 @@
             66%,91% { opacity:0; transform:scale(.45); }
             94% { opacity:.95; transform:scale(1); }
             98% { opacity:0; transform:scale(1.65); }
+        }
+        .hf-swipe-cue {
+            position:absolute;
+            z-index:4;
+            top:43%;
+            right:13%;
+            display:grid;
+            place-items:center;
+            width:26px;
+            height:26px;
+            border:2px solid rgba(255,255,255,.8);
+            border-radius:50%;
+            background:rgba(30,25,22,.24);
+            color:#fff;
+            font-size:15px;
+            line-height:1;
+            box-shadow:0 2px 9px rgba(0,0,0,.24);
+            opacity:0;
+            pointer-events:none;
+            animation:hf-swipe-cue 12s ease-out infinite;
+        }
+        @keyframes hf-swipe-cue {
+            0%,27%,100% { opacity:0; transform:translateX(0) scale(.72); }
+            28% { opacity:1; transform:translateX(0) scale(1); }
+            30% { opacity:0; transform:translateX(-58px) scale(.82); }
+            30.1%,60% { opacity:0; transform:translateX(0) scale(.72); }
+            61% { opacity:1; transform:translateX(0) scale(1); }
+            63% { opacity:0; transform:translateX(-58px) scale(.82); }
+            63.1%,93% { opacity:0; transform:translateX(0) scale(.72); }
+            94% { opacity:1; transform:translateX(0) scale(1); }
+            96% { opacity:0; transform:translateX(-58px) scale(.82); }
         }
         .hf-profile-info { display:block; min-height:25px; }
         .hf-profile-meta {
