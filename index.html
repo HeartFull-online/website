@@ -344,6 +344,27 @@
         }
         .hero-comparison .app-slide,
         .hero-comparison .hf-demo { border-radius: 25px; }
+        .hero-competitor-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+        .hero-other-app {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .hero-other-tinder { animation: hero-app-1 16s ease-in-out infinite; }
+        .hero-other-bumble { animation: hero-app-2 16s ease-in-out infinite; }
+        .hero-other-hinge { animation: hero-app-3 16s ease-in-out infinite; }
+        .hero-other-badoo { animation: hero-app-4 16s ease-in-out infinite; }
+        @keyframes hero-app-1 { 0%,22% { opacity:1; transform:scale(1); } 25%,97% { opacity:0; transform:scale(1.03); } 100% { opacity:1; transform:scale(1); } }
+        @keyframes hero-app-2 { 0%,22%,100% { opacity:0; transform:scale(1.03); } 25%,47% { opacity:1; transform:scale(1); } 50%,97% { opacity:0; transform:scale(1.03); } }
+        @keyframes hero-app-3 { 0%,47%,100% { opacity:0; transform:scale(1.03); } 50%,72% { opacity:1; transform:scale(1); } 75%,97% { opacity:0; transform:scale(1.03); } }
+        @keyframes hero-app-4 { 0%,72%,100% { opacity:0; transform:scale(1.03); } 75%,97% { opacity:1; transform:scale(1); } }
         .hero-comparison .hf-demo { padding-top: 19px; }
         .hero-comparison .hf-face { width: 31px; height: 43px; flex-basis: 31px; }
         .hero-comparison .hf-face img { border-radius: 15px 15px 5px 5px; }
@@ -368,6 +389,10 @@
             font-weight: 700;
         }
         .hero-phone-label-heartfull { color: var(--coral); }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-other-app { animation: none !important; }
+            .hero-other-tinder { opacity: 1; }
+        }
         @media (max-width: 639px) {
             .hero-comparison {
                 flex-direction: column;
@@ -471,7 +496,10 @@
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-tight" style="font-family: 'Fraunces', serif; font-weight: 600;">
                     Other apps are heartless.<br>We're <span style="color: var(--coral);">HeartFull.</span>
                     </h1>
-                    <p class="text-lg sm:text-xl lg:text-2xl mb-9 max-w-3xl mx-auto lg:mx-0" style="color: rgba(255,255,255,0.65); font-family: 'Fraunces', serif; font-weight: 400;">
+                    <p class="text-xl sm:text-2xl lg:text-3xl mb-3 max-w-3xl mx-auto lg:mx-0" style="color: rgba(255,255,255,0.9); font-family: 'Fraunces', serif; font-weight: 500;">
+                        Don't swipe to match. Swipe to chat.
+                    </p>
+                    <p class="text-base sm:text-lg lg:text-xl mb-9 max-w-3xl mx-auto lg:mx-0" style="color: rgba(255,255,255,0.65); font-family: 'Fraunces', serif; font-weight: 400;">
                         The first dating app where your character matters more than your credit card.
                     </p>
 
@@ -515,16 +543,19 @@
                     <div class="flex flex-col items-center">
                         <div class="phone-compare">
                             <div class="phone-compare-notch"></div>
-                            <div class="app-slide" style="background:linear-gradient(135deg,#FE3C72,#FF6036);">
-                                <div class="app-slide-name">Swipe app</div>
-                                <div class="app-slide-mockup">
-                                    <div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;">
-                                        <div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div>
-                                        <div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Jessica, 26</div><div style="font-size:7px;color:rgba(255,255,255,.7);">5 miles away</div></div>
-                                    </div>
-                                    <div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#2ecc71;">&#9829;</div></div>
+                            <div class="hero-competitor-track">
+                                <div class="hero-other-app hero-other-tinder app-slide" style="background:linear-gradient(135deg,#FE3C72,#FF6036);">
+                                    <div class="app-slide-name">Tinder</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Jessica, 26</div><div style="font-size:7px;color:rgba(255,255,255,.7);">5 miles away</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#2ecc71;">&#9829;</div></div></div><div class="app-slide-quote">&ldquo;Swipe. Wait. Pay.&rdquo;</div>
                                 </div>
-                                <div class="app-slide-quote">&ldquo;Swipe. Wait. Pay.&rdquo;</div>
+                                <div class="hero-other-app hero-other-bumble app-slide" style="background:linear-gradient(135deg,#FFC629,#FF9E00);">
+                                    <div class="app-slide-name" style="color:#1E1916;">Bumble</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;background:rgba(0,0,0,.08);"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;background:rgba(0,0,0,.1);"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Sarah, 24</div><div style="font-size:7px;color:rgba(255,255,255,.7);">23h left &middot; Her move</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round" style="color:#1E1916;">&#10005;</div><div class="mockup-btn-round" style="color:#1E1916;">&#9829;</div></div></div><div class="app-slide-quote" style="color:rgba(0,0,0,.55);">&ldquo;Like, then wait.&rdquo;</div>
+                                </div>
+                                <div class="hero-other-app hero-other-hinge app-slide" style="background:linear-gradient(160deg,#1A1A1A,#2A1A30);">
+                                    <div class="app-slide-name" style="color:#B66AC4;">Hinge</div><div class="app-slide-mockup" style="gap:6px;width:88%;"><div class="mockup-photo" style="height:115px;width:100%;border-radius:10px;background:rgba(182,106,196,.12);"></div><div class="mockup-card" style="padding:8px;width:100%;"><div style="font-size:8px;color:#ddd;">My biggest flex is...</div><div class="mockup-line w-3/4" style="margin-top:5px;"></div></div><div style="font-size:8px;color:#FFB0BE;">Send rose &middot; $3.99</div></div><div class="app-slide-quote">&ldquo;Pay for attention.&rdquo;</div>
+                                </div>
+                                <div class="hero-other-app hero-other-badoo app-slide" style="background:linear-gradient(135deg,#784CDA,#A567E8);">
+                                    <div class="app-slide-name">Badoo</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Anna, 25</div><div style="font-size:7px;color:rgba(255,255,255,.7);">2 km away</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#FF6E9D;">&#9829;</div></div></div><div class="app-slide-quote">&ldquo;Same cards. More credits.&rdquo;</div>
+                                </div>
                             </div>
                         </div>
                         <span class="hero-phone-label">The old model</span>
