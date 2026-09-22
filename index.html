@@ -368,6 +368,18 @@
             font-weight: 700;
         }
         .hero-phone-label-heartfull { color: var(--coral); }
+        @media (max-width: 639px) {
+            .hero-comparison {
+                flex-direction: column;
+                gap: .75rem;
+            }
+            .hero-comparison .phone-compare {
+                width: min(74vw, 280px);
+                height: auto;
+                aspect-ratio: 11 / 21;
+            }
+            .hero-vs { line-height: 1; }
+        }
         @media (min-width: 1024px) {
             .hero-section { min-height: 820px; }
             .hero-content-grid { gap: 2.5rem; }
@@ -523,7 +535,7 @@
                             <div class="phone-compare-notch"></div>
                             <div class="hf-demo">
                                 <div class="hf-demo-topbar"><span>Nearby</span><span class="hf-balance">&#9829; 42</span></div>
-                                <div class="hf-faces-bar"><div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div><div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div><div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div></div>
+                                <div class="hf-faces-bar"><div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div><div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div><div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div><div class="hf-face hf-face-4"><img src="illustrations/hf-demo-chloe.jpg" alt=""><span>Chloe</span></div><div class="hf-face hf-face-5"><img src="illustrations/hf-demo-isla.jpg" alt=""><span>Isla</span></div></div>
                                 <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-hearts-badge"><span>&#9829;</span> 247</div><div class="hf-profile-info"><div class="hf-profile-meta hf-profile-meta-1"><strong>Amelia, 29</strong><span>Fitzroy &middot; 2.4 km away</span></div><div class="hf-profile-meta hf-profile-meta-2"><strong>Maya, 27</strong><span>Carlton &middot; 1.1 km away</span></div><div class="hf-profile-meta hf-profile-meta-3"><strong>Sofia, 30</strong><span>St Kilda &middot; 4.8 km away</span></div></div><div class="hf-gallery-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
                                 <div class="hf-message-preview"><span class="hf-message-copy hf-message-copy-1"><span>That coffee spot looks lovely</span><b>&#9829; 3</b></span><span class="hf-message-copy hf-message-copy-2"><span>That hike looks like fun</span><b>&#9829; 2</b></span><span class="hf-message-copy hf-message-copy-3"><span>I love your style</span><b>&#9829; 4</b></span></div>
                                 <div class="hf-input"><div class="hf-input-text"><span class="hf-typing-copy hf-typing-copy-1">That coffee spot looks lovely</span><span class="hf-typing-copy hf-typing-copy-2">That hike looks like fun</span><span class="hf-typing-copy hf-typing-copy-3">I love your style</span></div><div class="hf-heart-attach">&#9829; 3</div><button class="hf-send" type="button" aria-label="Send message">&#10148;</button></div>
@@ -630,7 +642,7 @@
             </div>
 
             <!-- Phone Comparison: Them vs HeartFull -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-12 mb-16">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-12 mb-16" hidden>
                 <!-- Competitor Phone (Swipeable) -->
                 <div class="flex flex-col items-center flex-shrink-0">
                     <div class="phone-compare">
@@ -1007,6 +1019,8 @@
                                 <div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div>
                                 <div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div>
                                 <div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div>
+                                <div class="hf-face hf-face-4"><img src="illustrations/hf-demo-chloe.jpg" alt=""><span>Chloe</span></div>
+                                <div class="hf-face hf-face-5"><img src="illustrations/hf-demo-isla.jpg" alt=""><span>Isla</span></div>
                             </div>
                             <div class="hf-profile-card">
                                 <img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt="">
@@ -2148,10 +2162,10 @@
         }
         .hf-face {
             position: relative;
-            width: 40px;
+            width: 36px;
             height: 51px;
             overflow: visible;
-            flex: 0 0 40px;
+            flex: 0 0 36px;
             border: 2px solid transparent;
             border-radius: 21px 21px 8px 8px;
             background: #E4DDD8;
