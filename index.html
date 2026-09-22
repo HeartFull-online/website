@@ -365,6 +365,60 @@
         @keyframes hero-app-2 { 0%,22%,100% { opacity:0; transform:scale(1.03); } 25%,47% { opacity:1; transform:scale(1); } 50%,97% { opacity:0; transform:scale(1.03); } }
         @keyframes hero-app-3 { 0%,47%,100% { opacity:0; transform:scale(1.03); } 50%,72% { opacity:1; transform:scale(1); } 75%,97% { opacity:0; transform:scale(1.03); } }
         @keyframes hero-app-4 { 0%,72%,100% { opacity:0; transform:scale(1.03); } 75%,97% { opacity:1; transform:scale(1); } }
+        .hero-competitor-labels { position:relative; width:min(74vw,280px); height:1.25rem; margin-top:.65rem; text-align:center; }
+        .hero-competitor-label { position:absolute; inset:0; color:rgba(255,255,255,.65); font-size:.75rem; font-weight:700; opacity:0; }
+        .hero-competitor-label-tinder { animation: hero-label-1 16s ease-in-out infinite; }
+        .hero-competitor-label-bumble { animation: hero-label-2 16s ease-in-out infinite; }
+        .hero-competitor-label-hinge { animation: hero-label-3 16s ease-in-out infinite; }
+        .hero-competitor-label-badoo { animation: hero-label-4 16s ease-in-out infinite; }
+        @keyframes hero-label-1 { 0%,22% { opacity:1; } 25%,97% { opacity:0; } 100% { opacity:1; } }
+        @keyframes hero-label-2 { 0%,22%,100% { opacity:0; } 25%,47% { opacity:1; } 50%,97% { opacity:0; } }
+        @keyframes hero-label-3 { 0%,47%,100% { opacity:0; } 50%,72% { opacity:1; } 75%,97% { opacity:0; } }
+        @keyframes hero-label-4 { 0%,72%,100% { opacity:0; } 75%,97% { opacity:1; } }
+        .hero-competitor-track .app-slide { padding:22px 10px 10px; align-items:stretch; gap:7px; color:#1f1c1e; }
+        .legacy-status, .legacy-top, .legacy-bottom-nav { display:flex; align-items:center; justify-content:space-between; }
+        .legacy-status { font-size:6px; font-weight:700; line-height:1; padding:0 3px; }
+        .legacy-top { min-height:24px; padding:0 4px; font-size:12px; font-weight:800; }
+        .legacy-top-logo { font-size:14px; line-height:1; letter-spacing:-.8px; }
+        .legacy-bottom-nav { margin-top:auto; padding:5px 1px 0; color:#8c8589; font-size:6px; text-align:center; }
+        .legacy-bottom-nav span { display:flex; flex:1; flex-direction:column; align-items:center; gap:2px; }
+        .legacy-bottom-nav b { font-size:11px; font-weight:600; line-height:8px; }
+        .legacy-photo-card { position:relative; overflow:hidden; border-radius:13px; min-height:0; flex:1; }
+        .legacy-photo-card img { width:100%; height:100%; object-fit:cover; display:block; }
+        .legacy-photo-shade { position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(0,0,0,.78)); }
+        .legacy-photo-copy { position:absolute; bottom:10px; left:10px; right:10px; color:#fff; }
+        .legacy-photo-copy strong { display:block; font-size:14px; line-height:1.05; }
+        .legacy-photo-copy small { display:block; font-size:7px; margin-top:2px; color:rgba(255,255,255,.8); }
+        .tinder-ui { background:#fff; }
+        .tinder-ui .legacy-top { color:#fd5068; }
+        .tinder-actions { display:flex; align-items:center; justify-content:center; gap:7px; min-height:43px; }
+        .tinder-action { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.12); color:#fe526e; font-size:13px; font-weight:700; }
+        .tinder-action.small { width:20px; height:20px; font-size:9px; color:#e5a718; }
+        .tinder-action.blue { color:#2eb1ea; }.tinder-action.green { color:#36c989; }.tinder-action.purple { color:#9e5ae1; }
+        .bumble-ui { background:#f8f5ef; }
+        .bumble-ui .legacy-top { color:#1c1a18; }
+        .bumble-pill { display:inline-flex; align-items:center; gap:3px; padding:3px 6px; border-radius:20px; background:#fff; font-size:6px; color:#4b4642; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+        .bumble-profile { display:flex; flex:1; flex-direction:column; min-height:0; overflow:hidden; border-radius:14px; background:#fff; box-shadow:0 2px 10px rgba(66,54,39,.12); }
+        .bumble-profile img { height:61%; width:100%; object-fit:cover; }
+        .bumble-profile-copy { padding:7px 8px 5px; }
+        .bumble-profile-copy strong { font-size:13px; }.bumble-profile-copy small { display:block; color:#68625d; font-size:6px; margin:2px 0 5px; }
+        .bumble-tags { display:flex; flex-wrap:wrap; gap:3px; }.bumble-tags span { font-size:5px; color:#524c47; padding:3px 4px; background:#f6f1eb; border-radius:10px; }
+        .bumble-ui .legacy-bottom-nav span:first-child { color:#e69b00; font-weight:700; }
+        .hinge-ui { background:#f7f5f1; }
+        .hinge-ui .legacy-top { color:#242124; }.hinge-ui .legacy-top-logo { font-family:Georgia,serif; font-size:17px; letter-spacing:-1px; }
+        .hinge-photo { height:45%; flex:none; position:relative; overflow:hidden; border-radius:12px; }.hinge-photo img { width:100%; height:100%; object-fit:cover; }
+        .hinge-like { position:absolute; right:7px; bottom:7px; display:grid; place-items:center; width:23px; height:23px; border-radius:50%; color:#fff; background:#71505f; font-size:12px; }
+        .hinge-prompt { padding:8px 9px; background:#fff; border:1px solid #ece5df; border-radius:10px; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+        .hinge-prompt small { display:block; color:#786f70; font-size:6px; margin-bottom:3px; }.hinge-prompt b { font-size:8px; line-height:1.25; }
+        .hinge-rose { align-self:center; color:#a9536a; font-size:7px; font-weight:700; }
+        .hinge-ui .legacy-bottom-nav span:nth-child(2) { color:#6f4c5c; font-weight:700; }
+        .badoo-ui { background:#fff; }
+        .badoo-ui .legacy-top { color:#5e38a7; }.badoo-ui .legacy-top-logo { font-size:15px; letter-spacing:-1px; }
+        .badoo-badge { padding:3px 5px; color:#6640ac; background:#f1ecfb; border-radius:10px; font-size:6px; }
+        .badoo-profile { position:relative; flex:1; min-height:0; overflow:hidden; border-radius:13px; }.badoo-profile img { width:100%; height:100%; object-fit:cover; }
+        .badoo-online { position:absolute; top:8px; right:8px; width:8px; height:8px; background:#49c56d; border:2px solid #fff; border-radius:50%; }
+        .badoo-profile-copy { position:absolute; right:0; bottom:0; left:0; padding:20px 10px 9px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.72)); }.badoo-profile-copy strong { font-size:13px; }.badoo-profile-copy small { display:block; font-size:7px; margin-top:2px; }
+        .badoo-actions { display:flex; justify-content:center; gap:8px; padding-top:6px; }.badoo-actions span { display:grid; place-items:center; width:25px; height:25px; border-radius:50%; background:#f4f0fb; color:#6942ad; font-size:12px; }
         .hero-comparison .hf-demo { padding-top: 19px; }
         .hero-comparison .hf-face { width: 31px; height: 43px; flex-basis: 31px; }
         .hero-comparison .hf-face img { border-radius: 15px 15px 5px 5px; }
@@ -392,6 +446,8 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-other-app { animation: none !important; }
             .hero-other-tinder { opacity: 1; }
+            .hero-competitor-label { animation: none !important; }
+            .hero-competitor-label-tinder { opacity: 1; }
         }
         @media (max-width: 639px) {
             .hero-comparison {
@@ -544,21 +600,41 @@
                         <div class="phone-compare">
                             <div class="phone-compare-notch"></div>
                             <div class="hero-competitor-track">
-                                <div class="hero-other-app hero-other-tinder app-slide" style="background:linear-gradient(135deg,#FE3C72,#FF6036);">
-                                    <div class="app-slide-name">Tinder</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Jessica, 26</div><div style="font-size:7px;color:rgba(255,255,255,.7);">5 miles away</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#2ecc71;">&#9829;</div></div></div><div class="app-slide-quote">&ldquo;Swipe. Wait. Pay.&rdquo;</div>
+                                <div class="hero-other-app hero-other-tinder app-slide tinder-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span>&#9786;</span><span class="legacy-top-logo">&#9825;</span><span>&#9993;</span></div>
+                                    <div class="legacy-photo-card"><img src="illustrations/hf-demo-chloe.jpg" alt=""><div class="legacy-photo-shade"></div><div class="legacy-photo-copy"><strong>Jessica, 26</strong><small>2 miles away</small></div></div>
+                                    <div class="tinder-actions"><span class="tinder-action small">&#8634;</span><span class="tinder-action">&#10005;</span><span class="tinder-action small blue">&#9733;</span><span class="tinder-action green">&#9829;</span><span class="tinder-action small purple">&#9889;</span></div>
                                 </div>
-                                <div class="hero-other-app hero-other-bumble app-slide" style="background:linear-gradient(135deg,#FFC629,#FF9E00);">
-                                    <div class="app-slide-name" style="color:#1E1916;">Bumble</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;background:rgba(0,0,0,.08);"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;background:rgba(0,0,0,.1);"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Sarah, 24</div><div style="font-size:7px;color:rgba(255,255,255,.7);">23h left &middot; Her move</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round" style="color:#1E1916;">&#10005;</div><div class="mockup-btn-round" style="color:#1E1916;">&#9829;</div></div></div><div class="app-slide-quote" style="color:rgba(0,0,0,.55);">&ldquo;Like, then wait.&rdquo;</div>
+                                <div class="hero-other-app hero-other-bumble app-slide bumble-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">bumble</span><span class="bumble-pill">&#9679; Date</span></div>
+                                    <div class="bumble-profile"><img src="illustrations/hf-demo-isla.jpg" alt=""><div class="bumble-profile-copy"><strong>Sarah, 24 &#10003;</strong><small>Registered Nurse</small><div class="bumble-tags"><span>5'9&Prime;</span><span>Relationship</span><span>Capricorn</span></div></div></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9679;</b>Discover</span><span><b>&#9825;</b>Liked</span><span><b>&#9993;</b>Chats</span><span><b>&#9786;</b>You</span></div>
                                 </div>
-                                <div class="hero-other-app hero-other-hinge app-slide" style="background:linear-gradient(160deg,#1A1A1A,#2A1A30);">
-                                    <div class="app-slide-name" style="color:#B66AC4;">Hinge</div><div class="app-slide-mockup" style="gap:6px;width:88%;"><div class="mockup-photo" style="height:115px;width:100%;border-radius:10px;background:rgba(182,106,196,.12);"></div><div class="mockup-card" style="padding:8px;width:100%;"><div style="font-size:8px;color:#ddd;">My biggest flex is...</div><div class="mockup-line w-3/4" style="margin-top:5px;"></div></div><div style="font-size:8px;color:#FFB0BE;">Send rose &middot; $3.99</div></div><div class="app-slide-quote">&ldquo;Pay for attention.&rdquo;</div>
+                                <div class="hero-other-app hero-other-hinge app-slide hinge-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span>&#9776;</span><span class="legacy-top-logo">Hinge</span><span>&#9993;</span></div>
+                                    <div class="hinge-photo"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span class="hinge-like">&#9825;</span></div>
+                                    <div class="hinge-prompt"><small>My simple pleasures</small><b>Sunday markets, good pasta and a long walk home.</b></div>
+                                    <div class="hinge-rose">&#10048; Send rose &middot; $3.99</div>
+                                    <div class="legacy-bottom-nav"><span><b>&#9681;</b>Discover</span><span><b>&#9825;</b>Likes</span><span><b>&#9993;</b>Matches</span><span><b>&#9786;</b>Profile</span></div>
                                 </div>
-                                <div class="hero-other-app hero-other-badoo app-slide" style="background:linear-gradient(135deg,#784CDA,#A567E8);">
-                                    <div class="app-slide-name">Badoo</div><div class="app-slide-mockup"><div class="mockup-card" style="height:190px;padding:0;overflow:hidden;position:relative;"><div class="mockup-photo" style="height:100%;margin:0;border-radius:12px;"></div><div style="position:absolute;right:0;bottom:0;left:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));"><div style="font-size:13px;font-weight:700;color:#fff;">Anna, 25</div><div style="font-size:7px;color:rgba(255,255,255,.7);">2 km away</div></div></div><div class="mockup-actions" style="margin-top:8px;"><div class="mockup-btn-round">&#10005;</div><div class="mockup-btn-round" style="color:#FF6E9D;">&#9829;</div></div></div><div class="app-slide-quote">&ldquo;Same cards. More credits.&rdquo;</div>
+                                <div class="hero-other-app hero-other-badoo app-slide badoo-ui">
+                                    <div class="legacy-status"><span>9:41</span><span>&#9646;&#9646;&#9646; &#9679; 100%</span></div>
+                                    <div class="legacy-top"><span class="legacy-top-logo">badoo</span><span class="badoo-badge">&#9679; Nearby</span></div>
+                                    <div class="badoo-profile"><img src="illustrations/hf-demo-maya.jpg" alt=""><span class="badoo-online"></span><div class="badoo-profile-copy"><strong>Anna, 25</strong><small>&#9679; Online &middot; 2 km away</small></div></div>
+                                    <div class="badoo-actions"><span>&#10005;</span><span>&#9825;</span><span>&#9993;</span></div>
+                                    <div class="legacy-bottom-nav"><span><b>&#8982;</b>People</span><span><b>&#9825;</b>Encounters</span><span><b>&#10084;</b>Likes</span><span><b>&#9993;</b>Chats</span><span><b>&#9786;</b>You</span></div>
                                 </div>
                             </div>
                         </div>
-                        <span class="hero-phone-label">The old model</span>
+                        <div class="hero-competitor-labels">
+                            <span class="hero-competitor-label hero-competitor-label-tinder">The hookup slot machine</span>
+                            <span class="hero-competitor-label hero-competitor-label-bumble">Tinder, but yellow</span>
+                            <span class="hero-competitor-label hero-competitor-label-hinge">Designed to delete your wallet</span>
+                            <span class="hero-competitor-label hero-competitor-label-badoo">The one nobody chose on purpose</span>
+                        </div>
                     </div>
                     <div class="hero-vs">vs</div>
                     <div class="flex flex-col items-center">
