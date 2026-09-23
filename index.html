@@ -2583,6 +2583,8 @@
         @keyframes hf-meta-1 { 0%,29%,100% { opacity:1; transform:translateY(0); } 34%,95% { opacity:0; transform:translateY(4px); } }
         @keyframes hf-meta-2 { 0%,29%,100% { opacity:0; transform:translateY(4px); } 34%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(4px); } }
         @keyframes hf-meta-3 { 0%,62%,100% { opacity:0; transform:translateY(4px); } 67%,95% { opacity:1; transform:translateY(0); } }
+        /* Thread stacks from the bottom: when a message is sent, the visible
+           bubbles lift together by one bubble height, then the new one enters. */
         .hf-thread { position:absolute; z-index:5; right:7px; bottom:7px; left:7px; height:43px; overflow:hidden; }
         .hf-thread-empty, .hf-thread-bubble { position:absolute; font-size:5.8px; line-height:1.2; opacity:0; }
         .hf-thread-empty { right:4px; bottom:4px; left:4px; color:#9a8f89; text-align:center; }
@@ -2592,18 +2594,20 @@
         .hf-thread-mine small { color:#FFE1E6; text-align:right; }
         .hf-thread-theirs { left:0; color:#554b46; background:#fff; border:1px solid #E6DFDA; border-radius:8px 8px 8px 3px; }
         .hf-thread-first { bottom:0; animation:hf-thread-first 12s ease-in-out infinite; }
-        .hf-thread-maya-old { top:0; animation:hf-thread-maya-old 12s ease-in-out infinite; }
-        .hf-thread-maya-new { right:0; bottom:0; animation:hf-thread-maya-new 12s ease-in-out infinite; }
-        .hf-thread-sofia-old { top:7px; animation:hf-thread-sofia-old 12s ease-in-out infinite; }
-        .hf-thread-sofia-new { right:0; bottom:0; animation:hf-thread-sofia-new 12s ease-in-out infinite; }
-        .hf-thread-maya-old.hf-thread-mine { top:15px; right:0; left:auto; }
+        .hf-thread-maya-old { bottom:15px; animation:hf-thread-maya-old 12s ease-in-out infinite; }
+        .hf-thread-maya-old.hf-thread-mine { bottom:0; }
+        .hf-thread-maya-old.hf-thread-theirs { animation-name:hf-thread-maya-top; }
+        .hf-thread-maya-new { bottom:0; animation:hf-thread-maya-new 12s ease-in-out infinite; }
+        .hf-thread-sofia-old { bottom:0; animation:hf-thread-sofia-old 12s ease-in-out infinite; }
+        .hf-thread-sofia-new { bottom:0; animation:hf-thread-sofia-new 12s ease-in-out infinite; }
         .hf-thread-empty-1 { animation:hf-thread-empty-1 12s ease-in-out infinite; }
-        @keyframes hf-thread-empty-1 { 0%,20% { opacity:1; transform:translateY(0); } 23%,100% { opacity:0; transform:translateY(4px); } }
-        @keyframes hf-thread-first { 0%,22%,100% { opacity:0; transform:translateY(6px); } 24%,29% { opacity:1; transform:translateY(0); } 34%,95% { opacity:0; transform:translateY(6px); } }
-        @keyframes hf-thread-maya-old { 0%,29%,100% { opacity:0; transform:translateY(4px); } 34%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(4px); } }
-        @keyframes hf-thread-maya-new { 0%,49%,100% { opacity:0; transform:translateY(6px); } 52%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(6px); } }
-        @keyframes hf-thread-sofia-old { 0%,62%,100% { opacity:0; transform:translateY(4px); } 67%,95% { opacity:1; transform:translateY(0); } }
-        @keyframes hf-thread-sofia-new { 0%,82%,100% { opacity:0; transform:translateY(6px); } 85%,95% { opacity:1; transform:translateY(0); } }
+        @keyframes hf-thread-empty-1 { 0%,21% { opacity:1; transform:translateY(0); } 23% { opacity:0; transform:translateY(-12px); } 23.1%,100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-first { 0%,23% { opacity:0; transform:translateY(6px); } 25%,29% { opacity:1; transform:translateY(0); } 34%,100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-maya-old { 0%,29% { opacity:0; transform:translateY(4px); } 34%,49% { opacity:1; transform:translateY(0); } 51%,62% { opacity:1; transform:translateY(-22px); } 67%,100% { opacity:0; transform:translateY(-22px); } }
+        @keyframes hf-thread-maya-top { 0%,29% { opacity:0; transform:translateY(4px); } 34%,49% { opacity:1; transform:translateY(0); } 51%,100% { opacity:0; transform:translateY(-22px); } }
+        @keyframes hf-thread-maya-new { 0%,51% { opacity:0; transform:translateY(6px); } 53%,62% { opacity:1; transform:translateY(0); } 67%,100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-sofia-old { 0%,62% { opacity:0; transform:translateY(4px); } 67%,82% { opacity:1; transform:translateY(0); } 84%,95% { opacity:1; transform:translateY(-22px); } 100% { opacity:0; transform:translateY(-22px); } }
+        @keyframes hf-thread-sofia-new { 0%,84% { opacity:0; transform:translateY(6px); } 86%,95% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(0); } }
         .hf-message-preview {
             position: relative;
             display: block;
@@ -2648,7 +2652,7 @@
             .hf-lifestyle-1 { opacity: 1; }
             .hf-lifestyle-2, .hf-lifestyle-3 { opacity: 0; }
             .hf-face-1 { border-color: #FF5870; }
-            .hf-profile-meta-1, .hf-message-copy-1, .hf-typing-copy-1 { opacity: 1; transform: none; }
+            .hf-profile-meta-1, .hf-message-copy-1, .hf-typing-copy-1, .hf-thread-empty-1 { opacity: 1; transform: none; }
         }
 
         /* Device showcase */
