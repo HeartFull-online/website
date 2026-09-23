@@ -700,7 +700,7 @@
                             <div class="hf-demo">
                                 <div class="hf-demo-topbar"><span>Nearby</span><span class="hf-balance">&#9829; 42</span></div>
                                 <div class="hf-faces-bar"><div class="hf-face hf-face-1"><img src="illustrations/hf-demo-amelia.jpg" alt=""><span>Amelia</span></div><div class="hf-face hf-face-2"><img src="illustrations/hf-demo-maya.jpg" alt=""><span>Maya</span></div><div class="hf-face hf-face-3"><img src="illustrations/hf-demo-sofia.jpg" alt=""><span>Sofia</span></div><div class="hf-face hf-face-4"><img src="illustrations/hf-demo-chloe.jpg" alt=""><span>Chloe</span></div><div class="hf-face hf-face-5"><img src="illustrations/hf-demo-isla.jpg" alt=""><span>Isla</span></div></div>
-                                <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><img class="hf-gallery-peek" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-swipe-cue" aria-hidden="true">&#9757;</div><div class="hf-thread"><div class="hf-thread-empty hf-thread-empty-1">&#9825; Say hello &mdash; first message costs 1 heart</div><div class="hf-thread-bubble hf-thread-mine hf-thread-first">That coffee spot looks lovely <small>&#9829; -1</small></div><div class="hf-thread-bubble hf-thread-theirs hf-thread-maya-old">That hike was so worth it!</div><div class="hf-thread-bubble hf-thread-mine hf-thread-maya-old">It looks beautiful</div><div class="hf-thread-bubble hf-thread-mine hf-thread-maya-new">That hike looks like fun <small>&#9829; -2</small></div><div class="hf-thread-bubble hf-thread-theirs hf-thread-sofia-old">I make that pasta every Sunday.</div><div class="hf-thread-bubble hf-thread-mine hf-thread-sofia-new">I love your style <small>&#9829; -4</small></div></div></div>
+                                <div class="hf-profile-card"><img class="hf-lifestyle hf-lifestyle-1" src="illustrations/hf-demo-lifestyle-1.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-2" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><img class="hf-lifestyle hf-lifestyle-3" src="illustrations/hf-demo-lifestyle-3.jpg" alt=""><img class="hf-gallery-peek" src="illustrations/hf-demo-lifestyle-2.jpg" alt=""><div class="hf-profile-shade"></div><div class="hf-photo-tap" aria-hidden="true"></div><div class="hf-swipe-cue" aria-hidden="true">&#9757;</div><div class="hf-thread"><div class="hf-thread-empty hf-thread-empty-1">&#9825; Say hello &mdash; first message costs 1 heart</div><div class="hf-thread-convo hf-thread-convo-1"><div class="hf-thread-bubble hf-thread-mine hf-thread-first">That coffee spot looks lovely <small>&#9829; -1</small></div></div><div class="hf-thread-convo hf-thread-convo-2"><div class="hf-thread-bubble hf-thread-theirs">Back from Patagonia!</div><div class="hf-thread-bubble hf-thread-mine">No way, how was it?</div><div class="hf-thread-bubble hf-thread-theirs">That hike was so worth it!</div><div class="hf-thread-bubble hf-thread-mine">It looks beautiful</div><div class="hf-thread-bubble hf-thread-theirs">Want to do a trail near here?</div><div class="hf-thread-bubble hf-thread-mine hf-thread-maya-new">That hike looks like fun <small>&#9829; -2</small></div></div><div class="hf-thread-convo hf-thread-convo-3"><div class="hf-thread-bubble hf-thread-theirs">Found my new favourite spot</div><div class="hf-thread-bubble hf-thread-mine">The lamps are gorgeous</div><div class="hf-thread-bubble hf-thread-theirs">I copied them for my kitchen</div><div class="hf-thread-bubble hf-thread-mine">What do you cook in there?</div><div class="hf-thread-bubble hf-thread-theirs">I make that pasta every Sunday.</div><div class="hf-thread-bubble hf-thread-mine hf-thread-sofia-new">I love your style <small>&#9829; -4</small></div></div></div></div>
                                 <div class="hf-input"><div class="hf-input-text"><span class="hf-typing-copy hf-typing-copy-1">That coffee spot looks lovely</span><span class="hf-typing-copy hf-typing-copy-2">That hike looks like fun</span><span class="hf-typing-copy hf-typing-copy-3">I love your style</span></div><div class="hf-heart-attach"><span class="hf-heart-cost hf-heart-cost-1">&#9829; 1</span><span class="hf-heart-cost hf-heart-cost-2">&#9829; 2</span><span class="hf-heart-cost hf-heart-cost-3">&#9829; 4</span></div><button class="hf-send" type="button" aria-label="Send message">&#10148;</button></div>
                             </div>
                         </div>
@@ -2583,31 +2583,30 @@
         @keyframes hf-meta-1 { 0%,29%,100% { opacity:1; transform:translateY(0); } 34%,95% { opacity:0; transform:translateY(4px); } }
         @keyframes hf-meta-2 { 0%,29%,100% { opacity:0; transform:translateY(4px); } 34%,62% { opacity:1; transform:translateY(0); } 67%,95% { opacity:0; transform:translateY(4px); } }
         @keyframes hf-meta-3 { 0%,62%,100% { opacity:0; transform:translateY(4px); } 67%,95% { opacity:1; transform:translateY(0); } }
-        /* Thread stacks from the bottom: when a message is sent, the visible
-           bubbles lift together by one bubble height, then the new one enters. */
-        .hf-thread { position:absolute; z-index:5; right:7px; bottom:7px; left:7px; height:43px; overflow:hidden; }
-        .hf-thread-empty, .hf-thread-bubble { position:absolute; font-size:5.8px; line-height:1.2; opacity:0; }
-        .hf-thread-empty { right:4px; bottom:4px; left:4px; color:#9a8f89; text-align:center; }
-        .hf-thread-bubble { max-width:88%; padding:3px 5px; box-shadow:0 1px 2px rgba(30,25,22,.08); }
+        /* Each conversation stacks from the bottom and waits one bubble lower.
+           When a message is sent, the whole conversation lifts together, older
+           messages fade out at the top, then the new bubble enters. */
+        .hf-thread { position:absolute; z-index:5; right:7px; bottom:7px; left:7px; height:90px; overflow:hidden; -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 14px); mask-image:linear-gradient(to bottom, transparent 0, #000 14px); }
+        .hf-thread-empty { position:absolute; right:4px; bottom:4px; left:4px; font-size:5.8px; line-height:1.2; color:#9a8f89; text-align:center; opacity:0; }
+        .hf-thread-convo { position:absolute; right:0; bottom:0; left:0; display:flex; flex-direction:column; gap:2px; opacity:0; }
+        .hf-thread-convo-1 { opacity:1; }
+        .hf-thread-convo-2 { animation:hf-thread-convo-2 12s ease-in-out infinite; }
+        .hf-thread-convo-3 { animation:hf-thread-convo-3 12s ease-in-out infinite; }
+        .hf-thread-bubble { max-width:78%; padding:3px 5px; font-size:5.8px; line-height:1.2; box-shadow:0 1px 2px rgba(30,25,22,.08); }
         .hf-thread-bubble small { display:block; margin-top:1px; font-size:4.8px; font-weight:700; }
-        .hf-thread-mine { right:0; color:#fff; background:#FF5870; border-radius:8px 8px 3px 8px; }
+        .hf-thread-mine { align-self:flex-end; color:#fff; background:#FF5870; border-radius:8px 8px 3px 8px; }
         .hf-thread-mine small { color:#FFE1E6; text-align:right; }
-        .hf-thread-theirs { left:0; color:#554b46; background:#fff; border:1px solid #E6DFDA; border-radius:8px 8px 8px 3px; }
-        .hf-thread-first { bottom:0; animation:hf-thread-first 12s ease-in-out infinite; }
-        .hf-thread-maya-old { bottom:15px; animation:hf-thread-maya-old 12s ease-in-out infinite; }
-        .hf-thread-maya-old.hf-thread-mine { bottom:0; }
-        .hf-thread-maya-old.hf-thread-theirs { animation-name:hf-thread-maya-top; }
-        .hf-thread-maya-new { bottom:0; animation:hf-thread-maya-new 12s ease-in-out infinite; }
-        .hf-thread-sofia-old { bottom:0; animation:hf-thread-sofia-old 12s ease-in-out infinite; }
-        .hf-thread-sofia-new { bottom:0; animation:hf-thread-sofia-new 12s ease-in-out infinite; }
+        .hf-thread-theirs { align-self:flex-start; color:#554b46; background:#fff; border:1px solid #E6DFDA; border-radius:8px 8px 8px 3px; }
+        .hf-thread-first { opacity:0; animation:hf-thread-first 12s ease-in-out infinite; }
+        .hf-thread-maya-new { opacity:0; animation:hf-thread-maya-new 12s ease-in-out infinite; }
+        .hf-thread-sofia-new { opacity:0; animation:hf-thread-sofia-new 12s ease-in-out infinite; }
         .hf-thread-empty-1 { animation:hf-thread-empty-1 12s ease-in-out infinite; }
         @keyframes hf-thread-empty-1 { 0%,21% { opacity:1; transform:translateY(0); } 23% { opacity:0; transform:translateY(-12px); } 23.1%,100% { opacity:0; transform:translateY(0); } }
         @keyframes hf-thread-first { 0%,23% { opacity:0; transform:translateY(6px); } 25%,29% { opacity:1; transform:translateY(0); } 34%,100% { opacity:0; transform:translateY(0); } }
-        @keyframes hf-thread-maya-old { 0%,29% { opacity:0; transform:translateY(4px); } 34%,49% { opacity:1; transform:translateY(0); } 51%,62% { opacity:1; transform:translateY(-22px); } 67%,100% { opacity:0; transform:translateY(-22px); } }
-        @keyframes hf-thread-maya-top { 0%,29% { opacity:0; transform:translateY(4px); } 34%,49% { opacity:1; transform:translateY(0); } 51%,100% { opacity:0; transform:translateY(-22px); } }
-        @keyframes hf-thread-maya-new { 0%,51% { opacity:0; transform:translateY(6px); } 53%,62% { opacity:1; transform:translateY(0); } 67%,100% { opacity:0; transform:translateY(0); } }
-        @keyframes hf-thread-sofia-old { 0%,62% { opacity:0; transform:translateY(4px); } 67%,82% { opacity:1; transform:translateY(0); } 84%,95% { opacity:1; transform:translateY(-22px); } 100% { opacity:0; transform:translateY(-22px); } }
-        @keyframes hf-thread-sofia-new { 0%,84% { opacity:0; transform:translateY(6px); } 86%,95% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-convo-2 { 0%,29% { opacity:0; transform:translateY(26px); } 34%,49% { opacity:1; transform:translateY(22px); } 51%,62% { opacity:1; transform:translateY(0); } 67%,100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-convo-3 { 0%,62% { opacity:0; transform:translateY(26px); } 67%,82% { opacity:1; transform:translateY(22px); } 84%,95% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(0); } }
+        @keyframes hf-thread-maya-new { 0%,51% { opacity:0; transform:translateY(6px); } 53%,100% { opacity:1; transform:translateY(0); } }
+        @keyframes hf-thread-sofia-new { 0%,84% { opacity:0; transform:translateY(6px); } 86%,100% { opacity:1; transform:translateY(0); } }
         .hf-message-preview {
             position: relative;
             display: block;
