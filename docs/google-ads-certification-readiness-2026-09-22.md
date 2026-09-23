@@ -1,12 +1,13 @@
-# Google Ads dating-certification readiness — 22 September 2026
+# Google Ads dating-certification readiness — updated 23 September 2026
 
 ## Decision
 
 **Not ready to submit yet.** HeartFull is eligible in principle for Google's
 **General Dating and Companionship Certificate**: it is an adult general-dating
 service, not a compensated-dating or sexually focused service. The required
-product and policy hardening is implemented in this working copy but must be
-released and verified before the application is sent.
+product and policy hardening is now live and verified. Reviewer access and the
+final paid-ad destination set still need to be prepared before the application
+is sent.
 
 The controlling policy is Google's [Dating and Companionship policy](https://support.google.com/adspolicy/answer/15328393?hl=en).
 It requires the service to exclude under-18 users, avoid deceptive or
@@ -15,7 +16,7 @@ domains and reviewer access.
 
 ## Audit scope
 
-Reviewed on 22 September 2026:
+Reviewed on 22 September 2026; production status updated 23 September 2026:
 
 - Google Ads account state and its 21 September policy notice.
 - `about.heartfull.online` marketing site and its app/download destinations.
@@ -33,12 +34,12 @@ review after deployment or for Google's certification decision.
 | --- | --- | --- |
 | General dating service | HeartFull presents a general, consensual dating product; its public terms prohibit explicit, illegal, deceptive, and commercial misuse. | Ready |
 | No compensated dating | No source or public product copy promotes sugar dating, escorting, or payment for companionship or sexual activity. | Ready |
-| Adult-only access | The UI offered ages 18+ only, but did not require an explicit affirmation and Firestore accepted a forged under-18 age. | Fixed in code; release required |
-| Accurate public claims | Child-safety copy overstated the existing control as "age verification"; the app stores an age, not a date of birth. | Fixed in code; release required |
+| Adult-only access | The UI offered ages 18+ only, but did not require an explicit affirmation and Firestore accepted a forged under-18 age. | Live: explicit affirmation and server-side 18–99 enforcement |
+| Accurate public claims | Child-safety copy overstated the existing control as "age verification"; the app stores an age, not a date of birth. | Live: public copy now describes the actual age gate |
 | Synthetic profiles and chatbots | No product code creates dating profiles or messages through an AI service. Existing policies prohibit fake or misleading profiles. | Ready; keep this true |
 | Racy or sexually focused content | Terms prohibit sexually explicit or pornographic content. Do not use racy assets or hookup/sexual-outcome framing in ads or landing pages. | Creative review required |
-| Safety and reporting | Public child-safety page plus in-app reporting/blocking and photo-review pathways are present. | Ready after release of corrected page |
-| Transparent public explanation | New `/advertising-standards.html` explains adult access, prohibited paid companionship, authenticity, safety, and ad-claim limits. | New page; release required |
+| Safety and reporting | Public child-safety page plus in-app reporting/blocking and photo-review pathways are present. | Live and reachable |
+| Transparent public explanation | Public standards pages explain adult access, prohibited paid companionship, authenticity, safety, and ad-claim limits. | Live at `https://about.heartfull.online/advertising-standards.html` and `https://heartfull.online/advertising-standards/` |
 | Reviewer access | Google may need access beyond the public landing page. No dedicated reviewer test account or access instructions are prepared. | Required before submission |
 | Destinations | The certification form needs every service domain and app ID used in the journey. The final paid-ad URL set is not yet frozen. | Required before submission |
 
@@ -56,28 +57,40 @@ review after deployment or for Google's certification decision.
    incorrectly requiring phone-only identity verification.
 6. The marketing site now has an accessible public standards page, linked from
    the home-page footer and sitemap.
+7. The web/PWA has a matching standards page at
+   `https://heartfull.online/advertising-standards/`.
+
+## Production release evidence
+
+- 23 September 2026: web/PWA adult-only onboarding and its corrected public
+  policy pages were deployed in app release `1.0.265+272`
+  (`7a874c9eaa24`); the post-deploy version smoke test passed.
+- 23 September 2026: Firestore rules and indexes were deployed from
+  `7a874c9eaa24` after the app release. The 198-test rules suite and Firebase's
+  deployment compilation gate passed.
+- 23 September 2026: the public standards route was deployed in web/PWA
+  release `1.0.266+273` (`3361e3587643`); the post-deploy version smoke test
+  passed. The live route returned HTTP 200 and contains the adult-only and
+  advertising-claim statements.
 
 ## Submission checklist
 
 Before submitting the certificate application:
 
-1. Release the website and the web/PWA hardening, then verify the live pages
-   and onboarding flow. Include native releases if the store apps are listed
-   as certification destinations.
-2. Prepare one Google reviewer test account that can complete the relevant
+1. Prepare one Google reviewer test account that can complete the relevant
    journey. Keep credentials out of this repository; provide them only in
    Google's application form.
-3. Build the final destination inventory: `about.heartfull.online`,
+2. Build the final destination inventory: `about.heartfull.online`,
    `heartfull.online`, any sign-in/redirect domain, and the Google Play/Apple
    App Store IDs if included in the campaign or service journey.
-4. Use the **General** certificate for an ordinary HeartFull app campaign or a
+3. Use the **General** certificate for an ordinary HeartFull app campaign or a
    general product landing page. Do not send ads to Dating Institute comparison
    or ranking pages: those are policy-defined dating aggregators and are
    restricted to Search.
-5. Review every live ad asset and destination together. The copy must identify
+4. Review every live ad asset and destination together. The copy must identify
    HeartFull accurately, be 18+ appropriate, avoid racy imagery and outcome
    promises, and match the page a person reaches.
-6. Submit the certificate, wait for Google’s decision, then confirm every ad
+5. Submit the certificate, wait for Google’s decision, then confirm every ad
    group is **Eligible** before interpreting campaign performance.
 
 ## Residual risks
