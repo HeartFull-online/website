@@ -41,7 +41,7 @@ review after deployment or for Google's certification decision.
 | Safety and reporting | Public child-safety page plus in-app reporting/blocking and photo-review pathways are present. | Live and reachable |
 | Transparent public explanation | Public standards pages explain adult access, prohibited paid companionship, authenticity, safety, and ad-claim limits. | Live at `https://about.heartfull.online/advertising-standards.html` and `https://heartfull.online/advertising-standards/` |
 | Reviewer access | Google may need access beyond the public landing page. No dedicated reviewer test account or access instructions are prepared. | Required before submission |
-| Destinations | The certification form needs every service domain and app ID used in the journey. The final paid-ad URL set is not yet frozen. | Required before submission |
+| Destinations | The certification form needs every service domain and app ID used in the journey. Candidate destinations, route checks, and the signed-out journey findings are in the [website-traffic pack](google-ads-website-traffic-pack-2026-09-23.md); the final paid-ad URL set is not yet frozen. | Required before submission |
 
 ## Implemented hardening
 
@@ -82,7 +82,11 @@ Before submitting the certificate application:
    Google's application form.
 2. Build the final destination inventory: `about.heartfull.online`,
    `heartfull.online`, any sign-in/redirect domain, and the Google Play/Apple
-   App Store IDs if included in the campaign or service journey.
+   App Store IDs if included in the campaign or service journey. The signed-out
+   `heartfull.online` sign-in screen shows a Google Play badge (checked 25
+   September 2026), so the Play app ID is in scope unless that destination
+   changes. Start from the
+   [website-traffic pack](google-ads-website-traffic-pack-2026-09-23.md).
 3. Use the **General** certificate for an ordinary HeartFull app campaign or a
    general product landing page. Do not send ads to Dating Institute comparison
    or ranking pages: those are policy-defined dating aggregators and are
@@ -92,6 +96,16 @@ Before submitting the certificate application:
    promises, and match the page a person reaches.
 5. Submit the certificate, wait for Google’s decision, then confirm every ad
    group is **Eligible** before interpreting campaign performance.
+
+## Related documents
+
+- [Website-traffic destination and creative pack](google-ads-website-traffic-pack-2026-09-23.md):
+  candidate campaign URLs, 25 September 2026 route verification and
+  signed-out journey check, search/display/video drafts, asset requirements,
+  policy-page parity status, and the two-person pre-launch review checklist
+  (issue #8).
+- [Google Ads campaign status](google-ads-status-2026-09-22.md): current
+  disapproval and eligibility state.
 
 ## Residual risks
 

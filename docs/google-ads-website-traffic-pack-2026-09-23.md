@@ -1,6 +1,9 @@
 # Google Ads website-traffic pack — draft for policy review
 
-Status: **draft; do not launch from this document alone.**
+Status: **draft; do not launch from this document alone.** Last updated
+25 September 2026 (route verification, signed-out journey check, display and
+video copy). The two-person review and certificate submission are still
+outstanding and are human steps; nothing in this pack has been submitted.
 
 This pack is the proposed starting point for HeartFull's General Dating and
 Companionship certificate and a later website-traffic campaign. It is not a
@@ -18,12 +21,69 @@ outcome.
 
 | Use | URL | Status | Notes |
 | --- | --- | --- | --- |
-| Primary website-traffic destination | `https://heartfull.online/` | Candidate | Web/PWA entry point; confirm the signed-out journey and conversion event before launch. |
+| Primary website-traffic destination | `https://heartfull.online/` | Candidate — **decision needed** | Signed out, this redirects to the sign-in screen; see "Signed-out journey check" below before freezing it. |
 | Public standards evidence | `https://heartfull.online/advertising-standards/` | Live | Use for Google review or policy evidence, not as a default acquisition landing page. |
 | Marketing-site standards evidence | `https://about.heartfull.online/advertising-standards.html` | Live | Mirrors the adult-only, authenticity, safety, and advertising standards. |
 | Terms | `https://heartfull.online/terms/` | Live | Supporting policy page. |
-| Privacy | `https://heartfull.online/privacy/` | Live | Supporting policy page. |
-| Child safety | `https://heartfull.online/child-safety/` | Live | Supporting policy page. |
+| Privacy | `https://heartfull.online/privacy/` | Live; wording follow-up | Supporting policy page. Still says "matched users" / "your matches"; see "Policy-page parity". |
+| Child safety | `https://heartfull.online/child-safety/` | Live | Supporting policy page; describes the age gate, in-app Report, and blocking. |
+| Account deletion | `https://heartfull.online/delete-account/` | Live | Supporting page, linked from marketing-site support. |
+| Support, reporting, and blocking | `https://about.heartfull.online/support.html` | Live | Contact, report-a-user, block-someone, and deletion guidance. |
+
+## Route verification — 25 September 2026
+
+Every supporting route was fetched signed out (plain HTTPS GET, no cookies)
+and returned **HTTP 200** with the expected page title:
+
+| URL | Result | Content check |
+| --- | --- | --- |
+| `https://heartfull.online/` | 200 → `/#/signin` | Flutter sign-in screen; see below. |
+| `https://heartfull.online/advertising-standards/` | 200 | 18+ onboarding, report and block, `support@` contact. |
+| `https://heartfull.online/terms/` | 200 | "at least 18 years old". |
+| `https://heartfull.online/privacy/` | 200 | "aged 18 and over"; match wording outstanding. |
+| `https://heartfull.online/child-safety/` | 200 | Age gate, Report button, blocking, `support@` contact. |
+| `https://heartfull.online/delete-account/` | 200 | Deletion instructions. |
+| `https://about.heartfull.online/advertising-standards.html` | 200 | Adults-only, report and block, links to support. |
+| `https://about.heartfull.online/support.html` | 200 | Report-a-user and deletion FAQ. |
+| `https://about.heartfull.online/terms.html` | 200 | 18+ eligibility. |
+| `https://about.heartfull.online/privacy.html` | 200 | Data collection and rights. |
+
+Re-run this check against the frozen destination set on the day of submission;
+a deploy between now and then invalidates it.
+
+## Signed-out journey check — 25 September 2026
+
+Checked in a clean browser at desktop (1280×900) and mobile (390×844) sizes,
+app build `v1.0.269+276 · 8b51e6a`. A signed-out visit to
+`https://heartfull.online/` lands on `/#/signin`, which shows:
+
+- the HeartFull name, logo, and tagline "The ethical dating app — your
+  character is your currency";
+- phone-number sign-in ("Send code" / "Continue"), defaulting to the +1
+  country code;
+- links to "About the App", "Become a promoter", Terms, and Privacy Policy;
+- a **Get it on Google Play** badge.
+
+Decisions required before this URL can be frozen as the ad destination:
+
+1. **App-store link.** The Google Play badge is part of the landing journey.
+   Either include the Google Play app ID in the certificate application, or
+   use a destination without the badge. The targeting guardrail below forbids
+   app-store links that are not in the certification scope.
+2. **Service description and 18+ statement.** The sign-in screen describes the
+   service only through its tagline and does not state that HeartFull is for
+   adults. Google reviews whether the landing page accurately describes the
+   service. Either add a short adults-only service description to the signed-out
+   screen (app repository), or choose a different signed-out landing page.
+   Do **not** switch to `https://about.heartfull.online/`: its header and footer
+   link to Dating Institute and app-comparison pages, which are restricted
+   aggregator content.
+3. **Default country code.** The initial markets are Australian, but the phone
+   field defaults to +1. This is not a policy blocker; changing it would make
+   the landing experience match the targeted markets.
+4. **Conversion event.** Choose the event that counts as a conversion (for
+   example, a completed sign-in or completed onboarding) and confirm it fires
+   for a test account before launch.
 
 Do **not** use Dating Institute comparison, ranking, or multi-service review
 pages in a General Dating campaign. Google's policy treats those as restricted
@@ -44,24 +104,75 @@ dating aggregators, with a different eligibility path.
 
 All examples below require final Google Ads editorial and policy review. They
 are deliberately factual and must stay matched to the selected landing page.
+Search limits: headlines ≤30 characters, descriptions ≤90 characters (the
+25 September revision shortened all three descriptions to fit).
 
 ### Variant A
 
 - Headline: `Adult Dating on HeartFull`
 - Headline: `Meet Adults, Connect Honestly`
-- Description: `HeartFull is an 18+ dating service for people seeking genuine connection. Create a profile and get to know people thoughtfully.`
+- Description: `HeartFull is an 18+ dating service for real connection. Get to know people thoughtfully.`
 
 ### Variant B
 
 - Headline: `A Thoughtful Way to Date`
 - Headline: `HeartFull Is for Adults 18+`
-- Description: `Explore an adult dating service built around respectful connections. No paid companionship or outcome promises.`
+- Description: `An adult dating service built on respectful connection. No paid companionship.`
 
 ### Variant C
 
 - Headline: `Try HeartFull Dating`
 - Headline: `Build Real Connections`
-- Description: `Join HeartFull, an adult-only dating service. Set up your profile and connect at your own pace.`
+- Description: `Join HeartFull, an adult-only dating service. Set up a profile, connect at your own pace.`
+
+### Display (responsive display ad) draft
+
+Use only with a landing page that has passed the signed-out journey decisions
+above. Length limits are Google's current responsive display limits; confirm
+them in the Ads UI when the campaign is built.
+
+- Business name: `HeartFull`
+- Short headlines (≤30 characters):
+  - `HeartFull: Dating for Adults`
+  - `Message People Nearby, 18+`
+  - `No Mutual Swipe Needed`
+- Long headline (≤90 characters): `An 18+ dating service where you can message people nearby without a mutual swipe`
+- Descriptions (≤90 characters):
+  - `Connecting is never paywalled. Earn Hearts by sharing lifestyle photos.`
+  - `Attach Hearts to a message to show you mean it. The other person decides.`
+
+Each claim is taken from the live product copy: connections are not
+paywalled, people are selected by location and criteria rather than mutual
+swipes, and Hearts are earned (never bought) and attached to messages.
+
+### Video draft (15 seconds)
+
+| Time | Picture | Voice-over / on-screen text |
+| --- | --- | --- |
+| 0–3 s | HeartFull logo on the brand background. | "HeartFull. Dating for adults, 18+." |
+| 3–8 s | Product UI walkthrough: nearby-people strip, a lifestyle photo, typing a message. | "See people nearby and message them — no mutual swipe first." |
+| 8–12 s | Attaching Hearts to a message and sending it. | "Earn Hearts by sharing your lifestyle. Attach them to show you mean it." |
+| 12–15 s | Logo and the certified landing URL. | "HeartFull. Connect at your own pace." |
+
+### Asset requirements
+
+- **People in imagery.** Use only real, consenting adults (licensed stock with
+  model releases, or a paid shoot). Fully clothed, everyday settings, no
+  suggestive poses, and no one who could be read as under 18.
+- **Product UI.** Any UI shown must be the real app. Profiles and messages in
+  UI captures must be clearly labelled on screen as illustrative
+  (e.g. "Illustrative demo") so they are not presented as real members.
+  The animated demo in the `about.heartfull.online` hero phone uses
+  illustrative stock profiles; do not reuse it in ads without that label.
+- **No outcome imagery.** No couples, weddings, or "match" celebrations that
+  imply a guaranteed result.
+- **Image sizes** (responsive display): landscape 1.91:1 (1200×628), square
+  1:1 (1200×1200), logo 1:1 (1200×1200) and optional 4:1 (1200×300). Confirm
+  current limits in the Ads UI.
+- **Video.** Landscape 16:9 master; square 1:1 and vertical 9:16 cut-downs.
+  Captions burned in or supplied, because many placements play muted.
+- **Record the final assets.** File names and hashes of the frozen assets go
+  in the GitHub issue with the two-person review.
 
 ## Creative exclusions
 
@@ -73,7 +184,31 @@ are deliberately factual and must stay matched to the selected landing page.
   unless conspicuously disclosed and separately cleared through policy review.
 - No misleading prices, fake urgency, fake activity, or unsupported claims.
 
+## Policy-page parity — 25 September 2026
+
+Fixed on `about.heartfull.online` (this repository):
+
+- Privacy (EN, ES, AR, VI, ZH): the account-data line said the phone number was
+  collected "for verification". It now says it's the phone number or sign-in
+  account used to log in, which matches the app's sign-in options. The
+  "match you" / "your matches" wording is replaced with showing people nearby
+  and messaging the people you talk to, which matches the no-mutual-swipe model.
+- Support: added a "How do I block someone?" answer that matches the in-app
+  block confirmation, and a link to the Dating & Advertising Standards page.
+- Home-page footer (EN, ZH): added a Support & Safety link; the ZH footer also
+  gains the Dating & Advertising Standards link.
+
+Outstanding in the app repository (not this website):
+
+- `https://heartfull.online/privacy/` still says "matched users" and "your
+  matches". It should say "people you are talking to" before submission, so
+  the policy page matches the service.
+
 ## Two-person pre-launch review
+
+**Stop point:** everything below needs two named people and must not be ticked
+by an automated agent. Do not submit the certificate or enable any campaign
+until every item is ticked and the reviewers are recorded in issue #8.
 
 Record the names and date of the two reviewers in the related GitHub issue
 before any campaign is enabled.
