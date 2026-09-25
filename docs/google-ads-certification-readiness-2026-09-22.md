@@ -91,10 +91,14 @@ Before submitting the certificate application:
    general product landing page. Do not send ads to Dating Institute comparison
    or ranking pages: those are policy-defined dating aggregators and are
    restricted to Search.
-4. Review every live ad asset and destination together. The copy must identify
+4. Run `npm test` and `npm run check:ad-routes` in this repository and paste
+   the route-check output into issue #8. The first validates the pack's
+   destinations, copy limits, and policy-page links; the second confirms every
+   destination loads signed out with the expected policy text.
+5. Review every live ad asset and destination together. The copy must identify
    HeartFull accurately, be 18+ appropriate, avoid racy imagery and outcome
    promises, and match the page a person reaches.
-5. Submit the certificate, wait for Google’s decision, then confirm every ad
+6. Submit the certificate, wait for Google’s decision, then confirm every ad
    group is **Eligible** before interpreting campaign performance.
 
 ## Related documents

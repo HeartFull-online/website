@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "HeartFull marketing website",
   "scripts": {
-    "test": "node --test tests/site-language.test.js && bash scripts/check.sh",
+    "test": "node --test tests/site-language.test.js tests/google-ads-pack.test.js && bash scripts/check.sh",
     "build": "npx tailwindcss -i src/input.css -o style.css --minify",
+    "check:ad-routes": "node scripts/check-ad-routes.js",
     "validate": "html-validate '**/*.html' --ignore 'node_modules/**/*.html'"
   },
   "repository": {

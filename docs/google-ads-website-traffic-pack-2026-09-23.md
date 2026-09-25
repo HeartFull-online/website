@@ -33,7 +33,9 @@ outcome.
 ## Route verification — 25 September 2026
 
 Every supporting route was fetched signed out (plain HTTPS GET, no cookies)
-and returned **HTTP 200** with the expected page title:
+and returned **HTTP 200** with the expected page title. The destination-table
+subset is now repeatable with `npm run check:ad-routes`; its 25 September run
+passed for all 8 destinations.
 
 | URL | Result | Content check |
 | --- | --- | --- |
@@ -88,6 +90,43 @@ Decisions required before this URL can be frozen as the ad destination:
 Do **not** use Dating Institute comparison, ranking, or multi-service review
 pages in a General Dating campaign. Google's policy treats those as restricted
 dating aggregators, with a different eligibility path.
+
+## Destination exclusions
+
+These must never be a final URL, sitelink, or other ad destination in a General
+Dating campaign. `npm test` fails if any appears in the destination table above.
+
+| Excluded | Why |
+| --- | --- |
+| `https://about.heartfull.online/dating-institute/…` (all pages) | Dating advice, country guides, app directory, and competitor pricing and reputation pages are aggregator/review content. |
+| `https://about.heartfull.online/compare/…` (all pages) | Head-to-head comparisons with other dating apps are aggregator content. |
+| `https://about.heartfull.online/why-heartfull.html` | Multi-app comparison page. |
+| `https://about.heartfull.online/` (marketing home page) | Its header and footer link to Dating Institute and Compare Apps. |
+| App-store URLs (Google Play, Apple App Store) | Only if the app ID is in the approved certificate application. |
+
+## Validation
+
+Two checks keep this pack and the live destinations in step:
+
+- **`npm test`** (offline, runs on every change) parses this document. It
+  fails if:
+  - a destination is off the HeartFull domains, excluded above, or missing
+    from this repository;
+  - any headline, description, or business name is over its Google Ads
+    character limit, or uses outcome, compensated, or sexual framing;
+  - the readiness doc stops linking this pack;
+  - the privacy, terms, standards, or support links disappear from the home
+    footer, standards page, or support page;
+  - the corrected privacy/support wording regresses.
+- **`npm run check:ad-routes`** (live, needs network) fetches every URL in the
+  destination table while signed out. It fails unless each one returns
+  HTTP 200 and contains the policy text this pack relies on (for example 18+
+  statements, report and block guidance). When adding a destination, add its
+  expected text to `MARKERS` in `scripts/check-ad-routes.js`; `npm test`
+  enforces that.
+
+Run `npm run check:ad-routes` on the day the destination set is frozen and on
+submission day, and paste its output (it ends with a timestamp) into issue #8.
 
 ## Proposed targeting guardrails
 
@@ -214,14 +253,23 @@ Record the names and date of the two reviewers in the related GitHub issue
 before any campaign is enabled.
 
 - [ ] The final landing page returns HTTP 200 while signed out and accurately
-  describes the service.
+  describes the service, including that it is for adults 18+.
+- [ ] The signed-out journey decisions above are resolved: Google Play badge
+  (app ID in scope, or a destination without it), adults-only service
+  description, and the conversion event verified with a test account.
+- [ ] `https://heartfull.online/privacy/` no longer says "matched users" or
+  "your matches".
+- [ ] `npm test` and `npm run check:ad-routes` pass on submission day, and
+  the route-check output is pasted into issue #8.
 - [ ] The complete signup/onboarding journey is available to the Google
   reviewer using the supplied test access, if sign-in is needed.
 - [ ] Every selected asset matches this pack and uses adult, non-sexualised
   presentation.
 - [ ] Targeting is adults 18+ and contains only approved countries/markets.
 - [ ] The application includes every landing domain and any in-scope app ID.
-- [ ] The campaign contains no Dating Institute/aggregator destination.
+- [ ] The campaign contains no Dating Institute/aggregator destination or any
+  other URL from "Destination exclusions", including sitelinks.
+- [ ] Final assets are frozen: file names and hashes are recorded in issue #8.
 - [ ] Certification approval is recorded before the campaign is enabled.
 
 ## Evidence
