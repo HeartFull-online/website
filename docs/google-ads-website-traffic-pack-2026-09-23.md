@@ -1,7 +1,7 @@
 # Google Ads website-traffic pack — draft for policy review
 
 Status: **draft; do not launch from this document alone.** Last updated
-25 September 2026 (route verification, signed-out journey check, display and
+26 September 2026 (route verification, signed-out journey check, display and
 video copy). The two-person review and certificate submission are still
 outstanding and are human steps; nothing in this pack has been submitted.
 
@@ -30,11 +30,33 @@ outcome.
 | Account deletion | `https://heartfull.online/delete-account/` | Live | Supporting page, linked from marketing-site support. |
 | Support, reporting, and blocking | `https://about.heartfull.online/support.html` | Live | Contact, report-a-user, block-someone, and deletion guidance. |
 
-## Route verification — 25 September 2026
+### Candidate decision register
+
+This is the complete candidate inventory for this website-traffic campaign.
+It is deliberately **not** an approval list: the only acquisition URL remains
+conditional until the signed-out journey decisions and the named two-person
+review below are complete. Supporting URLs are evidence/sitelink candidates,
+not substitutes for the acquisition landing page.
+
+| URL group | Campaign use | Route status on 26 September 2026 | Source ownership |
+| --- | --- | --- | --- |
+| `https://heartfull.online/` | Conditional acquisition candidate | HTTP 200 signed out; redirects to `/#/signin` | HeartFull app repository |
+| `https://heartfull.online/advertising-standards/`, `/terms/`, `/privacy/`, `/child-safety/`, `/delete-account/` | Policy/support evidence only | HTTP 200 signed out | HeartFull app repository |
+| `https://about.heartfull.online/advertising-standards.html`, `/support.html` | Policy/support evidence or approved sitelink candidate after review | HTTP 200 signed out | This repository |
+
+The public marketing routes in this repository are static GitHub Pages files:
+`index.html` (`/`), `advertising-standards.html`, `terms.html`,
+`privacy.html`, and `support.html`. `CNAME` assigns these to
+`about.heartfull.online`, and `sitemap.xml` publishes each policy/support
+route. The same live checks on 26 September returned HTTP 200 for all five.
+The `heartfull.online` routes are external to this repository; their status is
+validated live, not inferred from a source file here.
+
+## Route verification — 26 September 2026
 
 Every supporting route was fetched signed out (plain HTTPS GET, no cookies)
 and returned **HTTP 200** with the expected page title. The destination-table
-subset is now repeatable with `npm run check:ad-routes`; its 25 September run
+subset is now repeatable with `npm run check:ad-routes`; its 26 September run
 passed for all 8 destinations.
 
 | URL | Result | Content check |
@@ -138,6 +160,57 @@ submission day, and paste its output (it ends with a timestamp) into issue #8.
 - Use only the certified HeartFull domain and the exact reviewed creative.
 - Do not include app-store links or app-promotion assets unless the relevant
   app IDs were included in the certification application and are approved.
+- Exclude these countries from every campaign because Google currently lists
+  them as ineligible for dating and companionship ads: Algeria, Bahrain, Sri
+  Lanka, Palestine, Iraq, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman,
+  Nepal, Pakistan, Qatar, Saudi Arabia, Tunisia, Egypt, and Yemen. Recheck the
+  [current policy](https://support.google.com/adspolicy/answer/15328393?hl=en)
+  in the Ads UI before creation because country availability can change.
+
+## Campaign exclusions
+
+Apply these exclusions before the campaign is enabled. They are a safety and
+scope guardrail; they do not replace Google's automated policy enforcement.
+
+### Negative keywords and search themes
+
+Exclude queries seeking compensated dating, escorting, sexual services, or
+mental-health treatment. At minimum, add phrase/exact negatives for:
+
+- `sugar daddy`, `sugar mommy`, `sugar dating`, `paid dating`, `paid companion`,
+  `compensated companionship`, `financial arrangement`;
+- `escort`, `escorting`, `sex worker`, `prostitute`, `hookup`, `one night stand`,
+  `casual sex`, `nudes`;
+- `therapy`, `therapist`, `counselling`, `counseling`, `mental health support`,
+  `crisis hotline`, `suicide help`.
+
+HeartFull must not be positioned as therapy, a crisis service, or a substitute
+for professional mental-health care. Review the search-terms report at least
+weekly during any pilot; add new excluded variants promptly and do not use
+negative keywords to conceal a prohibited campaign intent.
+
+### Placement and inventory exclusions
+
+- Exclude mature/adult, sexually explicit, gambling, violence, tragedy,
+  sensational or shocking-content inventory, and any site/app primarily aimed
+  at children or teenagers.
+- Do not use Dating Institute, comparison/review, app-directory, or competitor
+  content as a managed placement, contextual target, destination, or sitelink.
+- Exclude user-generated placements that cannot be reviewed for age-appropriate
+  context before launch; review the placement report weekly and exclude any
+  unsuitable inventory.
+
+### Audience exclusions
+
+- Exclude people under 18; do not use youth, student/minor-oriented, or
+  child-directed segments, creatives, or publishers.
+- Do not build, upload, or target audiences based on a person's mental-health
+  condition, crisis, treatment seeking, sexual activity, or other sensitive
+  personal hardship. Do not retarget visitors to safety, crisis, reporting, or
+  account-deletion pages.
+- Use only age-eligible, country-eligible audiences allowed by Google after
+  certification. Disable expansion or automated audience suggestions if they
+  would reach excluded countries or unsuitable inventory.
 
 ## Draft ad copy
 
@@ -205,11 +278,27 @@ swipes, and Hearts are earned (never bought) and attached to messages.
   illustrative stock profiles; do not reuse it in ads without that label.
 - **No outcome imagery.** No couples, weddings, or "match" celebrations that
   imply a guaranteed result.
-- **Image sizes** (responsive display): landscape 1.91:1 (1200×628), square
-  1:1 (1200×1200), logo 1:1 (1200×1200) and optional 4:1 (1200×300). Confirm
-  current limits in the Ads UI.
-- **Video.** Landscape 16:9 master; square 1:1 and vertical 9:16 cut-downs.
-  Captions burned in or supplied, because many placements play muted.
+- **Responsive-display images.** Supply landscape 1.91:1 (recommended
+  1200×628; minimum 600×314), square 1:1 (1200×1200; minimum 300×300), and
+  vertical 9:16 (900×1600; minimum 600×1067). Use JPG or PNG at 5 MB or less.
+  Aim for 5–10 images per ratio; avoid overlaid text, buttons, collages, and
+  digital-composite backgrounds.
+- **Logos.** Supply a square 1:1 logo (1200×1200 recommended; 128×128 minimum)
+  and landscape 4:1 logo (1200×300 recommended; 512×128 minimum), each 5 MB
+  or less. Keep the logo simple, centred, and free of small text; a transparent
+  background is preferred when the mark remains centred.
+- **Video.** Prepare 16:9 (1920×1080), 1:1 (1080×1080), and 9:16
+  (1080×1920) masters. The 15-second draft meets the 10–60 second Demand Gen
+  guideline and the 10-second minimum commonly required for YouTube in-stream.
+  Upload only a public or unlisted YouTube URL when the selected campaign type
+  requires it. Include readable captions and preserve safe areas for platform
+  UI, since many placements begin muted.
+- **Technical source of truth.** Reconfirm asset counts, accepted file types,
+  dimensions, and any campaign-type-specific limits in the Google Ads UI on
+  upload. The requirements above were checked on 26 September 2026 against
+  Google's [responsive-display specifications](https://support.google.com/google-ads/answer/7005917?hl=en),
+  [responsive-display best practices](https://support.google.com/google-ads/answer/9823397?hl=en),
+  and [Demand Gen specifications](https://support.google.com/google-ads/answer/17091672?hl=en).
 - **Record the final assets.** File names and hashes of the frozen assets go
   in the GitHub issue with the two-person review.
 
@@ -266,6 +355,12 @@ before any campaign is enabled.
 - [ ] Every selected asset matches this pack and uses adult, non-sexualised
   presentation.
 - [ ] Targeting is adults 18+ and contains only approved countries/markets.
+- [ ] Every ineligible country listed in "Proposed targeting guardrails" is
+  excluded; location option, language, and any audience expansion are checked
+  so they cannot widen the approved scope.
+- [ ] Negative-keyword, placement/inventory, and audience exclusions in
+  "Campaign exclusions" are applied. The campaign does not present HeartFull
+  as therapy, crisis support, or another mental-health service.
 - [ ] The application includes every landing domain and any in-scope app ID.
 - [ ] The campaign contains no Dating Institute/aggregator destination or any
   other URL from "Destination exclusions", including sitelinks.
