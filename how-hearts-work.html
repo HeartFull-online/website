@@ -146,12 +146,28 @@
                 <p>You're never locked out. Even at 0 Hearts you can <strong>always reply</strong> to anyone. To earn more, share lifestyle photos and videos.</p>
             </div>
 
+            <section id="date-check-in" aria-labelledby="date-check-in-title">
+                <h2 id="date-check-in-title">Date check-in: meet in person, earn Hearts</h2>
+                <p class="note"><strong>Coming soon:</strong> the location-checked date check-in described here has been implemented but is not yet deployed.</p>
+                <p>Check in together at your date, in the same place. One person generates a code and the other scans its QR code. If scanning is unavailable, enter the six-character code manually; the same location checks apply. The default reward is <strong>50 Hearts each</strong> after a successful check-in.</p>
+                <ul>
+                    <li><strong>Be within 100 metres of each other.</strong> Turn on location and allow access on both phones so the app can confirm you are nearby. Both location fixes must be no more than five minutes old and accurate to 50 metres or better.</li>
+                    <li><strong>Codes expire after ten minutes.</strong> The server controls expiry. If a check-in is refused, or the code owner's location fix has become stale, generate a new code with a fresh location fix.</li>
+                    <li><strong>One award per pair, ever.</strong> Meeting the same person again does not earn another check-in reward.</li>
+                    <li><strong>Daily limits apply separately.</strong> By default, each person can redeem up to three codes as the scanner and receive up to three code redemptions as the code owner per UTC day. These are independent limits, resetting at midnight UTC rather than local midnight.</li>
+                </ul>
+                <h3>What happens to your location?</h3>
+                <p>Coordinates are used to check that you are together. The code owner's location fix is stored temporarily in a server-only code document until redemption succeeds or is refused, then removed. The scanner's coordinates are never persisted. The date record stores only the rounded distance in metres, not either person's coordinates.</p>
+                <p>Unused codes and their temporary location data are deleted by cleanup scheduled every five minutes after the code's ten-minute expiry. Scheduling delays or failures can delay deletion, so expiry does not mean immediate removal of an unused code's coordinates.</p>
+                <p>These rules keep Hearts fair by rewarding real meetings and limiting repeat claims. The check uses device-reported location; it cannot prevent deliberate GPS spoofing.</p>
+            </section>
+
             <h2>Why it's built this way</h2>
             <div class="feature-grid">
                 <div class="feature-card"><h3>Fair to newcomers</h3><p>Reaching up never costs a penalty &mdash; you pay the floor. Your first 100 Hearts are always enough to start real conversations.</p></div>
                 <div class="feature-card"><h3>Protects popular people</h3><p>The busier someone's inbox, the more a message costs &mdash; so genuine interest rises to the top instead of getting buried under "hey".</p></div>
                 <div class="feature-card"><h3>No pay-to-win</h3><p>Hearts can't be bought at any price. Share your lifestyle to earn them.</p></div>
-                <div class="feature-card"><h3>Rewards meeting</h3><p>The biggest single reward &mdash; 50 Hearts each &mdash; is for actually going on a date and scanning each other's QR code.</p></div>
+                <div class="feature-card"><h3>Rewards meeting</h3><p>The default date check-in reward is 50 Hearts each. Location-checked check-in is coming soon; see the <a href="#date-check-in">rules and privacy details</a>.</p></div>
             </div>
 
             <div class="note">
