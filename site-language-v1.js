@@ -7,13 +7,13 @@
     vi: { flag: '🇻🇳', name: 'Tiếng Việt', dir: 'vi' },
   };
   const navLabels = {
-    en: { home: 'Home', compare: 'Compare Apps', institute: 'Dating Institute', promoters: 'Promoters', app: 'Open App', menu: 'Menu' },
-    es: { home: 'Inicio', compare: 'Comparar apps', institute: 'Instituto de Citas', promoters: 'Promotores', app: 'Abrir app', menu: 'Menu' },
-    zh: { home: '首页', compare: '应用对比', institute: 'Dating Institute', promoters: '推广者', app: '打开应用', menu: '菜单' },
-    ar: { home: 'الرئيسية', compare: 'مقارنة التطبيقات', institute: 'معهد المواعدة', promoters: 'المروجون', app: 'افتح التطبيق', menu: 'القائمة' },
-    vi: { home: 'Trang chủ', compare: 'So sánh ứng dụng', institute: 'Dating Institute', promoters: 'Người quảng bá', app: 'Mở ứng dụng', menu: 'Menu' },
+    en: { format: 'Event format', home: 'Home', compare: 'Compare Apps', institute: 'Dating Institute', promoters: 'Promoters', app: 'Open App', menu: 'Menu' },
+    es: { format: 'Formato del evento', home: 'Inicio', compare: 'Comparar apps', institute: 'Instituto de Citas', promoters: 'Promotores', app: 'Abrir app', menu: 'Menu' },
+    zh: { format: '活动形式', home: '首页', compare: '应用对比', institute: 'Dating Institute', promoters: '推广者', app: '打开应用', menu: '菜单' },
+    ar: { format: 'صيغة الفعالية', home: 'الرئيسية', compare: 'مقارنة التطبيقات', institute: 'معهد المواعدة', promoters: 'المروجون', app: 'افتح التطبيق', menu: 'القائمة' },
+    vi: { format: 'Hình thức sự kiện', home: 'Trang chủ', compare: 'So sánh ứng dụng', institute: 'Dating Institute', promoters: 'Người quảng bá', app: 'Mở ứng dụng', menu: 'Menu' },
   };
-  const translatedPages = new Set(['index.html', 'privacy.html', 'terms.html', 'promoters.html']);
+  const translatedPages = new Set(['index.html', 'privacy.html', 'terms.html', 'promoters.html', 'peacock-dating.html']);
 
   function normalizePath(pathname) {
     let path = pathname.replace(/^\/+/, '');
@@ -80,6 +80,7 @@
   function rewriteInternalLinks(lang) {
     document.querySelectorAll('a[href]').forEach((anchor) => {
       if (anchor.closest('.hf-language-menu')) return;
+      if (anchor.closest('.format-languages')) return;
       if (anchor.closest('.hf-site-mobile-languages')) return;
       const raw = anchor.getAttribute('href');
       if (!raw || raw.startsWith('#') || raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('javascript:')) return;
@@ -126,6 +127,7 @@
     const label = labelsFor(lang);
     return [
       { key: 'home', label: label.home, href: localizedHref(lang, 'index.html', '', search), paths: ['index.html'] },
+      { key: 'format', label: label.format, href: localizedHref(lang, 'peacock-dating.html', '', search), paths: ['peacock-dating.html'] },
       { key: 'compare', label: label.compare, href: localizedHref(lang, 'why-heartfull.html', '', search), paths: ['why-heartfull.html', 'compare/'] },
       { key: 'institute', label: label.institute, href: localizedHref(lang, 'dating-institute/index.html', '', search), paths: ['dating-institute/'] },
       { key: 'promoters', label: label.promoters, href: localizedHref(lang, 'promoters.html', '', search), paths: ['promoters.html'] },

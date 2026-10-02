@@ -32,3 +32,15 @@ test('language links preserve untranslated extensionless routes', () => {
   assert.equal(pagePath, 'compare/tinder');
   assert.equal(localizedHref('vi', pagePath, '#pricing', '?source=nav'), '/compare/tinder?source=nav&lang=vi#pricing');
 });
+
+
+test('event format language links reach static translations and preserve context', () => {
+  for (const lang of ['es', 'zh', 'ar', 'vi']) {
+    const page = normalizePath(`/${lang}/peacock-dating`);
+    assert.equal(page, 'peacock-dating.html');
+    assert.equal(localizedHref(lang, page, '#picks', '?source=app&lang=en'),
+      `/${lang}/peacock-dating.html?source=app#picks`);
+    assert.equal(localizedHref('en', page, '#privacy', ''), '/peacock-dating.html#privacy');
+    assert.ok(fs.existsSync(`${lang}/peacock-dating.html`));
+  }
+});
