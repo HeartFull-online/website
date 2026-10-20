@@ -8,7 +8,7 @@
   };
   const navLabels = {
     en: { format: 'Event format', home: 'Home', compare: 'Compare Apps', institute: 'Dating Institute', promoters: 'Promoters', app: 'Open App', menu: 'Menu' },
-    es: { format: 'Formato del evento', home: 'Inicio', compare: 'Comparar apps', institute: 'Instituto de Citas', promoters: 'Promotores', app: 'Abrir app', menu: 'Menu' },
+    es: { format: 'Formato del evento', home: 'Inicio', compare: 'Comparar apps', institute: 'Instituto de Citas', promoters: 'Promotores', app: 'Abrir app', menu: 'Menú' },
     zh: { format: '活动形式', home: '首页', compare: '应用对比', institute: 'Dating Institute', promoters: '推广者', app: '打开应用', menu: '菜单' },
     ar: { format: 'صيغة الفعالية', home: 'الرئيسية', compare: 'مقارنة التطبيقات', institute: 'معهد المواعدة', promoters: 'المروجون', app: 'افتح التطبيق', menu: 'القائمة' },
     vi: { format: 'Hình thức sự kiện', home: 'Trang chủ', compare: 'So sánh ứng dụng', institute: 'Dating Institute', promoters: 'Người quảng bá', app: 'Mở ứng dụng', menu: 'Menu' },
