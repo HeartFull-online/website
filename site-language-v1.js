@@ -99,6 +99,21 @@
     });
   }
 
+  function languageOptions(lang, pagePath, search) {
+    return Object.entries(languages).map(([code, item]) => {
+      const active = code === lang ? ' class="active"' : '';
+      return `<a${active} data-lang="${code}" href="${localizedHref(code, pagePath, '', search)}"><span>${item.flag}</span><span>${item.name}</span></a>`;
+    }).join('');
+  }
+
+  function rememberLanguageChoice(menu) {
+    menu.addEventListener('click', (event) => {
+      const link = event.target.closest('a[data-lang]');
+      if (link) localStorage.setItem('hf_language', link.dataset.lang);
+    });
+    return menu;
+  }
+
   function buildLanguageMenu(lang, pagePath, search) {
     const current = languages[lang] || languages.en;
     const details = document.createElement('details');
@@ -106,17 +121,10 @@
     details.innerHTML = `
       <summary><span>${current.flag}</span><span>${current.name}</span></summary>
       <div class="hf-language-list">
-        ${Object.entries(languages).map(([code, item]) => {
-          const active = code === lang ? ' class="active"' : '';
-          return `<a${active} data-lang="${code}" href="${localizedHref(code, pagePath, '', search)}"><span>${item.flag}</span><span>${item.name}</span></a>`;
-        }).join('')}
+        ${languageOptions(lang, pagePath, search)}
       </div>
     `;
-    details.addEventListener('click', (event) => {
-      const link = event.target.closest('a[data-lang]');
-      if (link) localStorage.setItem('hf_language', link.dataset.lang);
-    });
-    return details;
+    return rememberLanguageChoice(details);
   }
 
   function labelsFor(lang) {
@@ -177,23 +185,15 @@
       const active = activeNavLink(pagePath, link) ? ' class="active"' : '';
       return `<a${active} href="${link.href}">${link.label}</a>`;
     }).join('');
-    const languageLinks = Object.entries(languages).map(([code, item]) => {
-      const active = code === lang ? ' class="active"' : '';
-      return `<a${active} data-lang="${code}" href="${localizedHref(code, pagePath, '', search)}"><span>${item.flag}</span><span>${item.name}</span></a>`;
-    }).join('');
     menu.innerHTML = `
       <summary><span class="hf-site-mobile-icon" aria-hidden="true"></span><span>${labelsFor(lang).menu}</span></summary>
       <div class="hf-site-mobile-panel">
         <div class="hf-site-mobile-links">${links}</div>
         <a class="hf-site-mobile-app" href="https://heartfull.online" target="_blank" rel="noopener noreferrer">${labelsFor(lang).app}</a>
-        <div class="hf-site-mobile-languages">${languageLinks}</div>
+        <div class="hf-site-mobile-languages">${languageOptions(lang, pagePath, search)}</div>
       </div>
     `;
-    menu.addEventListener('click', (event) => {
-      const link = event.target.closest('a[data-lang]');
-      if (link) localStorage.setItem('hf_language', link.dataset.lang);
-    });
-    return menu;
+    return rememberLanguageChoice(menu);
   }
 
   function buildBrand(lang) {
