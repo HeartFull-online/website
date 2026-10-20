@@ -39,6 +39,25 @@ test('every page has a meta description', () => {
   }
 });
 
+test('every page has a canonical link to its own URL', () => {
+  const base = 'https://about.heartfull.online';
+  for (const { file, html } of pages) {
+    const match = html.match(/<link rel="canonical" href="([^"]+)"/);
+    assert.ok(match, `${file} has no canonical link`);
+    // index.html -> /, dir/index.html -> /dir/, anything else keeps its file name.
+    const expected = file === 'index.html'
+      ? `${base}/`
+      : file.endsWith('/index.html') ? `${base}/${file.slice(0, -'index.html'.length)}` : `${base}/${file}`;
+    assert.equal(match[1], expected, file);
+  }
+});
+
+test('every page has an og:image share image', () => {
+  for (const { file, html } of pages) {
+    assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+"/, file);
+  }
+});
+
 test('home page local images declare intrinsic dimensions', () => {
   const { html } = pages.find(({ file }) => file === 'index.html');
   for (const [tag] of html.matchAll(/<img\b[^>]*src="illustrations\/[^"]+"[^>]*>/g)) {
