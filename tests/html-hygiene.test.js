@@ -25,6 +25,14 @@ test('external links that open a new tab do not expose window.opener', () => {
   }
 });
 
+test('no link wraps a button (interactive content inside an anchor)', () => {
+  for (const { file, html } of pages) {
+    for (const [anchor] of html.matchAll(/<a\b[^>]*>(?:(?!<\/a>)[\s\S])*<\/a>/g)) {
+      assert.doesNotMatch(anchor, /<button\b/, `${file}: ${anchor.slice(0, 160)}`);
+    }
+  }
+});
+
 test('every page has a meta description', () => {
   for (const { file, html } of pages) {
     assert.match(html, /<meta name="description" content="[^"]+"/, file);
